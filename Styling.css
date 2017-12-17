@@ -1,0 +1,263 @@
+html, body{
+	margin:0px;
+	padding:0px;
+	background-image: url("topography.png");
+}
+
+a {
+   color: inherit;
+   text-decoration: none;
+}
+
+#Navbar {
+   display: inline-block;
+   vertical-align: top;
+   line-height: 1;
+   margin-top: 5vh;
+   margin-left: 5vw;
+   align-content: center;
+   font-family: "Quicksand", Sans-Serif;
+   font-size: 1.4vw;
+   color: black;
+}
+
+#line {
+	position: relative;
+	margin-top: 5.1vh;
+	align-content: center;
+	width:30%;
+	height:0.02vh;
+	background: black;
+}
+
+.Wallpaper {
+	width: 100vw;
+	height: auto;
+	max-height: 38vh;
+	object-fit: cover;
+	max-width: 100%;
+	overflow: clip;
+}
+
+.welcome {
+	width:40vw;
+	height:20vh;
+	max-height: 10vw;
+	border: 3px solid rgb(156, 194, 192);
+	top: 12vh;
+	margin-left: 32.5vw;
+	position: absolute;
+	transform: skew(170deg);
+	z-index: +1;
+	background: rgba(219, 240, 239, 0.8);
+	border: 3px solid rgb(22, 77, 100);
+}
+
+#Nombre {
+	transform: skew(10deg);
+	text-align: center;
+	font-size: 4.8vw;
+	width: auto;
+	font-family: "Yesteryear", Serif;
+}
+
+.socialmedia {
+	width: 2vw;
+	margin: 1vw;
+	margin-top: 5vh;
+	float: right;
+}
+
+#media {
+	margin-right: 5vw;
+	margin-bottom: 0px;
+}
+
+#Cuales {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	transform: skew(10deg);
+	font-size: 1.3vw;
+	letter-spacing: 0.4vw;
+	font-family: "Quicksand", Sans-Serif;
+}
+
+.lien {
+	margin: 1vw;
+}
+
+
+#img-circle {
+	position: absolute;
+	left: 37.5vw;
+	max-width: 15vw;
+	top: 3.5vh;
+	display: inline;
+	border-radius: 50%;
+	float: left;
+	z-index: 0;
+}
+
+.Aboutme {
+	position: relative;
+	font-family: "Raleway", Serif;
+	text-align: left;
+	left: 5vw;
+	display: inline;
+	width: 35vw;
+	top: 3.5vh;
+	font-size: 1.1vw;
+	float: left;
+}
+
+#Aimsandplans {
+	position: absolute;
+	left: 55.5vw;
+	width: 35vw;
+	top: 0vh;
+	display: inline;
+	float: left;
+	z-index: 0;
+}
+
+.TopContent {
+	position: static;
+}
+
+.Header {
+	position: absolute;
+	background-color: rgba(104,104,104,0.9);
+	z-index: 2;
+	width: 100vw;
+	max-width: 100%;
+	overflow: clip;
+}
+
+.ContactBox {
+	position: absolute;
+	margin-top: 20vh;
+	margin-left: 7.5vw;
+	background-color: rgba(219, 240, 239, 0.8);
+}
+
+.links {
+	margin-right: 5vw;
+}
+
+#TopNav {
+	font-family: "Quicksand", Sans-Serif;
+	width: 100%;
+	position: absolute;
+	font-size: 1.5vw;
+	vertical-align: top;
+	font-weight: 1;
+	color: white;
+	text-align: center;
+	top: 3vh;
+	z-index: 3;
+}
+
+#arboles {
+	position: relative;
+	width: 100vw;
+	max-height: 40vh;
+	overflow: clip;
+	max-width: 100%;
+	z-index: -1;
+	object-fit: cover;
+	margin-top: 0px;
+	padding-top: 0px;
+	z-index: 0;
+}
+
+.Title {
+	position: absolute;
+	width: 100%;
+	position: absolute;
+	vertical-align: top;
+	font-weight: 1;
+	color: white;
+	text-align: center;
+	top: 3vh;
+	z-index: 3;
+	font-size: 4vw;
+	margin-top: 22vh;
+	font-family: "Josefin Sans", Sans-Serif;
+}
+
+#ContactInfo {
+	position: absolute;
+	top:45vh;
+	max-width: 80vw;
+	left: 10vw;
+	right: 10vw;
+	font-family: "Raleway", Serif;
+	color: black;
+	display: inline;
+	text-align: center;
+}
+
+
+#ContactMedia {
+	position: absolute;
+	top: 68vh;
+	left: 42.8vw;
+}
+
+.socialmediaa {
+	width: 3vw;
+	margin: 1vw;
+	margin-top: 5vh;
+	float: right;
+}
+
+#PortfolioIntro {
+	background-color: rgba(220,220,220,0.8);
+	position: relative;
+	display: inline-block;
+	top: 10vh;
+	left: 7.5vw;
+	width: 85vw;
+	height: auto;
+	text-align: center;
+	border: 2px solid dimgrey;
+	font-family: "Droid Serif", Serif;
+}
+
+#Buscar {
+	position: relative;
+	width: 90%;
+	left: 5%;
+	top: 3vh;
+	padding-bottom: 3.8vh;
+	font-family: "Raleway", Sans-Serif;
+	font-weight: bold;
+}
+
+/*Look for a more professional font for this, perhaps the light version of the title*/
+
+.Content {
+	position: relative;
+	text-align: center;
+	font-family: "Raleway", Sans-Serif;
+	top: 15vh;
+	left: 12.5vw;
+	width: 76.5vw;
+}
+
+.Content h2 {
+	font-family: "Raleway", Sans-Serif;
+	font-size: 2.4vw;
+	letter-spacing: 0.2vw;
+}
+
+#linea {
+	position: relative;
+	width: 15vw;
+	top: 25vh;
+}
+
+#Services {
+	color: #000;
+}
