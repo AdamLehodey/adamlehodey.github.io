@@ -43,7 +43,6 @@ a {
 	width:40vw;
 	height:20vh;
 	max-height: 10vw;
-	border: 3px solid rgb(156, 194, 192);
 	top: 12vh;
 	margin-left: 32.5vw;
 	position: absolute;
@@ -212,11 +211,11 @@ a {
 	float: right;
 }
 
-#PortfolioIntro {
+.Intro {
 	background-color: rgba(220,220,220,0.8);
 	position: relative;
 	display: inline-block;
-	top: 10vh;
+	top: 6vh;
 	left: 7.5vw;
 	width: 85vw;
 	height: auto;
@@ -225,7 +224,7 @@ a {
 	font-family: "Droid Serif", Serif;
 }
 
-#Buscar {
+.Buscar {
 	position: relative;
 	width: 90%;
 	left: 5%;
@@ -234,8 +233,6 @@ a {
 	font-family: "Raleway", Sans-Serif;
 	font-weight: bold;
 }
-
-/*Look for a more professional font for this, perhaps the light version of the title*/
 
 .Content {
 	position: relative;
@@ -256,16 +253,4 @@ a {
 	position: relative;
 	width: 15vw;
 	top: 25vh;
-}
-
-#Services {
-	color: #000;
-}
-
-.Soon {
-	color: #000;
-	text-align: center;
-	padding: 10vw 20vw 10vw 20vw;
-	font-family: "Josefin Sans", Sans-Serif;
-	font-size: 2vw;
 }
