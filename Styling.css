@@ -200,7 +200,7 @@ a {
 
 #ContactMedia {
 	position: absolute;
-	top: 68vh;
+	top: 60vh;
 	left: 42.8vw;
 }
 
@@ -252,5 +252,14 @@ a {
 #linea {
 	position: relative;
 	width: 15vw;
-	top: 25vh;
+	top: 22vh;
+}
+
+.ContactForm {
+	position: relative;
+	font-family: "Raleway", Sans-Serif;
+	text-align: center;
+	width: 85vw;
+	left: 7.5vw;
+	top: 35vh;
 }
