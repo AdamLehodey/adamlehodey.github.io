@@ -257,3 +257,8 @@ a {
 	position: relative;
 	top: 8vh;
 }
+
+#Space {
+	margin: 2vh;
+	color: rgba(1, 1, 1, 0);
+}
