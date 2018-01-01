@@ -253,16 +253,8 @@ a {
 	top: 22vh;
 }
 
-.ContactForm {
-	position: relative;
-	font-family: "Raleway", Sans-Serif;
-	text-align: center;
-	width: 85vw;
-	left: 7.5vw;
-	top: 35vh;
-}
-
 #zbwid-e129fb4a {
 	position: relative;
 	top: 5vh;
+	bottom: 3vh;
 }
