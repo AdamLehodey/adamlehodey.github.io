@@ -21,6 +21,21 @@ a {
    color: black;
 }
 
+@media (max-width: 1200px) {
+	#Navbar {
+	position: relative;
+	display: inline-block;
+	margin-top: 2.5vh;
+   	width: 90vw;
+   	margin-left: 5vw;
+   	margin-right: 5vw;
+   	text-align: center;
+   	font-family: "Quicksand", Sans-Serif;
+   	font-size: 16px;
+   	color: black;
+	}
+}
+
 #line {
 	position: relative;
 	margin-top: 5.1vh;
@@ -39,10 +54,19 @@ a {
 	overflow: clip;
 }
 
+@media (max-width: 1200px) {
+	.Wallpaper {
+	width: 100vw;
+	height: 50vh;
+	object-fit: cover;
+	max-width: 100%;
+	overflow: clip;
+	}
+}
+
 .welcome {
 	width:40vw;
-	height:20vh;
-	max-height: 10vw;
+	height:auto;
 	top: 12vh;
 	margin-left: 32.5vw;
 	position: absolute;
@@ -50,6 +74,21 @@ a {
 	z-index: +1;
 	background: rgba(219, 240, 239, 0.8);
 	border: 3px solid rgb(22, 77, 100);
+}
+
+
+@media (max-width: 1200px) {
+	.welcome {
+	width:80vw;
+	height:auto;
+	margin-left: 10vw;
+	top: 6vh;
+	position: absolute;
+	transform: skew(170deg);
+	z-index: +1;
+	background: rgba(219, 240, 239, 0.8);
+	border: 3px solid rgb(22, 77, 100);
+	}
 }
 
 #Nombre {
@@ -60,21 +99,32 @@ a {
 	font-family: "Yesteryear", Serif;
 }
 
-.socialmedia {
-	width: 2vw;
-	margin: 1vw;
-	margin-top: 5vh;
-	float: right;
+@media (max-width: 1200px) {
+	#Nombre {
+	margin-top: 2vh;
+	transform: skew(10deg);
+	text-align: center;
+	font-size: 58px;
+	width: auto;
+	font-family: "Yesteryear", Serif;
+	}
 }
 
-#media {
-	margin-right: 5vw;
-	margin-bottom: 0px;
+@media (max-width: 400px) {
+	#Nombre {
+	margin-top: 2vh;
+	transform: skew(10deg);
+	text-align: center;
+	font-size: 44px;
+	width: auto;
+	font-family: "Yesteryear", Serif;
+	}
 }
 
 #Cuales {
 	margin: 0px;
 	padding: 0px;
+	margin-bottom: 5px;
 	text-align: center;
 	transform: skew(10deg);
 	font-size: 1.3vw;
@@ -82,21 +132,111 @@ a {
 	font-family: "Quicksand", Sans-Serif;
 }
 
+@media (max-width: 1200px) {
+	#Cuales {
+	text-align: center;
+	width: auto;
+	transform: skew(10deg);
+	font-size: 16px;
+	letter-spacing: 0.15vw;
+	margin-bottom: 5vh;
+	font-family: "Quicksand", Sans-Serif;
+	position: relative;
+	}
+}	
+.socialmedia {
+	width: 2vw;
+	margin: 1vw;
+	margin-top: 5vh;
+	float: right;
+}
+
+@media (max-width: 1200px) {
+	.socialmedia {
+		width: 4vw;
+		padding-top: 5vh;
+		padding-bottom: 2vh;
+		margin: 1vw;
+		float: unset;
+	}
+}
+
+@media (max-width: 600px) {
+	.socialmedia {
+		width: 8vw;
+		padding-top: 5vh;
+		padding-bottom: 2vh;
+		margin: 1vw;
+		float: unset;
+	}
+}
+
+#media {
+	position: relative;
+	margin-right: 5vw;
+	margin-bottom: 0px;
+}
+
+@media (max-width: 1200px) {
+	#media {
+		left: 4vw;
+		position: relative;
+		float: unset;
+		text-align: center;
+	}
+}
+
 .lien {
 	margin: 1vw;
 }
 
+/*Do not edit the following section up to the next 'do not edit' section'*/
 
 #img-circle {
 	position: absolute;
 	left: 37.5vw;
-	max-width: 15vw;
+	width: 15vw;
 	top: 3.5vh;
 	display: inline;
 	border-radius: 50%;
 	float: left;
 	z-index: 0;
 }
+
+@media (max-width: 1200px) {
+	#img-circle {
+	position: relative;
+	width: 20vw;
+	top: 3.5vh;
+	left: 30vw;
+	border-radius: 50%;
+	z-index: 0;
+	}
+}
+
+@media (max-width: 800px) {
+	#img-circle {
+	position: relative;
+	width: 22vw;
+	top: 3.5vh;
+	left: 29vw;
+	border-radius: 50%;
+	z-index: 0;
+	}
+}
+
+@media (max-width: 550px) {
+	#img-circle {
+	position: relative;
+	width: 40vw;
+	top: 3.5vh;
+	left: 20vw;
+	border-radius: 50%;
+	z-index: 0;
+	}
+}
+
+/*Do not edit up to here.*/
 
 .Aboutme {
 	position: relative;
@@ -118,6 +258,35 @@ a {
 	display: inline;
 	float: left;
 	z-index: 0;
+}
+
+@media (max-width: 1200px) {
+	.Aboutme {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	font-family: "Raleway", Serif;
+	text-align: center;
+	display: inline;
+	width: 80vw;
+	left: 10vw;
+	top: 3.5vh;	
+	font-size: 16px;
+	overflow-x:clip;
+	}
+
+	#Aimsandplans {
+	position: relative;
+	font-family: "Raleway", Serif;
+	text-align: center;
+	display: inline-block;
+	width: 80vw;
+	left: 0;
+	top: 3.5vh;	
+	font-size: 16px;
+	overflow-x:clip;
+	}
 }
 
 .TopContent {
@@ -160,7 +329,7 @@ a {
 #arboles {
 	position: relative;
 	width: 100vw;
-	max-height: 40vh;
+	height: 40vh;
 	overflow: clip;
 	max-width: 100%;
 	z-index: -1;
@@ -173,7 +342,6 @@ a {
 .Title {
 	position: absolute;
 	width: 100%;
-	position: absolute;
 	vertical-align: top;
 	font-weight: 1;
 	color: white;
@@ -245,6 +413,49 @@ a {
 	font-family: "Raleway", Sans-Serif;
 	font-size: 205%;
 	letter-spacing: 0.2vw;
+}
+
+/*Mobile Edits for other pages other than homepage.*/
+
+@media (max-width: 1200px) {
+	#TopNav {
+		font-size: 16px;
+	}
+
+	.links {
+		margin-right: 2.5vw;
+	}
+
+	.Title {
+		font-size: 40px;
+		top: 0;
+	}
+
+	.socialmediaa {
+		width: 5vw;
+		padding-top: 5vh;
+		padding-bottom: 2vh;
+		margin: 1vw;
+		float: unset;
+	}
+
+	#ContactMedia {
+		left: 41vw;
+	}
+}
+
+@media (max-width: 700px) {
+		.socialmediaa {
+		width: 8vw;
+		padding-top: 5vh;
+		padding-bottom: 2vh;
+		margin: 1vw;
+		float: unset;
+	}
+
+		#ContactMedia {
+		left: 36.5vw;
+	}
 }
 
 #linea {
