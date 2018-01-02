@@ -468,3 +468,12 @@ a {
 	position: relative;
 	top: 8vh;
 }
+
+.Quote {
+	font-style: italic;
+	font-size: large;
+	padding: 5px;
+	background-color: rgba(220,220,220,0.8);
+	border-style: double;
+    border-width: 3px;
+}
