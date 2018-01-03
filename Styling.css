@@ -477,3 +477,10 @@ a {
 	border-style: double;
     border-width: 3px;
 }
+
+.Privacy {
+	position: fixed;
+	text-align: center;
+	font-family: "Raleway";
+	background-color: rgba(220,220,220,0.8);
+}
