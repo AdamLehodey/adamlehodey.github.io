@@ -478,9 +478,37 @@ a {
     border-width: 3px;
 }
 
-.Privacy {
-	position: fixed;
+
+/*CONTROLS ALL THE BLOG CONTENT AND TITLES*/
+
+.Blogs {
+	position: relative;
 	text-align: center;
-	font-family: "Raleway";
-	background-color: rgba(220,220,220,0.8);
+	font-family: "Raleway", Sans-Serif;
+	top: 15vh;
+	padding-bottom: 5vh;
+	left: 8vw;
+	width:  84vw;
+}
+
+.Blogs h2 {
+	font-family: "Raleway", Sans-Serif;
+	font-size: 205%;
+	letter-spacing: 0.2vw;
+}
+
+.PostInfo {
+	font-size: 60%;
+	font-style: italic;
+	font-family: "Raleway", Sans-Serif;
+
+}
+
+.BlogPost {
+	font-family: "Lora", Serif;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(193, 196, 201);
 }
