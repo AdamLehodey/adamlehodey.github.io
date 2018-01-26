@@ -513,3 +513,12 @@ a {
 	margin-bottom: 5vh;
 	border-color: rgb(193, 196, 201);
 }
+
+.BlogImage {
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(193, 196, 201);
+	width: 70vw;
+	height: auto;
+	margin-bottom: 3vh;
+}
