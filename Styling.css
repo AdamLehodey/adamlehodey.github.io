@@ -487,6 +487,7 @@ a {
 	font-family: "Raleway", Sans-Serif;
 	top: 15vh;
 	left: 8vw;
+	padding-bottom: 5vh;
 	width:  84vw;
 }
 
@@ -509,6 +510,6 @@ a {
 	padding-right: 5vw;
 	border-style: solid;
 	border-width: 1px;
-	padding-bottom: 5vh;
+	margin-bottom: 5vh;
 	border-color: rgb(193, 196, 201);
 }
