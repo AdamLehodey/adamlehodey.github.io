@@ -519,13 +519,19 @@ a {
 	padding-bottom: 75%; /* 16:9 */
 	padding-top: 25px;
 	height: 0;
+	overflow: clip;
 }
 .videoWrapper iframe {
 	position: absolute;
 	top: 0;
 	left: 2.5%;
 	width: 95%;
-	height: 95%;
+	height: 69%;
+}
+
+.V-Blog {
+	height: 41vw;
+	overflow: hidden;
 }
 
 .BlogImage {
