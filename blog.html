@@ -20,9 +20,16 @@
 
   <div class="Blogs">
 
-    <div class="BlogPost"><h2 class="ContentTitle">Dame sugestiones!</h2>
+    <div class="BlogPost"><h2 class="ContentTitle">RESPONSIVE VIDEO DESIGN</h2>
+    <div class="PostInfo">28/02/2018 // ADAM LEHODEY</div>
+      <p>One of the main features you’ll notice about my website is the fluid, responsive design which works on all device sizes and keeps content flowing. When uploading videos to my blog, it was clear this was a problem as the native youtube embed gives you videos as a static size, so it overflows if ever you’re viewing on a mobile design. Here is the fix:<br><ol><li>Get the YouTube video you’d like to embed and copy the embed link, pasting it into where you’d like the content to go.<li>Create a separate div surrounding this, perhaps calling it ‘Content Box’ or ‘ContentWrapper’ - this div will serve to add padding to the bottom of the iframe to keep the aspect ratio the same.<li>Create an iframe selector for your iframe, with position absolute.<li>One issue I encountered was having a large amount of white space which was the padding underneath the video when size wasn’t set to 100%. Therefore, to fix this, create another div and set the max width to your height of video, but use the equivalent value in vw as the width varies less on devices. Then, clip the overflow.<li>You’re done!</ol><b>HTML</b><br>&ltdiv class="V-Blog">&ltdiv&gt class="Wrapper">&ltiframe&gt width="560" height="315" src="https://youtu.be/ayuooyWPEUc?t=30s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></&ltiframe&gt></&ltdiv&gt></&ltdiv&gt>&lt/iframe&gt&lt/div&gt&lt/div&gt<br><b>CSS</b><br>.Wrapper {position: relative; padding-bottom: 75%; padding-top: 25px; height: 0; overflow: clip;}
+      .videoWrapper iframe {  position: absolute;  top: 0; left: 2.5%; width: 95%;  height: 69%;}.V-Blog {height: 41vw;  overflow: hidden;}<br><br>Enjoy and feel free to ask any questions!
+      </p><br>
+    </div>
+
+    <div class="BlogPost"><h2 class="ContentTitle">'DAME SUGESTIONES'</h2>
     <div class="PostInfo">26/02/2018 // ADAM LEHODEY</div>
-      <p>Yeah give me suggestions!<br><br><div class="V-Blog"><div class="videoWrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/Q7I-IcDFUxo?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></div></p>
+      <p>Yeah give me suggestions!<br><br><div class="V-Blog"><div class="videoWrapper"><iframe width="560" height="315" src="www.youtube.com/embed/Q7I-IcDFUxo?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></div></p>
     </div>
 
     <div class="BlogPost"><h2 class="ContentTitle">'HARD TIMES'</h2>
@@ -45,11 +52,6 @@
     <div class="PostInfo">19/01/2018 // ADAM LEHODEY</div>
       <p>Welcome to my new programming blog, based on all the projects I am currently working on and what progress I've made each week. This first week, I have started getting really in depth with JavaFX, taking my Java skills to the next level by looking at UI and giving the users of my program a better experience!<br><br>To do so, I have been adapting a 'Theatre Ticketing System' which I created at home and started in CompSci lessons, and am working on the user inferface. Unfortunately, the implementation of the JavaFX classes has meant that the file read/write to Binary File is no longer working, but I will be looking into a solution. I've really gotten a strong hold on the MVC Progamming; Model, View, Controller, allowing you to separate the visual and functional aspects of your code and link them with a controller. The more I lean about this, the better my UI for the Theatre System will get.</p><br>
     </div>
-
-    <!--     <div class="BlogPost"><h2 class="ContentTitle">'HARD TIMES'</h2>
-    <div class="PostInfo">24/02/2018 // ADAM LEHODEY</div>
-      <p>Check out the cool Youtube V-blog post!</p>
-    </div> -->
 </div>
 </body>
 
