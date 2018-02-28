@@ -514,6 +514,20 @@ a {
 	border-color: rgb(193, 196, 201);
 }
 
+.videoWrapper {
+	position: relative;
+	padding-bottom: 75%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 2.5%;
+	width: 95%;
+	height: 95%;
+}
+
 .BlogImage {
 	border-width: 1px;
 	border-style: solid;
