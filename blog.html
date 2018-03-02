@@ -20,6 +20,11 @@
 
   <div class="Blogs">
 
+    <div class="BlogPost"><h2 class="ContentTitle">BRILLIANT BLOG-MANAGEMENT PROJECT</h2>
+    <div class="PostInfo">02/03/2018 // ADAM LEHODEY</div>
+      <p>Many of you may be unaware of this but I actually add blog posts by directly editing the source code of the site. While some of you may be thinking how amateurish that may be, worry not, as my latest Java Project is a blog management system. I have successfully set up an online database to host my blog content on, and have created a Java program to add new posts and view all current posts, which will edit the posts on my blog online - cutting out the tedious editing of the source code and making it a simple 'copy and paste' into a beautiful GUI.<br>This is my first real JavaFX project, but I definitely learnt a lot doing it - I'll definitely begin using JavaFX more in the future as it's really powerful!<br>Also, I've found a solution to the image problem where images in another folder weren't loading on the blog, and will begin loading blog images from an external source to speed up the page-load time. Some screenshots of the project include: <br><img class="BlogImage" src="http://res.cloudinary.com/adamlehodey/image/upload/v1519995949/BlogManagerHome.jpg"><img class="BlogImage" src="http://res.cloudinary.com/adamlehodey/image/upload/v1519995940/NewPost.jpg"><img class="BlogImage" src="http://res.cloudinary.com/adamlehodey/image/upload/v1519995951/ViewPosts.jpg"></p>
+    </div>
+
     <div class="BlogPost"><h2 class="ContentTitle">RESPONSIVE VIDEO DESIGN</h2>
     <div class="PostInfo">28/02/2018 // ADAM LEHODEY</div>
       <p>One of the main features you’ll notice about my website is the fluid, responsive design which works on all device sizes and keeps content flowing. When uploading videos to my blog, it was clear this was a problem as the native youtube embed gives you videos as a static size, so it overflows if ever you’re viewing on a mobile design. Here is the fix:<br><ol><li>Get the YouTube video you’d like to embed and copy the embed link, pasting it into where you’d like the content to go.<li>Create a separate div surrounding this, perhaps calling it ‘Content Box’ or ‘ContentWrapper’ - this div will serve to add padding to the bottom of the iframe to keep the aspect ratio the same.<li>Create an iframe selector for your iframe, with position absolute.<li>One issue I encountered was having a large amount of white space which was the padding underneath the video when size wasn’t set to 100%. Therefore, to fix this, create another div and set the max width to your height of video, but use the equivalent value in vw as the width varies less on devices. Then, clip the overflow.<li>You’re done!</ol><b>HTML</b><br>&ltdiv class="V-Blog">&ltdiv&gt class="Wrapper">&ltiframe&gt width="560" height="315" src="https://youtu.be/ayuooyWPEUc?t=30s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></&ltiframe&gt></&ltdiv&gt></&ltdiv&gt>&lt/iframe&gt&lt/div&gt&lt/div&gt<br><b>CSS</b><br>.Wrapper {position: relative; padding-bottom: 75%; padding-top: 25px; height: 0; overflow: clip;}
@@ -55,3 +60,4 @@
 </div>
 </body>
 
+<!-- Image Storage: https://cloudinary.com/console/media_library#/dialog/image/upload/BlogManagerHome -->
