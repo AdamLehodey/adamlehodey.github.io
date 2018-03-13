@@ -542,3 +542,8 @@ a {
 	height: auto;
 	margin-bottom: 3vh;
 }
+
+#Download {
+	font-style: italic;
+	color: blue;
+}
