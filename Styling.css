@@ -568,3 +568,7 @@ a {
 	color: #FFFF;
 	position: center;
 }
+
+.navbar-nav {
+	position: center;
+}
