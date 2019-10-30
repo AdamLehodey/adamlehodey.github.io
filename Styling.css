@@ -548,3 +548,22 @@ a {
 	font-style: italic;
 	color: blue;
 }
+
+/*BOOTSTRAP NAVBAR*/
+
+.navbar {
+	font-family: "Quicksand", Sans-Serif;
+	width: 100%;
+	font-size: 1.5vw;
+	vertical-align: top;
+	font-weight: 1;
+	color: white;
+	text-align: center;
+	top: 3vh;
+	z-index: 3;
+}
+
+.nav-link {
+	margin-right: 5vw;
+	color: white;
+}
