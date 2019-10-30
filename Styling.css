@@ -569,14 +569,10 @@ a {
 	position: center;
 }
 
-.navbar-nav {
-    float:none;
-    margin:0 auto;
-    display: block;
-    text-align: center;
-}
-
-.navbar-nav > li {
+.navbar .navbar-nav {
     display: inline-block;
-    float:none;
+    float: none;
+}
+.navbar .navbar-collapse {
+    text-align: center;
 }
