@@ -1,0 +1,6 @@
+YOUTUBE VIDEO:    
+
+<div class="BlogPost"><h2 class="ContentTitle">WRITE TITLE HERE</h2>
+    <div class="PostInfo">DATE // ADAM LEHODEY</div>
+      <p>POST CONTENT<div class="videoWrapper"><iframe width="560" height="315" src="***VIDEO LINK***" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></p><br>
+</div>
