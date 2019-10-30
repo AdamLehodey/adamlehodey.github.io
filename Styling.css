@@ -558,12 +558,14 @@ a {
 	vertical-align: top;
 	font-weight: 1;
 	background-color: rgba(104,104,104,0.9);
+	background: none;
+  	border: none;
 	text-align: center;
-	top: 3vh;
 	z-index: 3;
 }
 
 .nav-link {
 	margin-right: 5vw;
 	color: white;
+	position: center;
 }
