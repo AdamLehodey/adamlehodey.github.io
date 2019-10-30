@@ -557,7 +557,7 @@ a {
 	font-size: 1.5vw;
 	vertical-align: top;
 	font-weight: 1;
-	color: white;
+	background-color: rgba(104,104,104,0.9);
 	text-align: center;
 	top: 3vh;
 	z-index: 3;
