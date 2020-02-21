@@ -381,8 +381,8 @@ a {
 .PitchPhotos {
 	position: relative;
 	display: inline-block;
-	top: 6vh;
 	left: 7.5vw;
+	top: 6vh;
 	width: 85vw;
 	height: auto;
 	text-align: center;
