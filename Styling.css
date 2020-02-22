@@ -21,6 +21,32 @@ a {
    color: black;
 }
 
+.PitchPhotos {
+	position: relative;
+	display: inline-block;
+	left: 7.5vw;
+	top: 6vh;
+	width: 85vw;
+	height: auto;
+	text-align: center;
+}
+
+.PitchPicLarge {
+	max-width: 50vw;
+	height: auto;
+}
+
+.PitchPic {
+	max-width: 14vw;
+	height: auto;
+	padding-right: 0.5vw;
+}
+
+.PitchPicLast {
+	max-width: 14vw;
+	height: auto;
+}
+
 @media (max-width: 1200px) {
 	#Navbar {
 	position: relative;
@@ -376,32 +402,6 @@ a {
 	width: 3vw;
 	margin: 1vw;
 	margin-top: 5vh;
-}
-
-.PitchPhotos {
-	position: relative;
-	display: inline-block;
-	left: 7.5vw;
-	top: 6vh;
-	width: 85vw;
-	height: auto;
-	text-align: center;
-}
-
-.PitchPicLarge {
-	max-width: 50vw;
-	height: auto;
-}
-
-.PitchPic {
-	max-width: 14vw;
-	height: auto;
-	padding-right: 0.5vw;
-}
-
-.PitchPicLast {
-	max-width: 14vw;
-	height: auto;
 }
 
 .Intro {
