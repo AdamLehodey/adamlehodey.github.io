@@ -1,14 +1,7 @@
 /*PEN STYLES*/
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background: #f1f1f1;
-  margin: 2rem;
-}
 
 .blog-card {
+  box-sizing: border-box;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
