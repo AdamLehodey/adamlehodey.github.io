@@ -4,6 +4,7 @@
   <link rel="icon" href="/favicon.png" type="image/x-icon">
 	<title>BLOG</title>
 	<link rel="stylesheet" type="text/css" href="Styling.css">
+  <link rel="stylesheet" type="text/css" href="menustyling.css">
   <link rel="stylesheet" type="text/css" href="blogstyling.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 	<meta charset="UTF-8">
@@ -11,11 +12,53 @@
   <meta name="description" content="Adam Lehodey: Blog. Exlore my work and opinion pieces from across the internat, all in one convenient place.">
   
   <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Yesteryear|Quicksand|Josefin+Sans|Raleway|Lora" rel="stylesheet">
+
+  <script type="text/javascript">
+  $(document).ready(function() {
+          "use strict";
+          $('.menu > ul > li:has( > ul)').addClass('menu-dropdown-icon');
+          $('.menu > ul > li > ul:not(:has(ul))').addClass('normal-sub');
+          $(".menu > ul").before("<a href=\"#\" class=\"menu-mobile\">&nbsp;</a>");
+          $(".menu > ul > li").hover(function(e) {
+            if ($(window).width() > 943) {
+              $(this).children("ul").stop(true, false).fadeToggle(150);
+              e.preventDefault();
+            }
+          });
+          $(".menu > ul > li").click(function() {
+            if ($(window).width() <= 943) {
+              $(this).children("ul").fadeToggle(150);
+            }
+          });
+          $(".menu-mobile").click(function(e) {
+            $(".menu > ul").toggleClass('show-on-mobile');
+            e.preventDefault();
+          });
+        });
+        $(window).resize(function() {
+          $(".menu > ul > li").children("ul").hide();
+          $(".menu > ul").removeClass('show-on-mobile');
+        });
+  </script>
+
 </head>
 
 <body>
-	<div class="TopContent"><div class="Header" style="width:100vw;height:10vh;border:0px solid #3f38a6;"></div>
-	<div id="TopNav"><a class="links" href="index">HOME</a><a class="links" href="portfolio">PORTFOLIO</a><a class="links" href="tutoring">TUTORING</a><a class="links" href="contact">CONTACT</a></div>
+
+	<div class="TopContent">
+  <div class="menu-container">
+    <div class="menu">
+      <a class="menuitem" href="index">Logo</a>
+      <ul class="clearfix">
+        <li><a class="menuitem" href="index">HOME</a></li>
+        <li><a class="menuitem" href="portfolio">PORTFOLIO</a></li>
+        <li><a class="menuitem" href="blog">BLOG</a></li>
+        <li><a class="menuitem" href="tutoring">TUTORING</a></li>
+        <li><a class="menuitem" href="contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+
 	<img id="arboles" src="seas.jpg"><h1 class="Title">BLOG: ADAM LEHODEY</h1></div>
 
   <div class="container">
