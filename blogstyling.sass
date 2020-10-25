@@ -1,0 +1,175 @@
+%article-category
+  font-weight: 300
+  text-transform: uppercase
+  color: #9b9b9b
+  letter-spacing: .15em
+  line-height: 1
+  margin: 0
+  padding: 0
+  list-style-type: none
+  font-size: 14px
+
+  > *
+    display: inline-block
+    margin-top: 0
+    + *
+      margin-left: 1em
+      +relative
+      &:before
+        content: ''
+        +absolute(top 50% left -.8em)
+        border-left: 2px solid #9b9b9b
+        height: 2px
+        margin-top: -1px
+  a
+    &:hover
+      // text-decoration: underline
+
+%article-date
+  display: block
+  color: #4a4a4a
+  font-size: 14px
+  font-weight: 300
+  font-style: italic
+  letter-spacing: .1em
+  line-height: 1
+
+  .updated
+    color: rgba(black,.2)
+
+%article-list
+
+  +relative
+  &:before
+    content: ''
+    background: rgba(black,0)
+    +absolute(top right left bottom)
+    z-index: -1
+    pointer-events: none
+    transition: all .2s ease
+    @media (min-width: $mobile)
+      margin: $nspace
+
+  max-width: 80rem
+  margin: 0 auto
+  @media (max-width: $phone)
+    margin:
+      left: $nspace
+      right: $nspace
+
+  &:hover
+    &:before
+      background: rgba(black,.02)
+    > *[class]
+      background: rgba(black,0)
+    > * > *
+      opacity: 0.075
+
+%article-list-item-image
+  width: calc((#{$_space}) * 4)
+
+%article-list-item-date
+  +absolute(top $space right $space)
+  @media (max-width: $mobile)
+    display: none
+
+%article-list-item-category
+  +absolute(top $space left $space)
+  @media (max-width: $mobile)
+    display: none
+
+%article-list-item-title
+  @extend h2
+  line-height: 1.25
+  transition: all .2s ease
+  margin: 0 0 -.3em 0
+  align-self: flex-end
+  @media (min-width: $mobile)
+    margin-top: calc(1rem + .5em)
+
+%article-list-item-content
+  opacity: 0
+  font-family: "Droid Serif"
+  +absolute(top 100% left 0 right 0)
+  padding: 0 $space $space
+  background: rgba(black,.02)
+  margin: 0 $nspace
+  @extend %first-last-clear
+  border:
+    bottom: $space solid rgba(black,.02)
+    left: $space solid rgba(black,.02)
+    right: $space solid rgba(black,.02)
+
+
+%article-list-item
+  overflow: hidden
+  position: relative
+  transition: all .2s ease
+  padding: $space
+  background: rgba(black,.02)
+
+  display: flex
+  flex-flow: row wrap
+  align-items: flex-start
+  justify-content: space-between
+
+  &:before, &:after
+    content: ''
+    +absolute(right left)
+    height: $space
+  &:before
+    bottom: 100%
+  &:after
+    top: 100%
+
+
+  h1, h2, p
+    width: calc(100% - (#{$_space}) * 5)
+    
+
+  img, h1, h2, .article-content, .post-content
+    transition: all .2s ease
+
+  &:hover
+    overflow: visible
+    z-index: 10
+
+    &, .article-content, .post-content
+      background: rgba(white,1)
+
+    > *
+      opacity: 1
+      will-change: opacity
+
+  + *
+    margin-top: $space
+
+.article-list
+  @extend %article-list
+
+  .article
+    @extend %article-list-item
+
+  .article-image
+    @extend %article-list-item-image
+    ~ .article-category
+      left: calc((#{$_space}) * 6)
+
+  .article-category
+    @extend %article-category
+    @extend %article-list-item-category
+
+  .article-date
+    @extend %article-date
+    @extend %article-list-item-date
+
+  .article-title
+    @extend %article-list-item-title
+
+  .article-content
+    @extend %article-list-item-content
+    
+    
+svg
+  path
+    fill: black
