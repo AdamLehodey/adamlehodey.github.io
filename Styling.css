@@ -312,7 +312,7 @@ a {
 	display: inline;
 	width: 35vw;
 	top: 3.5vh;
-	font-size: 1.05vw;
+	font-size: 1.15vw;
 	float: left;
 }
 
@@ -432,16 +432,15 @@ a {
 }
 
 #ContactMedia {
+	display: block;
 	position: relative;
-	display: inline;
-	top: 5vh;
-	left: 44vw;
+	left: 48vw;
 }
 
 .socialmediaa {
 	width: 3vw;
 	margin: 1vw;
-	margin-top: 5vh;
+	margin-top: 10vh;
 }
 
 .Intro {
@@ -499,29 +498,27 @@ a {
 	}
 
 	.socialmediaa {
-		width: 5vw;
-		padding-top: 5vh;
+		width: 4vw;
+		padding-top: 1vh;
 		padding-bottom: 2vh;
-		margin: 1vw;
 		float: unset;
 	}
 
 	#ContactMedia {
-		left: 41vw;
+		left: 48vw;
 	}
 }
 
 @media (max-width: 700px) {
 		.socialmediaa {
 		width: 8vw;
-		padding-top: 5vh;
+		padding-top: 2vh;
 		padding-bottom: 2vh;
-		margin: 1vw;
 		float: unset;
 	}
 
 		#ContactMedia {
-		left: 36.5vw;
+		left: 46vw;
 	}
 }
 
