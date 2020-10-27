@@ -380,6 +380,10 @@ a {
 	color: white;
 }
 
+.containerBody {
+	overflow-x: hidden;
+}
+
 #TopNav {
 	font-family: "Quicksand", Sans-Serif;
 	width: 100%;
@@ -432,12 +436,25 @@ a {
 }
 
 #ContactMedia {
+	display: inline-block;
+	position: relative;
+	left: 48vw;
+	overflow-x: hidden;
+}
+
+.socialmediaa {
+	width: 3vw;
+	margin: 1vw;
+	margin-top: 10vh;
+}
+
+#ContactMediaExtra {
 	display: block;
 	position: relative;
 	left: 48vw;
 }
 
-.socialmediaa {
+.socialmediaaExtra {
 	width: 3vw;
 	margin: 1vw;
 	margin-top: 10vh;
