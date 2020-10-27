@@ -448,7 +448,7 @@ a {
 	margin-top: 10vh;
 }
 
-#ContactMediaExtra {
+.ContactMediaExtra {
 	max-width: 5vw;
 	max-height: 10vw;
 	display: block;
