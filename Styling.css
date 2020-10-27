@@ -449,13 +449,15 @@ a {
 }
 
 #ContactMediaExtra {
+	max-width: 5vw;
+	max-height: 10vw;
 	display: block;
 	position: relative;
 	left: 48vw;
 }
 
 .socialmediaaExtra {
-	width: 3vw;
+	max-width: 3vw;
 	max-height: 3vw;
 	margin: 1vw;
 	margin-top: 10vh;
