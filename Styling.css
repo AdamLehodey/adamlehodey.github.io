@@ -448,6 +448,19 @@ a {
 	margin-top: 10vh;
 }
 
+#ContactMediaExtra {
+	display: block;
+	position: relative;
+	left: 48vw;
+}
+
+.socialmediaaExtra {
+	width: 3vw;
+	max-height: 3vw;
+	margin: 1vw;
+	margin-top: 10vh;
+}
+
 .Intro {
 	background-color: rgba(220,220,220,0.8);
 	position: relative;
