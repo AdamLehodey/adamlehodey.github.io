@@ -70,8 +70,8 @@ a {
 	}
 
 	.PitchPic {
-		width: 0.1px;
-		height: 0.1px;
+		width: 0.0001px;
+		height: 0.0001px;
 		max-width: 80vw;
 		height: auto;
 		padding-right: 0.5vw;
@@ -79,7 +79,7 @@ a {
 	}
 
 	.PitchPicLast {
-		max-width: 80vw;
+		max-width: 75vw;
 		height: auto;
 	}
 
@@ -108,6 +108,19 @@ a {
 	width:30%;
 	height:0.02vh;
 	background: black;
+}
+
+.ButtonSocial {
+	display: block;
+	margin-left: 48.5vw;
+	margin-right: 48vw;
+	padding-top: 10vh;
+	max-width: 4vw;
+	max-height: 4vw;
+}
+
+.ButtonSocial {
+
 }
 
 .Wallpaper {
