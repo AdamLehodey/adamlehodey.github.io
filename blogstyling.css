@@ -75,12 +75,12 @@
 .blog-card .details .author:before {
   font-family: FontAwesome;
   margin-right: 10px;
-  content: "\f007";
+  content: url(/resources/pen.png);
 }
 .blog-card .details .date:before {
   font-family: FontAwesome;
   margin-right: 10px;
-  content: "\f133";
+  content: url(/resources/time.png);
 }
 .blog-card .details .tags ul:before {
   font-family: FontAwesome;
@@ -124,7 +124,7 @@
   position: relative;
 }
 .blog-card .description .read-more a:after {
-  content: "\f061";
+  content: url(/resources/next.png);
   font-family: FontAwesome;
   margin-left: -10px;
   opacity: 0;
