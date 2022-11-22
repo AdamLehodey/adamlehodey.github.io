@@ -384,7 +384,7 @@ a {
 .BlogHeader {
 	position: absolute;
 	background-color: rgb(104,104,104);
-	z-index: 9999;
+	z-index: 9990;
 	height: 65px;
 	width: 100vw;
 	max-width: 100%;
@@ -417,7 +417,7 @@ a {
 	color: white;
 	text-align: center;
 	top: 3vh;
-	z-index: 9998;
+	z-index: 9995;
 }
 
 #arboles {
