@@ -5,6 +5,8 @@
         <link rel="icon" href="/favicon.png" type="image/x-icon">
         <title>BLOG</title>
         <link rel="stylesheet" type="text/css" href="/Styling.css">
+        <link rel="stylesheet" type="text/css" href="pagestyling.css">
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <meta charset="UTF-8">
         <meta name="keywords" content="Adam Lehodey, Economics, Politics, Business, Redhill, Reigate, Surrey, Tutoring, Home Tutoring, Web Design, Programming, GCSE Tutor, GCSE Tutoring, Copywriting, Lehodey, adamlehodey, Social Media Management, Tutors Redhill, Tutors near me">
@@ -18,13 +20,29 @@
         <div class="BlogHeader" style="width:100vw;border:0px solid #3f38a6;"></div>
         <div id="TopNav"><a class="links" href="/index">HOME</a><a class="links" href="/blog">BACK TO BLOG</a>
 
-        <button class="BlogButton">
-          <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
-            <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-            <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
-          </svg>
-          <a class="links" href="/blog">BACK TO BLOG</a>
-        </button>
+<div class="buttons">
+  <button class="blob-btn">
+      <a class="links" href="/blog">BACK TO BLOG</a>
+    <span class="blob-btn__inner">
+      <span class="blob-btn__blobs">
+        <span class="blob-btn__blob"></span>
+        <span class="blob-btn__blob"></span>
+        <span class="blob-btn__blob"></span>
+        <span class="blob-btn__blob"></span>
+      </span>
+    </span>
+  </button>
+  <br/>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+      <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+    </filter>
+  </defs>
+</svg>
 
         </div>
       </div> 
