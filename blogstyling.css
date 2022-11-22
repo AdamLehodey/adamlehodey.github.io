@@ -75,12 +75,14 @@
 .blog-card .details .author:before {
   font-family: FontAwesome;
   margin-right: 10px;
-  content: url(/resources/pen.png);
+  background: url(/resources/pen.png) no-repeat 0 0;
+  background-size: 100%;
 }
 .blog-card .details .date:before {
   font-family: FontAwesome;
   margin-right: 10px;
-  content: url(/resources/time.png);
+  background: url(/resources/time.png) no-repeat 0 0;
+  background-size: 100%;
 }
 .blog-card .details .tags ul:before {
   font-family: FontAwesome;
@@ -124,7 +126,8 @@
   position: relative;
 }
 .blog-card .description .read-more a:after {
-  content: url(/resources/next.png);
+  background: url(/resources/next.png) no-repeat 0 0;
+  background-size: 100%;
   font-family: FontAwesome;
   margin-left: -10px;
   opacity: 0;
