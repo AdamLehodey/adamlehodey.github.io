@@ -385,7 +385,7 @@ a {
 	position: absolute;
 	background-color: rgb(104,104,104);
 	z-index: 9999;
-	height: 60px;
+	height: 65px;
 	width: 100vw;
 	max-width: 100%;
 	overflow: clip;
