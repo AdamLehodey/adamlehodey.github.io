@@ -381,6 +381,16 @@ a {
 	overflow: clip;
 }
 
+.BlogHeader {
+	position: absolute;
+	background-color: rgb(104,104,104);
+	z-index: 959;
+	height: 60px;
+	width: 100vw;
+	max-width: 100%;
+	overflow: clip;
+}
+
 .ContactBox {
 	position: absolute;
 	margin-top: 20vh;
@@ -407,7 +417,7 @@ a {
 	color: white;
 	text-align: center;
 	top: 3vh;
-	z-index: 3;
+	z-index: 970;
 }
 
 #arboles {
