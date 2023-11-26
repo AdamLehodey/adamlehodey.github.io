@@ -514,8 +514,9 @@ a {
 	text-align: center;
 	font-family: "Raleway", Sans-Serif;
 	top: 15vh;
-	left: 12.5vw;
-	width: 76.5vw;
+	padding-left: 12.5vw;
+	padding-right: 12.5vw;
+	width: 75vw;
 }
 
 .Content h2 {
