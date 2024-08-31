@@ -5,68 +5,34 @@
     <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
     <link rel="icon" href="/favicon.png" type="image/x-icon">
     <title>Pan-Gaia</title>
-    <link rel="stylesheet" type="text/css" href="/Styling.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=10.0, user-scalable=yes">
     <meta charset="UTF-8">
     <meta name="keywords" content="Adam Louis Sebastian Lehodey, Pangaia Literary piece, literature, London">
     <meta name="description" content="Pan-Gaia: an experimental literary essay exploring the nature of human existence on planet earth.">
 
-    <meta property="og:image" content="/blogs/resources/pangaia.jpg">
-    <meta property="og:url" content="http://www.adamlehodey.com/blogs/pan-gaia-narratives-of-a-new-vision.html">
-    <meta property="og:type" content="website">
-
-    <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Yesteryear|Quicksand|Josefin+Sans|Raleway|Lora" rel="stylesheet">
-
     <style>
-        /* Fix top content to the top of the page */
-        .TopContent {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            z-index: 1000;
-            background: #f4f4f4;
-            height: 50px;
-            box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
-        }
-
-        /* Adjust iframe to start below the TopContent */
-        iframe {
-            display: block;
-            width: 100%;
-            height: calc(100vh - 50px); /* Adjust height to account for the top content */
-            border: none;
-            overflow: hidden;
-        }
-
-        #TopNav a::before {
-            content: '← ';
-            margin-right: 5px;
-        }
-
-        /* Ensure body occupies full height and width */
-        body {
+        /* Ensure the PDF takes up the full viewport */
+        html, body {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
             overflow: hidden;
-            box-sizing: border-box;
+        }
+
+        embed {
+            display: block;
+            width: 100%;
+            height: 100vh; /* Full height of the viewport */
+            border: none;
         }
     </style>
 
 </head>
 
 <body>
-    <div class="TopContent">
-        <div class="BlogHeader" style="width:100vw;border:0px solid #3f38a6;"></div>
-        <div id="TopNav"><a href="/blog">Blog: Adam Louis Sebastian</a></div>
-    </div>
-
-    <!-- Embed the PDF using an iframe to allow better control and pinch-to-zoom -->
-    <iframe src="/blogs/Pan-Gaia-Narratives-Of-A-New-Vision.pdf#toolbar=1&navpanes=0&scrollbar=0&view=Fit"></iframe>
-
+    <!-- Embed the PDF with full-screen display -->
+    <embed src="/blogs/Pan-Gaia-Narratives-Of-A-New-Vision.pdf#toolbar=1&navpanes=0&scrollbar=0&view=Fit" type="application/pdf" />
 </body>
 
 </html>
