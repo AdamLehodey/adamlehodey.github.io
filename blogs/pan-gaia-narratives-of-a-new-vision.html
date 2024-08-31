@@ -36,6 +36,18 @@
 
 <body>
     <!-- Embed the PDF with full-screen display -->
+
+    <script type="text/javascript">
+        window.onload = function() {
+            var link = document.createElement('a');
+            link.href = '/blogs/Pan-Gaia-Narratives-Of-A-New-Vision.pdf';
+            link.download = '/blogs/Pan-Gaia-Narratives-Of-A-New-Vision.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+    
     <embed src="/blogs/Pan-Gaia-Narratives-Of-A-New-Vision.pdf#toolbar=1&navpanes=0&scrollbar=0&view=Fit" type="application/pdf" />
 </body>
 
