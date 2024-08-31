@@ -215,6 +215,11 @@
     position: relative;
 }
 
+.blog-card-featured:hover .photo {
+    filter: none; /* Ensure no filter is applied on hover */
+    background-color: transparent; /* Prevent any background color change */
+}
+
 .featured-banner {
     background-color: #b30000; /* Updated color */
     color: white;
@@ -298,11 +303,4 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-}
-
-/* Ensure no hover effects */
-.blog-card-featured:hover .photo,
-.blog-card-featured:hover .description {
-    transform: none;
-    background: none;
 }
