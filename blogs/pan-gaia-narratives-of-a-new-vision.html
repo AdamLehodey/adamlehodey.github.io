@@ -6,7 +6,7 @@
     <link rel="icon" href="/favicon.png" type="image/x-icon">
     <title>Pan-Gaia</title>
     <link rel="stylesheet" type="text/css" href="/Styling.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=10.0, user-scalable=yes">
     <meta charset="UTF-8">
     <meta name="keywords" content="Adam Louis Sebastian Lehodey, Pangaia Literary piece, literature, London">
     <meta name="description" content="Pan-Gaia: an experimental literary essay exploring the nature of human existence on planet earth.">
@@ -18,10 +18,12 @@
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Yesteryear|Quicksand|Josefin+Sans|Raleway|Lora" rel="stylesheet">
 
     <style>
-        /* Adjusted top content to avoid blocking PDF controls */
+        /* Fix top content to the top of the page */
         .TopContent {
-            position: relative;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             width: 100%;
             z-index: 1000;
             background: #f4f4f4;
@@ -29,13 +31,13 @@
             box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
         }
 
-        /* Add margin to ensure controls are fully visible */
+        /* Ensure the PDF starts below the TopContent */
         embed {
             display: block;
             width: 100%;
-            height: calc(100vh - 50px);
+            height: calc(100vh - 60px); /* Ensure height accounts for both TopContent and space for controls */
             border: none;
-            margin-top: 10px; /* Add margin to ensure PDF controls are fully visible */
+            padding-top: 10px; /* Add padding to push PDF down */
         }
 
         #TopNav a::before {
@@ -43,7 +45,7 @@
             margin-right: 5px;
         }
 
-        /* Prevent scrolling issues */
+        /* Ensure body occupies full height and width */
         body {
             margin: 0;
             padding: 0;
@@ -62,7 +64,7 @@
         <div id="TopNav"><a href="/blog">Blog: Adam Louis Sebastian</a></div>
     </div>
 
-    <!-- Embed the PDF with fit-to-screen and controls -->
+    <!-- Embed the PDF with space for controls and pinch-to-zoom enabled -->
     <embed src="/blogs/Pan-Gaia-Narratives-Of-A-New-Vision.pdf#toolbar=1&navpanes=0&scrollbar=0&view=Fit" type="application/pdf" />
 
 </body>
