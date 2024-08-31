@@ -215,11 +215,6 @@
     position: relative;
 }
 
-.blog-card-featured:hover .photo {
-    filter: none; /* Ensure no filter is applied on hover */
-    background-color: transparent; /* Prevent any background color change */
-}
-
 .featured-banner {
     background-color: #b30000; /* Updated color */
     color: white;
@@ -243,6 +238,13 @@
     background-repeat: no-repeat;
     position: relative;
     margin-top: 30px; /* This ensures the photo doesn't overlap the banner */
+    transition: none; /* Disable transition effects */
+}
+
+.blog-card-featured .photo:hover {
+    filter: none; /* Ensure no filter is applied on hover */
+    background-color: transparent; /* Prevent any background color change */
+    transition: none; /* Ensure no transition effect on hover */
 }
 
 .blog-card-featured .description {
