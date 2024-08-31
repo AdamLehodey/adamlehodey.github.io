@@ -18,32 +18,32 @@
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Yesteryear|Quicksand|Josefin+Sans|Raleway|Lora" rel="stylesheet">
 
     <style>
-        /* Override blog's top header styling */
+        /* Adjusted top content to avoid blocking PDF controls */
         .TopContent {
-            position: fixed;
+            position: relative; /* Change from fixed to relative */
             top: 0;
             width: 100%;
             z-index: 1000;
             background: #f4f4f4;
-            height: 50px; /* Ensure this matches the height of your TopNav */
+            height: 50px;
             box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
         }
 
-        /* Ensure the PDF starts right below the TopNav */
+        /* Adjust PDF to start below the TopContent */
         embed {
             display: block;
             width: 100%;
-            height: calc(100vh - 50px); /* Adjust if your TopNav height changes */
+            height: calc(100vh - 50px);
             border: none;
-            margin-top: 0; /* Set margin to 0 to ensure it starts directly below */
+            margin-top: 0;
         }
 
-                #TopNav a::before {
+        #TopNav a::before {
             content: '← '; /* Add the arrow before the text */
-            margin-right: 5px; /* Space between arrow and text */
+            margin-right: 5px;
         }
 
-        /* Ensure there's no unwanted scrolling or clipping */
+        /* Prevent scrolling issues */
         body {
             margin: 0;
             padding: 0;
