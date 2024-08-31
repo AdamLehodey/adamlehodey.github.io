@@ -1,22 +1,23 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
-        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
-        <link rel="icon" href="/favicon.png" type="image/x-icon">
-        <title>Pan-Gaia</title>
-        <link rel="stylesheet" type="text/css" href="/Styling.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <meta charset="UTF-8">
-        <meta name="keywords" content="Adam Louis Sebastian Lehodey, Pangaia Literary piece, literature, London">
-        <meta name="description" content="Pan-Gaia: an experimental literary essay exploring the nature of human existence on planet earth.">
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+    <title>Pan-Gaia</title>
+    <link rel="stylesheet" type="text/css" href="/Styling.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Adam Louis Sebastian Lehodey, Pangaia Literary piece, literature, London">
+    <meta name="description" content="Pan-Gaia: an experimental literary essay exploring the nature of human existence on planet earth.">
 
-        <meta property="og:image" content="/blogs/resources/pangaia.jpg">
-        <meta property="og:url" content="http://www.adamlehodey.com/blogs/pan-gaia-narratives-of-a-new-vision.html">
-        <meta property="og:type" content="website">
+    <meta property="og:image" content="/blogs/resources/pangaia.jpg">
+    <meta property="og:url" content="http://www.adamlehodey.com/blogs/pan-gaia-narratives-of-a-new-vision.html">
+    <meta property="og:type" content="website">
 
-        <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Yesteryear|Quicksand|Josefin+Sans|Raleway|Lora" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Yesteryear|Quicksand|Josefin+Sans|Raleway|Lora" rel="stylesheet">
 
-        <style>
+    <style>
         /* Remove margins and padding from the body and html */
         html, body {
             margin: 0;
@@ -25,24 +26,35 @@
             width: 100%;
         }
 
-        /* Make the PDF embed take up the entire screen */
+        /* Make sure the TopNav stays at the top */
+        .TopContent {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: #f4f4f4; /* Or any other background color you prefer */
+        }
+
+        /* Allow the PDF to take up the full screen below the TopNav */
         embed {
             display: block;
-            width: 120%; /* Increase width to zoom out */
-            height: 100vh; /* Full viewport height */
-            transform: scale(0.8); /* Zoom out by 20% */
-            transform-origin: top left; /* Anchor the scale transformation */
+            width: 100%;
+            height: calc(100vh - 50px); /* Adjust this if the TopNav height changes */
             border: none;
         }
-        </style>
+    </style>
 
 </head>
 
 <body>
-      <div class="TopContent">
+    <div class="TopContent">
         <div class="BlogHeader" style="width:100vw;border:0px solid #3f38a6;"></div>
         <div id="TopNav"><a class="links" href="/index">HOME</a><a class="links" href="/blog">BACK TO BLOG</a></div>
-      </div>
+    </div>
 
-       <embed src="/blogs/Pan-Gaia-Narratives-Of-A-New-Vision.pdf" type="application/pdf" width="100%" height="600px" />
+    <!-- Embed the PDF, ensuring it fills the remaining viewport after the TopNav -->
+    <embed src="/blogs/Pan-Gaia-Narratives-Of-A-New-Vision.pdf#toolbar=1&navpanes=0&scrollbar=0" type="application/pdf" />
+
 </body>
+
+</html>
