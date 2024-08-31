@@ -15,6 +15,27 @@
         <meta property="og:type" content="website">
 
         <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Yesteryear|Quicksand|Josefin+Sans|Raleway|Lora" rel="stylesheet">
+
+        <style>
+        /* Remove margins and padding from the body and html */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Make the PDF embed take up the entire screen */
+        embed {
+            display: block;
+            width: 120%; /* Increase width to zoom out */
+            height: 100vh; /* Full viewport height */
+            transform: scale(0.8); /* Zoom out by 20% */
+            transform-origin: top left; /* Anchor the scale transformation */
+            border: none;
+        }
+        </style>
+
 </head>
 
 <body>
@@ -24,6 +45,4 @@
       </div>
 
        <embed src="/blogs/Pan-Gaia-Narratives-Of-A-New-Vision.pdf" type="application/pdf" width="100%" height="600px" />
-
-
 </body>
