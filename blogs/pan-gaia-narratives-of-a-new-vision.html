@@ -31,13 +31,13 @@
             box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
         }
 
-        /* Ensure the PDF starts below the TopContent */
-        embed {
+        /* Adjust iframe to start below the TopContent */
+        iframe {
             display: block;
             width: 100%;
-            height: calc(100vh - 60px); /* Ensure height accounts for both TopContent and space for controls */
+            height: calc(100vh - 50px); /* Adjust height to account for the top content */
             border: none;
-            padding-top: 10px; /* Add padding to push PDF down */
+            overflow: hidden;
         }
 
         #TopNav a::before {
@@ -64,8 +64,8 @@
         <div id="TopNav"><a href="/blog">Blog: Adam Louis Sebastian</a></div>
     </div>
 
-    <!-- Embed the PDF with space for controls and pinch-to-zoom enabled -->
-    <embed src="/blogs/Pan-Gaia-Narratives-Of-A-New-Vision.pdf#toolbar=1&navpanes=0&scrollbar=0&view=Fit" type="application/pdf" />
+    <!-- Embed the PDF using an iframe to allow better control and pinch-to-zoom -->
+    <iframe src="/blogs/Pan-Gaia-Narratives-Of-A-New-Vision.pdf#toolbar=1&navpanes=0&scrollbar=0&view=Fit"></iframe>
 
 </body>
 
