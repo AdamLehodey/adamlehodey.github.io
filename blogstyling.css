@@ -307,38 +307,43 @@
     transform: translateX(-50%);
 }
 
-@media (max-width: 768px) {
-    .blog-card-featured {
-        flex-direction: column;
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 0;
-    }
+/* Mobile Optimization for .blog-card-featured */
+@media (max-width: 640px) {
+  .blog-card-featured {
+    margin: 0.5rem;
+    max-width: 100%;
+    box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.1);
+  }
 
-    .featured-banner {
-        font-size: 0.9rem;
-        padding: 8px 0;
-    }
+  .blog-card-featured .photo {
+    padding-top: 56.25%; /* Aspect ratio 16:9 for a more balanced height on mobile */
+    margin-top: 10px;
+  }
 
-    .blog-card-featured .photo {
-        padding-top: 56.25%; /* 16:9 aspect ratio for a consistent image size */
-        order: -1; /* Ensure the image stays on top */
-    }
+  .blog-card-featured .description {
+    padding: 0.75rem;
+  }
 
-    .blog-card-featured .description h1 {
-        font-size: 1.5rem;
-    }
+  .blog-card-featured .description h1 {
+    font-size: 1.4rem;
+  }
 
-    .blog-card-featured .description h2 {
-        font-size: 0.9rem;
-    }
+  .blog-card-featured .description h2 {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
 
-    .blog-card-featured .read-more a {
-        font-size: 1rem;
-    }
+  .featured-banner {
+    font-size: 0.85rem;
+    padding: 3px 0;
+  }
 
-    /* Ensure the card's height matches other cards */
-    .blog-card-featured {
-        min-height: calc(100vw * 0.75); /* Make sure the card's height matches the aspect ratio of the image */
-    }
+  .blog-card-featured .read-more {
+    margin-top: 0.75rem;
+  }
+
+  .blog-card-featured p:first-of-type:before {
+    top: -0.5rem;
+    width: 25px;
+  }
 }
