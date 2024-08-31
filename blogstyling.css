@@ -308,7 +308,7 @@
 }
 
 /* Mobile Optimization for .blog-card-featured */
-@media (min-width: 640px) {
+@media (min-width: 0px) {
   .blog-card-featured {
     display: flex;
     flex-direction: column; /* Keeps the photo at the top */
