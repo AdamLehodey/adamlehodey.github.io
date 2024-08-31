@@ -18,30 +18,36 @@
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Yesteryear|Quicksand|Josefin+Sans|Raleway|Lora" rel="stylesheet">
 
     <style>
-        /* Remove margins and padding from the body and html */
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-        }
-
-        /* Make sure the TopNav stays at the top */
+        /* Override blog's top header styling */
         .TopContent {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: #f4f4f4; /* Or any other background color you prefer */
+            background: #f4f4f4;
+            height: 50px; /* Make sure this matches the height of your TopNav */
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
         }
 
-        /* Allow the PDF to take up the full screen below the TopNav */
+        /* Ensure the PDF starts below the TopNav */
         embed {
             display: block;
             width: 100%;
-            height: calc(100vh - 50px); /* Adjust this if the TopNav height changes */
+            height: calc(100vh - 50px); /* Adjust this if your TopNav height changes */
             border: none;
+            margin-top: 50px; /* Push the PDF content below the TopContent */
         }
+
+        /* Prevent other styling from interfering */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            box-sizing: border-box; /* Ensure padding and borders are included in element's total width and height */
+        }
+
     </style>
 
 </head>
