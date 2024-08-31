@@ -158,6 +158,7 @@
 .blog-card:hover .details {
   left: 0%;
 }
+
 @media (min-width: 640px) {
   .blog-card {
     -webkit-box-orient: horizontal;
@@ -198,6 +199,7 @@
   .blog-card.alt .details {
     padding-left: 25px;
   }
+}
 
  .blog-card-featured {
     box-sizing: border-box;
