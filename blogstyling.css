@@ -308,7 +308,7 @@
 }
 
 /* Mobile Optimization for .blog-card-featured */
-@media (max-width: 640px) {
+@media (min-width: 640px) {
   .blog-card-featured {
     margin: 0.5rem !important;
     max-width: 100% !important;
