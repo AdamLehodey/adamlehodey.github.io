@@ -310,40 +310,40 @@
 /* Mobile Optimization for .blog-card-featured */
 @media (max-width: 640px) {
   .blog-card-featured {
-    margin: 0.5rem;
-    max-width: 100%;
-    box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.1);
+    margin: 0.5rem !important;
+    max-width: 100% !important;
+    box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.1) !important;
   }
 
   .blog-card-featured .photo {
-    padding-top: 56.25%; /* Aspect ratio 16:9 for a more balanced height on mobile */
-    margin-top: 10px;
+    padding-top: 56.25% !important; /* Aspect ratio 16:9 for a more balanced height on mobile */
+    margin-top: 10px !important;
   }
 
   .blog-card-featured .description {
-    padding: 0.75rem;
+    padding: 0.75rem !important;
   }
 
   .blog-card-featured .description h1 {
-    font-size: 1.4rem;
+    font-size: 1.4rem !important;
   }
 
   .blog-card-featured .description h2 {
-    font-size: 0.9rem;
-    margin-bottom: 0.75rem;
+    font-size: 0.9rem !important;
+    margin-bottom: 0.75rem !important;
   }
 
   .featured-banner {
-    font-size: 0.85rem;
-    padding: 3px 0;
+    font-size: 0.85rem !important;
+    padding: 3px 0 !important;
   }
 
   .blog-card-featured .read-more {
-    margin-top: 0.75rem;
+    margin-top: 0.75rem !important;
   }
 
   .blog-card-featured p:first-of-type:before {
-    top: -0.5rem;
-    width: 25px;
+    top: -0.5rem !important;
+    width: 25px !important;
   }
 }
