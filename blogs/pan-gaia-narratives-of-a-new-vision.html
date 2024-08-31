@@ -18,43 +18,22 @@
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Yesteryear|Quicksand|Josefin+Sans|Raleway|Lora" rel="stylesheet">
 
     <style>
-        /* Restore the previous top bar colour and adjustments */
+        /* Override blog's top header styling */
         .TopContent {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: #3f38a6; /* Previous top bar colour */
-            height: 50px; /* Adjust the height to ensure full text visibility */
+            background: #f4f4f4;
+            height: 50px; /* Ensure this matches the height of your TopNav */
             box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
-            display: flex;
-            justify-content: center; /* Center the content */
-            align-items: center; /* Vertically center the content */
-        }
-
-        /* Center and style the navigation links */
-        #TopNav {
-            text-align: center;
-        }
-
-        #TopNav a {
-            font-family: 'Raleway', sans-serif;
-            text-decoration: none;
-            color: #ffffff; /* Keep the text white for contrast against the dark background */
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        #TopNav a::before {
-            content: '← '; /* Add the arrow before the text */
-            margin-right: 5px; /* Space between arrow and text */
         }
 
         /* Ensure the PDF starts right below the TopNav */
         embed {
             display: block;
             width: 100%;
-            height: calc(100vh - 50px); /* Adjust the height calculation */
+            height: calc(100vh - 50px); /* Adjust if your TopNav height changes */
             border: none;
             margin-top: 0; /* Set margin to 0 to ensure it starts directly below */
         }
@@ -74,7 +53,8 @@
 
 <body>
     <div class="TopContent">
-        <div id="TopNav"><a href="/blog">Blog: Adam Louis Sebastian</a></div>
+        <div class="BlogHeader" style="width:100vw;border:0px solid #3f38a6;"></div>
+        <div id="TopNav"><a class="links" href="/index">HOME</a><a class="links" href="/blog">BACK TO BLOG</a></div>
     </div>
 
     <!-- Embed the PDF with fit-to-screen and controls -->
