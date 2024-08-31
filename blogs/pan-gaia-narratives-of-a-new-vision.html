@@ -6,7 +6,7 @@
     <link rel="icon" href="/favicon.png" type="image/x-icon">
     <title>Pan-Gaia</title>
     <link rel="stylesheet" type="text/css" href="/Styling.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="keywords" content="Adam Louis Sebastian Lehodey, Pangaia Literary piece, literature, London">
     <meta name="description" content="Pan-Gaia: an experimental literary essay exploring the nature of human existence on planet earth.">
@@ -20,7 +20,7 @@
     <style>
         /* Adjusted top content to avoid blocking PDF controls */
         .TopContent {
-            position: relative; /* Change from fixed to relative */
+            position: relative;
             top: 0;
             width: 100%;
             z-index: 1000;
@@ -29,17 +29,17 @@
             box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
         }
 
-        /* Adjust PDF to start below the TopContent */
+        /* Add margin to ensure controls are fully visible */
         embed {
             display: block;
             width: 100%;
             height: calc(100vh - 50px);
             border: none;
-            margin-top: 0;
+            margin-top: 10px; /* Add margin to ensure PDF controls are fully visible */
         }
 
         #TopNav a::before {
-            content: '← '; /* Add the arrow before the text */
+            content: '← ';
             margin-right: 5px;
         }
 
