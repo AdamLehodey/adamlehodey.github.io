@@ -18,14 +18,14 @@
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Yesteryear|Quicksand|Josefin+Sans|Raleway|Lora" rel="stylesheet">
 
     <style>
-        /* Slimmer and centered top navigation */
+        /* Restore the previous top bar colour and adjustments */
         .TopContent {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: #f4f4f4;
-            height: 40px; /* Reduced height for a slimmer look */
+            background: #3f38a6; /* Previous top bar colour */
+            height: 50px; /* Adjust the height to ensure full text visibility */
             box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
             display: flex;
             justify-content: center; /* Center the content */
@@ -40,8 +40,8 @@
         #TopNav a {
             font-family: 'Raleway', sans-serif;
             text-decoration: none;
-            color: #333; /* Adjust the color as needed */
-            font-size: 16px; /* Adjust the font size as needed */
+            color: #ffffff; /* Keep the text white for contrast against the dark background */
+            font-size: 16px;
             font-weight: bold;
         }
 
@@ -54,7 +54,7 @@
         embed {
             display: block;
             width: 100%;
-            height: calc(100vh - 40px); /* Adjust this if your TopNav height changes */
+            height: calc(100vh - 50px); /* Adjust the height calculation */
             border: none;
             margin-top: 0; /* Set margin to 0 to ensure it starts directly below */
         }
