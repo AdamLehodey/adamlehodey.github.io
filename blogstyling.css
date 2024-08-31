@@ -200,104 +200,109 @@
   }
 
  .blog-card-featured {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  margin: 1rem auto;
-  box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
-  background: #fff;
-  line-height: 1.4;
-  font-family: sans-serif;
-  border-radius: 5px;
-  overflow: hidden;
-  max-width: 700px;
-  text-align: center;
-  position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    line-height: 1.4;
+    font-family: sans-serif;
+    border-radius: 5px;
+    overflow: hidden;
+    max-width: 700px;
+    text-align: center;
+    position: relative;
 }
 
 .featured-banner {
-  width: 100%;
-  background-color: #b30000;
-  color: white;
-  padding: 5px 0;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  text-transform: uppercase;
-  text-align: center;
-  position: relative;
-  top: 0;
-  z-index: 1;
+    background-color: #b30000; /* Updated color */
+    color: white;
+    padding: 5px 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
 
 .blog-card-featured .photo {
-  width: 100%;
-  padding-top: 18.75%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    width: 100%;
+    padding-top: 18.75%; /* Aspect ratio 16:3 for a shorter height */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-top: 30px; /* This ensures the photo doesn't overlap the banner */
 }
 
 .blog-card-featured .description {
-  padding: 1rem;
-  background: #fff;
+    padding: 1rem;
+    background: #fff;
+    position: relative;
+    z-index: 1;
 }
 
 .blog-card-featured .description h1,
 .blog-card-featured .description h2 {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
 }
 
 .blog-card-featured .description h1 {
-  font-size: 1.7rem;
-  margin-bottom: 0.5rem;
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
 }
 
 .blog-card-featured .description h2 {
-  font-size: 1rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  color: #a2a2a2;
-  margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #a2a2a2;
+    margin-bottom: 1rem;
 }
 
 .blog-card-featured .read-more {
-  text-align: center;
-  margin-top: 1rem;
+    text-align: center;
+    margin-top: 1rem;
 }
 
 .blog-card-featured .read-more a {
-  color: #5ad67d;
-  text-decoration: none;
-  font-weight: bold;
-  position: relative;
+    color: #5ad67d;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
 }
 
 .blog-card-featured p {
-  margin: 1rem 0;
-  color: #555;
+    margin: 1rem 0;
+    color: #555;
 }
 
 .blog-card-featured p:first-of-type {
-  margin-top: 1.25rem;
-  position: relative;
+    margin-top: 1.25rem;
+    position: relative;
 }
 
 .blog-card-featured p:first-of-type:before {
-  content: "";
-  height: 5px;
-  background: #5ad67d;
-  width: 35px;
-  top: -0.75rem;
-  border-radius: 3px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+    content: "";
+    height: 5px;
+    background: #5ad67d;
+    width: 35px;
+    top: -0.75rem;
+    border-radius: 3px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Ensure no hover effects */
 .blog-card-featured:hover .photo,
 .blog-card-featured:hover .description {
-  transform: none;
-  background: none;
+    transform: none;
+    background: none;
 }
