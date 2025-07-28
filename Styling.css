@@ -399,8 +399,13 @@ a {
 }
 
 .links {
-	margin-right: 5vw;
 	color: white;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.links:hover {
+	color: rgba(255, 255, 255, 0.8);
 }
 
 .containerBody {
@@ -418,6 +423,10 @@ a {
 	text-align: center;
 	top: 3vh;
 	z-index: 9995;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2vw;
 }
 
 #arboles {
@@ -531,11 +540,9 @@ a {
 @media (max-width: 1200px) {
 	#TopNav {
 		font-size: 16px;
+		gap: 1.5vw;
 	}
-
-	.links {
-		margin-right: 2.5vw;
-	}
+}
 
 	.Title {
 		font-size: 40px;
@@ -564,6 +571,14 @@ a {
 
 		#ContactMedia {
 		left: 46vw;
+	}
+}
+
+@media (max-width: 600px) {
+	#TopNav {
+		font-size: 14px;
+		gap: 1vw;
+		flex-wrap: wrap;
 	}
 }
 
