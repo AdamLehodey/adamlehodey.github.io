@@ -97,37 +97,57 @@ a {
 }
 
 /* Homepage Content */
-.about-section {
-	position: relative;
-	font-family: "Raleway", Serif;
-	text-align: left;
-	left: 5vw;
-	display: inline;
-	width: 35vw;
-	top: 3.5vh;
-	font-size: 1.15vw;
-	float: left;
+.main-content-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	margin-top: 3.5vh;
+	margin-left: 5vw;
+	margin-right: 5vw;
 }
 
-.about-text {
-	position: absolute;
-	left: 55.5vw;
-	width: 35vw;
-	top: 0vh;
-	display: inline;
-	float: left;
-	z-index: 0;
+.about-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 90vw;
+}
+
+.content-wrapper {
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+	justify-content: center;
+	align-items: start;
+	gap: 2vw;
+	margin-bottom: 4vh;
+	max-width: 90vw;
+}
+
+.about-section {
+	font-family: "Raleway", Serif;
+	text-align: left;
+	width: 25vw;
+	font-size: 1.15vw;
+}
+
+.profile-column {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 20vw;
 }
 
 .profile-image {
-	position: absolute;
-	left: 37.5vw;
 	width: 15vw;
-	top: 3.5vh;
-	display: inline;
 	border-radius: 50%;
-	float: left;
-	z-index: 0;
+}
+
+.about-text {
+	font-family: "Raleway", Serif;
+	text-align: left;
+	width: 25vw;
+	font-size: 1.15vw;
 }
 
 /* Responsive Design - Homepage */
@@ -210,32 +230,77 @@ a {
 		z-index: 0;
 	}
 
+	.main-content-container {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		width: 100%;
+		margin-top: 3.5vh;
+		margin-left: 5vw;
+		margin-right: 5vw;
+	}
+
+	.about-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 90vw;
+	}
+
+	.content-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2vh;
+		margin-bottom: 4vh;
+		width: 100%;
+	}
+
 	.about-section {
 		width: 100%;
 		margin: 0;
 		padding: 0;
-		position: relative;
 		font-family: "Raleway", Serif;
 		text-align: center;
-		display: inline;
 		width: 80vw;
-		left: 10vw;
-		top: 3.5vh;
 		font-size: 16px;
 		overflow-x: clip;
 	}
 
+	.profile-column {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin: 2vh 0;
+	}
+
+	.profile-image {
+		width: 20vw;
+		border-radius: 50%;
+	}
+
 	.about-text {
-		position: relative;
+		width: 100%;
 		font-family: "Raleway", Serif;
 		text-align: center;
-		display: inline-block;
 		width: 80vw;
-		left: 0;
-		top: 3.5vh;
 		font-size: 16px;
 		overflow-x: clip;
 	}
+
+	.language-selector {
+		position: fixed;
+		bottom: 2vh;
+		left: 50%;
+		transform: translateX(-50%);
+		background: rgba(255, 255, 255, 0.95);
+		padding: 1vh 3vw;
+		border-radius: 25px;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+		z-index: 1000;
+	}
+
+
 }
 
 @media (max-width: 800px) {
@@ -713,4 +778,90 @@ a {
 .third-party-widget {
 	position: relative;
 	top: 8vh;
+}
+
+/* LANGUAGE SELECTOR STYLES // */
+
+.language-selector {
+	text-align: center;
+	margin-top: 4vh;
+	margin-bottom: 3vh;
+	font-family: "Quicksand", Sans-Serif;
+	order: 2;
+	position: fixed;
+	bottom: 5vh;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(255, 255, 255, 0.9);
+	padding: 1vh 2vw;
+	border-radius: 20px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+}
+
+.lang-btn {
+	background: none;
+	border: none;
+	color: #333;
+	font-size: 1.2vw;
+	font-weight: 500;
+	cursor: pointer;
+	padding: 0.5vh 1vw;
+	transition: color 0.3s ease;
+	font-family: "Quicksand", Sans-Serif;
+}
+
+.lang-btn:hover {
+	color: #666;
+}
+
+.lang-btn.active {
+	color: #000;
+	font-weight: 700;
+}
+
+.lang-separator {
+	color: #ccc;
+	font-size: 1.2vw;
+	margin: 0 0.5vw;
+	font-family: "Quicksand", Sans-Serif;
+}
+
+.language-content {
+	display: none;
+	order: 1;
+}
+
+.language-content[data-lang="en"] {
+	display: block;
+}
+
+/* Responsive Design - Language Selector */
+@media (max-width: 1200px) {
+	.lang-btn {
+		font-size: 16px;
+		padding: 0.5vh 1.5vw;
+	}
+	
+	.lang-separator {
+		font-size: 16px;
+		margin: 0 1vw;
+	}
+}
+
+@media (max-width: 600px) {
+	.language-selector {
+		margin-top: 1vh;
+		margin-bottom: 2vh;
+	}
+	
+	.lang-btn {
+		font-size: 14px;
+		padding: 0.3vh 1vw;
+	}
+	
+	.lang-separator {
+		font-size: 14px;
+		margin: 0 0.5vw;
+	}
 }
