@@ -28,8 +28,12 @@ a {
 }
 
 .homepage-nav-link {
-	margin: 1vw;
 	overflow-wrap: inherit;
+}
+
+.nav-separator {
+	margin-left: 1vw;
+	margin-right: 1vw;
 }
 
 /* Hero Section */
@@ -119,16 +123,13 @@ a {
 	display: grid;
 	grid-template-columns: 1fr auto 1fr;
 	justify-content: center;
-	align-items: start;
-	gap: 2vw;
-	margin-bottom: 4vh;
+	align-items: center;
 	width: 90vw;
 }
 
 .about-section {
 	font-family: "Raleway", Serif;
 	text-align: left;
-	width: 30vw;
 	font-size: 1.15vw;
 }
 
@@ -147,12 +148,11 @@ a {
 .about-text {
 	font-family: "Raleway", Serif;
 	text-align: left;
-	width: 30vw;
 	font-size: 1.15vw;
 }
 
 /* Responsive Design - Homepage */
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
 	.homepage-nav {
 		position: relative;
 		display: inline-block;
@@ -223,12 +223,8 @@ a {
 	}
 
 	.profile-image {
-		position: relative;
 		width: 20vw;
-		top: 3.5vh;
-		left: 30vw;
 		border-radius: 50%;
-		z-index: 0;
 	}
 
 	.main-content-container {
@@ -266,7 +262,6 @@ a {
 		padding: 0;
 		font-family: "Raleway", Serif;
 		text-align: center;
-		width: 90vw;
 		font-size: 16px;
 		overflow-x: hidden;
 	}
@@ -288,13 +283,11 @@ a {
 		width: 100%;
 		font-family: "Raleway", Serif;
 		text-align: center;
-		width: 90vw;
 		font-size: 16px;
 		overflow-x: hidden;
 	}
 
 	.language-selector {
-		margin-top: 2vh;
 		margin-bottom: 2vh;
 	}
 
@@ -303,12 +296,8 @@ a {
 
 @media (max-width: 800px) {
 	.profile-image {
-		position: relative;
 		width: 22vw;
-		top: 3.5vh;
-		left: 29vw;
 		border-radius: 50%;
-		z-index: 0;
 	}
 }
 
@@ -324,12 +313,8 @@ a {
 
 @media (max-width: 550px) {
 	.profile-image {
-		position: relative;
 		width: 40vw;
-		top: 3.5vh;
-		left: 20vw;
 		border-radius: 50%;
-		z-index: 0;
 	}
 }
 
