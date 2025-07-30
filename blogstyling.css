@@ -14,7 +14,7 @@
   line-height: 1.4;
   font-family: sans-serif;
   border-radius: 5px;
-  overflow: hidden;
+  overflow: visible;
   z-index: 0;
 }
 .blog-card a {
@@ -211,7 +211,7 @@
     line-height: 1.4;
     font-family: sans-serif;
     border-radius: 5px;
-    overflow: hidden;
+    overflow: visible;
     max-width: 700px;
     text-align: center;
     position: relative;

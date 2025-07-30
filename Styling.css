@@ -3,7 +3,7 @@
 html, body {
 	margin: 0px;
 	padding: 0px;
-	overflow-x: hidden;
+	scroll-behavior: smooth;
 }
 
 /* VIDEO BACKGROUND // */
@@ -169,7 +169,7 @@ a {
 	max-height: 38vh;
 	object-fit: cover;
 	max-width: 100%;
-	overflow: clip;
+	overflow: hidden;
 }
 
 .social-icon {
@@ -197,6 +197,11 @@ a {
 	border: none;
 	border-radius: 0;
 	box-shadow: none;
+}
+
+/* Black divider for subpages */
+body.subpage .content-divider {
+	background: black;
 }
 
 /* Homepage Content */
@@ -317,7 +322,7 @@ body:not(.fallback-mode) .main-content-container {
 		height: 50vh;
 		object-fit: cover;
 		max-width: 100%;
-		overflow: clip;
+		overflow: hidden;
 	}
 
 	.social-icon {
@@ -495,7 +500,7 @@ body:not(.fallback-mode) .main-content-container {
 	z-index: 2;
 	width: 100vw;
 	max-width: 100%;
-	overflow: clip;
+	overflow: hidden;
 }
 
 .blog-header {
@@ -505,14 +510,14 @@ body:not(.fallback-mode) .main-content-container {
 	height: 65px;
 	width: 100vw;
 	max-width: 100%;
-	overflow: clip;
+	overflow: hidden;
 }
 
 .page-background {
 	position: relative;
 	width: 100vw;
 	height: 40vh;
-	overflow: clip;
+	overflow: hidden;
 	max-width: 100%;
 	z-index: -1;
 	object-fit: cover;
@@ -561,6 +566,24 @@ body:not(.fallback-mode) .main-content-container {
 }
 
 /* CONTENT STYLES // */
+
+/* PAGE CONTAINER SYSTEM // */
+.page-container {
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+}
+
+/* Align page container with menu bar for subpages */
+body.subpage .page-container {
+	margin-left: 5vw;
+	margin-right: 5vw;
+	width: auto;
+}
 
 /* SUBPAGE TEXT STYLES // */
 /* Black text and topography background for all subpages (excluding index.html) */
@@ -635,10 +658,10 @@ body.subpage a:not(.nav-link):not(.homepage-nav-link):hover {
 	body.subpage .content-main {
 		position: relative;
 		text-align: left;
-		left: 5vw; /* Align with menu bar start */
-		width: 90%;
-		padding-left: 0;
-		padding-right: 0;
+		width: 100%;
+		padding: 0;
+		margin-left: 0;
+		margin-right: 0;
 		top: 6vh;
 		margin-bottom: 4vh;
 	}
@@ -674,16 +697,19 @@ body.subpage a:not(.nav-link):not(.homepage-nav-link):hover {
 
 /* Fix scrolling issues */
 body.subpage {
-	overflow-x: hidden;
-	overflow-y: auto;
 	height: auto;
 	min-height: 100vh;
+	-webkit-overflow-scrolling: touch;
+	scroll-behavior: smooth;
 }
 
 body.subpage .content-main {
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 	position: relative;
+	overflow: visible;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
 }
 
 /* Hide content-intro on biography page */
@@ -716,6 +742,10 @@ body.subpage .content-intro {
 
 /* Responsive design for contact page */
 @media (max-width: 1000px) {
+	.page-container {
+		width: 92%;
+	}
+	
 	.contact-content {
 		top: 15vh;
 	}
@@ -733,24 +763,36 @@ body.subpage .content-intro {
 .content-intro {
 	background-color: rgba(220,220,220,0.8);
 	position: relative;
-	display: inline-block;
+	display: block;
 	top: 6vh;
-	left: 7.5vw;
-	width: 85vw;
+	width: 100%;
 	height: auto;
 	text-align: center;
 	border: 2px solid dimgrey;
 	font-family: "Bodoni Moda", serif;
+	margin: 0 auto;
+}
+
+/* Align content-intro with menu bar for subpages */
+body.subpage .content-intro {
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .content-search {
 	position: relative;
-	width: 90%;
-	left: 5%;
+	width: 100%;
 	top: 3vh;
 	padding-bottom: 3.8vh;
 	font-family: "Bodoni Moda", serif;
 	font-weight: bold;
+	margin: 0 auto;
+}
+
+/* Align content-search with menu bar for subpages */
+body.subpage .content-search {
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .content-main {
@@ -758,9 +800,9 @@ body.subpage .content-intro {
 	text-align: center;
 	font-family: "Bodoni Moda", serif;
 	top: 15vh;
-	width: 75vw;
-	padding-left: 12.5vw;
-	padding-right: 12.5vw;
+	width: 100%;
+	padding: 0;
+	margin: 0 auto;
 }
 
 .content-main h2 {
@@ -825,7 +867,7 @@ body.subpage .content-intro {
 	padding-bottom: 75%;
 	padding-top: 25px;
 	height: 0;
-	overflow: clip;
+	overflow: hidden;
 }
 
 .blog-video-wrapper iframe {
@@ -908,7 +950,7 @@ body.subpage .content-intro {
 	display: inline-block;
 	position: relative;
 	left: 48vw;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 .contact-social-icon {
