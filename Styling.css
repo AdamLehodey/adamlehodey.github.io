@@ -3,8 +3,102 @@
 html, body {
 	margin: 0px;
 	padding: 0px;
-	background-image: url("site-resources/topography.png");
 	overflow-x: hidden;
+}
+
+/* VIDEO BACKGROUND // */
+/* Fallback background - only show when video fails */
+body::before {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background-image: url("site-resources/Stars.jpg");
+	background-size: cover;
+	background-position: center;
+	display: none; /* Hide by default, show only in fallback mode */
+}
+
+body.fallback-mode::before {
+	display: block; /* Show only in fallback mode */
+}
+
+.video-background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	z-index: -2;
+	min-width: 100%;
+	min-height: 100%;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.video-background.active-video {
+	display: block;
+	opacity: 1;
+	visibility: visible;
+}
+
+
+
+/* Text colors */
+body {
+	color: white; /* Default white text for video background */
+}
+
+/* White text for fallback mode */
+body.fallback-mode {
+	color: white;
+}
+
+/* White text for video mode - specific elements */
+body:not(.fallback-mode) .hero-name,
+body:not(.fallback-mode) .hero-subtitle,
+body:not(.fallback-mode) .homepage-nav,
+body:not(.fallback-mode) .homepage-nav-link,
+body:not(.fallback-mode) .nav-separator {
+	color: white !important;
+}
+
+/* White text for fallback mode - specific elements */
+body.fallback-mode .hero-name,
+body.fallback-mode .hero-subtitle,
+body.fallback-mode .homepage-nav,
+body.fallback-mode .homepage-nav-link,
+body.fallback-mode .nav-separator {
+	color: white !important;
+}
+
+/* Hide stars image when video is working */
+body:not(.fallback-mode) .hero-background {
+	display: none;
+}
+
+/* Show stars image only in fallback mode */
+body.fallback-mode .hero-background {
+	display: block;
+}
+
+
+
+/* PAGE FADE TRANSITION // */
+.page-fade {
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.page-fade.fade-in {
+	opacity: 1;
+}
+
+.page-fade.fade-out {
+	opacity: 0;
 }
 
 a {
@@ -22,9 +116,11 @@ a {
 	margin-top: 5vh;
 	margin-left: 5vw;
 	align-content: center;
-	font-family: "Quicksand", Sans-Serif;
+	font-family: "Bodoni Moda", serif;
 	font-size: 1.4vw;
+	font-weight: 300;
 	color: black;
+	z-index: +2; /* Added z-index */
 }
 
 .homepage-nav-link {
@@ -38,34 +134,32 @@ a {
 
 /* Hero Section */
 .hero-container {
-	width: 40vw;
+	width: 60vw;
 	height: auto;
-	top: 12vh;
-	margin-left: 32.5vw;
+	top: 25vh;
+	margin-left: 5vw;
 	position: absolute;
-	transform: skew(170deg);
-	z-index: +1;
-	background: rgba(219, 240, 239, 0.8);
-	border: 3px solid rgb(22, 77, 100);
+	z-index: +2; /* Increased from +1 */
 }
 
 .hero-name {
-	transform: skew(10deg);
-	text-align: center;
-	font-size: 4.8vw;
-	width: auto;
-	font-family: "Yesteryear", Serif;
+	text-align: left;
+	font-size: 4.2vw;
+	font-weight: 500;
+	font-family: "Libre Bodoni", serif;
+	letter-spacing: 0.15vw;
+	line-height: 1.1;
+	margin-bottom: 1vh;
+	text-transform: uppercase;
 }
 
 .hero-subtitle {
-	margin: 0px;
-	padding: 0px;
-	margin-bottom: 5px;
-	text-align: center;
-	transform: skew(10deg);
-	font-size: 1.3vw;
-	letter-spacing: 0.4vw;
-	font-family: "Quicksand", Sans-Serif;
+	text-align: left;
+	font-size: 1.5vw;
+	font-weight: 400;
+	font-family: "Bodoni Moda", serif;
+	letter-spacing: 0.05vw;
+	color: rgba(255, 255, 255, 0.9);
 }
 
 /* Background & Social */
@@ -89,16 +183,20 @@ a {
 	position: relative;
 	margin-right: 5vw;
 	margin-bottom: 0px;
+	z-index: +2; /* Added z-index */
 }
 
 /* Divider */
 .content-divider {
 	position: relative;
 	margin-top: 5.1vh;
-	align-content: center;
+	margin-left: 5vw;
 	width: 30%;
-	height: 0.02vh;
-	background: black;
+	height: 1px;
+	background: white;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
 }
 
 /* Homepage Content */
@@ -110,6 +208,12 @@ a {
 	margin-top: 3.5vh;
 	margin-left: 5vw;
 	margin-right: 5vw;
+	z-index: +2; /* Added z-index */
+}
+
+/* Add extra spacing when video is working (no stars image) */
+body:not(.fallback-mode) .main-content-container {
+	margin-top: 41.5vh; /* 3.5vh + 38vh to compensate for missing stars image */
 }
 
 .about-container {
@@ -128,9 +232,9 @@ a {
 }
 
 .about-section {
-	font-family: "Raleway", Serif;
-	text-align: left;
-	font-size: 1.15vw;
+	font-family: "Bodoni Moda", serif;
+	text-align: justify;
+	font-size: 1.05vw;
 }
 
 .profile-column {
@@ -149,9 +253,9 @@ a {
 }
 
 .about-text {
-	font-family: "Raleway", Serif;
-	text-align: left;
-	font-size: 1.15vw;
+	font-family: "Bodoni Moda", serif;
+	text-align: justify;
+	font-size: 1.05vw;
 }
 
 /* Responsive Design - Homepage */
@@ -165,41 +269,47 @@ a {
 		margin-right: 5vw;
 		overflow-wrap: break-word;
 		text-align: center;
-		font-family: "Quicksand", Sans-Serif;
+		font-family: "Bodoni Moda", serif;
 		font-size: 16px;
+		font-weight: 300;
 		color: black;
 	}
 
+	.content-divider {
+		margin-left: 0;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
 	.hero-container {
-		width: 80vw;
+		width: 90vw;
 		height: auto;
-		margin-left: 10vw;
-		top: 6vh;
+		margin-left: 5vw;
+		margin-right: 5vw;
+		top: 35vh;
 		position: absolute;
-		transform: skew(170deg);
 		z-index: +1;
-		background: rgba(219, 240, 239, 0.8);
-		border: 3px solid rgb(22, 77, 100);
+		text-align: center;
 	}
 
 	.hero-name {
-		margin-top: 2vh;
-		transform: skew(10deg);
 		text-align: center;
-		font-size: 58px;
-		width: auto;
-		font-family: "Yesteryear", Serif;
+		font-size: 42px;
+		font-weight: 500;
+		font-family: "Libre Bodoni", serif;
+		letter-spacing: 0.15vw;
+		line-height: 1.1;
+		margin-bottom: 1vh;
+		text-transform: uppercase;
 	}
 
 	.hero-subtitle {
 		text-align: center;
-		width: auto;
-		transform: skew(10deg);
 		font-size: 16px;
-		letter-spacing: 0.15vw;
-		margin-bottom: 5vh;
-		font-family: "Quicksand", Sans-Serif;
-		position: relative;
+		font-weight: 400;
+		font-family: "Bodoni Moda", serif;
+		letter-spacing: 0.05vw;
+		color: rgba(255, 255, 255, 0.9);
 	}
 
 	.hero-background {
@@ -264,7 +374,7 @@ a {
 		width: 100%;
 		margin: 0;
 		padding: 0;
-		font-family: "Raleway", Serif;
+		font-family: "Bodoni Moda", serif;
 		text-align: center;
 		font-size: 16px;
 		overflow-x: hidden;
@@ -285,7 +395,7 @@ a {
 
 	.about-text {
 		width: 100%;
-		font-family: "Raleway", Serif;
+		font-family: "Bodoni Moda", serif;
 		text-align: center;
 		font-size: 16px;
 		overflow-x: hidden;
@@ -328,12 +438,23 @@ a {
 
 @media (max-width: 400px) {
 	.hero-name {
-		margin-top: 2vh;
-		transform: skew(10deg);
 		text-align: center;
-		font-size: 44px;
-		width: auto;
-		font-family: "Yesteryear", Serif;
+		font-size: 32px;
+		font-weight: 500;
+		font-family: "Libre Bodoni", serif;
+		letter-spacing: 0.15vw;
+		line-height: 1.1;
+		margin-bottom: 1vh;
+		text-transform: uppercase;
+	}
+
+	.hero-subtitle {
+		text-align: center;
+		font-size: 16px;
+		font-weight: 400;
+		font-family: "Bodoni Moda", serif;
+		letter-spacing: 0.05vw;
+		color: rgba(255, 255, 255, 0.9);
 	}
 }
 
@@ -341,12 +462,12 @@ a {
 
 /* Navigation */
 .subpage-nav {
-	font-family: "Quicksand", Sans-Serif;
+	font-family: "Bodoni Moda", serif;
 	width: 100%;
 	position: absolute;
 	font-size: 1.5vw;
 	vertical-align: top;
-	font-weight: 1;
+	font-weight: 300;
 	color: white;
 	text-align: center;
 	top: 3vh;
@@ -419,6 +540,8 @@ a {
 	.subpage-nav {
 		font-size: 16px;
 		gap: 1.5vw;
+		font-family: "Bodoni Moda", serif;
+		font-weight: 300;
 	}
 
 	.page-title {
@@ -432,10 +555,179 @@ a {
 		font-size: 14px;
 		gap: 1vw;
 		flex-wrap: wrap;
+		font-family: "Bodoni Moda", serif;
+		font-weight: 300;
 	}
 }
 
 /* CONTENT STYLES // */
+
+/* SUBPAGE TEXT STYLES // */
+/* Black text and topography background for all subpages (excluding index.html) */
+body.subpage {
+	color: black !important;
+	background-image: url("site-resources/topography.png");
+	background-repeat: repeat;
+	background-size: auto;
+	background-position: top left;
+	background-attachment: scroll;
+}
+
+body.subpage .homepage-nav,
+body.subpage .homepage-nav-link,
+body.subpage .nav-separator,
+body.subpage .subpage-nav,
+body.subpage .nav-link,
+body.subpage .page-title,
+body.subpage .content-intro,
+body.subpage .content-search,
+body.subpage .content-main,
+body.subpage .content-main h2,
+body.subpage .content-main h3,
+body.subpage .content-main p,
+body.subpage .content-pitch,
+body.subpage .content-pitch h2,
+body.subpage .blog-container,
+body.subpage .blog-container h2,
+body.subpage .blog-post-info,
+body.subpage .blog-post,
+body.subpage .contact-info,
+body.subpage .contact-box,
+body.subpage .quote-box,
+body.subpage .ContentTitles,
+body.subpage .Quote {
+	color: black !important;
+}
+
+body.subpage .nav-link:hover {
+	color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Blog card text styling for subpages */
+body.subpage .blog-card .description h1,
+body.subpage .blog-card .description h2,
+body.subpage .blog-card .description p,
+body.subpage .blog-card-featured .description h1,
+body.subpage .blog-card-featured .description h2,
+body.subpage .blog-card-featured .description p,
+body.subpage .blog-card .read-more a,
+body.subpage .blog-card-featured .read-more a {
+	color: black !important;
+}
+
+body.subpage .blog-card .read-more a:hover,
+body.subpage .blog-card-featured .read-more a:hover {
+	color: #5ad67d !important;
+}
+
+/* Link styling for subpages */
+body.subpage a:not(.nav-link):not(.homepage-nav-link) {
+	color: black !important;
+}
+
+body.subpage a:not(.nav-link):not(.homepage-nav-link):hover {
+	color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* BIOGRAPHY PAGE SPECIFIC STYLES // */
+/* Desktop layout for biography page */
+@media (min-width: 1001px) {
+	body.subpage .content-main {
+		position: relative;
+		text-align: left;
+		left: 5vw; /* Align with menu bar start */
+		width: 90%;
+		padding-left: 0;
+		padding-right: 0;
+		top: 6vh;
+		margin-bottom: 4vh;
+	}
+
+	body.subpage .content-main h2 {
+		text-align: left;
+		font-size: 2.2vw;
+		margin-bottom: 2vh;
+	}
+
+	body.subpage .content-main h3 {
+		text-align: left;
+		font-size: 1.4vw;
+		margin-bottom: 1vh;
+		margin-top: 3vh;
+	}
+
+	body.subpage .content-main p {
+		text-align: left;
+		font-size: 1.05vw;
+		line-height: 1.6;
+		margin-bottom: 2vh;
+	}
+
+	body.subpage .Quote {
+		font-style: italic;
+		background-color: rgba(220,220,220,0.8);
+		padding: 2vh 2vw;
+		border-left: 4px solid #333;
+		margin: 2vh 0;
+	}
+}
+
+/* Fix scrolling issues */
+body.subpage {
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: auto;
+	min-height: 100vh;
+}
+
+body.subpage .content-main {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	position: relative;
+}
+
+/* Hide content-intro on biography page */
+body.subpage .content-intro {
+	display: none;
+}
+
+/* CONTACT PAGE STYLES // */
+.contact-content {
+	position: relative;
+	text-align: center;
+	font-family: "Bodoni Moda", serif;
+	top: 20vh;
+	width: 100%;
+	padding: 0 5vw;
+}
+
+.contact-content h1 {
+	font-size: 3vw;
+	font-weight: 500;
+	margin-bottom: 2vh;
+	color: black;
+}
+
+.contact-content p {
+	font-size: 1.5vw;
+	font-weight: 400;
+	color: black;
+}
+
+/* Responsive design for contact page */
+@media (max-width: 1000px) {
+	.contact-content {
+		top: 15vh;
+	}
+	
+	.contact-content h1 {
+		font-size: 32px;
+	}
+	
+	.contact-content p {
+		font-size: 18px;
+	}
+}
 
 /* General Content */
 .content-intro {
@@ -448,7 +740,7 @@ a {
 	height: auto;
 	text-align: center;
 	border: 2px solid dimgrey;
-	font-family: "Droid Serif", Serif;
+	font-family: "Bodoni Moda", serif;
 }
 
 .content-search {
@@ -457,14 +749,14 @@ a {
 	left: 5%;
 	top: 3vh;
 	padding-bottom: 3.8vh;
-	font-family: "Raleway", Sans-Serif;
+	font-family: "Bodoni Moda", serif;
 	font-weight: bold;
 }
 
 .content-main {
 	position: relative;
 	text-align: center;
-	font-family: "Raleway", Sans-Serif;
+	font-family: "Bodoni Moda", serif;
 	top: 15vh;
 	width: 75vw;
 	padding-left: 12.5vw;
@@ -472,7 +764,7 @@ a {
 }
 
 .content-main h2 {
-	font-family: "Raleway", Sans-Serif;
+	font-family: "Bodoni Moda", serif;
 	font-size: 205%;
 	letter-spacing: 0.2vw;
 	text-align: center;
@@ -481,7 +773,7 @@ a {
 .content-pitch {
 	position: relative;
 	text-align: center;
-	font-family: "Raleway", Sans-Serif;
+	font-family: "Bodoni Moda", serif;
 	top: 15vh;
 	left: 8vw;
 	padding-bottom: 5vh;
@@ -489,7 +781,7 @@ a {
 }
 
 .content-pitch h2 {
-	font-family: "Raleway", Sans-Serif;
+	font-family: "Bodoni Moda", serif;
 	font-size: 205%;
 	letter-spacing: 0.2vw;
 }
@@ -773,42 +1065,46 @@ a {
 /* LANGUAGE SELECTOR STYLES // */
 
 .language-selector {
+	position: fixed;
+	bottom: 3vh;
+	left: 5vw;
 	text-align: center;
-	margin-top: 2vh;
-	margin-bottom: 2vh;
-	font-family: "Quicksand", Sans-Serif;
-	order: 2;
+	font-family: "Bodoni Moda", serif;
+	z-index: +11; /* Increased from +10 */
 }
+
+
 
 
 
 .lang-btn {
 	background: none;
 	border: none;
-	color: #333;
+	color: white;
 	font-size: 0.9vw;
-	font-weight: 500;
+	font-weight: 300;
 	cursor: pointer;
 	padding: 0.3vh 0.6vw;
 	transition: color 0.3s ease;
-	font-family: "Quicksand", Sans-Serif;
+	font-family: "Bodoni Moda", serif;
 	white-space: nowrap;
 }
 
 .lang-btn:hover {
-	color: #666;
+	color: rgba(255, 255, 255, 0.8);
 }
 
 .lang-btn.active {
-	color: #000;
+	color: white;
 	font-weight: 700;
+	text-decoration: underline; /* Add underline to active button */
 }
 
 .lang-separator {
-	color: #ccc;
+	color: rgba(255, 255, 255, 0.7);
 	font-size: 0.9vw;
 	margin: 0 0.2vw;
-	font-family: "Quicksand", Sans-Serif;
+	font-family: "Bodoni Moda", serif;
 }
 
 .language-content {
@@ -823,7 +1119,7 @@ a {
 /* Fade animation for text only */
 .fade-text {
 	opacity: 0;
-	transition: opacity 0.5s ease-in-out;
+	transition: opacity 0.1s ease-in-out; /* Much faster transition */
 }
 
 .language-content[data-lang="en"] .fade-text {
@@ -851,6 +1147,8 @@ a {
 	}
 }
 
+
+
 @media (max-width: 800px) {
 	.lang-btn {
 		font-size: 1.3vw;
@@ -863,20 +1161,67 @@ a {
 	}
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
 	.language-selector {
-		margin-top: 1vh;
-		margin-bottom: 2vh;
+		position: relative;
+		bottom: auto;
+		left: auto;
+		right: auto;
+		width: 100%;
+		text-align: center;
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+		padding: 1.2vh 0;
+		margin: 0;
+		z-index: +11;
+		font-family: "Bodoni Moda", serif;
 	}
 	
 	.lang-btn {
-		font-size: 2.2vw;
-		padding: 0.4vh 1vw;
+		font-size: 14px;
+		padding: 0.4vh 0.8vw;
+		font-family: "Bodoni Moda", serif;
+		font-weight: 300;
+		color: white;
 	}
 	
 	.lang-separator {
-		font-size: 2.2vw;
-		margin: 0 0.3vw;
+		font-size: 14px;
+		margin: 0 0.2vw;
+		font-family: "Bodoni Moda", serif;
+		color: white;
 	}
 }
+
+@media (max-width: 600px) {
+	.language-selector {
+		position: relative;
+		bottom: auto;
+		left: auto;
+		right: auto;
+		width: 100%;
+		text-align: center;
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+		padding: 1.2vh 0;
+		margin: 0;
+		z-index: +11;
+		font-family: "Bodoni Moda", serif;
+	}
+	
+	.lang-btn {
+		font-size: 14px;
+		padding: 0.4vh 0.8vw;
+		font-family: "Bodoni Moda", serif;
+		font-weight: 300;
+		color: white;
+	}
+	
+	.lang-separator {
+		font-size: 14px;
+		margin: 0 0.2vw;
+		font-family: "Bodoni Moda", serif;
+		color: white;
+	}
+}
+
+
 

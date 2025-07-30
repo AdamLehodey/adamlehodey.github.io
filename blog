@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="0; url=blog.html">
+    <title>Redirecting to Blog</title>
+</head>
+<body>
+    <p>Redirecting to <a href="blog.html">blog.html</a>...</p>
+</body>
+</html> 
