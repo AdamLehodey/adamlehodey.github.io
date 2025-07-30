@@ -578,7 +578,7 @@ body:not(.fallback-mode) .main-content-container {
 	-webkit-overflow-scrolling: touch;
 }
 
-/* Align page container with menu bar for subpages */
+/* Align page container with menu bar for biography and tutoring pages */
 body.subpage .page-container {
 	margin-left: 5vw;
 	margin-right: 5vw;
@@ -628,14 +628,18 @@ body.subpage .nav-link:hover {
 
 /* Blog card text styling for subpages */
 body.subpage .blog-card .description h1,
-body.subpage .blog-card .description h2,
 body.subpage .blog-card .description p,
 body.subpage .blog-card-featured .description h1,
-body.subpage .blog-card-featured .description h2,
 body.subpage .blog-card-featured .description p,
 body.subpage .blog-card .read-more a,
 body.subpage .blog-card-featured .read-more a {
 	color: black !important;
+}
+
+/* Blog card subtitle styling for subpages */
+body.subpage .blog-card .description h2,
+body.subpage .blog-card-featured .description h2 {
+	color: #a2a2a2 !important;
 }
 
 body.subpage .blog-card .read-more a:hover,
@@ -650,6 +654,15 @@ body.subpage a:not(.nav-link):not(.homepage-nav-link) {
 
 body.subpage a:not(.nav-link):not(.homepage-nav-link):hover {
 	color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Quote styling for all screen sizes */
+body.subpage .Quote {
+	font-style: italic;
+	background-color: rgba(220,220,220,0.8);
+	padding: 2vh 2vw;
+	border-left: 4px solid #333;
+	margin: 2vh 0;
 }
 
 /* BIOGRAPHY PAGE SPECIFIC STYLES // */
@@ -685,15 +698,9 @@ body.subpage a:not(.nav-link):not(.homepage-nav-link):hover {
 		line-height: 1.6;
 		margin-bottom: 2vh;
 	}
-
-	body.subpage .Quote {
-		font-style: italic;
-		background-color: rgba(220,220,220,0.8);
-		padding: 2vh 2vw;
-		border-left: 4px solid #333;
-		margin: 2vh 0;
-	}
 }
+
+/* Remove mobile and extra quote styling blocks */
 
 /* Fix scrolling issues */
 body.subpage {
@@ -773,7 +780,7 @@ body.subpage .content-intro {
 	margin: 0 auto;
 }
 
-/* Align content-intro with menu bar for subpages */
+/* Align content-intro with menu bar for biography and tutoring pages */
 body.subpage .content-intro {
 	margin-left: 0;
 	margin-right: 0;
@@ -789,7 +796,7 @@ body.subpage .content-intro {
 	margin: 0 auto;
 }
 
-/* Align content-search with menu bar for subpages */
+/* Align content-search with menu bar for biography and tutoring pages */
 body.subpage .content-search {
 	margin-left: 0;
 	margin-right: 0;
