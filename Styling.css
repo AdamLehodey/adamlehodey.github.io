@@ -1139,6 +1139,11 @@ body.subpage .content-search {
 	white-space: nowrap;
 }
 
+/* Special override for EN button to remove left padding */
+#en-btn {
+	padding-left: 0;
+}
+
 .lang-btn:hover {
 	color: rgba(255, 255, 255, 0.8);
 }
