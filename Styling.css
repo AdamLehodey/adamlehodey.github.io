@@ -183,7 +183,6 @@ a {
 
 .social-icon {
 	width: 2vw;
-	margin: 1vw;
 	margin-top: 5vh;
 	float: right;
 }
@@ -338,7 +337,7 @@ body:not(.fallback-mode) .main-content-container {
 		width: 4vw;
 		padding-top: 5vh;
 		padding-bottom: 2vh;
-		margin: 1vw;
+		margin: 1vw 0 1vw 1vw; /* Remove right margin */
 		float: unset;
 	}
 
@@ -438,7 +437,7 @@ body:not(.fallback-mode) .main-content-container {
 		width: 8vw;
 		padding-top: 5vh;
 		padding-bottom: 2vh;
-		margin: 1vw;
+		margin: 1vw 0 1vw 1vw; /* Remove right margin */
 		float: unset;
 	}
 }

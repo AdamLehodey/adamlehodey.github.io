@@ -35,7 +35,6 @@
     .hero-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2; }
     .homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-top: 5vh; margin-left: 5vw; font-family: "Bodoni Moda", serif; font-size: 1.4vw; font-weight: 300; color: black; z-index: 2; }
     .social-container { position: relative; margin-right: 5vw; margin-bottom: 0px; z-index: 2; }
-    .social-icon { width: 2vw; margin: 1vw; margin-top: 5vh; float: right; }
     .blog-background-image { position: absolute; top: 0; left: 0; width: 100vw; height: 52vh; background-image: url('../site-resources/cover-photos/posters-stickers.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: -1; }
     .blog-gradient-overlay { position: absolute; top: 0; left: 0; width: 100vw; height: 52vh; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)); z-index: 0; pointer-events: none; }
     #blog-container { margin-top: 15vh; padding-top: 2rem; position: relative; z-index: 1; }
@@ -58,8 +57,16 @@
   <div class="blog-background-image"></div>
   <div class="blog-gradient-overlay"></div>
   <div class="social-container"><a href="https://www.linkedin.com/in/adamlehodey/" target="blank"><img class="social-icon" src="site-resources/LinkedIn.png" alt="LinkedIn Link" loading="eager"></a></div>
-  <div class="homepage-nav"><a class="homepage-nav-link" href="index">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="blog">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="tutoring">INSTRUCTION</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
+  <div class="homepage-nav"><a class="homepage-nav-link" href="/">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="blog">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="tutoring">INSTRUCTION</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
   <div class="block_1"></div> <hr class="content-divider" />
+
+  <!-- Blog Filter Bar -->
+  <div class="blog-filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="Analysis">Analysis / Opinion</button>
+    <button class="filter-btn" data-filter="Essays">Essays</button>
+    <button class="filter-btn" data-filter="Prose/Verse">Verse & Prose</button>
+  </div>
 
   <div class="container" id="blog-container">
    <!-- Blog posts will be loaded here dynamically -->
@@ -195,6 +202,10 @@
   		return new Date(0); // Fallback for invalid dates
   	}
 
+  	// Global variables for filtering
+  	let allPosts = [];
+  	let currentFilter = 'all';
+  	
   	// Function to load and display blog posts
   	async function loadBlogPosts() {
   		try {
@@ -237,28 +248,79 @@
   				return dateB - dateA;
   			});
   			
-  			// Generate HTML
-  			const container = document.getElementById('blog-container');
-  			let html = '';
+  			// Store all posts globally for filtering
+  			allPosts = [...featuredPosts, ...regularPosts];
   			
-  			// Add featured posts first
-  			featuredPosts.forEach(post => {
-  				html += generateFeaturedPostHTML(post);
-  			});
+  			// Display all posts initially
+  			displayPosts(allPosts);
   			
-  			// Add regular posts
-  			let altClass = false;
-  			regularPosts.forEach(post => {
-  				html += generateRegularPostHTML(post, altClass);
-  				altClass = !altClass; // Alternate layout
-  			});
-  			
-  			container.innerHTML = html;
+  			// Initialize filter buttons
+  			initFilterButtons();
   			
   		} catch (error) {
   			console.error('Error loading blog posts:', error);
   			document.getElementById('blog-container').innerHTML = '<p>Error loading blog posts. Please try again later.</p>';
   		}
+  	}
+  	
+  	// Function to display posts
+  	function displayPosts(postsToShow) {
+  		const container = document.getElementById('blog-container');
+  		let html = '';
+  		
+  		// Separate featured and regular posts
+  		const featuredPosts = postsToShow.filter(post => post.featured);
+  		const regularPosts = postsToShow.filter(post => !post.featured);
+  		
+  		// Add featured posts first
+  		featuredPosts.forEach(post => {
+  			html += generateFeaturedPostHTML(post);
+  		});
+  		
+  		// Add regular posts
+  		let altClass = false;
+  		regularPosts.forEach(post => {
+  			html += generateRegularPostHTML(post, altClass);
+  			altClass = !altClass; // Alternate layout
+  		});
+  		
+  		container.innerHTML = '';
+  		const temp = document.createElement('div');
+  		temp.innerHTML = html;
+  		while (temp.firstChild) {
+  			container.appendChild(temp.firstChild);
+  		}
+  	}
+  	
+  	// Function to initialize filter buttons
+  	function initFilterButtons() {
+  		const filterButtons = document.querySelectorAll('.filter-btn');
+  		filterButtons.forEach(button => {
+  			button.addEventListener('click', function() {
+  				const filter = this.getAttribute('data-filter');
+  				
+  				// Update active button
+  				filterButtons.forEach(btn => btn.classList.remove('active'));
+  				this.classList.add('active');
+  				
+  				// Filter posts
+  				filterPosts(filter);
+  			});
+  		});
+  	}
+  	
+  	// Function to filter posts
+  	function filterPosts(filter) {
+  		currentFilter = filter;
+  		
+  		let filteredPosts;
+  		if (filter === 'all') {
+  			filteredPosts = allPosts;
+  		} else {
+  			filteredPosts = allPosts.filter(post => post.type === filter);
+  		}
+  		
+  		displayPosts(filteredPosts);
   	}
 
   	// Function to generate featured post HTML
