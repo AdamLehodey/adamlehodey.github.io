@@ -320,6 +320,19 @@
   			filteredPosts = allPosts.filter(post => post.type === filter);
   		}
   		
+  		// Change background image based on filter
+  		const backgroundElement = document.querySelector('.blog-background-image');
+  		if (backgroundElement) {
+  			if (filter === 'Essays') {
+  				backgroundElement.style.backgroundImage = "url('../site-resources/cover-photos/essays.jpg')";
+  			} else if (filter === 'Prose/Verse') {
+  				backgroundElement.style.backgroundImage = "url('../site-resources/cover-photos/etching.jpg')";
+  			} else {
+  				// Keep current background for other filters (Analysis, etc.)
+  				backgroundElement.style.backgroundImage = "url('../site-resources/cover-photos/posters-stickers.jpg')";
+  			}
+  		}
+  		
   		displayPosts(filteredPosts);
   	}
 

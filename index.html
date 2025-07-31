@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- If you're reading this, remember to stay golden, Ponyboy ;) -->
 <head>
-  <title>LEHODEY</title>
+  <title>Adam Louis Sebastian</title>
   <meta charset="UTF-8">
   <link rel="shortcut icon" href="/site-resources/favicon.png" type="image/x-icon">
   <link rel="icon" href="/site-resources/favicon.png" type="image/x-icon">
@@ -53,24 +54,24 @@
 
 <body class="page-fade">
  <!-- Main English video - loads immediately -->
- <video class="video-background active-video" autoplay muted loop playsinline preload="auto" data-lang="en" fetchpriority="high" data-playback-rate="0.75">
+ <video class="video-background active-video" autoplay muted loop playsinline preload="auto" data-lang="en" fetchpriority="high" data-playback-rate="0.75" webkit-playsinline="true" x5-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="false" x5-video-orientation="landscape">
   <source src="site-resources/midtown.mp4" type="video/mp4">
   Your browser does not support the video tag.
  </video>
  
  <!-- Lazy-loaded videos - only created when needed -->
  <div id="lazy-video-container" style="display: none;">
-  <video class="video-background" muted loop playsinline preload="none" data-lang="fr" style="display: none;" data-playback-rate="0.75">
+  <video class="video-background" muted loop playsinline preload="none" data-lang="fr" style="display: none;" data-playback-rate="0.75" webkit-playsinline="true" x5-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="false" x5-video-orientation="landscape">
    <source src="site-resources/nice.mp4" type="video/mp4">
    Your browser does not support the video tag.
   </video>
   
-  <video class="video-background" muted loop playsinline preload="none" data-lang="es" style="display: none;">
+  <video class="video-background" muted loop playsinline preload="none" data-lang="es" style="display: none;" webkit-playsinline="true" x5-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="false" x5-video-orientation="landscape">
    <source src="site-resources/cdmx.mp4" type="video/mp4">
    Your browser does not support the video tag.
   </video>
   
-  <video class="video-background" muted loop playsinline preload="none" data-lang="it" style="display: none;" data-playback-rate="0.75">
+  <video class="video-background" muted loop playsinline preload="none" data-lang="it" style="display: none;" data-playback-rate="0.75" webkit-playsinline="true" x5-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="false" x5-video-orientation="landscape">
    <source src="site-resources/italia.mp4" type="video/mp4">
    Your browser does not support the video tag.
   </video>
@@ -331,8 +332,31 @@
  		function setupInitialVideoEvents(video) {
  			if (!video) return;
  			console.log('Setting up initial video events');
+ 			
+ 			video.load();
+ 			
+ 			// Multiple attempts to play the video
+ 			function attemptPlay() {
+ 				const playPromise = video.play();
+ 				if (playPromise !== undefined) {
+ 					playPromise.then(() => {
+ 						console.log('Video playing successfully');
+ 						document.body.classList.remove('fallback-mode');
+ 						document.querySelector('.fallback-background-div').style.display = 'none';
+ 					}).catch((error) => {
+ 						console.error('Video play failed:', error);
+ 						// Try again after a short delay
+ 						setTimeout(attemptPlay, 500);
+ 					});
+ 				}
+ 			}
+ 			
+ 			// Start playing attempts
+ 			attemptPlay();
+ 			
  			video.addEventListener('canplay', function() {
  				console.log('Initial video can play');
+ 				attemptPlay(); // Try to play again when it can play
  				document.body.classList.remove('fallback-mode');
  				document.querySelector('.fallback-background-div').style.display = 'none';
  			});
@@ -343,15 +367,33 @@
  			});
  			video.addEventListener('loadeddata', function() {
  				console.log('Initial video loaded data');
+ 				attemptPlay(); // Try to play again when data is loaded
  				document.body.classList.remove('fallback-mode');
  				document.querySelector('.fallback-background-div').style.display = 'none';
  			});
+ 			
+ 			// Check if video is actually playing after a delay
  			setTimeout(function() {
  				console.log('Initial video readyState:', video.readyState);
- 				if (video.readyState < 2) {
- 					console.log('Initial video taking too long - switching to fallback');
- 					document.body.classList.add('fallback-mode');
- 					document.querySelector('.fallback-background-div').style.display = 'block';
+ 				console.log('Video paused:', video.paused);
+ 				console.log('Video currentTime:', video.currentTime);
+ 				
+ 				if (video.readyState < 2 || video.paused) {
+ 					console.log('Video not playing - attempting one more time');
+ 					attemptPlay();
+ 					
+ 					// Final fallback check
+ 					setTimeout(function() {
+ 						if (video.paused) {
+ 							console.log('Video still not playing - switching to fallback');
+ 							document.body.classList.add('fallback-mode');
+ 							document.querySelector('.fallback-background-div').style.display = 'block';
+ 						} else {
+ 							console.log('Video playing successfully');
+ 							document.body.classList.remove('fallback-mode');
+ 							document.querySelector('.fallback-background-div').style.display = 'none';
+ 						}
+ 					}, 1000);
  				} else {
  					console.log('Initial video loaded successfully');
  					document.body.classList.remove('fallback-mode');
