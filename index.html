@@ -17,30 +17,33 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Droid+Serif&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Open+Sans&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="HomeStyling.css" media="Mobile">
+	
+	<link rel="preload" href="site-resources/midtown.mp4" as="video" type="video/mp4">
 </head>
 
 <body class="page-fade">
- <!-- Update main English video -->
+
  <video class="video-background active-video" autoplay muted loop playsinline preload="auto" data-lang="en" fetchpriority="high" data-playback-rate="0.75">
   <source src="site-resources/midtown.mp4" type="video/mp4">
   Your browser does not support the video tag.
  </video>
  
- <!-- Preload all videos -->
- <video class="video-background" muted loop playsinline preload="auto" data-lang="fr" style="display: none;" fetchpriority="low" data-playback-rate="0.75">
-  <source src="site-resources/nice.mp4" type="video/mp4">
-  Your browser does not support the video tag.
- </video>
- 
- <video class="video-background" muted loop playsinline preload="auto" data-lang="es" style="display: none;" fetchpriority="low">
-  <source src="site-resources/cdmx.mp4" type="video/mp4">
-  Your browser does not support the video tag.
- </video>
- 
- <video class="video-background" muted loop playsinline preload="auto" data-lang="it" style="display: none;" fetchpriority="low" data-playback-rate="0.75">
-  <source src="site-resources/italia.mp4" type="video/mp4">
-  Your browser does not support the video tag.
- </video>
+ <div id="lazy-video-container" style="display: none;">
+  <video class="video-background" muted loop playsinline preload="none" data-lang="fr" style="display: none;" data-playback-rate="0.75">
+   <source src="site-resources/nice.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+  </video>
+  
+  <video class="video-background" muted loop playsinline preload="none" data-lang="es" style="display: none;">
+   <source src="site-resources/cdmx.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+  </video>
+  
+  <video class="video-background" muted loop playsinline preload="none" data-lang="it" style="display: none;" data-playback-rate="0.75">
+   <source src="site-resources/italia.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+  </video>
+ </div>
  
  <img class="hero-background" src="site-resources/Stars.jpg" alt="Stars Background" fetchpriority="high">
  <div class="fallback-background-div" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-image: url('site-resources/Stars.jpg'); background-size: cover; background-position: center; z-index: -3; display: none;"></div>
@@ -128,6 +131,38 @@
 
 
  <script>
+ 	// Video loading optimization
+ 	let lazyVideosLoaded = false;
+ 	let videoCache = new Map();
+ 	
+ 	// Function to load lazy videos in background
+ 	function loadLazyVideos() {
+ 		if (lazyVideosLoaded) return;
+ 		
+ 		const lazyContainer = document.getElementById('lazy-video-container');
+ 		if (!lazyContainer) return;
+ 		
+ 		// Move lazy videos to body and start loading them
+ 		const lazyVideos = lazyContainer.querySelectorAll('video');
+ 		lazyVideos.forEach(video => {
+ 			document.body.appendChild(video);
+ 			video.preload = 'metadata'; // Start loading metadata
+ 			
+ 			// Cache the video element
+ 			const lang = video.getAttribute('data-lang');
+ 			videoCache.set(lang, video);
+ 		});
+ 		
+ 		lazyVideosLoaded = true;
+ 		console.log('Lazy videos loaded in background');
+ 	}
+ 	
+ 	// Load lazy videos after page is fully loaded
+ 	window.addEventListener('load', function() {
+ 		// Small delay to ensure main content is loaded first
+ 		setTimeout(loadLazyVideos, 1000);
+ 	});
+
  	// Language switching functionality with fade animation for text only
  	document.addEventListener('DOMContentLoaded', function() {
  		const langButtons = document.querySelectorAll('.lang-btn');
@@ -143,96 +178,116 @@
  				langButtons.forEach(btn => btn.classList.remove('active'));
  				this.classList.add('active');
  				
- 				// Switch video backgrounds
- 				videos.forEach(video => {
- 					const videoLang = video.getAttribute('data-lang');
- 					console.log('Checking video:', videoLang, 'for language:', selectedLang);
- 					
- 					if (videoLang === selectedLang) {
- 						console.log('Activating video for language:', selectedLang);
- 						
- 												// Show and activate the selected video
-						video.style.display = '';
-						video.classList.add('active-video');
-						video.style.opacity = '1';
-						video.style.visibility = 'visible';
-						
-						// Set playback rate if specified
-						const playbackRate = video.getAttribute('data-playback-rate');
-						if (playbackRate) {
-							video.playbackRate = parseFloat(playbackRate);
-						}
- 						
- 												// Show overlay for specific videos
-						const overlay = document.querySelector('.video-overlay');
-						if (selectedLang === 'fr' || selectedLang === 'en' || selectedLang === 'es' || selectedLang === 'it') {
-							overlay.style.display = 'block';
-							// Set specific opacity for each language
-							if (selectedLang === 'fr') {
-								overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.45)';
-							} else if (selectedLang === 'en') {
-								overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.65)';
-							} else if (selectedLang === 'es') {
-								overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-							} else if (selectedLang === 'it') {
-								overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.35)';
-							}
-						} else {
-							overlay.style.display = 'none';
-						}
- 						
- 						// Try to play the video
- 						video.play().then(() => {
- 							console.log('Video playing successfully for:', selectedLang);
- 							document.body.classList.remove('fallback-mode');
- 							document.querySelector('.fallback-background-div').style.display = 'none';
- 						}).catch((error) => {
- 							console.error('Video play failed for:', selectedLang, error);
- 							document.body.classList.add('fallback-mode');
- 							document.querySelector('.fallback-background-div').style.display = 'block';
- 						});
- 						
- 					} else {
- 						// Hide and pause other videos
- 						video.style.display = 'none';
- 						video.style.opacity = '0';
- 						video.style.visibility = 'hidden';
- 						video.classList.remove('active-video');
- 						video.pause();
+ 				// Handle video switching with lazy loading
+ 				if (selectedLang === 'en') {
+ 					// English video is already loaded
+ 					switchToVideo(selectedLang);
+ 				} else {
+ 					// For other languages, ensure lazy videos are loaded
+ 					if (!lazyVideosLoaded) {
+ 						loadLazyVideos();
  					}
- 				});
+ 					
+ 					// Small delay to ensure video is available
+ 					setTimeout(() => {
+ 						switchToVideo(selectedLang);
+ 					}, 100);
+ 				}
  				
- 								// Fade out all text first
-				const allFadeTexts = document.querySelectorAll('.fade-text');
-				allFadeTexts.forEach(text => {
-					text.classList.add('fade-out');
-					text.classList.remove('fade-in');
-				});
-				
-				// After fade out, show selected content with fade in
-				setTimeout(() => {
-					langContents.forEach(content => {
-						if (content.getAttribute('data-lang') === selectedLang) {
-							content.style.display = 'block';
-							// Trigger fade in for text only
-							setTimeout(() => {
-								const fadeTexts = content.querySelectorAll('.fade-text');
-								fadeTexts.forEach(text => {
-									text.classList.remove('fade-out');
-									text.classList.add('fade-in');
-								});
-							}, 10);
-						} else {
-							content.style.display = 'none';
-							const fadeTexts = content.querySelectorAll('.fade-text');
-							fadeTexts.forEach(text => {
-								text.classList.remove('fade-in', 'fade-out');
-							});
-						}
-					});
-				}, 150); // Smooth transition timing
+ 				// Handle text content switching
+ 				switchTextContent(selectedLang);
  			});
  		});
+ 		
+ 		function switchToVideo(selectedLang) {
+ 			// Hide all videos first
+ 			videos.forEach(video => {
+ 				video.style.display = 'none';
+ 				video.style.opacity = '0';
+ 				video.style.visibility = 'hidden';
+ 				video.classList.remove('active-video');
+ 				video.pause();
+ 			});
+ 			
+ 			// Show selected video
+ 			const targetVideo = document.querySelector(`.video-background[data-lang="${selectedLang}"]`);
+ 			if (targetVideo) {
+ 				console.log('Activating video for language:', selectedLang);
+ 				
+ 				// Show and activate the selected video
+ 				targetVideo.style.display = '';
+ 				targetVideo.classList.add('active-video');
+ 				targetVideo.style.opacity = '1';
+ 				targetVideo.style.visibility = 'visible';
+ 				
+ 				// Set playback rate if specified
+ 				const playbackRate = targetVideo.getAttribute('data-playback-rate');
+ 				if (playbackRate) {
+ 					targetVideo.playbackRate = parseFloat(playbackRate);
+ 				}
+ 				
+ 				// Show overlay for specific videos
+ 				const overlay = document.querySelector('.video-overlay');
+ 				if (selectedLang === 'fr' || selectedLang === 'en' || selectedLang === 'es' || selectedLang === 'it') {
+ 					overlay.style.display = 'block';
+ 					// Set specific opacity for each language
+ 					if (selectedLang === 'fr') {
+ 						overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.45)';
+ 					} else if (selectedLang === 'en') {
+ 						overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.65)';
+ 					} else if (selectedLang === 'es') {
+ 						overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+ 					} else if (selectedLang === 'it') {
+ 						overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.35)';
+ 					}
+ 				} else {
+ 					overlay.style.display = 'none';
+ 				}
+ 				
+ 				// Try to play the video
+ 				targetVideo.play().then(() => {
+ 					console.log('Video playing successfully for:', selectedLang);
+ 					document.body.classList.remove('fallback-mode');
+ 					document.querySelector('.fallback-background-div').style.display = 'none';
+ 				}).catch((error) => {
+ 					console.error('Video play failed for:', selectedLang, error);
+ 					document.body.classList.add('fallback-mode');
+ 					document.querySelector('.fallback-background-div').style.display = 'block';
+ 				});
+ 			}
+ 		}
+ 		
+ 		function switchTextContent(selectedLang) {
+ 			// Fade out all text first
+ 			const allFadeTexts = document.querySelectorAll('.fade-text');
+ 			allFadeTexts.forEach(text => {
+ 				text.classList.add('fade-out');
+ 				text.classList.remove('fade-in');
+ 			});
+				
+ 			// After fade out, show selected content with fade in
+ 			setTimeout(() => {
+ 				langContents.forEach(content => {
+ 					if (content.getAttribute('data-lang') === selectedLang) {
+ 						content.style.display = 'block';
+ 						// Trigger fade in for text only
+ 						setTimeout(() => {
+ 							const fadeTexts = content.querySelectorAll('.fade-text');
+ 							fadeTexts.forEach(text => {
+ 								text.classList.remove('fade-out');
+ 								text.classList.add('fade-in');
+ 							});
+ 						}, 10);
+ 					} else {
+ 						content.style.display = 'none';
+ 						const fadeTexts = content.querySelectorAll('.fade-text');
+ 						fadeTexts.forEach(text => {
+ 							text.classList.remove('fade-in', 'fade-out');
+ 						});
+ 					}
+ 				});
+ 			}, 150); // Smooth transition timing
+ 		}
  	});
 
 

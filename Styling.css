@@ -37,12 +37,21 @@ body.fallback-mode::before {
 	min-width: 100%;
 	min-height: 100%;
 	transition: opacity 0.3s ease-in-out;
+	will-change: opacity; /* Optimize for opacity transitions */
+	transform: translateZ(0); /* Force hardware acceleration */
 }
 
 .video-background.active-video {
 	display: block;
 	opacity: 1;
 	visibility: visible;
+}
+
+/* Optimize video loading performance */
+.video-background:not(.active-video) {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none; /* Prevent interaction with hidden videos */
 }
 
 
