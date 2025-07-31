@@ -19,15 +19,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bentham&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Droid+Serif&family=Josefin+Sans&family=Lora&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Quicksand&family=Raleway&display=swap" rel="stylesheet">
   </head>
 
-  <body class="page-fade subpage">
+  <body class="page-fade subpage blog-page">
 
    <img class="hero-background" src="site-resources/topography.png" alt="Topography Background">
+   <div class="blog-background-image"></div>
+   <div class="blog-gradient-overlay"></div>
    <div class="social-container"><a href="https://www.linkedin.com/in/adamlehodey/" target="blank"><img class="social-icon" src="site-resources/LinkedIn.png" alt="LinkedIn Link"></a></div>
    <div class="homepage-nav"><a class="homepage-nav-link" href="index">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="blog">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="tutoring">INSTRUCTION</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
    <div class="block_1"></div> <hr class="content-divider" />
 
    <div class="container" id="blog-container">
     <!-- Blog posts will be loaded here dynamically -->
+   </div>
+
+   <!-- Background Image Cycler -->
+   <div class="background-cycler">
+     <div class="cycler-info">
+       <span id="current-image-name">posters-stickers.jpg</span>
+       <span id="image-counter">1 of 8</span>
+     </div>
+     <div class="cycler-controls">
+       <button id="prev-image" class="cycler-btn">← Previous</button>
+       <button id="next-image" class="cycler-btn">Next →</button>
+     </div>
    </div>
 
      <script>
@@ -69,7 +83,68 @@
 
   		// Load blog posts from XML
   		loadBlogPosts();
+  		
+  		// Initialize background image cycler
+  		initBackgroundCycler();
+  		
+  		// Highlight current page in navigation
+  		const currentPage = 'blog';
+  		const currentNavLinks = document.querySelectorAll('.homepage-nav-link');
+  		currentNavLinks.forEach(link => {
+  			if (link.getAttribute('href') === currentPage) {
+  				link.classList.add('current-page');
+  			}
+  		});
   	});
+
+  	// Background Image Cycler Functionality
+  	const backgroundImages = [
+  		'posters-stickers.jpg',
+  		'titian-bacchus-ariadne.jpg',
+  		'light-shards.jpg',
+  		'modern-art-gallery.jpg',
+  		'neon.jpg',
+  		'pastoral.jpg',
+  		'essays.jpg',
+  		'art-gallery-exhibit.jpg'
+  	];
+  	
+  	let currentImageIndex = 0;
+  	
+  	function initBackgroundCycler() {
+  		const prevBtn = document.getElementById('prev-image');
+  		const nextBtn = document.getElementById('next-image');
+  		const imageName = document.getElementById('current-image-name');
+  		const imageCounter = document.getElementById('image-counter');
+  		
+  		function updateBackgroundImage() {
+  			const backgroundElement = document.querySelector('.blog-background-image');
+  			if (backgroundElement) {
+  				backgroundElement.style.backgroundImage = `url('../site-resources/cover-photos/${backgroundImages[currentImageIndex]}')`;
+  			}
+  			
+  			// Update display
+  			imageName.textContent = backgroundImages[currentImageIndex];
+  			imageCounter.textContent = `${currentImageIndex + 1} of ${backgroundImages.length}`;
+  		}
+  		
+  		function nextImage() {
+  			currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+  			updateBackgroundImage();
+  		}
+  		
+  		function prevImage() {
+  			currentImageIndex = (currentImageIndex - 1 + backgroundImages.length) % backgroundImages.length;
+  			updateBackgroundImage();
+  		}
+  		
+  		// Add event listeners
+  		nextBtn.addEventListener('click', nextImage);
+  		prevBtn.addEventListener('click', prevImage);
+  		
+  		// Initialize with first image
+  		updateBackgroundImage();
+  	}
 
   	// Function to convert date string to Date object
   	function parseDate(dateStr) {

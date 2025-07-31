@@ -61,6 +61,15 @@
 					});
 				}
 			});
+			
+			// Highlight current page in navigation
+			const currentPage = 'tutoring';
+			const currentNavLinks = document.querySelectorAll('.homepage-nav-link');
+			currentNavLinks.forEach(link => {
+				if (link.getAttribute('href') === currentPage) {
+					link.classList.add('current-page');
+				}
+			});
 		});
 	</script>
 </body>

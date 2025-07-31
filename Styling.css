@@ -493,6 +493,20 @@ body:not(.fallback-mode) .main-content-container {
 	color: rgba(255, 255, 255, 0.8);
 }
 
+/* Current page styling for subpages - desktop/tablet only */
+@media (min-width: 768px) {
+	body.subpage .homepage-nav-link.current-page {
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 3px;
+	}
+}
+
+/* Hide divider on subpages */
+body.subpage .content-divider {
+	display: none;
+}
+
 /* Page Header */
 .page-header {
 	position: absolute;

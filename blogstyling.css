@@ -1,5 +1,217 @@
 /*PEN STYLES*/
 
+/* Blog page background image for top 52% */
+.blog-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 52vh; /* 52% of viewport height */
+  background-image: url('../site-resources/cover-photos/posters-stickers.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  /* CSS mask to make image fade from opaque to transparent */
+  -webkit-mask: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  mask: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+/* Blog page gradient overlay */
+.blog-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 52vh; /* Same height as background image */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Ensure topography background stays fixed on blog page */
+body.subpage .hero-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Blog-specific topography background - fixed only on blog page */
+.blog-page .hero-background {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Override any conflicting rules with maximum specificity */
+body.blog-page .hero-background {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: cover !important;
+  z-index: -2 !important;
+}
+
+/* Override the body background attachment for blog page */
+body.blog-page {
+  background-attachment: fixed !important;
+}
+
+/* Blog container positioning for desktop and tablet */
+@media (min-width: 768px) {
+  #blog-container {
+    margin-top: 15vh; /* Moved up from 22.22vh */
+    padding-top: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Ensure cards have proper background over the image */
+  .blog-card,
+  .blog-card-featured {
+    background: #fff;
+    box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Make divider bar white on blog page */
+  body.subpage .content-divider {
+    background: white !important;
+  }
+}
+
+/* Mobile styles - background image with smaller height */
+@media (max-width: 767px) {
+  .blog-background-image {
+    height: 40vh; /* Smaller height for mobile */
+  }
+  
+  .blog-gradient-overlay {
+    height: 40vh; /* Same height as background image */
+  }
+  
+  #blog-container {
+    margin-top: 10vh; /* Adjusted for smaller background */
+    padding-top: 1rem;
+  }
+  
+  .background-cycler {
+    display: none;
+  }
+  
+  /* White text for navigation and divider on mobile */
+  body.subpage .homepage-nav-link {
+    color: white !important;
+  }
+  
+
+  
+  body.subpage .nav-separator {
+    color: white !important;
+  }
+  
+  body.subpage .content-divider {
+    background: white !important;
+  }
+}
+
+/* Background Image Cycler Styles */
+.background-cycler {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Bodoni Moda', serif;
+}
+
+.cycler-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+#current-image-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#image-counter {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.cycler-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.cycler-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Bodoni Moda', serif;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.cycler-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.cycler-btn:active {
+  transform: scale(0.95);
+}
+
+/* Ensure navigation elements are visible over background image */
+@media (min-width: 768px) {
+  body.subpage .homepage-nav,
+  body.subpage .homepage-nav-link,
+  body.subpage .nav-separator,
+  body.subpage .social-container {
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Change menu color to white on blog page only */
+  body.subpage .homepage-nav-link {
+    color: white !important;
+  }
+  
+  /* Current page styling for blog page */
+  body.subpage .homepage-nav-link.current-page {
+    text-decoration: underline !important;
+    text-decoration-thickness: 1px !important;
+    text-underline-offset: 3px !important;
+  }
+  
+  body.subpage .nav-separator {
+    color: white !important;
+  }
+}
+
 .blog-card {
   box-sizing: border-box;
   display: -webkit-box;
