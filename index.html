@@ -12,22 +12,53 @@
   <meta name="description" content="Adam Lehodey is an explorer; a lover of great ideas and great people and great places. Visit his website to access his portfolio and essays on economics, philosophy and literature.">
   <meta name="author" content="Adam Louis Sebastian Lehodey">
 
-	<link rel="stylesheet" type="text/css" href="Styling.css">
+	<!-- Resource hints for faster loading -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Droid+Serif&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Open+Sans&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="HomeStyling.css" media="Mobile">
+	<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+	<link rel="dns-prefetch" href="https://fonts.gstatic.com">
 	
+	<!-- Preload critical resources -->
 	<link rel="preload" href="site-resources/midtown.mp4" as="video" type="video/mp4">
+	<link rel="preload" href="site-resources/Stars.jpg" as="image">
+	<link rel="preload" href="site-resources/ProfilePicture.jpg" as="image">
+	<link rel="preload" href="site-resources/LinkedIn.png" as="image">
+	<link rel="preload" href="Styling.css" as="style">
+	
+	<!-- Critical CSS inlined for above-the-fold content -->
+	<style>
+		/* Critical CSS for immediate rendering */
+		html, body { margin: 0; padding: 0; }
+		.page-fade { opacity: 0; transition: opacity 0.5s ease-in-out; }
+		.page-fade.fade-in { opacity: 1; }
+		.video-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2; }
+		.hero-container { width: 60vw; height: auto; top: 25vh; margin-left: 5vw; position: absolute; z-index: 2; }
+		.hero-name { text-align: left; font-size: 4.2vw; font-weight: 500; font-family: "Libre Bodoni", serif; letter-spacing: 0.15vw; line-height: 1.1; margin-bottom: 1vh; text-transform: uppercase; color: white; }
+		.hero-subtitle { text-align: left; font-size: 1.5vw; font-weight: 400; font-family: "Bodoni Moda", serif; letter-spacing: 0.05vw; color: rgba(255, 255, 255, 0.9); }
+		.homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-top: 5vh; margin-left: 5vw; font-family: "Bodoni Moda", serif; font-size: 1.4vw; font-weight: 300; color: white; z-index: 2; }
+		.social-container { position: relative; margin-right: 5vw; margin-bottom: 0px; z-index: 2; }
+		.social-icon { width: 2vw; margin: 1vw; margin-top: 5vh; float: right; }
+		@media (max-width: 1000px) {
+			.hero-name { font-size: 42px; text-align: center; }
+			.hero-subtitle { font-size: 16px; text-align: center; }
+			.homepage-nav { font-size: 16px; text-align: center; width: 90vw; margin-left: 5vw; }
+			.social-icon { width: 4vw; }
+		}
+	</style>
+
+	<link rel="stylesheet" type="text/css" href="Styling.css">
+	<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Droid+Serif&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Open+Sans&display=swap" rel="stylesheet">
+
 </head>
 
 <body class="page-fade">
-
+ <!-- Main English video - loads immediately -->
  <video class="video-background active-video" autoplay muted loop playsinline preload="auto" data-lang="en" fetchpriority="high" data-playback-rate="0.75">
   <source src="site-resources/midtown.mp4" type="video/mp4">
   Your browser does not support the video tag.
  </video>
  
+ <!-- Lazy-loaded videos - only created when needed -->
  <div id="lazy-video-container" style="display: none;">
   <video class="video-background" muted loop playsinline preload="none" data-lang="fr" style="display: none;" data-playback-rate="0.75">
    <source src="site-resources/nice.mp4" type="video/mp4">
@@ -45,14 +76,14 @@
   </video>
  </div>
  
- <img class="hero-background" src="site-resources/Stars.jpg" alt="Stars Background" fetchpriority="high">
+ <img class="hero-background" src="site-resources/Stars.jpg" alt="Stars Background" fetchpriority="high" loading="eager">
  <div class="fallback-background-div" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-image: url('site-resources/Stars.jpg'); background-size: cover; background-position: center; z-index: -3; display: none;"></div>
  <div class="video-overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.4); z-index: -1; display: none; pointer-events: none;"></div>
  <div class="hero-container">
  	<div class="hero-name">ADAM LOUIS SEBASTIAN LEHODEY</div>
  	<div class="hero-subtitle">is an investigative reporter, explorer and thinker based in New York City.</div>
  </div>
- <div class="social-container"><a href="https://www.linkedin.com/in/adamlehodey/" target="blank"><img class="social-icon" src="site-resources/LinkedIn.png" alt="LinkedIn Link"></a></div>
+ <div class="social-container"><a href="https://www.linkedin.com/in/adamlehodey/" target="blank"><img class="social-icon" src="site-resources/LinkedIn.png" alt="LinkedIn Link" loading="eager"></a></div>
  <div class="homepage-nav"><a class="homepage-nav-link" href="blog">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="tutoring" target="blank">INSTRUCTION</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
  <div class="block_1"></div> <hr class="content-divider" />
  
@@ -65,7 +96,7 @@
  					<p class="fade-text"><strong>ADAM LOUIS SEBASTIAN LEHODEY</strong>. What drives me is a desire to grow, learn, and explore. Over the past few years I've done just that, having taken two gap-years after sixth form. I spent my time working for a Member of the British Parliament where I gained a deep understanding of British and international politics, foreign affairs, and research methodology. I also leveraged this time to travel extensively across Europe and North America, an unforgettable experience.  Now studying on a dual-degree programme between SciencesPo Paris and Columbia University, New York, the aim is to consolidate and reinforce my understanding of economics, history, and mathematics.</p>
  				</div>
  								<div class="profile-column">
-					<img class="profile-image" src="site-resources/ProfilePicture.jpg" alt="Profile Picture">
+					<img class="profile-image" src="site-resources/ProfilePicture.jpg" alt="Profile Picture" loading="eager">
 				</div>
  				<div class="about-text">
  					<p class="fade-text">Fluent in French, English, Spanish, and learning Italian, <i>se ve que me encantan los idiomas.</i> I express this through my writing, of which one of the greatest inspirations for the essays and articles I write on my blog are conversations I've had with friends and others I've met on my journeys. My motivation to write is to share and develop my own ideas, to start a conversation, and because prose is inherently beautiful. If you're interested in ideas on subjects as varied as philosophy, cultural history, and urbanism, check out my <a href="blog">'essays and articles'</a> page now. For any business or personal enquiries, please reach out via the <a href="contact">'contact me'</a> page. -Adam<br></p>
@@ -79,7 +110,7 @@
  					<p class="fade-text"><strong>ADAM LOUIS SEBASTIAN LEHODEY</strong>. Ce qui me motive, c'est un désir de grandir, d'apprendre et d'explorer. Au cours des dernières années, j'ai fait exactement cela, en prenant deux années sabbatiques après le lycée. J'ai passé mon temps à travailler pour un député britannique où j'ai acquis une compréhension approfondie de la politique britannique et internationale, des affaires étrangères et de la méthodologie de recherche. J'ai également profité de cette période pour voyager largement à travers l'Europe et l'Amérique du Nord, une expérience inoubliable. Maintenant étudiant dans un programme de double diplôme entre SciencesPo Paris et l'Université Columbia de New York, l'objectif est de consolider et renforcer ma compréhension de l'économie, de l'histoire et des mathématiques.</p>
  				</div>
  								<div class="profile-column">
-					<img class="profile-image" src="site-resources/ProfilePicture.jpg" alt="Photo de profil">
+					<img class="profile-image" src="site-resources/ProfilePicture.jpg" alt="Photo de profil" loading="eager">
 				</div>
  				<div class="about-text">
  					<p class="fade-text">Parlant couramment français, anglais, espagnol, et l'italien, <i>se ve que me encantan los idiomas.</i> J'exprime cela à travers mon écriture, dont l'une des plus grandes inspirations pour les essais et articles que j'écris sur mon blog sont les conversations que j'ai eues avec des amis et d'autres personnes que j'ai rencontrées lors de mes voyages. Ma motivation pour écrire est de partager et développer mes propres idées, de commencer une conversation, et parce que la prose est intrinsèquement belle. Si vous êtes intéressé par des idées sur des sujets aussi variés que la philosophie, l'histoire culturelle et l'urbanisme, consultez maintenant ma page <a href="blog">'essais et articles'</a>. Pour toute demande commerciale ou personnelle, veuillez me contacter via la page <a href="contact">'contactez-moi'</a>. -Adam<br></p>
@@ -93,7 +124,7 @@
  					<p class="fade-text"><strong>ADAM LOUIS SEBASTIAN LEHODEY</strong>. Lo que me impulsa es un deseo de crecer, aprender y explorar. Durante los últimos años he hecho exactamente eso, tomando dos años sabáticos después del instituto. Pasé mi tiempo trabajando para un Miembro del Parlamento Británico donde adquirí una comprensión profunda de la política británica e internacional, asuntos exteriores y metodología de investigación. He aprovechado este tiempo para viajar extensamente por Europa y América del Norte, una experiencia inolvidable. Ahora estudiando en un programa de doble titulación entre SciencesPo París y la Universidad de Columbia, Nueva York, el objetivo es consolidar y reforzar mi comprensión de la economía, la historia y las matemáticas.</p>
  				</div>
  								<div class="profile-column">
-					<img class="profile-image" src="site-resources/ProfilePicture.jpg" alt="Foto de perfil">
+					<img class="profile-image" src="site-resources/ProfilePicture.jpg" alt="Foto de perfil" loading="eager">
 				</div>
  				<div class="about-text">
  					<p class="fade-text">Fluido en francés, inglés, español, y aprendiendo italiano, <i>se ve que me encantan los idiomas.</i> Expreso esto a través de mi escritura, de la cual una de las mayores inspiraciones para los ensayos y artículos que escribo en mi blog son las conversaciones que he tenido con amigos y otras personas que he conocido en mis viajes. Mi motivación para escribir es compartir y desarrollar mis propias ideas, iniciar una conversación, y porque la prosa es intrínsecamente hermosa. Si te interesan las ideas sobre temas tan variados como la filosofía, la historia cultural y el urbanismo, revisa mi página de <a href="blog">'ensayos y artículos'</a> ahora. Para cualquier consulta comercial o personal, por favor contacta a través de la página <a href="contact">'contáctame'</a>. -Adam<br></p>
@@ -107,7 +138,7 @@
  					<p class="fade-text"><strong>ADAM LOUIS SEBASTIAN LEHODEY</strong>. Ciò che mi spinge è un desiderio di crescere, imparare ed esplorare. Negli ultimi anni ho fatto esattamente questo, prendendo due anni sabbatici dopo il liceo. Ho trascorso il mio tempo lavorando per un Membro del Parlamento Britannico dove ho acquisito una comprensione profonda della politica britannica e internazionale, degli affari esteri e della metodologia di ricerca. Ho anche sfruttato questo tempo per viaggiare estesamente attraverso l'Europa e il Nord America, un'esperienza indimenticabile. Ora studio in un programma di doppia laurea tra SciencesPo Parigi e l'Università di Columbia, New York, l'obiettivo è consolidare e rafforzare la mia comprensione dell'economia, della storia e della matematica.</p>
  				</div>
  								<div class="profile-column">
-					<img class="profile-image" src="site-resources/ProfilePicture.jpg" alt="Foto del profilo">
+					<img class="profile-image" src="site-resources/ProfilePicture.jpg" alt="Foto del profilo" loading="eager">
 				</div>
  				<div class="about-text">
  					<p class="fade-text">Fluente in francese, inglese, spagnolo, e imparando l'italiano, <i>se ve que me encantan los idiomas.</i> Esprimo questo attraverso la mia scrittura, di cui una delle più grandi ispirazioni per i saggi e articoli che scrivo sul mio blog sono le conversazioni che ho avuto con amici e altre persone che ho incontrato nei miei viaggi. La mia motivazione per scrivere è condividere e sviluppare le mie idee, iniziare una conversazione, e perché la prosa è intrinsecamente bella. Se sei interessato a idee su argomenti così vari come filosofia, storia culturale e urbanistica, controlla ora la mia pagina di <a href="blog">'saggi e articoli'</a>. Per qualsiasi richiesta commerciale o personale, contattami tramite la pagina <a href="contact">'contattami'</a>. -Adam<br></p>

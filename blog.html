@@ -1,100 +1,132 @@
-  <!DOCTYPE html>
-  <head>
-    <link rel="shortcut icon" href="/site-resources/favicon.png" type="image/x-icon">
-    <link rel="icon" href="/site-resources/favicon.png" type="image/x-icon">
-    <title>BLOG</title>
-    <link rel="stylesheet" type="text/css" href="Styling.css">
-    <link rel="stylesheet" type="text/css" href="blogstyling.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta charset="UTF-8">
-    
-    <meta name="keywords" content="Adam Lehodey, Lehodey, Adam Louis Sebastian Lehodey, Adventures, Ideas, Global Denizen"> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>BLOG</title>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="/site-resources/favicon.png" type="image/x-icon">
+  <link rel="icon" href="/site-resources/favicon.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   
-    <meta name="author" content="Adam Louis Sebastian Lehodey">
+  <meta name="keywords" content="Adam Lehodey, Lehodey, Adam Louis Sebastian Lehodey, Adventures, Ideas, Global Denizen"> 
+  <meta name="description" content="Adam Lehodey: Blog. Explore my work and opinion pieces from across the internet, all in one convenient place.">
+  <meta name="author" content="Adam Louis Sebastian Lehodey">
 
-    <meta name="description" content="Adam Lehodey: Blog. Exlore my work and opinion pieces from across the internat, all in one convenient place.">
+  <!-- Resource hints for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="site-resources/topography.png" as="image">
+  <link rel="preload" href="site-resources/cover-photos/posters-stickers.jpg" as="image">
+  <link rel="preload" href="site-resources/LinkedIn.png" as="image">
+  <link rel="preload" href="Styling.css" as="style">
+  <link rel="preload" href="blogstyling.css" as="style">
+  <link rel="preload" href="blog-posts.xml" as="fetch" crossorigin>
+  
+  <!-- Critical CSS inlined for above-the-fold content -->
+  <style>
+    /* Critical CSS for immediate rendering */
+    html, body { margin: 0; padding: 0; }
+    .page-fade { opacity: 0; transition: opacity 0.5s ease-in-out; }
+    .page-fade.fade-in { opacity: 1; }
+    .hero-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2; }
+    .homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-top: 5vh; margin-left: 5vw; font-family: "Bodoni Moda", serif; font-size: 1.4vw; font-weight: 300; color: black; z-index: 2; }
+    .social-container { position: relative; margin-right: 5vw; margin-bottom: 0px; z-index: 2; }
+    .social-icon { width: 2vw; margin: 1vw; margin-top: 5vh; float: right; }
+    .blog-background-image { position: absolute; top: 0; left: 0; width: 100vw; height: 52vh; background-image: url('../site-resources/cover-photos/posters-stickers.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: -1; }
+    .blog-gradient-overlay { position: absolute; top: 0; left: 0; width: 100vw; height: 52vh; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)); z-index: 0; pointer-events: none; }
+    #blog-container { margin-top: 15vh; padding-top: 2rem; position: relative; z-index: 1; }
+    @media (max-width: 768px) {
+      .homepage-nav { font-size: 16px; text-align: center; width: 90vw; margin-left: 5vw; }
+      .social-icon { width: 4vw; }
+      .blog-background-image { height: 40vh; }
+      .blog-gradient-overlay { height: 40vh; }
+      #blog-container { margin-top: 10vh; }
+    }
+  </style>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bentham&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Droid+Serif&family=Josefin+Sans&family=Lora&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Quicksand&family=Raleway&display=swap" rel="stylesheet">
-  </head>
+  <link rel="stylesheet" type="text/css" href="Styling.css">
+  <link rel="stylesheet" type="text/css" href="blogstyling.css">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bentham&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Droid+Serif&family=Josefin+Sans&family=Lora&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Quicksand&family=Raleway&display=swap" rel="stylesheet">
+</head>
 
-  <body class="page-fade subpage blog-page">
+<body class="page-fade subpage blog-page">
+  <img class="hero-background" src="site-resources/topography.png" alt="Topography Background" loading="eager">
+  <div class="blog-background-image"></div>
+  <div class="blog-gradient-overlay"></div>
+  <div class="social-container"><a href="https://www.linkedin.com/in/adamlehodey/" target="blank"><img class="social-icon" src="site-resources/LinkedIn.png" alt="LinkedIn Link" loading="eager"></a></div>
+  <div class="homepage-nav"><a class="homepage-nav-link" href="index">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="blog">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="tutoring">INSTRUCTION</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
+  <div class="block_1"></div> <hr class="content-divider" />
 
-   <img class="hero-background" src="site-resources/topography.png" alt="Topography Background">
-   <div class="blog-background-image"></div>
-   <div class="blog-gradient-overlay"></div>
-   <div class="social-container"><a href="https://www.linkedin.com/in/adamlehodey/" target="blank"><img class="social-icon" src="site-resources/LinkedIn.png" alt="LinkedIn Link"></a></div>
-   <div class="homepage-nav"><a class="homepage-nav-link" href="index">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="blog">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="tutoring">INSTRUCTION</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
-   <div class="block_1"></div> <hr class="content-divider" />
+  <div class="container" id="blog-container">
+   <!-- Blog posts will be loaded here dynamically -->
+  </div>
 
-   <div class="container" id="blog-container">
-    <!-- Blog posts will be loaded here dynamically -->
-   </div>
+  <!-- Background Image Cycler -->
+  <div class="background-cycler">
+    <div class="cycler-info">
+      <span id="current-image-name">posters-stickers.jpg</span>
+      <span id="image-counter">1 of 8</span>
+    </div>
+    <div class="cycler-controls">
+      <button id="prev-image" class="cycler-btn">← Previous</button>
+      <button id="next-image" class="cycler-btn">Next →</button>
+    </div>
+  </div>
 
-   <!-- Background Image Cycler -->
-   <div class="background-cycler">
-     <div class="cycler-info">
-       <span id="current-image-name">posters-stickers.jpg</span>
-       <span id="image-counter">1 of 8</span>
-     </div>
-     <div class="cycler-controls">
-       <button id="prev-image" class="cycler-btn">← Previous</button>
-       <button id="next-image" class="cycler-btn">Next →</button>
-     </div>
-   </div>
-
-     <script>
-   	// Page fade transition
-   	document.addEventListener('DOMContentLoaded', function() {
-   		// Use fallback background since no video is present
+  <script>
+  	// Page fade transition
+  	document.addEventListener('DOMContentLoaded', function() {
+  		// Use fallback background since no video is present
 		const fallbackBg = document.querySelector('.fallback-background');
 		if (fallbackBg) {
 			fallbackBg.style.display = 'block';
 		}
-   		
-  		// Fade in the page when it loads
-  		document.body.classList.add('fade-in');
   		
-  		// Handle navigation links for fade out effect
-  		const navLinks = document.querySelectorAll('a[href]');
-  		navLinks.forEach(link => {
-  			// Only apply to internal links (not external or same page)
-  			const href = link.getAttribute('href');
-  			if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
-  				link.addEventListener('click', function(e) {
-  					// Don't apply to links that open in new tabs
-  					if (!link.hasAttribute('target') || link.getAttribute('target') !== 'blank') {
-  						e.preventDefault();
-  						const targetUrl = this.getAttribute('href');
-  						
-  						// Fade out current page
-  						document.body.classList.remove('fade-in');
-  						document.body.classList.add('fade-out');
-  						
-  						// Navigate to new page after fade out
-  						setTimeout(() => {
-  							window.location.href = targetUrl;
-  						}, 500);
-  					}
-  				});
-  			}
-  		});
+ 		// Fade in the page when it loads
+ 		document.body.classList.add('fade-in');
+  		
+ 		// Handle navigation links for fade out effect
+ 		const navLinks = document.querySelectorAll('a[href]');
+ 		navLinks.forEach(link => {
+ 			// Only apply to internal links (not external or same page)
+ 			const href = link.getAttribute('href');
+ 			if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+ 				link.addEventListener('click', function(e) {
+ 					// Don't apply to links that open in new tabs
+ 					if (!link.hasAttribute('target') || link.getAttribute('target') !== 'blank') {
+ 						e.preventDefault();
+ 						const targetUrl = this.getAttribute('href');
+ 						
+ 						// Fade out current page
+ 						document.body.classList.remove('fade-in');
+ 						document.body.classList.add('fade-out');
+ 						
+ 						// Navigate to new page after fade out
+ 						setTimeout(() => {
+ 							window.location.href = targetUrl;
+ 						}, 500);
+ 					}
+ 				});
+ 			}
+ 		});
 
-  		// Load blog posts from XML
-  		loadBlogPosts();
+ 		// Load blog posts from XML
+ 		loadBlogPosts();
   		
-  		// Initialize background image cycler
-  		initBackgroundCycler();
+ 		// Initialize background image cycler
+ 		initBackgroundCycler();
   		
-  		// Highlight current page in navigation
-  		const currentPage = 'blog';
-  		const currentNavLinks = document.querySelectorAll('.homepage-nav-link');
-  		currentNavLinks.forEach(link => {
-  			if (link.getAttribute('href') === currentPage) {
-  				link.classList.add('current-page');
-  			}
-  		});
+ 		// Highlight current page in navigation
+ 		const currentPage = 'blog';
+ 		const currentNavLinks = document.querySelectorAll('.homepage-nav-link');
+ 		currentNavLinks.forEach(link => {
+ 			if (link.getAttribute('href') === currentPage) {
+ 				link.classList.add('current-page');
+ 			}
+ 		});
   	});
 
   	// Background Image Cycler Functionality
@@ -271,12 +303,5 @@
   		`;
   	}
   </script>
-
 </body>
-
-
-<!-- VIDEO TEMPLATE     <div class="BlogPost"><h2 class="ContentTitle">UN A-LEVEL EN FRANÇAIS</h2>
-    <div class="PostInfo">19/01/2018 // ADAM LEHODEY</div>
-      <p>Allez voir ma nouvelle vidéo sur mon expérience du A-Level en Français en tant que français! For any non-french people, it's a video about my experience with French A-Level, all in french.<div class="videoWrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/nolink" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></p><br>
-    </div>
-  -->
+</html>
