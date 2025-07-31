@@ -17,6 +17,8 @@
   mask: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   /* Smooth transition for background changes */
   transition: background-image 0.8s ease-in-out;
+  will-change: transform;
+  transform: translate3d(0,0,0); /* Force hardware acceleration */
 }
 
 /* Blog page gradient overlay */
@@ -204,6 +206,8 @@ body.blog-page {
   transition: -webkit-transform .2s;
   transition: transform .2s;
   transition: transform .2s, -webkit-transform .2s;
+  will-change: transform;
+  transform: translate3d(0,0,0); /* Force hardware acceleration */
 }
 .blog-card .details,
 .blog-card .details ul {
@@ -401,6 +405,8 @@ body.blog-page {
     position: relative;
     margin-top: 30px; /* This ensures the photo doesn't overlap the banner */
     transition: none; /* Disable transition effects */
+    will-change: transform;
+    transform: translate3d(0,0,0); /* Force hardware acceleration */
 }
 
 .blog-card-featured .photo:hover {
@@ -536,6 +542,8 @@ body.blog-page {
     text-align: center;
   }
 }
+
+
 
 /* Blog Filter Bar Styles */
 .blog-filter-bar {

@@ -25,6 +25,12 @@
   <link rel="preload" href="blogstyling.css" as="style">
   <link rel="preload" href="blog-posts.xml" as="fetch" crossorigin>
   
+  <!-- Preload blog background images for instant switching -->
+  <link rel="preload" href="site-resources/cover-photos/essays.jpg" as="image">
+  <link rel="preload" href="site-resources/cover-photos/contemporary-art.jpg" as="image">
+  <link rel="preload" href="site-resources/cover-photos/expressionist-art.jpg" as="image">
+  <link rel="preload" href="site-resources/cover-photos/etching.jpg" as="image">
+  
   <!-- Critical CSS inlined for above-the-fold content -->
   <style>
     /* Critical CSS for immediate rendering */
@@ -108,18 +114,49 @@
  			}
  		});
 
- 		// Load blog posts from XML
- 		loadBlogPosts();
+ 		  		// Preload background images for instant switching
+  		preloadBackgroundImages();
   		
- 		// Highlight current page in navigation
- 		const currentPage = 'blog';
- 		const currentNavLinks = document.querySelectorAll('.homepage-nav-link');
- 		currentNavLinks.forEach(link => {
- 			if (link.getAttribute('href') === currentPage) {
- 				link.classList.add('current-page');
- 			}
- 		});
+  		// Load blog posts from XML
+  		loadBlogPosts();
+  		
+  		// Highlight current page in navigation
+  		const currentPage = 'blog';
+  		const currentNavLinks = document.querySelectorAll('.homepage-nav-link');
+  		currentNavLinks.forEach(link => {
+  			if (link.getAttribute('href') === currentPage) {
+  				link.classList.add('current-page');
+  			}
+  		});
+  		
+  		// Initialize lazy loading for blog post images
+  		initLazyLoading();
   	});
+  	
+  	// Lazy loading for blog post images
+  	function initLazyLoading() {
+  		const imageObserver = new IntersectionObserver((entries, observer) => {
+  			entries.forEach(entry => {
+  				if (entry.isIntersecting) {
+  					const photo = entry.target;
+  					const src = photo.getAttribute('data-src');
+  					if (src) {
+  						photo.style.backgroundImage = `url('${src}')`;
+  						photo.removeAttribute('data-src');
+  						observer.unobserve(photo);
+  					}
+  				}
+  			});
+  		}, {
+  			rootMargin: '50px 0px',
+  			threshold: 0.1
+  		});
+  		
+  		// Observe all photo elements with data-src
+  		document.querySelectorAll('.photo[data-src]').forEach(photo => {
+  			imageObserver.observe(photo);
+  		});
+  	}
 
   	// Function to convert date string to Date object
   	function parseDate(dateStr) {
@@ -225,6 +262,9 @@
   		while (temp.firstChild) {
   			container.appendChild(temp.firstChild);
   		}
+  		
+  		// Reinitialize lazy loading for new content
+  		initLazyLoading();
   	}
   	
   	// Function to initialize filter buttons
@@ -244,6 +284,22 @@
   		});
   	}
   	
+  	// Background image mapping for efficient switching
+  	const backgroundImages = {
+  		'all': 'site-resources/cover-photos/essays.jpg',
+  		'Analysis': 'site-resources/cover-photos/contemporary-art.jpg',
+  		'Essays': 'site-resources/cover-photos/expressionist-art.jpg',
+  		'Prose/Verse': 'site-resources/cover-photos/etching.jpg'
+  	};
+  	
+  	// Preload background images for instant switching
+  	function preloadBackgroundImages() {
+  		Object.values(backgroundImages).forEach(src => {
+  			const img = new Image();
+  			img.src = src;
+  		});
+  	}
+  	
   	// Function to filter posts
   	function filterPosts(filter) {
   		currentFilter = filter;
@@ -255,21 +311,13 @@
   			filteredPosts = allPosts.filter(post => post.type === filter);
   		}
   		
-  		// Change background image based on filter
+  		// Change background image based on filter using optimized method
   		const backgroundElement = document.querySelector('.blog-background-image');
   		if (backgroundElement) {
-  			if (filter === 'all') {
-  				backgroundElement.style.backgroundImage = "url('../site-resources/cover-photos/essays.jpg')";
-  			} else if (filter === 'Analysis') {
-  				backgroundElement.style.backgroundImage = "url('../site-resources/cover-photos/contemporary-art.jpg')";
-  			} else if (filter === 'Essays') {
-  				backgroundElement.style.backgroundImage = "url('../site-resources/cover-photos/expressionist-art.jpg')";
-  			} else if (filter === 'Prose/Verse') {
-  				backgroundElement.style.backgroundImage = "url('../site-resources/cover-photos/etching.jpg')";
-  			} else {
-  				// Keep current background for other filters
-  				backgroundElement.style.backgroundImage = "url('../site-resources/cover-photos/essays.jpg')";
-  			}
+  			const newImage = backgroundImages[filter] || backgroundImages['all'];
+  			// Use transform3d to force hardware acceleration
+  			backgroundElement.style.transform = 'translate3d(0,0,0)';
+  			backgroundElement.style.backgroundImage = `url('${newImage}')`;
   		}
   		
   		displayPosts(filteredPosts);
@@ -280,7 +328,7 @@
   		return `
   			<div class="blog-card-featured">
   				<div class="featured-banner">featured</div>
-  				<div class="photo" style="background-image: url(${post.image});"></div>
+  				<div class="photo" data-src="${post.image}" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmMGYwZjAiLz48L3N2Zz4=');"></div>
   				<div class="description">
   					<h1>${post.title}</h1>
   					<h2>${post.subtitle}</h2>
@@ -299,7 +347,7 @@
   		return `
   			<div class="blog-card${altClassStr}">
   				<div class="meta">
-  					<div class="photo" style="background-image: url('${post.image}');"></div>
+  					<div class="photo" data-src="${post.image}" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmMGYwZjAiLz48L3N2Zz4=');"></div>
   					<ul class="details">
   						<li class="author">${post.author}</li>
   						<li class="date">${post.date}</li>
