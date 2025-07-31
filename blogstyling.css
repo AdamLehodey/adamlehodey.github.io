@@ -133,17 +133,20 @@ body.blog-page {
   body.subpage .content-divider {
     background: white !important;
   }
+  
+
 }
 
 /* Ensure navigation elements are visible over background image */
 @media (min-width: 768px) {
   body.subpage .homepage-nav,
   body.subpage .homepage-nav-link,
-  body.subpage .nav-separator,
-  body.subpage .social-container {
+  body.subpage .nav-separator {
     position: relative;
     z-index: 10;
   }
+  
+
   
   /* Change menu color to white on blog page only */
   body.subpage .homepage-nav-link {
@@ -675,3 +678,4 @@ body.blog-page {
     border-radius: 0;
   }
 }
+

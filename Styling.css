@@ -4,6 +4,7 @@ html, body {
 	margin: 0px;
 	padding: 0px;
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 /* VIDEO BACKGROUND // */
@@ -30,7 +31,7 @@ body.fallback-mode::before {
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 100vw;
+	width: 100%;
 	height: 100vh;
 	object-fit: cover;
 	z-index: -2;
@@ -122,7 +123,6 @@ a {
 	display: inline-block;
 	vertical-align: top;
 	line-height: 1;
-	margin-top: 5vh;
 	margin-left: 5vw;
 	align-content: center;
 	font-family: "Bodoni Moda", serif;
@@ -134,6 +134,78 @@ a {
 
 .homepage-nav-link {
 	overflow-wrap: inherit;
+}
+
+/* Hide HOME link on homepage (when not on a subpage) */
+body:not(.subpage) .homepage-nav-link[href="/"] {
+	display: none;
+}
+
+/* Hide separator before HOME link on homepage */
+body:not(.subpage) .homepage-nav-link[href="/"] + .nav-separator {
+	display: none;
+}
+
+/* Subpage navbar and social icons styling - matching blog page spacing but with black color */
+body.subpage:not(.blog-page) .homepage-nav {
+	display: inline-block;
+	vertical-align: top;
+	line-height: 1;
+	margin-left: 5vw;
+	font-family: "Bodoni Moda", serif;
+	font-size: 1.4vw;
+	font-weight: 300;
+	color: black;
+	z-index: 2;
+}
+
+body.subpage:not(.blog-page) .social-container {
+	position: relative;
+	margin-right: 5vw;
+	margin-bottom: 0px;
+	z-index: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1vw;
+}
+
+/* Ensure navigation elements are visible and properly positioned - EXACTLY like blog page */
+@media (min-width: 768px) {
+	body.subpage:not(.blog-page) .homepage-nav,
+	body.subpage:not(.blog-page) .homepage-nav-link,
+	body.subpage:not(.blog-page) .nav-separator {
+		position: relative;
+		z-index: 10;
+	}
+}
+
+/* Mobile responsive styling for subpages - EXACTLY like blog page */
+@media (max-width: 700px) {
+	body.subpage:not(.blog-page) .homepage-nav {
+		font-size: 16px;
+		text-align: center;
+		width: 90vw;
+		margin-left: 5vw;
+	}
+	
+	body.subpage:not(.blog-page) .social-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1vw;
+		position: relative;
+		top: auto;
+		left: 50%;
+		transform: translateX(-50%);
+		margin: 5vh auto 0 auto;
+		width: auto;
+		text-align: center;
+	}
+	
+	body.subpage:not(.blog-page) .social-icon {
+		width: 4vw;
+	}
 }
 
 .nav-separator {
@@ -173,7 +245,7 @@ a {
 
 /* Background & Social */
 .hero-background {
-	width: 100vw;
+	width: 100%;
 	height: auto;
 	max-height: 38vh;
 	object-fit: cover;
@@ -183,15 +255,24 @@ a {
 
 .social-icon {
 	width: 2vw;
-	margin-top: 5vh;
-	float: right;
+	height: auto;
+	object-fit: contain;
+	transition: opacity 0.3s ease;
+}
+
+.social-icon:hover {
+	opacity: 0.8;
 }
 
 .social-container {
-	position: relative;
-	margin-right: 5vw;
-	margin-bottom: 0px;
-	z-index: +2; /* Added z-index */
+	position: absolute;
+	top: 5vh;
+	right: 0;
+	z-index: +2;
+	display: flex;
+	gap: 1vw;
+	justify-content: center;
+	align-items: center;
 }
 
 /* Divider */
@@ -276,7 +357,7 @@ body:not(.fallback-mode) .main-content-container {
 	.homepage-nav {
 		position: relative;
 		display: inline-block;
-		margin-top: 2.5vh;
+		margin-top: 5vh;
 		width: 90vw;
 		margin-left: 5vw;
 		margin-right: 5vw;
@@ -299,7 +380,7 @@ body:not(.fallback-mode) .main-content-container {
 		height: auto;
 		margin-left: 5vw;
 		margin-right: 5vw;
-		top: 35vh;
+		top: 30vh;
 		position: absolute;
 		z-index: +1;
 		text-align: center;
@@ -326,7 +407,7 @@ body:not(.fallback-mode) .main-content-container {
 	}
 
 	.hero-background {
-		width: 100vw;
+		width: 100%;
 		height: 50vh;
 		object-fit: cover;
 		max-width: 100%;
@@ -335,17 +416,27 @@ body:not(.fallback-mode) .main-content-container {
 
 	.social-icon {
 		width: 4vw;
-		padding-top: 5vh;
-		padding-bottom: 2vh;
-		margin: 1vw 0 1vw 1vw; /* Remove right margin */
-		float: unset;
+		height: auto;
+		object-fit: contain;
 	}
 
 	.social-container {
-		left: 4vw;
 		position: relative;
-		float: unset;
+		top: auto;
+		left: auto;
+		transform: none;
+		justify-content: center;
+		gap: 1vw;
+		align-items: center;
+		margin: 5vh auto 0 auto;
+		width: 100%;
 		text-align: center;
+	}
+	
+	.social-icon {
+		width: 2vw;
+		height: auto;
+		object-fit: contain;
 	}
 
 	.profile-image {
@@ -358,7 +449,7 @@ body:not(.fallback-mode) .main-content-container {
 		justify-content: flex-start;
 		align-items: center;
 		width: 100%;
-		margin-top: 3.5vh;
+		margin-top: 8vh;
 		margin-left: 5vw;
 		margin-right: 5vw;
 		overflow-x: hidden;
@@ -434,11 +525,31 @@ body:not(.fallback-mode) .main-content-container {
 
 @media (max-width: 600px) {
 	.social-icon {
-		width: 8vw;
-		padding-top: 5vh;
-		padding-bottom: 2vh;
-		margin: 1vw 0 1vw 1vw; /* Remove right margin */
-		float: unset;
+		width: 3vw;
+		height: auto;
+		object-fit: contain;
+	}
+	
+	.social-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1vw;
+		position: relative;
+		top: auto;
+		left: 50%;
+		transform: translateX(-50%);
+		margin: 5vh auto 0 auto;
+		width: auto;
+		text-align: center;
+	}
+}
+
+@media (max-width: 450px) {
+	.social-icon {
+		width: 10vw; /* Much larger for very small screens */
+		height: auto;
+		object-fit: contain;
 	}
 }
 
@@ -520,7 +631,7 @@ body.subpage .content-divider {
 	position: absolute;
 	background-color: rgba(104,104,104,0.9);
 	z-index: 2;
-	width: 100vw;
+	width: 100%;
 	max-width: 100%;
 	overflow: hidden;
 }
@@ -530,14 +641,14 @@ body.subpage .content-divider {
 	background-color: rgb(104,104,104);
 	z-index: 9990;
 	height: 65px;
-	width: 100vw;
+	width: 100%;
 	max-width: 100%;
 	overflow: hidden;
 }
 
 .page-background {
 	position: relative;
-	width: 100vw;
+	width: 100%;
 	height: 40vh;
 	overflow: hidden;
 	max-width: 100%;
@@ -601,7 +712,7 @@ body.subpage .content-divider {
 }
 
 /* Align page container with menu bar for biography and tutoring pages */
-body.subpage .page-container {
+body.subpage:not(.blog-page) .page-container {
 	margin-left: 5vw;
 	margin-right: 5vw;
 	width: auto;
@@ -618,68 +729,68 @@ body.subpage {
 	background-attachment: scroll;
 }
 
-body.subpage .homepage-nav,
-body.subpage .homepage-nav-link,
-body.subpage .nav-separator,
-body.subpage .subpage-nav,
-body.subpage .nav-link,
-body.subpage .page-title,
-body.subpage .content-intro,
-body.subpage .content-search,
-body.subpage .content-main,
-body.subpage .content-main h2,
-body.subpage .content-main h3,
-body.subpage .content-main p,
-body.subpage .content-pitch,
-body.subpage .content-pitch h2,
-body.subpage .blog-container,
-body.subpage .blog-container h2,
-body.subpage .blog-post-info,
-body.subpage .blog-post,
-body.subpage .contact-info,
-body.subpage .contact-box,
-body.subpage .quote-box,
-body.subpage .ContentTitles,
-body.subpage .Quote {
+body.subpage:not(.blog-page) .homepage-nav,
+body.subpage:not(.blog-page) .homepage-nav-link,
+body.subpage:not(.blog-page) .nav-separator,
+body.subpage:not(.blog-page) .subpage-nav,
+body.subpage:not(.blog-page) .nav-link,
+body.subpage:not(.blog-page) .page-title,
+body.subpage:not(.blog-page) .content-intro,
+body.subpage:not(.blog-page) .content-search,
+body.subpage:not(.blog-page) .content-main,
+body.subpage:not(.blog-page) .content-main h2,
+body.subpage:not(.blog-page) .content-main h3,
+body.subpage:not(.blog-page) .content-main p,
+body.subpage:not(.blog-page) .content-pitch,
+body.subpage:not(.blog-page) .content-pitch h2,
+body.subpage:not(.blog-page) .blog-container,
+body.subpage:not(.blog-page) .blog-container h2,
+body.subpage:not(.blog-page) .blog-post-info,
+body.subpage:not(.blog-page) .blog-post,
+body.subpage:not(.blog-page) .contact-info,
+body.subpage:not(.blog-page) .contact-box,
+body.subpage:not(.blog-page) .quote-box,
+body.subpage:not(.blog-page) .ContentTitles,
+body.subpage:not(.blog-page) .Quote {
 	color: black !important;
 }
 
-body.subpage .nav-link:hover {
+body.subpage:not(.blog-page) .nav-link:hover {
 	color: rgba(0, 0, 0, 0.8) !important;
 }
 
 /* Blog card text styling for subpages */
-body.subpage .blog-card .description h1,
-body.subpage .blog-card .description p,
-body.subpage .blog-card-featured .description h1,
-body.subpage .blog-card-featured .description p,
-body.subpage .blog-card .read-more a,
-body.subpage .blog-card-featured .read-more a {
+body.subpage:not(.blog-page) .blog-card .description h1,
+body.subpage:not(.blog-page) .blog-card .description p,
+body.subpage:not(.blog-page) .blog-card-featured .description h1,
+body.subpage:not(.blog-page) .blog-card-featured .description p,
+body.subpage:not(.blog-page) .blog-card .read-more a,
+body.subpage:not(.blog-page) .blog-card-featured .read-more a {
 	color: black !important;
 }
 
 /* Blog card subtitle styling for subpages */
-body.subpage .blog-card .description h2,
-body.subpage .blog-card-featured .description h2 {
+body.subpage:not(.blog-page) .blog-card .description h2,
+body.subpage:not(.blog-page) .blog-card-featured .description h2 {
 	color: #a2a2a2 !important;
 }
 
-body.subpage .blog-card .read-more a:hover,
-body.subpage .blog-card-featured .read-more a:hover {
+body.subpage:not(.blog-page) .blog-card .read-more a:hover,
+body.subpage:not(.blog-page) .blog-card-featured .read-more a:hover {
 	color: #5ad67d !important;
 }
 
 /* Link styling for subpages */
-body.subpage a:not(.nav-link):not(.homepage-nav-link) {
+body.subpage:not(.blog-page) a:not(.nav-link):not(.homepage-nav-link) {
 	color: black !important;
 }
 
-body.subpage a:not(.nav-link):not(.homepage-nav-link):hover {
+body.subpage:not(.blog-page) a:not(.nav-link):not(.homepage-nav-link):hover {
 	color: rgba(0, 0, 0, 0.8) !important;
 }
 
 /* Quote styling for all screen sizes */
-body.subpage .Quote {
+body.subpage:not(.blog-page) .Quote {
 	font-style: italic;
 	background-color: rgba(220,220,220,0.8);
 	padding: 2vh 2vw;
@@ -690,7 +801,7 @@ body.subpage .Quote {
 /* BIOGRAPHY PAGE SPECIFIC STYLES // */
 /* Desktop layout for biography page */
 @media (min-width: 1001px) {
-	body.subpage .content-main {
+	body.subpage:not(.blog-page) .content-main {
 		position: relative;
 		text-align: left;
 		width: 100%;
@@ -701,20 +812,20 @@ body.subpage .Quote {
 		margin-bottom: 4vh;
 	}
 
-	body.subpage .content-main h2 {
+	body.subpage:not(.blog-page) .content-main h2 {
 		text-align: left;
 		font-size: 2.2vw;
 		margin-bottom: 2vh;
 	}
 
-	body.subpage .content-main h3 {
+	body.subpage:not(.blog-page) .content-main h3 {
 		text-align: left;
 		font-size: 1.4vw;
 		margin-bottom: 1vh;
 		margin-top: 3vh;
 	}
 
-	body.subpage .content-main p {
+	body.subpage:not(.blog-page) .content-main p {
 		text-align: left;
 		font-size: 1.05vw;
 		line-height: 1.6;
@@ -725,14 +836,14 @@ body.subpage .Quote {
 /* Remove mobile and extra quote styling blocks */
 
 /* Fix scrolling issues */
-body.subpage {
+body.subpage:not(.blog-page) {
 	height: auto;
 	min-height: 100vh;
 	-webkit-overflow-scrolling: touch;
 	scroll-behavior: smooth;
 }
 
-body.subpage .content-main {
+body.subpage:not(.blog-page) .content-main {
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 	position: relative;
@@ -742,7 +853,7 @@ body.subpage .content-main {
 }
 
 /* Hide content-intro on biography page */
-body.subpage .content-intro {
+body.subpage:not(.blog-page) .content-intro {
 	display: none;
 }
 
@@ -803,7 +914,7 @@ body.subpage .content-intro {
 }
 
 /* Align content-intro with menu bar for biography and tutoring pages */
-body.subpage .content-intro {
+body.subpage:not(.blog-page) .content-intro {
 	margin-left: 0;
 	margin-right: 0;
 }
@@ -819,7 +930,7 @@ body.subpage .content-intro {
 }
 
 /* Align content-search with menu bar for biography and tutoring pages */
-body.subpage .content-search {
+body.subpage:not(.blog-page) .content-search {
 	margin-left: 0;
 	margin-right: 0;
 }
@@ -1133,19 +1244,78 @@ body.subpage .content-search {
 	position: relative;
 	top: 8vh;
 }
-/* LANGUAGE SELECTOR STYLES // */
-
-.language-selector {
+/* BOTTOM CONTAINER STYLES // */
+.bottom-container {
 	position: fixed;
 	bottom: 3vh;
-	left: 5vw;
-	text-align: center;
+	left: 0;
+	right: 0;
+	width: 100%;
+	padding: 0 5vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: +11;
 	font-family: "Bodoni Moda", serif;
-	z-index: +11; /* Increased from +10 */
+	box-sizing: border-box;
 }
 
+/* LANGUAGE SELECTOR STYLES // */
+.language-selector {
+	text-align: center;
+	font-family: "Bodoni Moda", serif;
+}
 
+/* COPYRIGHT NOTICE STYLES // */
+.copyright-notice {
+	text-align: right;
+	font-family: "Bodoni Moda", serif;
+	font-size: 0.9vw;
+	font-weight: 300;
+	color: white;
+	white-space: nowrap;
+	position: relative;
+	overflow: visible;
+	min-width: 200px;
+}
 
+.copyright-short {
+	display: inline-block;
+	transition: opacity 0.2s ease;
+}
+
+.copyright-full {
+	display: inline-block;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.copyright-main {
+	display: inline-block;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+/* Desktop hover effect only */
+@media (min-width: 1001px) {
+	.copyright-notice:hover .copyright-short {
+		opacity: 0;
+	}
+	
+	.copyright-notice:hover .copyright-full {
+		opacity: 1;
+	}
+	
+	.copyright-notice:hover .copyright-main {
+		opacity: 1;
+	}
+}
 
 
 .lang-btn {
@@ -1238,18 +1408,24 @@ body.subpage .content-search {
 }
 
 @media (max-width: 1000px) {
-	.language-selector {
+	.bottom-container {
 		position: relative;
 		bottom: auto;
 		left: auto;
 		right: auto;
 		width: 100%;
-		text-align: center;
+		flex-direction: column;
 		background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
 		padding: 1.2vh 0;
 		margin: 0;
 		z-index: +11;
+	}
+	
+	.language-selector {
+		width: 100%;
+		text-align: center;
 		font-family: "Bodoni Moda", serif;
+		margin-bottom: 1vh;
 	}
 	
 	.lang-btn {
@@ -1265,22 +1441,51 @@ body.subpage .content-search {
 		margin: 0 0.2vw;
 		font-family: "Bodoni Moda", serif;
 		color: white;
+	}
+	
+	.copyright-notice {
+		width: 100%;
+		text-align: center;
+		font-size: 14px;
+		padding: 1vh 0;
+		margin: 0;
+		overflow: visible;
+	}
+	
+	.copyright-notice .copyright-full {
+		display: none;
+	}
+	
+	.copyright-notice .copyright-main {
+		display: none;
+	}
+	
+	.copyright-notice .copyright-short {
+		transform: none !important;
+		opacity: 1 !important;
+		transition: none !important;
 	}
 }
 
 @media (max-width: 600px) {
-	.language-selector {
+	.bottom-container {
 		position: relative;
 		bottom: auto;
 		left: auto;
 		right: auto;
 		width: 100%;
-		text-align: center;
+		flex-direction: column;
 		background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
 		padding: 1.2vh 0;
 		margin: 0;
 		z-index: +11;
+	}
+	
+	.language-selector {
+		width: 100%;
+		text-align: center;
 		font-family: "Bodoni Moda", serif;
+		margin-bottom: 1vh;
 	}
 	
 	.lang-btn {
@@ -1297,7 +1502,32 @@ body.subpage .content-search {
 		font-family: "Bodoni Moda", serif;
 		color: white;
 	}
+	
+	.copyright-notice {
+		width: 100%;
+		text-align: center;
+		font-size: 14px;
+		padding: 1vh 0;
+		margin: 0;
+		overflow: visible;
+	}
+	
+	.copyright-notice .copyright-full {
+		display: none;
+	}
+	
+	.copyright-notice .copyright-main {
+		display: none;
+	}
+	
+	.copyright-notice .copyright-short {
+		transform: none !important;
+		opacity: 1 !important;
+		transition: none !important;
+	}
 }
+
+
 
 
 
