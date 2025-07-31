@@ -91,6 +91,13 @@ body.blog-page {
   }
 }
 
+/* Remove top padding on blog-container for tablet and below */
+@media (max-width: 999px) {
+  #blog-container {
+    padding-top: 0;
+  }
+}
+
 /* Mobile styles - background image with smaller height */
 @media (max-width: 767px) {
   .blog-background-image {
@@ -621,7 +628,9 @@ body.blog-page {
   font-size: 14px;
   font-weight: 300;
   transition: all 0.3s ease;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
+  flex: 0 1 auto;
 }
 
 .filter-btn:hover {
@@ -635,26 +644,29 @@ body.blog-page {
   font-weight: 500;
 }
 
-/* Mobile responsive for filter bar */
-@media (max-width: 768px) {
+/* Normal tablet styling for 701px-1000px */
+@media (min-width: 701px) and (max-width: 1000px) {
   .blog-filter-bar {
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10vh;
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-    padding: 12px 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    border-left: none;
-    border-right: none;
-    border-radius: 0;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
   }
   
   .filter-btn {
     font-size: 12px;
-    padding: 6px 12px;
+    padding: 6px 10px;
+  }
+  
+  .filter-btn[data-filter="Analysis"] {
+    flex: 0 1 auto;
+    min-width: fit-content;
+    white-space: nowrap;
+    max-width: none;
+  }
+  
+  .filter-btn:not([data-filter="Analysis"]) {
+    max-width: calc(50% - 5px);
   }
 }
 
@@ -664,6 +676,38 @@ body.blog-page {
     border-left: none;
     border-right: none;
     margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 8px 10px;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0;
+  }
+  
+  .filter-btn {
+    font-size: 10px;
+    padding: 4px 6px;
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: calc(50% - 3px);
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  
+  /* Special handling for "Analysis / Opinion" button */
+  .filter-btn[data-filter="Analysis"] {
+    flex: 0 1 auto;
+    min-width: fit-content;
+    white-space: nowrap;
+    max-width: none;
+  }
+  
+  /* Other buttons can wrap more flexibly */
+  .filter-btn:not([data-filter="Analysis"]) {
+    max-width: calc(50% - 3px);
   }
   
   #blog-container {
