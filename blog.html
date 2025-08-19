@@ -18,24 +18,25 @@
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   
-  <!-- Preload critical resources -->
-  <link rel="preload" href="site-resources/topography.png" as="image">
-  <link rel="preload" href="site-resources/LinkedIn.png" as="image">
-  <link rel="preload" href="Styling.css" as="style">
-  <link rel="preload" href="blogstyling.css" as="style">
-  <link rel="preload" href="blog-posts.xml" as="fetch" crossorigin>
+  <!-- Preload critical resources - TOP PRIORITY -->
+  <link rel="preload" href="site-resources/topography.png" as="image" fetchpriority="high">
+  <link rel="preload" href="site-resources/cover-photos/essays.jpg" as="image" fetchpriority="high">
+  <link rel="preload" href="site-resources/cover-photos/contemporary-art.jpg" as="image" fetchpriority="high">
+  <link rel="preload" href="site-resources/cover-photos/expressionist-art.jpg" as="image" fetchpriority="high">
+  <link rel="preload" href="site-resources/cover-photos/etching.jpg" as="image" fetchpriority="high">
+  <link rel="preload" href="Styling.css" as="style" fetchpriority="high">
+  <link rel="preload" href="blogstyling.css" as="style" fetchpriority="high">
   
-  <!-- Preload blog background images for instant switching -->
-  <link rel="preload" href="site-resources/cover-photos/essays.jpg" as="image">
-  <link rel="preload" href="site-resources/cover-photos/contemporary-art.jpg" as="image">
-  <link rel="preload" href="site-resources/cover-photos/expressionist-art.jpg" as="image">
-  <link rel="preload" href="site-resources/cover-photos/etching.jpg" as="image">
+  <!-- Preload secondary resources -->
+  <link rel="preload" href="site-resources/LinkedIn.png" as="image" fetchpriority="low">
+  <link rel="preload" href="site-resources/x-logo-white.png" as="image" fetchpriority="low">
+  <link rel="preload" href="blog-posts.xml" as="fetch" crossorigin fetchpriority="low">
   
   <!-- Critical CSS inlined for above-the-fold content -->
   <style>
     /* Critical CSS for immediate rendering */
     html, body { margin: 0; padding: 0; }
-    .page-fade { opacity: 0; transition: opacity 0.5s ease-in-out; }
+    .page-fade { opacity: 0; transition: opacity 0.1s ease-in-out; }
     .page-fade.fade-in { opacity: 1; }
     .hero-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2; }
     .homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-top: 5vh; margin-left: 5vw; font-family: "Bodoni Moda", serif; font-size: 1.4vw; font-weight: 300; color: black; z-index: 2; }
@@ -108,10 +109,10 @@
  						document.body.classList.remove('fade-in');
  						document.body.classList.add('fade-out');
  						
- 						// Navigate to new page after fade out
- 						setTimeout(() => {
- 							window.location.href = targetUrl;
- 						}, 500);
+ 												// Navigate to new page after fade out
+						setTimeout(() => {
+							window.location.href = targetUrl;
+						}, 100);
  					}
  				});
  			}
