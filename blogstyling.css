@@ -72,7 +72,7 @@ body.blog-page {
 }
 
 /* Blog container positioning for desktop and tablet */
-@media (min-width: 768px) {
+@media (min-width: 701px) {
   #blog-container {
     margin-top: 2rem; /* Reduced from 15vh since filter bar is above */
     padding-top: 2rem;
@@ -93,23 +93,29 @@ body.blog-page {
   }
 }
 
-/* Remove top padding on blog-container for tablet and below */
+/* Tablet and mobile styles - background image with smaller height */
 @media (max-width: 999px) {
-  #blog-container {
-    padding-top: 0;
-  }
-}
-
-/* Mobile styles - background image with smaller height */
-@media (max-width: 767px) {
   .blog-background-image {
-    height: 40vh; /* Smaller height for mobile */
+    height: 40vh; /* Smaller height for tablet and mobile */
   }
   
   .blog-gradient-overlay {
     height: 40vh; /* Same height as background image */
   }
   
+  #blog-container {
+    padding-top: 0;
+  }
+  
+  .blog-filter-bar {
+    margin-top: 10vh; /* Reduced spacing for tablet and mobile */
+  }
+}
+
+
+
+/* Mobile styles - additional adjustments for small screens */
+@media (max-width: 700px) {
   #blog-container {
     margin-top: 0; /* Remove gap - content starts immediately after filter bar */
     padding-top: 1rem;
@@ -138,7 +144,7 @@ body.blog-page {
 }
 
 /* Ensure navigation elements are visible over background image */
-@media (min-width: 768px) {
+@media (min-width: 701px) {
   body.subpage .homepage-nav,
   body.subpage .homepage-nav-link,
   body.subpage .nav-separator {
@@ -555,7 +561,7 @@ body.blog-page {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  margin-top: 15vh;
+  margin-top: 10vh; /* Reduced spacing for all screen sizes */
   margin-bottom: 2rem;
   margin-left: 5vw;
   margin-right: 5vw;
@@ -628,6 +634,7 @@ body.blog-page {
     margin-bottom: 0;
     margin-left: 0;
     margin-right: 0;
+    margin-top: 10vh; /* Reduced spacing for mobile */
     flex-wrap: wrap;
     gap: 6px;
     padding: 8px 10px;

@@ -171,7 +171,7 @@ body.subpage:not(.blog-page) .social-container {
 }
 
 /* Ensure navigation elements are visible and properly positioned - EXACTLY like blog page */
-@media (min-width: 768px) {
+@media (min-width: 701px) {
 	body.subpage:not(.blog-page) .homepage-nav,
 	body.subpage:not(.blog-page) .homepage-nav-link,
 	body.subpage:not(.blog-page) .nav-separator {
@@ -415,8 +415,8 @@ body:not(.fallback-mode) .main-content-container {
 	}
 
 	.social-icon {
-		width: 4vw;
-		height: auto;
+		width: 34px;
+		height: 34px;
 		object-fit: contain;
 	}
 
@@ -433,12 +433,6 @@ body:not(.fallback-mode) .main-content-container {
 		text-align: center;
 	}
 	
-	.social-icon {
-		width: 2vw;
-		height: auto;
-		object-fit: contain;
-	}
-
 	.profile-image {
 		width: 20vw;
 		border-radius: 50%;
@@ -510,10 +504,6 @@ body:not(.fallback-mode) .main-content-container {
 	.language-selector {
 		margin-bottom: 2vh;
 	}
-	
-
-
-
 }
 
 @media (max-width: 800px) {
@@ -524,12 +514,6 @@ body:not(.fallback-mode) .main-content-container {
 }
 
 @media (max-width: 600px) {
-	.social-icon {
-		width: 3vw;
-		height: auto;
-		object-fit: contain;
-	}
-	
 	.social-container {
 		display: flex;
 		justify-content: center;
@@ -542,14 +526,6 @@ body:not(.fallback-mode) .main-content-container {
 		margin: 5vh auto 0 auto;
 		width: auto;
 		text-align: center;
-	}
-}
-
-@media (max-width: 450px) {
-	.social-icon {
-		width: 10vw; /* Much larger for very small screens */
-		height: auto;
-		object-fit: contain;
 	}
 }
 
@@ -613,7 +589,7 @@ body:not(.fallback-mode) .main-content-container {
 }
 
 /* Current page styling for subpages - desktop/tablet only */
-@media (min-width: 768px) {
+@media (min-width: 701px) {
 	body.subpage .homepage-nav-link.current-page {
 		text-decoration: underline;
 		text-decoration-thickness: 1px;

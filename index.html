@@ -43,7 +43,7 @@
 			.hero-name { font-size: 42px; text-align: center; }
 			.hero-subtitle { font-size: 16px; text-align: center; }
 			.homepage-nav { font-size: 16px; text-align: center; width: 90vw; margin-left: 5vw; }
-			.social-icon { width: 4vw; }
+			.social-icon { width: 34px; height: 34px; }
 		}
 	</style>
 
@@ -78,7 +78,7 @@
  </div>
  
  <img class="hero-background" src="site-resources/Stars.jpg" alt="Stars Background" fetchpriority="high" loading="eager">
- <div class="fallback-background-div" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-image: url('site-resources/Stars.jpg'); background-size: cover; background-position: center; z-index: -3; display: none;"></div>
+ <div class="center-line"></div>
  <div class="video-overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.4); z-index: -1; display: none; pointer-events: none;"></div>
  <div class="hero-container">
  	<div class="hero-name">ADAM LOUIS SEBASTIAN LEHODEY</div>
@@ -293,12 +293,8 @@
  				// Try to play the video
  				targetVideo.play().then(() => {
  					console.log('Video playing successfully for:', selectedLang);
- 					document.body.classList.remove('fallback-mode');
- 					document.querySelector('.fallback-background-div').style.display = 'none';
  				}).catch((error) => {
  					console.error('Video play failed for:', selectedLang, error);
- 					document.body.classList.add('fallback-mode');
- 					document.querySelector('.fallback-background-div').style.display = 'block';
  				});
  			}
  		}
@@ -338,7 +334,7 @@
 
 
 
- 	// Page fade transition and initial fallback logic
+ 	 		// Page fade transition and initial video logic
  	document.addEventListener('DOMContentLoaded', function() {
  		const getActiveVideo = () => document.querySelector('.video-background.active-video');
  		let video = getActiveVideo();
@@ -355,8 +351,6 @@
  				if (playPromise !== undefined) {
  					playPromise.then(() => {
  						console.log('Video playing successfully');
- 						document.body.classList.remove('fallback-mode');
- 						document.querySelector('.fallback-background-div').style.display = 'none';
  					}).catch((error) => {
  						console.error('Video play failed:', error);
  						// Try again after a short delay
@@ -371,19 +365,13 @@
  			video.addEventListener('canplay', function() {
  				console.log('Initial video can play');
  				attemptPlay(); // Try to play again when it can play
- 				document.body.classList.remove('fallback-mode');
- 				document.querySelector('.fallback-background-div').style.display = 'none';
  			});
  			video.addEventListener('error', function(e) {
  				console.error('Initial video error:', e);
- 				document.body.classList.add('fallback-mode');
- 				document.querySelector('.fallback-background-div').style.display = 'block';
  			});
  			video.addEventListener('loadeddata', function() {
  				console.log('Initial video loaded data');
  				attemptPlay(); // Try to play again when data is loaded
- 				document.body.classList.remove('fallback-mode');
- 				document.querySelector('.fallback-background-div').style.display = 'none';
  			});
  			
  			// Check if video is actually playing after a delay
@@ -396,22 +384,16 @@
  					console.log('Video not playing - attempting one more time');
  					attemptPlay();
  					
- 					// Final fallback check
+ 					// Final check
  					setTimeout(function() {
  						if (video.paused) {
- 							console.log('Video still not playing - switching to fallback');
- 							document.body.classList.add('fallback-mode');
- 							document.querySelector('.fallback-background-div').style.display = 'block';
+ 							console.log('Video still not playing');
  						} else {
  							console.log('Video playing successfully');
- 							document.body.classList.remove('fallback-mode');
- 							document.querySelector('.fallback-background-div').style.display = 'none';
  						}
  					}, 1000);
  				} else {
  					console.log('Initial video loaded successfully');
- 					document.body.classList.remove('fallback-mode');
- 					document.querySelector('.fallback-background-div').style.display = 'none';
  				}
  			}, 2000);
  		}
