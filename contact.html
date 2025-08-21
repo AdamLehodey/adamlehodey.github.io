@@ -1,81 +1,176 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<link rel="shortcut icon" href="/site-resources/favicon.png" type="image/x-icon">
-	<link rel="icon" href="/site-resources/favicon.png" type="image/x-icon">
-	<title>CONTACT</title>
-	<link rel="stylesheet" type="text/css" href="Styling.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-	<meta charset="UTF-8">
-	
-	<meta name="keywords" content="Adam Lehodey, Lehodey, Adam Louis Sebastian Lehodey, Adventures, Ideas, Global Denizen"> 
+  <title>Adam Lehodey: Contact</title>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="/site-resources/favicon.png" type="image/x-icon">
+  <link rel="icon" href="/site-resources/favicon.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="keywords" content="Adam Lehodey, Contact, Get in Touch, Lehodey, Adam Louis Sebastian Lehodey, Contact Form"> 
+  <meta name="description" content="Get in touch with Adam Lehodey. Contact form and information for inquiries, collaborations, and discussions.">
+  <meta name="author" content="Adam Louis Sebastian Lehodey">
 
-	<meta name="author" content="Adam Louis Sebastian Lehodey">
+  <!-- Resource hints for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  
+  <!-- Preload critical resources - TOP PRIORITY -->
+  <link rel="preload" href="site-resources/topography.png" as="image" fetchpriority="high">
+  <link rel="preload" href="site-resources/cover-photos/essays.jpg" as="image" fetchpriority="high">
+  <link rel="preload" href="Styling.css" as="style" fetchpriority="high">
+  <link rel="preload" href="blogstyling.css" as="style" fetchpriority="high">
+  
+  <!-- Preload secondary resources -->
+  <link rel="preload" href="site-resources/LinkedIn.png" as="image" fetchpriority="low">
+  <link rel="preload" href="site-resources/x-logo-white.png" as="image" fetchpriority="low">
+  <link rel="preload" href="site-resources/x-logo.png" as="image" fetchpriority="low">
+  
+      <!-- Critical CSS inlined for above-the-fold content -->
+    <style>
+      /* Critical CSS for immediate rendering */
+      html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+      .page-fade { opacity: 0; transition: opacity 0.1s ease-in-out; }
+      .page-fade.fade-in { opacity: 1; }
+      .hero-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2; }
+      .homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-top: 5vh; margin-left: 5vw; font-family: "Bodoni Moda", serif; font-size: 1.4vw; font-weight: 300; color: white; z-index: 2; }
+      .social-container { position: relative; margin-right: 5vw; margin-bottom: 0px; z-index: 2; }
+      .blog-background-image { position: absolute; top: 0; left: 0; width: 100vw; height: 52vh; background-image: url('site-resources/cover-photos/essays.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: -1; }
+      .blog-gradient-overlay { position: absolute; top: 0; left: 0; width: 100vw; height: 52vh; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)); z-index: 0; pointer-events: none; }
+      #content-container { margin-top: 10vh; padding-top: 2rem; position: relative; z-index: 1; }
+      .content-box { margin-left: 5vw; margin-right: 5vw; background: rgba(255, 255, 255, 0.85); min-height: 60vh; padding: 2rem 3rem; border-radius: 8px; margin-bottom: 40px; font-family: "Bodoni Moda", serif; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+      .content-box h2 { font-family: "Bodoni Moda", serif; font-size: 2.2vw; margin-bottom: 2vh; text-align: center; }
+      .content-box h3 { font-family: "Bodoni Moda", serif; font-size: 1.4vw; margin-bottom: 1vh; margin-top: 3vh; text-align: center; }
+      .content-box p { font-family: "Bodoni Moda", serif; font-size: 1.05vw; line-height: 1.6; margin-bottom: 2vh; text-align: center; }
+      
+      /* Mobile and tablet responsive font sizing */
+      @media (max-width: 1000px) {
+        .content-box h2 { font-size: 32px; }
+        .content-box h3 { font-size: 20px; }
+        .content-box p { font-size: 16px; text-align: center; }
+      }
+    </style>
 
-	<meta name="description" content="Adam Lehodey: Contact Information. Get in touch with Adam for collaborations, questions, or opportunities.">
-
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bentham&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Droid+Serif&family=Josefin+Sans&family=Lora&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Quicksand&family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="Styling.css">
+  <link rel="stylesheet" type="text/css" href="blogstyling.css">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bentham&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Droid+Serif&family=Josefin+Sans&family=Lora&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Quicksand&family=Raleway&display=swap" rel="stylesheet">
 </head>
 
-<body class="page-fade subpage">
-
-	<img class="hero-background" src="site-resources/topography.png" alt="Topography Background" loading="eager">
-	<div class="social-container">
-		<a href="https://x.com/adamlehodey" target="_blank"><img class="social-icon" src="site-resources/x-logo.png" alt="X Link" loading="eager"></a>
+<body class="page-fade subpage blog-page">
+  <img class="hero-background" src="site-resources/topography.png" alt="Topography Background" loading="eager">
+  <div class="blog-background-image"></div>
+  <div class="blog-gradient-overlay"></div>
+  	<div class="social-container">
+		<a href="https://x.com/adamlehodey" target="_blank"><img class="social-icon" src="site-resources/x-logo-white.png" alt="X Link" loading="eager"></a>
 		<a href="https://www.linkedin.com/in/adamlehodey/" target="_blank"><img class="social-icon" src="site-resources/LinkedIn.png" alt="LinkedIn Link" loading="eager"></a>
 	</div>
-	<div class="homepage-nav"><a class="homepage-nav-link" href="/">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="blog">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="tutoring.html">INSTRUCTION</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
-	<div class="block_1"></div> <hr class="content-divider" />
+  <div class="homepage-nav"><a class="homepage-nav-link" href="/">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="blog">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="tutoring">INSTRUCTION</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
+  <div class="block_1"></div> <hr class="content-divider" />
 
-	<div class="contact-content">
-		<h1>Contact Me</h1>
-		<p>adam at adamlehodey.com</p>
-	</div>
+  <!-- Content Container -->
+  <div id="content-container">
+    <div class="content-box">
+      <h2>Contact Me</h2>
+      <p>adam at adamlehodey.com</p>
+    </div>
+  </div>
 
-	<script>
-		// Page fade transition
-		document.addEventListener('DOMContentLoaded', function() {
-			// Fade in the page when it loads
-			document.body.classList.add('fade-in');
-			
-			// Handle navigation links for fade out effect
-			const navLinks = document.querySelectorAll('a[href]');
-			navLinks.forEach(link => {
-				// Only apply to internal links (not external or same page)
-				const href = link.getAttribute('href');
-				if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
-					link.addEventListener('click', function(e) {
-						// Don't apply to links that open in new tabs
-						if (!link.hasAttribute('target') || link.getAttribute('target') !== 'blank') {
-							e.preventDefault();
-							const targetUrl = this.getAttribute('href');
-							
-							// Fade out current page
-							document.body.classList.remove('fade-in');
-							document.body.classList.add('fade-out');
-							
-							// Navigate to new page after fade out
-							setTimeout(() => {
-								window.location.href = targetUrl;
-							}, 500);
-						}
-					});
-				}
-			});
-			
-			// Highlight current page in navigation
-			const currentPage = 'contact';
-			const currentNavLinks = document.querySelectorAll('.homepage-nav-link');
-			currentNavLinks.forEach(link => {
-				if (link.getAttribute('href') === currentPage) {
-					link.classList.add('current-page');
-				}
-			});
-		});
-	</script>
+  <script>
+  	// Page fade transition
+  	document.addEventListener('DOMContentLoaded', function() {
+  		// Use fallback background since no video is present
+		const fallbackBg = document.querySelector('.fallback-background');
+		if (fallbackBg) {
+			fallbackBg.style.display = 'block';
+		}
+  		
+ 		// Fade in the page when it loads
+ 		document.body.classList.add('fade-in');
+  		
+ 		// Handle navigation links for fade out effect
+ 		const navLinks = document.querySelectorAll('a[href]');
+ 		navLinks.forEach(link => {
+ 			// Only apply to internal links (not external or same page)
+ 			const href = link.getAttribute('href');
+ 			if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+ 				link.addEventListener('click', function(e) {
+ 					// Don't apply to links that open in new tabs
+ 					if (!link.hasAttribute('target') || link.getAttribute('target') !== 'blank') {
+ 						e.preventDefault();
+ 						const targetUrl = this.getAttribute('href');
+ 						
+ 						// Fade out current page
+ 						document.body.classList.remove('fade-in');
+ 						document.body.classList.add('fade-out');
+ 						
+ 												// Navigate to new page after fade out
+						setTimeout(() => {
+							window.location.href = targetUrl;
+						}, 100);
+ 					}
+ 				});
+ 			}
+ 		});
 
+  		// Highlight current page in navigation
+  		const currentPage = 'contact';
+  		const currentNavLinks = document.querySelectorAll('.homepage-nav-link');
+  		currentNavLinks.forEach(link => {
+  			if (link.getAttribute('href') === currentPage) {
+  				link.classList.add('current-page');
+  			}
+  		});
+  		
+  		// Preload background images for instant switching (if function exists)
+  		if (typeof preloadBackgroundImages === 'function') {
+  			preloadBackgroundImages();
+  		}
+  		
+  		// Enhanced smooth scrolling for better performance
+  		if ('scrollBehavior' in document.documentElement.style) {
+  			// Native smooth scrolling is supported
+  			document.documentElement.style.scrollBehavior = 'smooth';
+  		} else {
+  			// Fallback for older browsers
+  			const smoothScrollTo = (target, duration = 800) => {
+  				const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+  				const startPosition = window.pageYOffset;
+  				const distance = targetPosition - startPosition;
+  				let startTime = null;
+  				
+  				const animation = currentTime => {
+  					if (startTime === null) startTime = currentTime;
+  					const timeElapsed = currentTime - startTime;
+  					const run = ease(timeElapsed, startPosition, distance, duration);
+  					window.scrollTo(0, run);
+  					if (timeElapsed < duration) requestAnimationFrame(animation);
+  				};
+  				
+  				const ease = (t, b, c, d) => {
+  					t /= d / 2;
+  					if (t < 1) return c / 2 * t * t + b;
+  					t--;
+  					return -c / 2 * (t * (t - 2) - 1) + b;
+  				};
+  				
+  				requestAnimationFrame(animation);
+  			};
+  			
+  			// Apply to all anchor links
+  			document.querySelectorAll('a[href^="#"]').forEach(link => {
+  				link.addEventListener('click', e => {
+  					e.preventDefault();
+  					const target = document.querySelector(link.getAttribute('href'));
+  					if (target) smoothScrollTo(target);
+  				});
+  			});
+  		}
+  		
+  	});
+ 
+  </script>
 </body>
 </html>
