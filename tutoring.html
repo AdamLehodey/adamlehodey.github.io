@@ -1,80 +1,188 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>TUTORING</title>
-	<link rel="stylesheet" type="text/css" href="Styling.css">
-	<meta charset="UTF-8">
-
-  	<meta name="keywords" content="Adam Lehodey, Lehodey, Adam Louis Sebastian Lehodey, Adventures, Ideas, Global Denizen"> 
-
-  	<meta name="description" content="Adam Lehodey is a tutor offering university admissions guidance, GCSE and A-Level tutoring, and language instruction. Get personalized academic support and mentoring.">
+  <title>Adam Lehodey: Tutoring Services</title>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="/site-resources/favicon.png" type="image/x-icon">
+  <link rel="icon" href="/site-resources/favicon.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
-  	<meta name="author" content="Adam Louis Sebastian Lehodey">
+  <meta name="keywords" content="Adam Lehodey, Lehodey, Adam Louis Sebastian Lehodey, Adventures, Ideas, Global Denizen"> 
+  <meta name="description" content="Adam Lehodey is a tutor offering university admissions guidance, GCSE and A-Level tutoring, and language instruction. Get personalized academic support and mentoring.">
+  <meta name="author" content="Adam Louis Sebastian Lehodey">
 
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  	<link rel="shortcut icon" href="/site-resources/favicon.png" type="image/x-icon">
-	<link rel="icon" href="/site-resources/favicon.png" type="image/x-icon">
-  	<link rel="preconnect" href="https://fonts.googleapis.com">
-  	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bentham&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Droid+Serif&family=Josefin+Sans&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Quicksand&family=Raleway&display=swap" rel="stylesheet">
+  <!-- Resource hints for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  
+  <!-- Preload critical resources - TOP PRIORITY -->
+  <link rel="preload" href="site-resources/topography.png" as="image" fetchpriority="high">
+  <link rel="preload" href="site-resources/cover-photos/essays.jpg" as="image" fetchpriority="high">
+  <link rel="preload" href="Styling.css" as="style" fetchpriority="high">
+  <link rel="preload" href="blogstyling.css" as="style" fetchpriority="high">
+  
+  <!-- Preload secondary resources -->
+  <link rel="preload" href="site-resources/LinkedIn.png" as="image" fetchpriority="low">
+  <link rel="preload" href="site-resources/x-logo-white.png" as="image" fetchpriority="low">
+  <link rel="preload" href="site-resources/x-logo.png" as="image" fetchpriority="low">
+  
+      <!-- Critical CSS inlined for above-the-fold content -->
+    <style>
+      /* Critical CSS for immediate rendering */
+      html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+      .page-fade { opacity: 0; transition: opacity 0.1s ease-in-out; }
+      .page-fade.fade-in { opacity: 1; }
+      .hero-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2; }
+      .homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-top: 5vh; margin-left: 5vw; font-family: "Bodoni Moda", serif; font-size: 1.4vw; font-weight: 300; color: white; z-index: 2; }
+      .social-container { position: relative; margin-right: 5vw; margin-bottom: 0px; z-index: 2; }
+      .blog-background-image { position: absolute; top: 0; left: 0; width: 100vw; height: 52vh; background-image: url('site-resources/cover-photos/essays.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: -1; }
+      .blog-gradient-overlay { position: absolute; top: 0; left: 0; width: 100vw; height: 52vh; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)); z-index: 0; pointer-events: none; }
+      #content-container { margin-top: 10vh; padding-top: 2rem; position: relative; z-index: 1; }
+      .content-box { margin-left: 5vw; margin-right: 5vw; background: rgba(255, 255, 255, 0.85); min-height: 120vh; padding: 2rem 3rem; border-radius: 8px; margin-bottom: 40px; font-family: "Bodoni Moda", serif; }
+      .content-box h2 { font-family: "Bodoni Moda", serif; font-size: 2.2vw; margin-bottom: 2vh; text-align: center; }
+      .content-box h3 { font-family: "Bodoni Moda", serif; font-size: 1.4vw; margin-bottom: 1vh; margin-top: 3vh; }
+      .content-box p { font-family: "Bodoni Moda", serif; font-size: 1.05vw; line-height: 1.6; margin-bottom: 2vh; }
+      
+      /* Mobile and tablet responsive font sizing */
+      @media (max-width: 1000px) {
+        .content-box h2 { font-size: 32px; }
+        .content-box h3 { font-size: 20px; }
+        .content-box p { font-size: 16px; text-align: justify; }
+      }
+    </style>
+
+  <link rel="stylesheet" type="text/css" href="Styling.css">
+  <link rel="stylesheet" type="text/css" href="blogstyling.css">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bentham&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Droid+Serif&family=Josefin+Sans&family=Lora&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Quicksand&family=Raleway&display=swap" rel="stylesheet">
 </head>
 
-<body class="page-fade subpage">
-	<img class="hero-background" src="site-resources/topography.png" alt="Topography Background" loading="eager">
-	<div class="social-container">
-		<a href="https://x.com/adamlehodey" target="_blank"><img class="social-icon" src="site-resources/x-logo.png" alt="X Link" loading="eager"></a>
+<body class="page-fade subpage blog-page">
+  <img class="hero-background" src="site-resources/topography.png" alt="Topography Background" loading="eager">
+  <div class="blog-background-image"></div>
+  <div class="blog-gradient-overlay"></div>
+  	<div class="social-container">
+		<a href="https://x.com/adamlehodey" target="_blank"><img class="social-icon" src="site-resources/x-logo-white.png" alt="X Link" loading="eager"></a>
 		<a href="https://www.linkedin.com/in/adamlehodey/" target="_blank"><img class="social-icon" src="site-resources/LinkedIn.png" alt="LinkedIn Link" loading="eager"></a>
 	</div>
-	<div class="homepage-nav"><a class="homepage-nav-link" href="/">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="blog">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="tutoring">INSTRUCTION</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
-	<div class="block_1"></div> <hr class="content-divider" />
+  <div class="homepage-nav"><a class="homepage-nav-link" href="/">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="blog">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="tutoring">INSTRUCTION</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
+  <div class="block_1"></div> <hr class="content-divider" />
 
-	<div class="page-container">
-		<div class="content-main"><h2 class="ContentTitles">TUTORING SERVICES</h2><h3>Tutoring, Not Like the Rest</h3><p>It's been a difficult time to be a student. With self-isolation and coronavirus dominating much of the past two years, the extra hours you put into your studies outside of the classroom have now become more important than ever. My tutoring is unique: you'll approach the subject in a way that teaches not just the course, but the whole context surrounding the subject so that you can truly understand it. I know what A-Levels and GCSE's are like, having completed mine only a couple of years ago, and so I understand the problems you might face and will assist with teaching the course in an intuitive manner. I'll focus on teaching the subject for it's own sake, as opposed to just teaching how to pass the exam - though I'll of course also demonstrate how to excel at exam technique and how to tailor your answers to show the examiner what he is looking for.<br><br>My tutoring is not like the rest: you will enjoy learning the subject and understand why it's so useful and exciting. My energy and charisma means saying goodbye to the days of falling asleep in lessons: these are lessons you'll want to stay awake for. The tutoring I will offer for both GCSE and A-Levels, as well as that for university applications, will be one of the best investments you can make.</p><h3>University Admissions Tutoring</h3><p>Applying for university can be daunting. It's also become increasingly competitive to get into top instutitions - with many having had many hours of practice writing personal statements and doing interviews, as well as fierce competition from abroad.<br><br>
+  <!-- Content Container -->
+  <div id="content-container">
+    <div class="content-box">
+      <h2 class="ContentTitles">TUTORING SERVICES</h2>
+      <h3>Tutoring, Not Like the Rest</h3>
+      <p>It's been a difficult time to be a student. With self-isolation and coronavirus dominating much of the past two years, the extra hours you put into your studies outside of the classroom have now become more important than ever. My tutoring is unique: you'll approach the subject in a way that teaches not just the course, but the whole context surrounding the subject so that you can truly understand it. I know what A-Levels and GCSE's are like, having completed mine only a couple of years ago, and so I understand the problems you might face and will assist with teaching the course in an intuitive manner. I'll focus on teaching the subject for it's own sake, as opposed to just teaching how to pass the exam - though I'll of course also demonstrate how to excel at exam technique and how to tailor your answers to show the examiner what he is looking for.<br><br>My tutoring is not like the rest: you will enjoy learning the subject and understand why it's so useful and exciting. My energy and charisma means saying goodbye to the days of falling asleep in lessons: these are lessons you'll want to stay awake for. The tutoring I will offer for both GCSE and A-Levels, as well as that for university applications, will be one of the best investments you can make.</p>
+      
+      <h3>University Admissions Tutoring</h3>
+      <p>Applying for university can be daunting. It's also become increasingly competitive to get into top instutitions - with many having had many hours of practice writing personal statements and doing interviews, as well as fierce competition from abroad.<br><br>
 
-	Having received offers from a number of prestigious universities (<i>University College London, the LSE, Durham University, Warwick, King's College London, and SciencesPo and Columbia University in the US, where I have chosen to study</i>), I know what it takes to write a strong personal statement and to secure a place at a top Russell Group or Ivy League institution. I will guide you through the whole process: the 'super-curricular' activities you should be doing to enhance your application, deadlines to keep in mind, I will assist with helping you choose the right course, and of course, I'll guide you through every step of writing your personal statement.<br><br>If you are applying to Oxbridge or to the Ivy League I will assist with preparation for entrance examinations, and with regards to US applications, with the SAT, with navigating the CollegeBoard platform, applications for financial aid, and other tips for applying as an international student, having done so and been successful myself.<br><br>I will then provide mock-interviews and ensure you have everything you need to succeed. This is an investment that will be well worth it and will help you get way ahead of your peers. <br><br>The rate for a one hour session is £35 (minimum of five sessions), prices are negotiable. Alternatively, I can give feedback, improve and annotate three drafts of your personal statement for £110. For more information, please contact me via the <a href="contact"><i>Contact Me</i></a> page.</p><h3>Academic Tutoring</h3><p>The subjects I offer tutoring for are as follow.<br><br><b><i>GCSE Level</i></b><br><br>Mathematics, English Literature and Language, French, Spanish, Computer Science, Business Studies.<br><br><b><i>A-Level</i></b><br><br>Mathematics, Computer Science, French, Spanish<br><br>The lessons will include problem sheets, time to discuss individual difficulties, questions for the Tutor, further activities, and anything else that will aid learning! I have achieved top GCSE and A-Level grades in all these subjects (10A* at GCSE, A*A*AA at A-Level), and will approach teaching in a fun, interesting, yet structured way to ensure exam success!<br><br>The rate for a one hour session is £30. For more information or to book a session, please contact me via the <a href="contact"><i>Contact Me</i></a> page.</p><h3>Languages Tutoring</h3><p>I offer tutoring in French, English, and Spanish for all learners, and propose a dynamic and fun way of learning languages. Using a mix of modern and traditional techniques, you will see a marked improvement in your language skills. Each hour and a half session will include time to go over vocabulary, reading, writing, and oral skills. The sessions will also include worksheets, vocabulary lists, and special exam success advise.<br><br>The rate for a one hour session is £30. For more information or to book a session, please contact me via the <a href="contact"><i>Contact Me</i></a> page.</p><br>	</div>
-	</div>
+      Having received offers from a number of prestigious universities (<i>University College London, the LSE, Durham University, Warwick, King's College London, and SciencesPo and Columbia University in the US, where I have chosen to study</i>), I know what it takes to write a strong personal statement and to secure a place at a top Russell Group or Ivy League institution. I will guide you through the whole process: the 'super-curricular' activities you should be doing to enhance your application, deadlines to keep in mind, I will assist with helping you choose the right course, and of course, I'll guide you through every step of writing your personal statement.<br><br>If you are applying to Oxbridge or to the Ivy League I will assist with preparation for entrance examinations, and with regards to US applications, with the SAT, with navigating the CollegeBoard platform, applications for financial aid, and other tips for applying as an international student, having done so and been successful myself.<br><br>I will then provide mock-interviews and ensure you have everything you need to succeed. This is an investment that will be well worth it and will help you get way ahead of your peers. <br><br>The rate for a one hour session is £35 (minimum of five sessions), prices are negotiable. Alternatively, I can give feedback, improve and annotate three drafts of your personal statement for £110. For more information, please contact me via the <a href="contact"><i>Contact Me</i></a> page.</p>
+      
+      <h3>Academic Tutoring</h3>
+      <p>The subjects I offer tutoring for are as follow.<br><br><b><i>GCSE Level</i></b><br><br>Mathematics, English Literature and Language, French, Spanish, Computer Science, Business Studies.<br><br><b><i>A-Level</i></b><br><br>Mathematics, Computer Science, French, Spanish<br><br>The lessons will include problem sheets, time to discuss individual difficulties, questions for the Tutor, further activities, and anything else that will aid learning! I have achieved top GCSE and A-Level grades in all these subjects (10A* at GCSE, A*A*AA at A-Level), and will approach teaching in a fun, interesting, yet structured way to ensure exam success!<br><br>The rate for a one hour session is £30. For more information or to book a session, please contact me via the <a href="contact"><i>Contact Me</i></a> page.</p>
+      
+      <h3>Languages Tutoring</h3>
+      <p>I offer tutoring in French, English, and Spanish for all learners, and propose a dynamic and fun way of learning languages. Using a mix of modern and traditional techniques, you will see a marked improvement in your language skills. Each hour and a half session will include time to go over vocabulary, reading, writing, and oral skills. The sessions will also include worksheets, vocabulary lists, and special exam success advise.<br><br>The rate for a one hour session is £30. For more information or to book a session, please contact me via the <a href="contact"><i>Contact Me</i></a> page.</p>
+    </div>
+  </div>
 
-	<script>
-		// Page fade transition
-		document.addEventListener('DOMContentLoaded', function() {
-			// Fade in the page when it loads
-			document.body.classList.add('fade-in');
-			
-			// Handle navigation links for fade out effect
-			const navLinks = document.querySelectorAll('a[href]');
-			navLinks.forEach(link => {
-				// Only apply to internal links (not external or same page)
-				const href = link.getAttribute('href');
-				if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
-					link.addEventListener('click', function(e) {
-						// Don't apply to links that open in new tabs
-						if (!link.hasAttribute('target') || link.getAttribute('target') !== 'blank') {
-							e.preventDefault();
-							const targetUrl = this.getAttribute('href');
-							
-							// Fade out current page
-							document.body.classList.remove('fade-in');
-							document.body.classList.add('fade-out');
-							
-							// Navigate to new page after fade out
-							setTimeout(() => {
-								window.location.href = targetUrl;
-							}, 500);
-						}
-					});
-				}
-			});
-			
-			// Highlight current page in navigation
-			const currentPage = 'tutoring';
-			const currentNavLinks = document.querySelectorAll('.homepage-nav-link');
-			currentNavLinks.forEach(link => {
-				if (link.getAttribute('href') === currentPage) {
-					link.classList.add('current-page');
-				}
-			});
-		});
-	</script>
+  <script>
+  	// Page fade transition
+  	document.addEventListener('DOMContentLoaded', function() {
+  		// Use fallback background since no video is present
+		const fallbackBg = document.querySelector('.fallback-background');
+		if (fallbackBg) {
+			fallbackBg.style.display = 'block';
+		}
+  		
+ 		// Fade in the page when it loads
+ 		document.body.classList.add('fade-in');
+  		
+ 		// Handle navigation links for fade out effect
+ 		const navLinks = document.querySelectorAll('a[href]');
+ 		navLinks.forEach(link => {
+ 			// Only apply to internal links (not external or same page)
+ 			const href = link.getAttribute('href');
+ 			if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+ 				link.addEventListener('click', function(e) {
+ 					// Don't apply to links that open in new tabs
+ 					if (!link.hasAttribute('target') || link.getAttribute('target') !== 'blank') {
+ 						e.preventDefault();
+ 						const targetUrl = this.getAttribute('href');
+ 						
+ 						// Fade out current page
+ 						document.body.classList.remove('fade-in');
+ 						document.body.classList.add('fade-out');
+ 						
+ 						// Navigate to new page after fade out
+ 						setTimeout(() => {
+ 							window.location.href = targetUrl;
+ 						}, 100);
+ 					}
+ 				});
+ 			}
+ 		});
+
+  		// Highlight current page in navigation
+  		const currentPage = 'tutoring';
+  		const currentNavLinks = document.querySelectorAll('.homepage-nav-link');
+  		currentNavLinks.forEach(link => {
+  			if (link.getAttribute('href') === currentPage) {
+  				link.classList.add('current-page');
+  			}
+  		});
+  		
+  		// Preload background images for instant switching (if function exists)
+  		if (typeof preloadBackgroundImages === 'function') {
+  			preloadBackgroundImages();
+  		}
+  		
+  		// Enhanced smooth scrolling for better performance
+  		if ('scrollBehavior' in document.documentElement.style) {
+  			// Native smooth scrolling is supported
+  			document.documentElement.style.scrollBehavior = 'smooth';
+  		} else {
+  			// Fallback for older browsers
+  			const smoothScrollTo = (target, duration = 800) => {
+  				const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+  				const startPosition = window.pageYOffset;
+  				const distance = targetPosition - startPosition;
+  				let startTime = null;
+  				
+  				const animation = currentTime => {
+  					if (startTime === null) startTime = currentTime;
+  					const timeElapsed = currentTime - startTime;
+  					const run = ease(timeElapsed, startPosition, distance, duration);
+  					window.scrollTo(0, run);
+  					if (timeElapsed < duration) requestAnimationFrame(animation);
+  				};
+  				
+  				const ease = (t, b, c, d) => {
+  					t /= d / 2;
+  					if (t < 1) return c / 2 * t * t + b;
+  					t--;
+  					return -c / 2 * (t * (t - 2) - 1) + b;
+  				};
+  				
+  				requestAnimationFrame(animation);
+  			};
+  			
+  			// Apply to all anchor links
+  			document.querySelectorAll('a[href^="#"]').forEach(link => {
+  				link.addEventListener('click', e => {
+  					e.preventDefault();
+  					const target = document.querySelector(link.getAttribute('href'));
+  					if (target) smoothScrollTo(target);
+  				});
+  			});
+  		}
+  		
+  	});
+ 
+  </script>
 </body>
 </html>
