@@ -687,7 +687,7 @@ body.subpage .content-divider {
 	-webkit-overflow-scrolling: touch;
 }
 
-/* Align page container with menu bar for biography and tutoring pages */
+/* Align page container with menu bar for subpages */
 body.subpage:not(.blog-page) .page-container {
 	margin-left: 5vw;
 	margin-right: 5vw;
@@ -774,44 +774,7 @@ body.subpage:not(.blog-page) .Quote {
 	margin: 2vh 0;
 }
 
-/* BIOGRAPHY PAGE SPECIFIC STYLES // */
-/* Desktop layout for biography page */
-@media (min-width: 1001px) {
-	body.subpage:not(.blog-page) .content-main {
-		position: relative;
-		text-align: left;
-		width: 100%;
-		padding: 0;
-		margin-left: 0;
-		margin-right: 0;
-		top: 6vh;
-		margin-bottom: 4vh;
-	}
-
-	body.subpage:not(.blog-page) .content-main h2 {
-		text-align: left;
-		font-size: 2.2vw;
-		margin-bottom: 2vh;
-	}
-
-	body.subpage:not(.blog-page) .content-main h3 {
-		text-align: left;
-		font-size: 1.4vw;
-		margin-bottom: 1vh;
-		margin-top: 3vh;
-	}
-
-	body.subpage:not(.blog-page) .content-main p {
-		text-align: left;
-		font-size: 1.05vw;
-		line-height: 1.6;
-		margin-bottom: 2vh;
-	}
-}
-
-/* Remove mobile and extra quote styling blocks */
-
-/* Fix scrolling issues */
+/* Fix scrolling issues for subpages */
 body.subpage:not(.blog-page) {
 	height: auto;
 	min-height: 100vh;
@@ -828,7 +791,7 @@ body.subpage:not(.blog-page) .content-main {
 	-webkit-overflow-scrolling: touch;
 }
 
-/* Hide content-intro on biography page */
+/* Hide content-intro on subpages */
 body.subpage:not(.blog-page) .content-intro {
 	display: none;
 }
@@ -889,7 +852,7 @@ body.subpage:not(.blog-page) .content-intro {
 	margin: 0 auto;
 }
 
-/* Align content-intro with menu bar for biography and tutoring pages */
+/* Align content-intro with menu bar for subpages */
 body.subpage:not(.blog-page) .content-intro {
 	margin-left: 0;
 	margin-right: 0;
@@ -905,7 +868,7 @@ body.subpage:not(.blog-page) .content-intro {
 	margin: 0 auto;
 }
 
-/* Align content-search with menu bar for biography and tutoring pages */
+/* Align content-search with menu bar for subpages */
 body.subpage:not(.blog-page) .content-search {
 	margin-left: 0;
 	margin-right: 0;
@@ -1047,6 +1010,15 @@ body.subpage:not(.blog-page) .content-search {
 	color: white;
 	font-size: 18px;
 	font-weight: 100;
+}
+
+/* Current page styling for navigation - only on desktop/tablet */
+@media (min-width: 701px) {
+	.homepage-nav-link.current-page {
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 3px;
+	}
 }
 
 /* CONTACT STYLES // */

@@ -1,89 +1,241 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>BIOGRAPHY</title>
-	<link rel="stylesheet" type="text/css" href="Styling.css">
-	<meta charset="UTF-8">
-
-  	<meta name="keywords" content="Adam Lehodey, Lehodey, Adam Louis Sebastian Lehodey, Adventures, Ideas, Global Denizen"> 
-
-  	<meta name="description" content="Adam Lehodey is an adventurer; a lover of great ideas and great people and great places. Visit his website to access his portfolio and essays on economics, philosophy and literature.">
+  <title>Adam Lehodey: Biography</title>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="/site-resources/favicon.png" type="image/x-icon">
+  <link rel="icon" href="/site-resources/favicon.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
-  	<meta name="author" content="Adam Louis Sebastian Lehodey">
+  <meta name="keywords" content="Adam Lehodey, Lehodey, Adam Louis Sebastian Lehodey, Adventures, Ideas, Global Denizen"> 
+  <meta name="description" content="The Making of Adam Lehodey">
+  <meta name="author" content="Adam Louis Sebastian Lehodey">
 
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  	<link rel="shortcut icon" href="/site-resources/favicon.png" type="image/x-icon">
-	<link rel="icon" href="/site-resources/favicon.png" type="image/x-icon">
-  	<link rel="preconnect" href="https://fonts.googleapis.com">
-  	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bentham&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Droid+Serif&family=Josefin+Sans&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Quicksand&family=Raleway&display=swap" rel="stylesheet">
+  <!-- Resource hints for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  
+  <!-- Preload critical resources - TOP PRIORITY -->
+  <link rel="preload" href="site-resources/topography.png" as="image" fetchpriority="high">
+  <link rel="preload" href="site-resources/cover-photos/essays.jpg" as="image" fetchpriority="high">
+  <link rel="preload" href="Styling.css" as="style" fetchpriority="high">
+  <link rel="preload" href="blogstyling.css" as="style" fetchpriority="high">
+  
+  <!-- Preload secondary resources -->
+  <link rel="preload" href="site-resources/LinkedIn.png" as="image" fetchpriority="low">
+  <link rel="preload" href="site-resources/x-logo-white.png" as="image" fetchpriority="low">
+  <link rel="preload" href="site-resources/x-logo.png" as="image" fetchpriority="low">
+  
+      <!-- Critical CSS inlined for above-the-fold content -->
+    <style>
+      /* Critical CSS for immediate rendering */
+      html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+      .page-fade { opacity: 0; transition: opacity 0.1s ease-in-out; }
+      .page-fade.fade-in { opacity: 1; }
+      .hero-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2; }
+      .homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-top: 5vh; margin-left: 5vw; font-family: "Bodoni Moda", serif; font-size: 1.4vw; font-weight: 300; color: white; z-index: 2; }
+      .social-container { position: relative; margin-right: 5vw; margin-bottom: 0px; z-index: 2; }
+      .blog-background-image { position: absolute; top: 0; left: 0; width: 100vw; height: 52vh; background-image: url('site-resources/cover-photos/essays.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: -1; }
+      .blog-gradient-overlay { position: absolute; top: 0; left: 0; width: 100vw; height: 52vh; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)); z-index: 0; pointer-events: none; }
+      #content-container { margin-top: 10vh; padding-top: 2rem; position: relative; z-index: 1; }
+      .content-box { margin-left: 5vw; margin-right: 5vw; background: rgba(255, 255, 255, 0.85); min-height: 120vh; padding: 2rem 3rem; border-radius: 8px; margin-bottom: 40px; font-family: "Bodoni Moda", serif; }
+      .content-box h2 { font-family: "Bodoni Moda", serif; font-size: 2.2vw; margin-bottom: 2vh; text-align: center; }
+      .content-box h3 { font-family: "Bodoni Moda", serif; font-size: 1.4vw; margin-bottom: 1vh; margin-top: 3vh; }
+      .content-box p { font-family: "Bodoni Moda", serif; font-size: 1.05vw; line-height: 1.6; margin-bottom: 2vh; }
+      
+      /* Mobile and tablet responsive font sizing */
+      @media (max-width: 1000px) {
+        .content-box h2 { font-size: 32px; }
+        .content-box h3 { font-size: 20px; }
+        .content-box p { font-size: 16px; text-align: justify; }
+      }
+      .content-box .Quote { font-style: italic; background-color: rgba(220,220,220,0.8); padding: 2vh 2vw; border-left: 4px solid #333; margin: 2vh 0; }
+    </style>
+
+  <link rel="stylesheet" type="text/css" href="Styling.css">
+  <link rel="stylesheet" type="text/css" href="blogstyling.css">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bentham&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Droid+Serif&family=Josefin+Sans&family=Lora&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Quicksand&family=Raleway&display=swap" rel="stylesheet">
 </head>
 
-<body class="page-fade subpage">
-	<img class="hero-background" src="site-resources/topography.png" alt="Topography Background" loading="eager">
-	<div class="blog-background-image"></div>
-	<div class="blog-gradient-overlay"></div>
-		<div class="social-container">
-		  <a href="https://x.com/adamlehodey" target="_blank"><img class="social-icon" src="site-resources/x-logo-white.png" alt="X Link" loading="eager"></a>
-		  <a href="https://www.linkedin.com/in/adamlehodey/" target="_blank"><img class="social-icon" src="site-resources/LinkedIn.png" alt="LinkedIn Link" loading="eager"></a>
-	  </div>
-	<div class="homepage-nav"><a class="homepage-nav-link" href="/">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="blog">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="tutoring">INSTRUCTION</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
-	<div class="block_1"></div> <hr class="content-divider" />
+<body class="page-fade subpage blog-page">
+  <img class="hero-background" src="site-resources/topography.png" alt="Topography Background" loading="eager">
+  <div class="blog-background-image"></div>
+  <div class="blog-gradient-overlay"></div>
+  	<div class="social-container">
+		<a href="https://x.com/adamlehodey" target="_blank"><img class="social-icon" src="site-resources/x-logo-white.png" alt="X Link" loading="eager"></a>
+		<a href="https://www.linkedin.com/in/adamlehodey/" target="_blank"><img class="social-icon" src="site-resources/LinkedIn.png" alt="LinkedIn Link" loading="eager"></a>
+	</div>
+  <div class="homepage-nav"><a class="homepage-nav-link" href="/">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="blog">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="tutoring">INSTRUCTION</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
+  <div class="block_1"></div> <hr class="content-divider" />
 
-	<div class="page-container">
-		<div class="content-main"><h2 class="ContentTitles">WORK EXPERIENCE</h2><h3>American Enterprise Institute • Adam Smith Institute • Institute of Economic Affairs</h3><p>A number of short stints at various British and American think-tanks have given me a firm understanding of how think-tanks operate and run their operations. As <i>Summer Honors Fellow</i> at the American Enterprise Institute, I spent a week examining the issue of political alientation under scholar Tim Carney. I returned to the IEA in 2022 as a fellow on Freedom Week, an intense course of seminars and lectures on liberty and policy. Finally, after winning the 2021 Young Writers on Liberty Contest, I spent three weeks interning at the Adam Smith Institute, where I worked first-hand on research papers, drafted podcast scripts, and organised events for the Institute.</p><h3>House of Commons – Parliamentary Researcher</h3><p>I have significant experience in British politics, having worked for a Member of Parliament during my gap year and alongside my studies. This role enabled me to better discern <i>who governs</i> and what the most effective levers of change are in various cases. Having to work on diverse areas of policy, from building regulations, to security and foreign policy, has given me an excellent grasp of many interrelated subject areas. I also leveraged this time to build up a significant network across and outside 'the bubble.'</p><h3>JP Morgan Chase and Co - Intern</h3><p>In July 2019 I interned at JP Morgan’s Wealth Management Division, an experience that gave me a deep and meaningful insight into the world of finance and banking. It enabled me to translate the theoretical aspects of modern finance that I’d read in books by Philip Coggan and Michael Lewis and gave me a real understanding of the needs and role that global finance plays today. The truth is that it’s far greater than you think. Credit and financial institutions underpin almost every aspect of modern society and without them, the world would almost literally fall apart. What we saw in 2008 was only the tip of the iceberg.<br><br>Through working on a research project on blockchain and other innovations in fintech, I was excited about the potential these technologies have. Take blockchain for instance: if used correctly, it could result in a super-transparent system which would enable a crack-down on criminal activity and money laundering. This would lower costs for not only the banks themselves but society as a whole.<br><br>I also made the most of my time to speak to as many people as possible, from senior Managing Directors to other interns. This enabled me to learn a great amount as well. I wasn’t scared to get stuck in and ask when I didn’t understand, which is why the experience was so valuable.</p><h3>Institute of Economic Affairs - Intern</h3><p>In addition to my internship at JP Morgan, I also spent some of the summer of 2019 undertaking the Sixth Form Internship at the Institute of Economic Affairs, a prestigious Westminster think-tank. The internship allowed me to explore and research many topics including housing policy, immigration, the role of the market, justice in healthcare, and more. My favourite part was assessing what makes a strong argument, and subsequently participating in group debates. I worked in a group of three, and over the week we researched points against the statement ‘Cash should be abolished’. The leadership and discipline that I demonstrated not only contributed to our group winning the debate, but also to us being awarded ‘Strongest Group Argument’. In addition to this, I was awarded the 'Best Intern' award at the end of the week.</p><h3>The Economist Group - Intern</h3><p>In August of 2018, I was one of 8 to be selected from a pool of over 800 applicants for an internship at The Economist Group, a world-leading quality-press newspaper. Throughout the internship, it was fascinating to gain a deeper understanding into the practices and functions that exist within a media organisation. It was also captivating to examine the role that the media plays in current-affairs and politics. By attending editorial meetings, working on various projects, and asking questions to journalists, advertising agents, and columnists, I was able to gain a significant understanding into the workings of one of the world's most prestigious newspapers.</p><h3>Boots UK</h3><p>Throughout my time at Sixth-Form, I worked part-time at Boots Pharmacy, where working in pharmacy allowed me to gain an understanding of the procedures and laws related to the sale of medicine and drugs. I also managed the team on a Sunday, managing rotas and delegating jobs to other team members.<br><br>
-	The job also allowed me to develop my leadership and communication skills, especially working in a fast-paced retail environment. It was critical to be able to prioritise, and to manage my time effectively. Though not officially part of my job, working here allowed me to put into practise some of the techniques I had read in business books and journals. For instance, I often re-arranged products and counters to increase sales, and I was congratulated for my intuition and helpful suggestions that improved the customer experience.
-	</p><p class="Quote">“The only way to do great work is to love what you do, and it is apparent that Adam loves his job. Never has a room lit up more, than when Adam walks in!” – Bhageera Sivakumaran, Pharmacy Colleague.</p><h3>Surrey Libraries, Volunteer</h3>Volunteering at Surrey libraries not only allowed me to meet many people in the local community, but also allowed me to gain an understanding into the work that libraries do to support vulnerable people, such as the elderly. I leveraged IT in many ways to help improve the library in many ways including creating a system to organise events being hosted at the library, creating new displays and promotions, and promoting events through social media. I really got stuck in and was able to meet new people from across the constituency that I would never otherwise have met.<br><br>	</div>
-	</div>
-	
-	<div class="page-container">
-		<div class="content-main"><h2 class="ContentTitles">MAIN ACHIEVEMENTS</h2><h3>Duke of Edinburgh Awards – Gold Award</h3><p>The Gold Duke of Edinburgh award involves 18 months of volunteering, sport and ‘skills’, as well as a five-day long expedition abroad with nothing but a backpack. Many drop out or fail within the first couple of months, but I stuck to it and persevered, despite it being tough at times. Having completed my Bronze-Gold awards, I was invited to meet His Royal Highness the Earl of Wessex for a ceremony at St James’ Palace, where I was handed my certificate.<br><br>I knew it would strengthen my communication and teamwork skills and that it would push me out of my comfort zone, and so I’m so pleased to have completed it. Next step: Mount Everest (or possibly Kilimanjaro first!)</p><h3>Reigate and Banstead Youth Council</h3><p>As a former Chair of the Reigate and Banstead Youth Council, I gained strong experience in leadership and the importance of community work. The aim was to represent young people from across the whole borough and ensure they had a voice at the Council. We also worked on various charity projects, including fundraising for ‘Surrey Drug and Alcohol Care’, and ‘Surrey Young Carers’, and so I learnt a great deal about these charities and about raising funds for a cause. We also had bi-monthly debates, volunteered at events across the constituency, including the Holocaust Memorial Evening and the Heritage Week, and had talks from interesting speakers. It was a fantastic thing to be a part of.</p><h3>National Citizen Service</h3><p>Undertaking my National Citizen Service in Summer of 2017 was a challenging yet rewarding experience. Our group expedition to Buckinghamshire allowed me to build on my teamwork and leadership skills and spending a week at Surrey University allowed me to gain a flavour of life at University. I also built on my public speaking skills, and as a result of my confidence and willingness to put in 100%, I was chosen to present our final awards ceremony to an audience of 200 people.<br><br>As a group, we fundraised around £2000 for the organisation Rape Crisis Surrey and Sussex, a fantastic organisation supporting vulnerable women in the South-East of England. We had so much fun as a team, and in the end, we were awarded certificates signed by the then Prime Minister, Theresa May.</p><h3>UCL Finance Spring School</h3><p>In February of 2018, I was selected for a competitive week-long insight week into the finance sector at University College London, a world class university. Throughout the week, I worked on a group project examining the role of investment banks in the British economy, and I developed my understanding of what working in these giant institutions entails. It was imperative that I show excellent communication skills, thought in a clear and concise manner, and showed strong communication. My willingness and desire to learn more about economics and to get stuck in was also a key skill I demonstrated.</p><h3>Deputy Head Boy</h3><p>One of my great school achievements was being appointed Deputy Head Boy. I worked very closely with the  Head Boy and Head Girls, and a standout moment was fundraising for ‘Children in Need’, where I used problem-solving skills to come up with ideas and help raise almost £2000 for the charity, exceeding our goal of £1500. The strong connection I shared with all the staff meant that I was trusted to create the final leavers video along with the other Head Boys and girls, and it came out as a huge success!<br><br>I carried out many speeches and assemblies and used my confidence to represent our school in a very positive way, something I a still proud of and will continue to use my confidence to make a positive impact. Leadership and public speaking were some of the key skills this role helped me consolidate, and I gained not only great friendships, but also allowed me to gain experience in leading societies and hosting and organising many large events.</p><h3>UK Senior Mathematics Challenge – Silver Award</h3><p>I was one of three people in my year of 300 maths students to achieve a silver certificate at the UK Senior Maths Challenge 2018 and have been awarded certificates for 5 consecutive years.</p><h3>Canon Make the Grade Project</h3><p>Involved creating an ad to attract more people to Canon cameras. As group leader, I led, managed deadlines and brought the group together, where we did superbly and won 2nd place.</p><h3>Teaching Languages - St John’s School </h3><p>I delivered fun and enjoyable Spanish language lessons to Students at St John’s School every fortnight. I thought of all ideas and material to communicate well with younger people.<p class="Quote">“I worked closely with Adam in languages and witnessed his hard-work, reliability and creativity. He always made others laugh in a positive way and put his heart and soul into all his projects which is why they are such a success.” – Holly Rush, Friend of Adam.</p></p><br>	</div>
-	</div>
-	
-	<div class="page-container">
-		<div class="content-main"><h2 class="ContentTitles">SKILLS AND INTERESTS</h2><h3>Languages</h3><p>The way we use language to communicate and interact has never failed to amaze me, and I am constantly reading novels and publications such as The Economist and WIRED to see different perspectives on events. In addition, linguistics masterclasses I’ve attended at Cambridge and King’s college have also shown how language can be manipulated to make current affairs (US Gun Control, African Issues such as Corruption in South Africa) fit an agenda.</p><h3>Computing and Mathematics</h3><p>In addition to my A-Level in Computer Science, I have a deep interest in computer science and learnt to use languages including Java, Python, SQL, HTML/CSS, JavaScript and more. I often leverage the use of technology to automate and facilitate repetitive tasks, delivering increased efficiency and productivity gains across the board. I am also fascinated by Mathematics and, as mentioned, have participated in the UK Maths Challenge and Group Maths Challenge several times.</p><p class="Quote">“In Computer Science, Adam has shown himself to be a highly motivated student with great ability and insight into the Computer Science discipline. During his studies, Adam has developed a strong grasp of programming with an intuitive understanding of algorithm design. He has spent a considerable amount of time outside of lessons practising his programming skills to an advanced level.  Adam has been developing in Java using the NetBeans IDE. He has shown a keen interest and dedication throughout the course and strives to achieve an excellent understanding of the various topics within the course.  Adam is an amazing student and I am always very interested to see what he does next.” - Julie Hodgson, Computer Science Teacher.</p><h3>Web Design</h3><p>This very website was designed, coded, and published by me. I self-taught to code at the age of thirteen and have been doing it ever since. Now in an age dominated by mobile web traffic, I’m able to design mobile friendly websites, and understand the key elements of the GDPR and other legislation to ensure my websites comply.</p><h3>Music and Art</h3><p>In school I played in the orchestra, and I just generally love music and art. Whenever I’m travelling, I love to visit galleries and museums. My favourite ones are the Centre Pompidou, MoMA and National Gallery.	</p><br><br>	</div>
-	</div>
+  <!-- Content Container -->
+  <div id="content-container">
+    <div class="content-box">
 
-	<script>
-		// Page fade transition
-		document.addEventListener('DOMContentLoaded', function() {
-			// Fade in the page when it loads
-			document.body.classList.add('fade-in');
-			
-			// Handle navigation links for fade out effect
-			const navLinks = document.querySelectorAll('a[href]');
-			navLinks.forEach(link => {
-				// Only apply to internal links (not external or same page)
-				const href = link.getAttribute('href');
-				if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
-					link.addEventListener('click', function(e) {
-						// Don't apply to links that open in new tabs
-						if (!link.hasAttribute('target') || link.getAttribute('target') !== 'blank') {
-							e.preventDefault();
-							const targetUrl = this.getAttribute('href');
-							
-							// Fade out current page
-							document.body.classList.remove('fade-in');
-							document.body.classList.add('fade-out');
-							
-							// Navigate to new page after fade out
-							setTimeout(() => {
-								window.location.href = targetUrl;
-							}, 500);
-						}
-					});
-				}
-			});
-			
-			// Highlight current page in navigation
-			const currentPage = 'biography';
-			const currentNavLinks = document.querySelectorAll('.homepage-nav-link');
-			currentNavLinks.forEach(link => {
-				if (link.getAttribute('href') === currentPage) {
-					link.classList.add('current-page');
-				}
-			});
-		});
-	</script>
+      <h2 class="ContentTitles">WORK EXPERIENCE</h2>
+      <h3>American Enterprise Institute • Adam Smith Institute • Institute of Economic Affairs</h3>
+      <p>A number of short stints at various British and American think-tanks have given me a firm understanding of how think-tanks operate and run their operations. As <i>Summer Honors Fellow</i> at the American Enterprise Institute, I spent a week examining the issue of political alientation under scholar Tim Carney. I returned to the IEA in 2022 as a fellow on Freedom Week, an intense course of seminars and lectures on liberty and policy. Finally, after winning the 2021 Young Writers on Liberty Contest, I spent three weeks interning at the Adam Smith Institute, where I worked first-hand on research papers, drafted podcast scripts, and organised events for the Institute.</p>
+      
+      <h3>House of Commons – Parliamentary Researcher</h3>
+      <p>I have significant experience in British politics, having worked for a Member of Parliament during my gap year and alongside my studies. This role enabled me to better discern <i>who governs</i> and what the most effective levers of change are in various cases. Having to work on diverse areas of policy, from building regulations, to security and foreign policy, has given me an excellent grasp of many interrelated subject areas. I also leveraged this time to build up a significant network across and outside 'the bubble.'</p>
+      
+      <h3>JP Morgan Chase and Co - Intern</h3>
+      <p>In July 2019 I interned at JP Morgan's Wealth Management Division, an experience that gave me a deep and meaningful insight into the world of finance and banking. It enabled me to translate the theoretical aspects of modern finance that I'd read in books by Philip Coggan and Michael Lewis and gave me a real understanding of the needs and role that global finance plays today. The truth is that it's far greater than you think. Credit and financial institutions underpin almost every aspect of modern society and without them, the world would almost literally fall apart. What we saw in 2008 was only the tip of the iceberg.<br><br>Through working on a research project on blockchain and other innovations in fintech, I was excited about the potential these technologies have. Take blockchain for instance: if used correctly, it could result in a super-transparent system which would enable a crack-down on criminal activity and money laundering. This would lower costs for not only the banks themselves but society as a whole.<br><br>I also made the most of my time to speak to as many people as possible, from senior Managing Directors to other interns. This enabled me to learn a great amount as well. I wasn't scared to get stuck in and ask when I didn't understand, which is why the experience was so valuable.</p>
+      
+      <h3>Institute of Economic Affairs - Intern</h3>
+      <p>In addition to my internship at JP Morgan, I also spent some of the summer of 2019 undertaking the Sixth Form Internship at the Institute of Economic Affairs, a prestigious Westminster think-tank. The internship allowed me to explore and research many topics including housing policy, immigration, the role of the market, justice in healthcare, and more. My favourite part was assessing what makes a strong argument, and subsequently participating in group debates. I worked in a group of three, and over the week we researched points against the statement 'Cash should be abolished'. The leadership and discipline that I demonstrated not only contributed to our group winning the debate, but also to us being awarded 'Strongest Group Argument'. In addition to this, I was awarded the 'Best Intern' award at the end of the week.</p>
+      
+      <h3>The Economist Group - Intern</h3>
+      <p>In August of 2018, I was one of 8 to be selected from a pool of over 800 applicants for an internship at The Economist Group, a world-leading quality-press newspaper. Throughout the internship, it was fascinating to gain a deeper understanding into the practices and functions that exist within a media organisation. It was also captivating to examine the role that the media plays in current-affairs and politics. By attending editorial meetings, working on various projects, and asking questions to journalists, advertising agents, and columnists, I was able to gain a significant understanding into the workings of one of the world's most prestigious newspapers.</p>
+      
+      <h3>Boots UK</h3>
+      <p>Throughout my time at Sixth-Form, I worked part-time at Boots Pharmacy, where working in pharmacy allowed me to gain an understanding of the procedures and laws related to the sale of medicine and drugs. I also managed the team on a Sunday, managing rotas and delegating jobs to other team members.<br><br>The job also allowed me to develop my leadership and communication skills, especially working in a fast-paced retail environment. It was critical to be able to prioritise, and to manage my time effectively. Though not officially part of my job, working here allowed me to put into practise some of the techniques I had read in business books and journals. For instance, I often re-arranged products and counters to increase sales, and I was congratulated for my intuition and helpful suggestions that improved the customer experience.</p>
+      
+      <p class="Quote">"The only way to do great work is to love what you do, and it is apparent that Adam loves his job. Never has a room lit up more, than when Adam walks in!" – Bhageera Sivakumaran, Pharmacy Colleague.</p>
+      
+      <h3>Surrey Libraries, Volunteer</h3>
+      <p>Volunteering at Surrey libraries not only allowed me to meet many people in the local community, but also allowed me to gain an understanding into the work that libraries do to support vulnerable people, such as the elderly. I leveraged IT in many ways to help improve the library in many ways including creating a system to organise events being hosted at the library, creating new displays and promotions, and promoting events through social media. I really got stuck in and was able to meet new people from across the constituency that I would never otherwise have met.</p>
+      
+      <h2 class="ContentTitles">MAIN ACHIEVEMENTS</h2>
+      <h3>Duke of Edinburgh Awards – Gold Award</h3>
+      <p>The Gold Duke of Edinburgh award involves 18 months of volunteering, sport and 'skills', as well as a five-day long expedition abroad with nothing but a backpack. Many drop out or fail within the first couple of months, but I stuck to it and persevered, despite it being tough at times. Having completed my Bronze-Gold awards, I was invited to meet His Royal Highness the Earl of Wessex for a ceremony at St James' Palace, where I was handed my certificate.<br><br>I knew it would strengthen my communication and teamwork skills and that it would push me out of my comfort zone, and so I'm so pleased to have completed it. Next step: Mount Everest (or possibly Kilimanjaro first!)</p>
+      
+      <h3>Reigate and Banstead Youth Council</h3>
+      <p>As a former Chair of the Reigate and Banstead Youth Council, I gained strong experience in leadership and the importance of community work. The aim was to represent young people from across the whole borough and ensure they had a voice at the Council. We also worked on various charity projects, including fundraising for 'Surrey Drug and Alcohol Care', and 'Surrey Young Carers', and so I learnt a great deal about these charities and about raising funds for a cause. We also had bi-monthly debates, volunteered at events across the constituency, including the Holocaust Memorial Evening and the Heritage Week, and had talks from interesting speakers. It was a fantastic thing to be a part of.</p>
+      
+      <h3>National Citizen Service</h3>
+      <p>Undertaking my National Citizen Service in Summer of 2017 was a challenging yet rewarding experience. Our group expedition to Buckinghamshire allowed me to build on my teamwork and leadership skills and spending a week at Surrey University allowed me to gain a flavour of life at University. I also built on my public speaking skills, and as a result of my confidence and willingness to put in 100%, I was chosen to present our final awards ceremony to an audience of 200 people.<br><br>As a group, we fundraised around £2000 for the organisation Rape Crisis Surrey and Sussex, a fantastic organisation supporting vulnerable women in the South-East of England. We had so much fun as a team, and in the end, we were awarded certificates signed by the then Prime Minister, Theresa May.</p>
+      
+      <h3>UCL Finance Spring School</h3>
+      <p>In February of 2018, I was selected for a competitive week-long insight week into the finance sector at University College London, a world class university. Throughout the week, I worked on a group project examining the role of investment banks in the British economy, and I developed my understanding of what working in these giant institutions entails. It was imperative that I show excellent communication skills, thought in a clear and concise manner, and showed strong communication. My willingness and desire to learn more about economics and to get stuck in was also a key skill I demonstrated.</p>
+      
+      <h3>Deputy Head Boy</h3>
+      <p>One of my great school achievements was being appointed Deputy Head Boy. I worked very closely with the Head Boy and Head Girls, and a standout moment was fundraising for 'Children in Need', where I used problem-solving skills to come up with ideas and help raise almost £2000 for the charity, exceeding our goal of £1500. The strong connection I shared with all the staff meant that I was trusted to create the final leavers video along with the other Head Boys and girls, and it came out as a huge success!<br><br>I carried out many speeches and assemblies and used my confidence to represent our school in a very positive way, something I a still proud of and will continue to use my confidence to make a positive impact. Leadership and public speaking were some of the key skills this role helped me consolidate, and I gained not only great friendships, but also allowed me to gain experience in leading societies and hosting and organising many large events.</p>
+      
+      <h3>UK Senior Mathematics Challenge – Silver Award</h3>
+      <p>I was one of three people in my year of 300 maths students to achieve a silver certificate at the UK Senior Maths Challenge 2018 and have been awarded certificates for 5 consecutive years.</p>
+      
+      <h3>Canon Make the Grade Project</h3>
+      <p>Involved creating an ad to attract more people to Canon cameras. As group leader, I led, managed deadlines and brought the group together, where we did superbly and won 2nd place.</p>
+      
+      <h3>Teaching Languages - St John's School</h3>
+      <p>I delivered fun and enjoyable Spanish language lessons to Students at St John's School every fortnight. I thought of all ideas and material to communicate well with younger people.</p>
+      
+      <p class="Quote">"I worked closely with Adam in languages and witnessed his hard-work, reliability and creativity. He always made others laugh in a positive way and put his heart and soul into all his projects which is why they are such a success." – Holly Rush, Friend of Adam.</p>
+      
+      <h2 class="ContentTitles">SKILLS AND INTERESTS</h2>
+      <h3>Languages</h3>
+      <p>The way we use language to communicate and interact has never failed to amaze me, and I am constantly reading novels and publications such as The Economist and WIRED to see different perspectives on events. In addition, linguistics masterclasses I've attended at Cambridge and King's college have also shown how language can be manipulated to make current affairs (US Gun Control, African Issues such as Corruption in South Africa) fit an agenda.</p>
+      
+      <h3>Computing and Mathematics</h3>
+      <p>In addition to my A-Level in Computer Science, I have a deep interest in computer science and learnt to use languages including Java, Python, SQL, HTML/CSS, JavaScript and more. I often leverage the use of technology to automate and facilitate repetitive tasks, delivering increased efficiency and productivity gains across the board. I am also fascinated by Mathematics and, as mentioned, have participated in the UK Maths Challenge and Group Maths Challenge several times.</p>
+      
+      <p class="Quote">"In Computer Science, Adam has shown himself to be a highly motivated student with great ability and insight into the Computer Science discipline. During his studies, Adam has developed a strong grasp of programming with an intuitive understanding of algorithm design. He has spent a considerable amount of time outside of lessons practising his programming skills to an advanced level. Adam has been developing in Java using the NetBeans IDE. He has shown a keen interest and dedication throughout the course and strives to achieve an excellent understanding of the various topics within the course. Adam is an amazing student and I am always very interested to see what he does next." - Julie Hodgson, Computer Science Teacher.</p>
+      
+      <h3>Web Design</h3>
+      <p>This very website was designed, coded, and published by me. I self-taught to code at the age of thirteen and have been doing it ever since. Now in an age dominated by mobile web traffic, I'm able to design mobile friendly websites, and understand the key elements of the GDPR and other legislation to ensure my websites comply.</p>
+      
+      <h3>Music and Art</h3>
+      <p>In school I played in the orchestra, and I just generally love music and art. Whenever I'm travelling, I love to visit galleries and museums. My favourite ones are the Centre Pompidou, MoMA and National Gallery.</p>
+    </div>
+  </div>
+
+  <script>
+  	// Page fade transition
+  	document.addEventListener('DOMContentLoaded', function() {
+  		// Use fallback background since no video is present
+		const fallbackBg = document.querySelector('.fallback-background');
+		if (fallbackBg) {
+			fallbackBg.style.display = 'block';
+		}
+  		
+ 		// Fade in the page when it loads
+ 		document.body.classList.add('fade-in');
+  		
+ 		// Handle navigation links for fade out effect
+ 		const navLinks = document.querySelectorAll('a[href]');
+ 		navLinks.forEach(link => {
+ 			// Only apply to internal links (not external or same page)
+ 			const href = link.getAttribute('href');
+ 			if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+ 				link.addEventListener('click', function(e) {
+ 					// Don't apply to links that open in new tabs
+ 					if (!link.hasAttribute('target') || link.getAttribute('target') !== 'blank') {
+ 						e.preventDefault();
+ 						const targetUrl = this.getAttribute('href');
+ 						
+ 						// Fade out current page
+ 						document.body.classList.remove('fade-in');
+ 						document.body.classList.add('fade-out');
+ 						
+ 												// Navigate to new page after fade out
+						setTimeout(() => {
+							window.location.href = targetUrl;
+						}, 100);
+ 					}
+ 				});
+ 			}
+ 		});
+
+  		// Highlight current page in navigation
+  		const currentPage = 'biography';
+  		const currentNavLinks = document.querySelectorAll('.homepage-nav-link');
+  		currentNavLinks.forEach(link => {
+  			if (link.getAttribute('href') === currentPage) {
+  				link.classList.add('current-page');
+  			}
+  		});
+  		
+  		// Preload background images for instant switching (if function exists)
+  		if (typeof preloadBackgroundImages === 'function') {
+  			preloadBackgroundImages();
+  		}
+  		
+  		// Enhanced smooth scrolling for better performance
+  		if ('scrollBehavior' in document.documentElement.style) {
+  			// Native smooth scrolling is supported
+  			document.documentElement.style.scrollBehavior = 'smooth';
+  		} else {
+  			// Fallback for older browsers
+  			const smoothScrollTo = (target, duration = 800) => {
+  				const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+  				const startPosition = window.pageYOffset;
+  				const distance = targetPosition - startPosition;
+  				let startTime = null;
+  				
+  				const animation = currentTime => {
+  					if (startTime === null) startTime = currentTime;
+  					const timeElapsed = currentTime - startTime;
+  					const run = ease(timeElapsed, startPosition, distance, duration);
+  					window.scrollTo(0, run);
+  					if (timeElapsed < duration) requestAnimationFrame(animation);
+  				};
+  				
+  				const ease = (t, b, c, d) => {
+  					t /= d / 2;
+  					if (t < 1) return c / 2 * t * t + b;
+  					t--;
+  					return -c / 2 * (t * (t - 2) - 1) + b;
+  				};
+  				
+  				requestAnimationFrame(animation);
+  			};
+  			
+  			// Apply to all anchor links
+  			document.querySelectorAll('a[href^="#"]').forEach(link => {
+  				link.addEventListener('click', e => {
+  					e.preventDefault();
+  					const target = document.querySelector(link.getAttribute('href'));
+  					if (target) smoothScrollTo(target);
+  				});
+  			});
+  		}
+  		
+  	});
+ 
+  </script>
 </body>
+</html>
