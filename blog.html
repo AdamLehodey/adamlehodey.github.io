@@ -278,11 +278,18 @@
   			button.addEventListener('click', function() {
   				const filter = this.getAttribute('data-filter');
   				
-  				// Update active button
+  				// IMMEDIATE: Change background image first for instant visual feedback
+  				const backgroundElement = document.querySelector('.blog-background-image');
+  				if (backgroundElement) {
+  					const newImage = backgroundImages[filter] || backgroundImages['all'];
+  					backgroundElement.style.backgroundImage = `url('${newImage}')`;
+  				}
+  				
+  				// IMMEDIATE: Update active button styling
   				filterButtons.forEach(btn => btn.classList.remove('active'));
   				this.classList.add('active');
   				
-  				// Filter posts
+  				// Then filter posts (this can happen after visual feedback)
   				filterPosts(filter);
   			});
   		});
@@ -313,15 +320,6 @@
   			filteredPosts = allPosts;
   		} else {
   			filteredPosts = allPosts.filter(post => post.type === filter);
-  		}
-  		
-  		// Change background image based on filter using optimized method
-  		const backgroundElement = document.querySelector('.blog-background-image');
-  		if (backgroundElement) {
-  			const newImage = backgroundImages[filter] || backgroundImages['all'];
-  			// Use transform3d to force hardware acceleration
-  			backgroundElement.style.transform = 'translate3d(0,0,0)';
-  			backgroundElement.style.backgroundImage = `url('${newImage}')`;
   		}
   		
   		displayPosts(filteredPosts);

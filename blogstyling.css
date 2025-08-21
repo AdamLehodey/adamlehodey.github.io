@@ -15,8 +15,8 @@
   /* CSS mask to make image fade from opaque to transparent */
   -webkit-mask: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   mask: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-  /* Smooth transition for background changes */
-  transition: background-image 0.8s ease-in-out;
+  /* Quick fade transition for smooth background switching */
+  transition: background-image 0.3s ease-in-out;
   will-change: transform;
   transform: translate3d(0,0,0); /* Force hardware acceleration */
 }
