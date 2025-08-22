@@ -60,7 +60,43 @@
   <script src="https://www.google.com/recaptcha/api.js"></script>
   <script>
     function onSubmit() {
-      document.getElementById("contactForm").submit();
+      // Get the form
+      const form = document.getElementById("contactForm");
+      
+      // Check if all required fields are filled
+      const nameField = document.getElementById("name");
+      const emailField = document.getElementById("email");
+      const messageField = document.getElementById("message");
+      
+      // Validate required fields
+      if (!nameField.value.trim()) {
+        alert("Please enter your name.");
+        nameField.focus();
+        return false;
+      }
+      
+      if (!emailField.value.trim()) {
+        alert("Please enter your email address.");
+        emailField.focus();
+        return false;
+      }
+      
+      if (!messageField.value.trim()) {
+        alert("Please enter your message.");
+        messageField.focus();
+        return false;
+      }
+      
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailField.value.trim())) {
+        alert("Please enter a valid email address.");
+        emailField.focus();
+        return false;
+      }
+      
+      // If all validation passes, submit the form
+      form.submit();
     }
   </script>
 </head>
