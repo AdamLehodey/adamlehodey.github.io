@@ -1503,7 +1503,7 @@ fieldset {
 .contact-form-layout .fs-button-group {
   display: flex;
   justify-content: center;
-  margin-top: 0.5rem;
+  margin-top: 0;
 }
 
 /* Contact Divider Line */
@@ -1672,11 +1672,13 @@ fieldset {
 .contact-form-layout .fs-select {
   height: 2.5rem;
   font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .contact-form-layout .fs-textarea {
   font-size: 0.95rem;
   padding: 0.75rem;
+  font-weight: 500;
 }
 
 .contact-form-layout .fs-label {
