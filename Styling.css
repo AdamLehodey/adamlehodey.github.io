@@ -1691,6 +1691,303 @@ fieldset {
   margin-top: 0.25rem;
 }
 
+/* BIOGRAPHY PAGE SPECIFIC RESPONSIVE STYLES */
+/* Ensure biography page text always overlays stars background */
+
+/* Biography page specific overrides */
+body.biography-page {
+  background-image: url("site-resources/twinkle_twinkle.png") !important;
+  background-repeat: repeat !important;
+  background-size: auto !important;
+  background-position: top left !important;
+  background-attachment: scroll !important;
+}
+
+body.biography-page .homepage-nav,
+body.biography-page .homepage-nav-link,
+body.biography-page .nav-separator {
+  color: white !important;
+}
+
+/* Biography page video background positioning */
+body.biography-page .biography-video-background {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: -1 !important;
+}
+
+/* Biography page hero section positioning */
+body.biography-page #hero-section {
+  position: relative !important;
+  z-index: 10 !important;
+  margin-top: 10vh !important;
+  max-height: 90vh !important;
+  overflow: hidden !important;
+}
+
+/* Biography page text section positioning */
+body.biography-page #text-section {
+  position: relative !important;
+  z-index: 10 !important;
+  max-height: 70vh !important;
+  overflow: hidden !important;
+}
+
+/* Biography page content box positioning */
+body.biography-page .hero-content-box {
+  background: transparent !important;
+  margin-left: 5vw !important;
+  margin-right: 5vw !important;
+}
+
+/* Biography content boxes spacing and typography */
+body.biography-page #biography-content-box {
+  margin-bottom: 4rem !important;
+}
+
+body.biography-page #biography-content-box:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Biography content typography - match text-section styling */
+body.biography-page #biography-content-box h3 {
+  font-family: "Libre Bodoni", serif !important;
+  font-size: 1.4rem !important;
+  margin-bottom: 2vh !important;
+  color: white !important;
+}
+
+body.biography-page #biography-content-box p {
+  font-family: "Libre Bodoni", serif !important;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 2vh !important;
+  color: white !important;
+  text-align: justify !important;
+}
+
+/* ENHANCED MOBILE RESPONSIVE SYSTEM FOR BIOGRAPHY PAGE */
+/* Desktop and large tablets */
+@media (min-width: 1001px) {
+  body.biography-page #typewriter-title,
+  body.biography-page #typewriter-cursor { 
+    font-size: 4rem !important; 
+  }
+  body.biography-page #text-section p { 
+    font-size: 1.05rem !important; 
+  }
+}
+
+/* Medium tablets and small desktops */
+@media (max-width: 1000px) and (min-width: 801px) {
+  body.biography-page #typewriter-title,
+  body.biography-page #typewriter-cursor { 
+    font-size: 3.5rem !important; 
+  }
+  body.biography-page #text-section p { 
+    font-size: 1rem !important; 
+  }
+}
+
+/* Small tablets */
+@media (max-width: 800px) and (min-width: 601px) {
+  body.biography-page #typewriter-title,
+  body.biography-page #typewriter-cursor { 
+    font-size: 3rem !important; 
+  }
+  body.biography-page #text-section p { 
+    font-size: 0.95rem !important; 
+  }
+}
+
+/* Large phones and small tablets */
+@media (max-width: 600px) and (min-width: 481px) {
+  body.biography-page #typewriter-title,
+  body.biography-page #typewriter-cursor { 
+    font-size: 2.8rem !important; 
+  }
+  body.biography-page #text-section p { 
+    font-size: 0.85rem !important; 
+  }
+}
+
+/* Medium phones (iPhone 14 Pro Max, iPhone XR, etc.) */
+@media (max-width: 480px) and (min-width: 401px) {
+  body.biography-page #typewriter-title,
+  body.biography-page #typewriter-cursor { 
+    font-size: 2.5rem !important; 
+  }
+  body.biography-page #text-section p { 
+    font-size: 0.8rem !important; 
+  }
+}
+
+/* Small phones (iPhone SE, etc.) */
+@media (max-width: 400px) and (min-width: 321px) {
+  body.biography-page #typewriter-title,
+  body.biography-page #typewriter-cursor { 
+    font-size: 2.2rem !important; 
+  }
+  body.biography-page #text-section p { 
+    font-size: 0.75rem !important; 
+  }
+}
+
+/* Very small phones */
+@media (max-width: 320px) {
+  body.biography-page #typewriter-title,
+  body.biography-page #typewriter-cursor { 
+    font-size: 2rem !important; 
+  }
+  body.biography-page #text-section p { 
+    font-size: 0.7rem !important; 
+  }
+}
+
+/* ASPECT RATIO BASED ADJUSTMENTS FOR SPECIFIC DEVICES */
+/* iPhone 14 Pro Max landscape (430x932) - prevent overflow */
+@media (max-width: 932px) and (max-height: 430px) and (orientation: landscape) {
+  body.biography-page #hero-section { 
+    margin-top: 3vh !important; 
+    padding-top: 0.5rem !important; 
+    max-height: 97vh !important;
+  }
+  body.biography-page #text-section p { 
+    font-size: 0.75rem !important; 
+  }
+  body.biography-page #text-section { 
+    margin-top: 2vh !important; 
+  }
+}
+
+/* iPhone 14 Pro Max portrait (430x932) - increase text size */
+@media (min-width: 430px) and (max-width: 932px) and (min-height: 430px) and (orientation: portrait) {
+  body.biography-page #text-section p { 
+    font-size: 0.85rem !important; 
+  }
+}
+
+/* iPhone SE (375x667) - decrease text size */
+@media (max-width: 375px) and (max-height: 667px) {
+  body.biography-page #text-section p { 
+    font-size: 0.75rem !important; 
+  }
+}
+
+/* iPad Mini (768x1024) - increase text size */
+@media (min-width: 768px) and (max-width: 1024px) and (min-height: 768px) {
+  body.biography-page #text-section p { 
+    font-size: 1rem !important; 
+  }
+}
+
+/* Surface Duo (540x720) - keep current sizing (looks perfect) */
+@media (min-width: 540px) and (max-width: 720px) and (min-height: 540px) {
+  body.biography-page #text-section p { 
+    font-size: 0.85rem !important; 
+  }
+}
+
+/* Galaxy Z Fold 5 (344x882) - keep current sizing (looks good) */
+@media (max-width: 344px) and (min-height: 882px) {
+  body.biography-page #text-section p { 
+    font-size: 0.8rem !important; 
+  }
+}
+
+/* iPhone XR (414x896) - increase text size slightly */
+@media (min-width: 414px) and (max-width: 896px) and (min-height: 414px) {
+  body.biography-page #text-section p { 
+    font-size: 0.83rem !important; 
+  }
+}
+
+/* VIEWPORT HEIGHT BASED ADJUSTMENTS */
+/* Short viewports (landscape phones) - prevent overflow */
+@media (max-height: 500px) {
+  body.biography-page #hero-section { 
+    margin-top: 2vh !important; 
+    padding-top: 0.5rem !important; 
+    max-height: 98vh !important;
+  }
+  body.biography-page #text-section { 
+    margin-top: 1vh !important; 
+  }
+  body.biography-page #text-section p { 
+    font-size: 0.7rem !important; 
+    line-height: 1.4 !important;
+    margin-bottom: 1vh !important;
+  }
+}
+
+/* Tall viewports (portrait phones) - increase text size */
+@media (min-height: 800px) and (max-width: 500px) {
+  body.biography-page #text-section p { 
+    font-size: 0.85rem !important; 
+  }
+}
+
+/* Very tall viewports (large phones in portrait) */
+@media (min-height: 900px) and (max-width: 500px) {
+  body.biography-page #text-section p { 
+    font-size: 0.9rem !important; 
+  }
+}
+
+/* Mobile layout adjustments - ensure text stays within video background */
+@media (max-width: 700px) {
+  body.biography-page #hero-section { 
+    margin-top: 5vh !important; 
+    padding-top: 1rem !important; 
+    max-height: 95vh !important;
+    overflow: hidden !important;
+  }
+  body.biography-page .typewriter-container { 
+    width: 100% !important; 
+    display: flex !important;
+    justify-content: center !important; 
+    align-items: center !important;
+  }
+  body.biography-page #typewriter-title { 
+    text-align: center !important; 
+  }
+  body.biography-page .hero-content-box {
+    margin-left: 4vw !important;
+    margin-right: 4vw !important;
+  }
+}
+
+@media (max-width: 500px) {
+  body.biography-page #hero-section { 
+    margin-top: 3vh !important; 
+    padding-top: 0.5rem !important; 
+    max-height: 97vh !important;
+  }
+  body.biography-page .typewriter-container { 
+    width: 100% !important; 
+    display: flex !important;
+    justify-content: center !important; 
+    align-items: center !important;
+  }
+  body.biography-page #typewriter-title { 
+    text-align: center !important; 
+  }
+  body.biography-page .hero-content-box {
+    margin-left: 3vw !important;
+    margin-right: 3vw !important;
+  }
+}
+
+/* Force text to stay within bounds on all devices */
+body.biography-page #text-section p {
+  max-width: 100% !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
 
 
 

@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>(Auto)-biography | Adam Lehodey</title>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="/site-resources/favicon.png" type="image/x-icon">
+  <link rel="icon" href="/site-resources/favicon.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="keywords" content="Adam Lehodey, Lehodey, Adam Louis Sebastian Lehodey, Adventures, Ideas, Global Denizen"> 
+  <meta name="description" content="The Making of Adam Lehodey">
+  <meta name="author" content="Adam Louis Sebastian Lehodey">
+
+  <!-- Resource hints for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  
+  <!-- Preload critical resources - TOP PRIORITY -->
+  <link rel="preload" href="site-resources/Stars-3.mp4" as="video" fetchpriority="high">
+  <link rel="preload" href="Styling.css" as="style" fetchpriority="high">
+  <link rel="preload" href="blogstyling.css" as="style" fetchpriority="high">
+  
+  <!-- Preload secondary resources -->
+  <link rel="preload" href="site-resources/LinkedIn.png" as="image" fetchpriority="low">
+  <link rel="preload" href="site-resources/x-logo-white.png" as="image" fetchpriority="low">
+  
+      <!-- Critical CSS inlined for above-the-fold content -->
+    <style>
+      /* Critical CSS for immediate rendering */
+      html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+      .page-fade { opacity: 0; transition: opacity 0.1s ease-in-out; }
+      .page-fade.fade-in { opacity: 1; }
+      
+      /* Biography video background styling - covers full viewport initially */
+      .biography-video-background { 
+        position: absolute !important; 
+        top: 0 !important; 
+        left: 0 !important; 
+        width: 100vw !important; 
+        height: 100vh !important; 
+        object-fit: cover !important; 
+        z-index: -1 !important; 
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        min-width: 100vw !important;
+        min-height: 100vh !important;
+      }
+      
+      /* Biography fallback background for when video fails to load */
+      .biography-fallback-background { 
+        position: absolute !important; 
+        top: 0 !important; 
+        left: 0 !important; 
+        width: 100vw !important; 
+        height: 100vh !important; 
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%) !important;
+        z-index: -1 !important; 
+        display: none;
+      }
+      
+      /* Biography video overlay */
+      .biography-video-overlay { 
+        position: absolute !important; 
+        top: 0 !important; 
+        left: 0 !important; 
+        width: 100vw !important; 
+        height: 100vh !important; 
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 90%, rgba(0, 0, 0, 0.6) 93%, rgba(0, 0, 0, 0.8) 96%, rgba(0, 0, 0, 1) 100%) !important; 
+        z-index: 0 !important; 
+        pointer-events: none !important;
+      }
+      
+      .homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-top: 5vh; margin-left: 5vw; font-family: "Bodoni Moda", serif; font-size: 1.4vw; font-weight: 300; color: white; z-index: 2; }
+      .social-container { position: relative; margin-right: 5vw; margin-bottom: 0px; z-index: 2; }
+      
+      /* Remove the old blog background image and gradient overlay */
+      .blog-background-image { display: none; }
+      .blog-gradient-overlay { display: none; }
+      
+      /* Hero section - overlays the video background with title and intro text */
+      #hero-section { 
+        margin-top: 10vh; 
+        padding-top: 2rem; 
+        position: relative; 
+        z-index: 10;
+        max-height: 90vh;
+        overflow: hidden;
+      }
+      .hero-content-box { 
+        margin-left: 5vw; 
+        margin-right: 5vw; 
+        background: transparent !important; 
+        border-radius: 8px; 
+        margin-bottom: 40px; 
+        font-family: "Bodoni Moda", serif; 
+      }
+      
+
+      
+      /* Background - Twinkle Twinkle */
+      body {
+        background-image: url('site-resources/twinkle_twinkle.png') !important;
+        background-repeat: repeat !important;
+        background-size: auto !important;
+        background-position: top left !important;
+        background-attachment: scroll !important;
+      }
+      #title-section {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        margin-top: 0;
+      }
+      
+      .typewriter-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: fit-content;
+      }
+      
+      #typewriter-title { 
+        font-family: "Bodoni Moda", serif; 
+        font-size: 4rem; 
+        margin-bottom: 0.3vw; 
+        text-align: left; 
+        color: white !important; 
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      
+      #typewriter-cursor {
+        font-family: "Bodoni Moda", serif;
+        font-size: 4rem;
+        color: white;
+        margin-left: 2px;
+        opacity: 0;
+        position: relative;
+        top: 0;
+        animation: blink-caret 0.75s step-end infinite;
+      }
+      
+      #text-section {
+        position: relative;
+        margin-top: 5vh;
+        left: 0;
+        right: 0;
+        z-index: 10;
+      }
+      
+      #text-section p {
+        font-family: "Libre Bodoni", serif;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        margin-bottom: 2vh;
+        color: white !important;
+        text-align: justify;
+      }
+      
+      .author-signature {
+        margin-right: 2em;
+        display: inline-block;
+      }
+      
+      /* Main biography content - starts after video background */
+      #biography-content {
+        margin-top: 100px;
+        padding: 2rem 0;
+        position: relative;
+        z-index: 10;
+      }
+      
+      #biography-content-box {
+        margin-left: 5vw;
+        margin-right: 5vw;
+        background: transparent !important;
+        border-radius: 8px;
+        margin-bottom: 40px;
+        font-family: "Bodoni Moda", serif;
+        border: 2px solid;
+        border-image: linear-gradient(45deg, blue, green, blue, green) 1;
+        color: white !important;
+      }
+      
+      #biography-content-box h2,
+      #biography-content-box h3,
+      #biography-content-box p {
+        color: white !important;
+      }
+      
+      @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+      }
+      
+      @keyframes blink-caret {
+        from, to { opacity: 0; }
+        50% { opacity: 1; }
+      }
+      .content-box h2 { font-family: "Bodoni Moda", serif; font-size: 2.2rem; margin-bottom: 2vh; text-align: center; color: white !important; }
+      .content-box h3 { font-family: "Bodoni Moda", serif; font-size: 1.4rem; margin-bottom: 1vh; margin-top: 3vh; color: white !important; }
+      .content-box p { font-family: "Libre Bodoni", serif; font-size: 1.05rem; line-height: 1.6; margin-bottom: 2vh; color: white !important; text-align: justify; }
+      
+      /* ENHANCED RESPONSIVE SYSTEM FOR BIOGRAPHY PAGE */
+      /* Desktop and large tablets - keep existing sizing */
+      @media (min-width: 1001px) {
+        #typewriter-title, #typewriter-cursor { font-size: 4rem; }
+        #text-section p { font-size: 1.05rem; }
+      }
+      
+      /* Medium tablets and small desktops */
+      @media (max-width: 1000px) and (min-width: 801px) {
+        #typewriter-title, #typewriter-cursor { font-size: 3.5rem; }
+        #text-section p { font-size: 1rem; }
+      }
+      
+      /* Small tablets */
+      @media (max-width: 800px) and (min-width: 601px) {
+        #typewriter-title, #typewriter-cursor { font-size: 3rem; }
+        #text-section p { font-size: 0.95rem; }
+      }
+      
+      /* Large phones and small tablets */
+      @media (max-width: 600px) and (min-width: 481px) {
+        #typewriter-title, #typewriter-cursor { font-size: 2.8rem; }
+        #text-section p { font-size: 0.9rem; }
+      }
+      
+      /* Medium phones (iPhone 14 Pro Max, iPhone XR, etc.) */
+      @media (max-width: 480px) and (min-width: 401px) {
+        #typewriter-title, #typewriter-cursor { font-size: 2.5rem; }
+        #text-section p { font-size: 0.85rem; }
+      }
+      
+      /* Small phones (iPhone SE, etc.) */
+      @media (max-width: 400px) and (min-width: 321px) {
+        #typewriter-title, #typewriter-cursor { font-size: 2.2rem; }
+        #text-section p { font-size: 0.8rem; }
+      }
+      
+      /* Very small phones */
+      @media (max-width: 320px) {
+        #typewriter-title, #typewriter-cursor { font-size: 2rem; }
+        #text-section p { font-size: 0.75rem; }
+      }
+      
+      /* ASPECT RATIO BASED ADJUSTMENTS FOR SPECIFIC DEVICES */
+      /* iPhone 14 Pro Max landscape (430x932) - prevent overflow */
+      @media (max-width: 932px) and (max-height: 430px) and (orientation: landscape) {
+        #hero-section { 
+          margin-top: 3vh !important; 
+          padding-top: 0.5rem !important; 
+          max-height: 97vh !important;
+        }
+        #text-section p { font-size: 0.75rem !important; }
+        #text-section { margin-top: 2vh !important; }
+      }
+      
+      /* iPhone 14 Pro Max portrait (430x932) - increase text size */
+      @media (min-width: 430px) and (max-width: 932px) and (min-height: 430px) and (orientation: portrait) {
+        #text-section p { font-size: 0.9rem !important; }
+      }
+      
+      /* iPhone SE (375x667) - decrease text size */
+      @media (max-width: 375px) and (max-height: 667px) {
+        #text-section p { font-size: 0.75rem !important; }
+      }
+      
+      /* iPad Mini (768x1024) - increase text size */
+      @media (min-width: 768px) and (max-width: 1024px) and (min-height: 768px) {
+        #text-section p { font-size: 1rem !important; }
+      }
+      
+      /* Surface Duo (540x720) - keep current sizing (looks perfect) */
+      @media (min-width: 540px) and (max-width: 720px) and (min-height: 540px) {
+        #text-section p { font-size: 0.85rem !important; }
+      }
+      
+      /* Galaxy Z Fold 5 (344x882) - keep current sizing (looks good) */
+      @media (max-width: 344px) and (min-height: 882px) {
+        #text-section p { font-size: 0.8rem !important; }
+      }
+      
+      /* iPhone XR (414x896) - increase text size slightly */
+      @media (min-width: 414px) and (max-width: 896px) and (min-height: 414px) {
+        #text-section p { font-size: 0.88rem !important; }
+      }
+      
+      /* VIEWPORT HEIGHT BASED ADJUSTMENTS */
+      /* Short viewports (landscape phones) - prevent overflow */
+      @media (max-height: 500px) {
+        #hero-section { 
+          margin-top: 2vh !important; 
+          padding-top: 0.5rem !important; 
+          max-height: 98vh !important;
+        }
+        #text-section { margin-top: 1vh !important; }
+        #text-section p { 
+          font-size: 0.7rem !important; 
+          line-height: 1.4 !important;
+          margin-bottom: 1vh !important;
+        }
+      }
+      
+      /* Tall viewports (portrait phones) - increase text size */
+      @media (min-height: 800px) and (max-width: 500px) {
+        #text-section p { font-size: 0.9rem !important; }
+      }
+      
+      /* Very tall viewports (large phones in portrait) */
+      @media (min-height: 900px) and (max-width: 500px) {
+        #text-section p { font-size: 0.95rem !important; }
+      }
+      
+      /* Mobile layout adjustments - ensure text stays within video background */
+      @media (max-width: 700px) {
+        #hero-section { 
+          margin-top: 5vh !important; 
+          padding-top: 1rem !important; 
+          max-height: 95vh !important;
+          overflow: hidden !important;
+        }
+        #typewriter-title { 
+          text-align: center !important; 
+        }
+        .hero-content-box {
+          margin-left: 3vw !important;
+          margin-right: 3vw !important;
+        }
+      }
+      
+      @media (max-width: 500px) {
+        #hero-section { 
+          margin-top: 3vh !important; 
+          padding-top: 0.5rem !important; 
+          max-height: 97vh !important;
+        }
+        #typewriter-title { 
+          text-align: center !important; 
+        }
+        .hero-content-box {
+          margin-left: 2vw !important;
+          margin-right: 2vw !important;
+        }
+      }
+      
+      /* Ensure text section never overflows the video background */
+      #text-section {
+        max-height: 70vh !important;
+        overflow: hidden !important;
+      }
+      
+      /* Force text to stay within bounds on all devices */
+      #text-section p {
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+      
+      .content-box .Quote { font-style: italic; background-color: rgba(220,220,220,0.8); padding: 2vh 2vw; border-left: 4px solid #333; margin: 2vh 0; color: white !important; }
+      
+
+    </style>
+
+  <link rel="stylesheet" type="text/css" href="Styling.css">
+  <link rel="stylesheet" type="text/css" href="blogstyling.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+
+<body class="page-fade subpage blog-page biography-page">
+  <!-- Video background -->
+  <video class="biography-video-background" autoplay muted loop playsinline preload="metadata" fetchpriority="high" data-playback-rate="0.75" webkit-playsinline="true" x5-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="false" x5-video-orientation="landscape" poster="site-resources/Stars.jpg">
+    <source src="site-resources/Stars-3.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  
+  <!-- Video overlay -->
+  <div class="biography-video-overlay"></div>
+  
+  <!-- Fallback background for when video fails to load -->
+  <div class="biography-fallback-background"></div>
+  
+  	<div class="social-container">
+		<a href="https://x.com/adamlehodey" target="_blank"><img class="social-icon" src="site-resources/x-logo-white.png" alt="X Link" loading="eager"></a>
+		<a href="https://www.linkedin.com/in/adamlehodey/" target="_blank"><img class="social-icon" src="site-resources/LinkedIn.png" alt="LinkedIn Link" loading="eager"></a>
+	</div>
+  <div class="homepage-nav"><a class="homepage-nav-link" href="/">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="blog">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="tutoring.html">INSTRUCTION</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
+  
+
+  
+
+  
+
+  
+  <div class="block_1"></div> <hr class="content-divider" />
+
+  <!-- Hero Content Container (overlays video background) -->
+  <div id="hero-section">
+    <div class="hero-content-box">
+
+      <!-- Title Section -->
+      <div id="title-section">
+        <div class="typewriter-container">
+          <h1 id="typewriter-title">(auto) biography</h1>
+          <span id="typewriter-cursor">|</span>
+        </div>
+      </div>
+      
+      <!-- Intro Text Section -->
+      <div id="text-section">
+        <p><span class="author-signature">[<i>a.l.s.lehodey</i>]</span>I've always believed there is something special about the stars. You can stare and stare and stare; they'll stare right back at you. There they lay, glimmering in the immensity of the night sky, having witnessed the entire drama of humankind, all three-hundred thousand years, as if it were but yesterday. The stars are a constant. The stars give us life. The stars are our friends.</p>
+        
+        <p>And yet there's another striking thing about the stars: they're of the same substance as us, <i>homo sapiens</i>. Fine, not <i>exactly</i> the same substance. But close enough, for they too are bundles of atoms and hydrogen and helium with a little carbon mixed in. There's something very special about this: it serves as a reminder that we are of the universe; that consciousness occurs <i>through</i> us; and that reality is more than just our little egos. It reminds us there is beauty, there is love, and there is wisdom in this world. My story, as does that of humankind, starts with the stars. But for fear of becoming a little too abstract, our story shall start a little further down the line.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Biography Content (starts immediately after video background) -->
+  <div id="biography-content">
+    <div id="biography-content-box">
+      
+      <h3>Lorem Ipsum Section One</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      
+      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+    
+    <div id="biography-content-box">
+      
+      <h3>Lorem Ipsum Section Two</h3>
+      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+      
+      <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+    </div>
+    
+    <div id="biography-content-box">
+      
+      <h3>Lorem Ipsum Section Three</h3>
+      <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+      
+      <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
+    </div>
+  </div>
+
+  <script>
+  	// Page fade transition
+  	document.addEventListener('DOMContentLoaded', function() {
+  		console.log('DOMContentLoaded event fired - JavaScript is running');
+  		// Handle video background
+		const video = document.querySelector('.biography-video-background');
+		const fallbackBg = document.querySelector('.biography-fallback-background');
+		
+		function setupVideoEvents(video) {
+			if (!video) return;
+			console.log('Setting up video events for biography page');
+			
+			video.load();
+			
+			// Multiple attempts to play the video
+			function attemptPlay() {
+				const playPromise = video.play();
+				if (playPromise !== undefined) {
+					playPromise.then(() => {
+						console.log('Biography video playing successfully');
+						fallbackBg.style.display = 'none';
+					}).catch((error) => {
+						console.error('Biography video play failed:', error);
+						// Try again after a short delay
+						setTimeout(attemptPlay, 500);
+					});
+				}
+			}
+			
+			// Start playing attempts
+			attemptPlay();
+			
+			video.addEventListener('canplay', function() {
+				console.log('Biography video can play');
+				attemptPlay(); // Try to play again when it can play
+			});
+			
+			video.addEventListener('error', function(e) {
+				console.error('Biography video error:', e);
+				fallbackBg.style.display = 'block';
+			});
+			
+			video.addEventListener('loadstart', function() {
+				console.log('Biography video loadstart');
+				fallbackBg.style.display = 'none';
+			});
+			
+			video.addEventListener('loadeddata', function() {
+				console.log('Biography video loaded data');
+				attemptPlay(); // Try to play again when data is loaded
+			});
+			
+			// Check if video is actually playing after a delay
+			setTimeout(function() {
+				console.log('Biography video readyState:', video.readyState);
+				console.log('Video paused:', video.paused);
+				console.log('Video currentTime:', video.currentTime);
+				
+				if (video.readyState < 2 || video.paused) {
+					console.log('Biography video not playing - attempting one more time');
+					attemptPlay();
+					
+					// Final check
+					setTimeout(function() {
+						if (video.paused) {
+							console.log('Biography video still not playing - showing fallback');
+							fallbackBg.style.display = 'block';
+						} else {
+							console.log('Biography video playing successfully');
+							fallbackBg.style.display = 'none';
+						}
+					}, 1000);
+				} else {
+					console.log('Biography video loaded successfully');
+					fallbackBg.style.display = 'none';
+				}
+			}, 2000);
+		}
+		
+		// Setup video events
+		setupVideoEvents(video);
+		
+
+		
+		// Typewriter effect for title
+		console.log('Setting up typewriter effect...');
+		const titleElement = document.getElementById('typewriter-title');
+		const cursorElement = document.getElementById('typewriter-cursor');
+		
+		console.log('Found elements:', { titleElement, cursorElement });
+		
+		if (titleElement && cursorElement) {
+			console.log('Typewriter elements found, starting effect...');
+			
+			// The text to type
+			const textToType = '(auto) biography';
+			let currentIndex = 0;
+			
+			// Clear the text initially and hide cursor
+			titleElement.textContent = '';
+			cursorElement.style.opacity = '0';
+			
+			// Start typewriter effect after a short delay
+			setTimeout(() => {
+				console.log('Starting typewriter effect...');
+				
+				function typeNextChar() {
+					if (currentIndex < textToType.length) {
+						titleElement.textContent += textToType[currentIndex];
+						console.log('Typed character:', textToType[currentIndex], 'Current text:', titleElement.textContent);
+						currentIndex++;
+						setTimeout(typeNextChar, 150); // Adjust speed here (lower = faster)
+					} else {
+						// Show cursor when typing is complete
+						console.log('Typewriter effect complete, showing cursor');
+						cursorElement.style.opacity = '1';
+						
+						// Start cursor blinking
+						setInterval(() => {
+							cursorElement.style.opacity = cursorElement.style.opacity === '1' ? '0' : '1';
+						}, 500);
+					}
+				}
+				
+				typeNextChar();
+			}, 500);
+		} else {
+			console.error('Typewriter elements not found:', { 
+				titleElement: !!titleElement, 
+				cursorElement: !!cursorElement 
+			});
+		}
+		
+
+		
+		// Add user interaction trigger for localhost autoplay issues
+		document.addEventListener('click', function() {
+			if (video.paused) {
+				console.log('User interaction detected - attempting to play video');
+				video.play().then(() => {
+					console.log('Video started playing after user interaction');
+				}).catch((error) => {
+					console.error('Video play failed after user interaction:', error);
+				});
+			}
+		}, { once: true });
+		
+		// Also try on any user interaction
+		document.addEventListener('touchstart', function() {
+			if (video.paused) {
+				console.log('Touch interaction detected - attempting to play video');
+				video.play().then(() => {
+					console.log('Video started playing after touch interaction');
+				}).catch((error) => {
+					console.error('Video play failed after touch interaction:', error);
+				});
+			}
+		}, { once: true });
+		
+
+  		
+ 		// Fade in the page when it loads
+ 		document.body.classList.add('fade-in');
+  		
+ 		// Handle navigation links for fade out effect
+ 		const navLinks = document.querySelectorAll('a[href]');
+ 		navLinks.forEach(link => {
+ 			// Only apply to internal links (not external or same page)
+ 			const href = link.getAttribute('href');
+ 			if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+ 				link.addEventListener('click', function(e) {
+ 					// Don't apply to links that open in new tabs
+ 					if (!link.hasAttribute('target') || link.getAttribute('target') !== 'blank') {
+ 						e.preventDefault();
+ 						const targetUrl = this.getAttribute('href');
+ 						
+ 						// Fade out current page
+ 						document.body.classList.remove('fade-in');
+ 						document.body.classList.add('fade-out');
+ 						
+ 												// Navigate to new page after fade out
+ 						setTimeout(() => {
+ 							window.location.href = targetUrl;
+ 						}, 100);
+ 					}
+ 				});
+ 			}
+ 		});
+
+  		// Highlight current page in navigation
+  		const currentPage = 'biography';
+  		const currentNavLinks = document.querySelectorAll('.homepage-nav-link');
+  		currentNavLinks.forEach(link => {
+  			if (link.getAttribute('href') === currentPage) {
+  			link.classList.add('current-page');
+  			}
+  		});
+  		
+  		// Preload background images for instant switching (if function exists)
+  		if (typeof preloadBackgroundImages === 'function') {
+  			preloadBackgroundImages();
+  		}
+  		
+  		// Debug responsive system for biography page
+  		function debugResponsiveSystem() {
+  			const viewport = {
+  				width: window.innerWidth,
+  				height: window.innerHeight,
+  				aspectRatio: window.innerWidth / window.innerHeight
+  			};
+  			
+  			const textSection = document.getElementById('text-section');
+  			const heroSection = document.getElementById('hero-section');
+  			
+  			if (textSection && heroSection) {
+  				const textRect = textSection.getBoundingClientRect();
+  				const heroRect = heroSection.getBoundingClientRect();
+  				
+  				console.log('Biography Page Responsive Debug:', {
+  					viewport,
+  					textSectionHeight: textRect.height,
+  					heroSectionHeight: heroRect.height,
+  					textOverflow: textRect.bottom > window.innerHeight,
+  					heroOverflow: heroRect.bottom > window.innerHeight,
+  					textFontSize: window.getComputedStyle(textSection.querySelector('p')).fontSize,
+  					titleFontSize: window.getComputedStyle(document.getElementById('typewriter-title')).fontSize
+  				});
+  			}
+  		}
+  		
+  		// Run debug on load and resize
+  		debugResponsiveSystem();
+  		window.addEventListener('resize', debugResponsiveSystem);
+  		
+  		// Enhanced smooth scrolling for better performance
+  		if ('scrollBehavior' in document.documentElement.style) {
+  			// Native smooth scrolling is supported
+  			document.documentElement.style.scrollBehavior = 'smooth';
+  		} else {
+  			// Fallback for older browsers
+  			const smoothScrollTo = (target, duration = 800) => {
+  				const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+  				const startPosition = window.pageYOffset;
+  				const distance = targetPosition - startPosition;
+  				let startTime = null;
+  				
+  				const animation = currentTime => {
+  					if (startTime === null) startTime = currentTime;
+  					const timeElapsed = currentTime - startTime;
+  					const run = ease(timeElapsed, startPosition, distance, duration);
+  					window.scrollTo(0, run);
+  					if (timeElapsed < duration) requestAnimationFrame(animation);
+  				};
+  				
+  				const ease = (t, b, c, d) => {
+  					t /= d / 2;
+  					if (t < 1) return c / 2 * t * t + b;
+  					t--;
+  					return -c / 2 * (t * (t - 2) - 1) + b;
+  				};
+  				
+  				requestAnimationFrame(animation);
+  			};
+  			
+  			// Apply to all anchor links
+  			document.querySelectorAll('a[href^="#"]').forEach(link => {
+  				link.addEventListener('click', e => {
+  					e.preventDefault();
+  					const target = document.querySelector(link.getAttribute('href'));
+  					if (target) smoothScrollTo(target);
+  				});
+  			});
+  		}
+  		
+  	});
+ 
+  </script>
+</body>
+</html>
