@@ -176,6 +176,28 @@
         z-index: 10;
       }
       
+      /* Mobile and tablet adjustments for biography content spacing */
+      @media (max-width: 1000px) {
+        #biography-content {
+          margin-top: 50px !important;
+          padding: 1rem 0 !important;
+        }
+      }
+      
+      @media (max-width: 700px) {
+        #biography-content {
+          margin-top: 30px !important;
+          padding: 0.5rem 0 !important;
+        }
+      }
+      
+      @media (max-width: 500px) {
+        #biography-content {
+          margin-top: 20px !important;
+          padding: 0.25rem 0 !important;
+        }
+      }
+      
       #biography-content-box {
         margin-left: 5vw;
         margin-right: 5vw;
@@ -183,9 +205,20 @@
         border-radius: 8px;
         margin-bottom: 40px;
         font-family: "Bodoni Moda", serif;
-        border: 2px solid;
-        border-image: linear-gradient(45deg, blue, green, blue, green) 1;
         color: white !important;
+      }
+      
+      /* Mobile adjustments for content box spacing */
+      @media (max-width: 700px) {
+        #biography-content-box {
+          margin-bottom: 20px !important;
+        }
+      }
+      
+      @media (max-width: 500px) {
+        #biography-content-box {
+          margin-bottom: 15px !important;
+        }
       }
       
       #biography-content-box h2,
@@ -204,7 +237,7 @@
         50% { opacity: 1; }
       }
       .content-box h2 { font-family: "Bodoni Moda", serif; font-size: 2.2rem; margin-bottom: 2vh; text-align: center; color: white !important; }
-      .content-box h3 { font-family: "Bodoni Moda", serif; font-size: 1.4rem; margin-bottom: 1vh; margin-top: 3vh; color: white !important; }
+      .content-box h3 { font-family: "Bodoni Moda", serif; font-size: 2.6rem; margin-bottom: 2vh; margin-top: 3vh; color: white !important; }
       .content-box p { font-family: "Libre Bodoni", serif; font-size: 1.05rem; line-height: 1.6; margin-bottom: 2vh; color: white !important; text-align: justify; }
       
       /* ENHANCED RESPONSIVE SYSTEM FOR BIOGRAPHY PAGE */
@@ -248,6 +281,113 @@
       @media (max-width: 320px) {
         #typewriter-title, #typewriter-cursor { font-size: 2rem; }
         #text-section p { font-size: 0.75rem; }
+      }
+      
+      /* ENHANCED RESPONSIVE IMPROVEMENTS */
+      
+      /* Ultra-wide screens (21:9, 32:9) - better text scaling */
+      @media (min-width: 2000px) {
+        #typewriter-title, #typewriter-cursor { font-size: 5rem; }
+        #text-section p { font-size: 1.2rem; }
+        .hero-content-box { margin-left: 8vw; margin-right: 8vw; }
+        #biography-content-box { margin-left: 8vw; margin-right: 8vw; }
+      }
+      
+      /* Large desktop screens (1920px+) - improved spacing */
+      @media (min-width: 1920px) and (max-width: 1999px) {
+        #typewriter-title, #typewriter-cursor { font-size: 4.5rem; }
+        #text-section p { font-size: 1.1rem; }
+        .hero-content-box { margin-left: 6vw; margin-right: 6vw; }
+        #biography-content-box { margin-left: 6vw; margin-right: 6vw; }
+      }
+      
+      /* Better landscape orientation handling for phones */
+      @media (max-height: 500px) and (orientation: landscape) {
+        #hero-section { 
+          margin-top: 2vh !important; 
+          padding-top: 0.5rem !important; 
+          max-height: 98vh !important;
+        }
+        #text-section { margin-top: 1vh !important; }
+        #text-section p { 
+          font-size: 0.7rem !important; 
+          line-height: 1.4 !important;
+          margin-bottom: 1vh !important;
+        }
+        #typewriter-title, #typewriter-cursor { font-size: 1.8rem !important; }
+        .hero-content-box { margin-bottom: 20px !important; }
+      }
+      
+      /* Enhanced landscape handling for tablets */
+      @media (max-height: 600px) and (min-width: 768px) and (orientation: landscape) {
+        #hero-section { 
+          margin-top: 3vh !important; 
+          max-height: 97vh !important;
+        }
+        #text-section p { font-size: 0.85rem !important; }
+        #typewriter-title, #typewriter-cursor { font-size: 2.5rem !important; }
+      }
+      
+      /* Better handling for foldable devices (Galaxy Z Fold series) */
+      @media (min-width: 280px) and (max-width: 360px) and (min-height: 650px) {
+        #typewriter-title, #typewriter-cursor { font-size: 1.8rem; }
+        #text-section p { font-size: 0.75rem; }
+        .hero-content-box { margin-left: 4vw; margin-right: 4vw; }
+        #biography-content-box { margin-left: 4vw; margin-right: 4vw; }
+      }
+      
+      /* Improved accessibility for users with reduced motion preferences */
+      @media (prefers-reduced-motion: reduce) {
+        #typewriter-cursor { animation: none !important; }
+        .page-break-image { transition: none !important; }
+        * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+      }
+      
+      /* Better contrast for accessibility */
+      @media (prefers-contrast: high) {
+        #typewriter-title, #typewriter-cursor { 
+          color: #ffffff !important; 
+          text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+        }
+        #text-section p { 
+          color: #ffffff !important; 
+          text-shadow: 1px 1px 2px rgba(0,0,0,0.6) !important;
+        }
+      }
+      
+      /* Dark mode support (if user prefers dark mode) */
+      @media (prefers-color-scheme: dark) {
+        .biography-fallback-background { 
+          background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%) !important;
+        }
+      }
+      
+      /* Better text rendering for high-DPI displays */
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        #typewriter-title, #typewriter-cursor, #text-section p {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          text-rendering: optimizeLegibility;
+        }
+      }
+      
+      /* Improved spacing for very tall screens (portrait monitors) */
+      @media (min-height: 1200px) and (max-width: 1000px) {
+        #hero-section { margin-top: 15vh !important; }
+        #text-section { margin-top: 8vh !important; }
+        #biography-content { margin-top: 200px !important; }
+      }
+      
+      /* Better handling for devices with notches (iPhone X and newer) */
+      @supports (padding: max(0px)) {
+        .hero-content-box {
+          padding-left: max(5vw, env(safe-area-inset-left));
+          padding-right: max(5vw, env(safe-area-inset-right));
+        }
+        #biography-content-box {
+          padding-left: max(5vw, env(safe-area-inset-left));
+          padding-right: max(5vw, env(safe-area-inset-right));
+        }
       }
       
       /* ASPECT RATIO BASED ADJUSTMENTS FOR SPECIFIC DEVICES */
@@ -329,6 +469,9 @@
         #typewriter-title { 
           text-align: center !important; 
         }
+        #biography-h3 {
+          text-align: center !important;
+        }
         .hero-content-box {
           margin-left: 3vw !important;
           margin-right: 3vw !important;
@@ -343,6 +486,9 @@
         }
         #typewriter-title { 
           text-align: center !important; 
+        }
+        #biography-h3 {
+          text-align: center !important;
         }
         .hero-content-box {
           margin-left: 2vw !important;
@@ -364,6 +510,39 @@
       }
       
       .content-box .Quote { font-style: italic; background-color: rgba(220,220,220,0.8); padding: 2vh 2vw; border-left: 4px solid #333; margin: 2vh 0; color: white !important; }
+      
+      /* Page break image styling with parallax effect */
+      .page-break-image {
+        width: 100vw;
+        height: 50vh;
+        object-fit: cover;
+        object-position: center;
+        margin: 4rem 0;
+        position: relative;
+        z-index: 10;
+        transform: translateY(0);
+        transition: transform 0.1s ease-out;
+      }
+      
+      /* Parallax container to control the effect */
+      .parallax-container {
+        position: relative;
+        overflow: hidden;
+        margin: 4rem 0;
+      }
+      
+      /* Mobile adjustments for parallax container spacing */
+      @media (max-width: 700px) {
+        .parallax-container {
+          margin: 2rem 0 !important;
+        }
+      }
+      
+      @media (max-width: 500px) {
+        .parallax-container {
+          margin: 1rem 0 !important;
+        }
+      }
       
 
     </style>
@@ -427,18 +606,41 @@
   <div id="biography-content">
     <div id="biography-content-box">
       
-      <h3>Lorem Ipsum Section One</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <h3 id="biography-h3">where it all started</h3>
+      <p>It started in Reigate. Or more accurately, Redhill, a not-so-little town about twenty-miles as the crow flies from central London. To my American friends, I would describe Reigate as being to London what Connecticut is to New York. Suburbia, sure, but not quite the endless suburbia that one might find outside Houston or Los Angeles or Cape Town.</p>
       
-      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      <p>All those who know Reigate, as the Parliamentary constituency is named, would know that its two largest towns include the eponymous Reigate, and its less-nice neighbour Redhill. That statement would no-doubt spark controversy were it to be uttered in the town itself, but everyone, including myself knows it to be true. Reigate is quaint little English storefronts and centuries old relics, the town even mentioned in the Domesday book of 1086. Redhill is… Reigate's slightly more downtrodden neighbour, lacking a unifying architecture and tormented by anti-social behaviour.</p>
+      
+      <p>And Redhill, was also,</p>
+      
+      <p>home.</p>
+      
+      <p>In an all-too-English tale, class <i>did</i> mean something to me, and motivated I was to do better. But time has passed. I have seen a lot more of the world and read a lot more than I had when I was younger. And I recognise that the British obsession with class is quite precisely that: a distinctly <i>British</i> obsession. That, perhaps, is what distinguishes the United Kingdom, and to some-extent ties it together. (A friend of mine once asked me: "Adam, what exactly <i>is</i> it that unifies Britain?" I was at a loss for a response. "The rule of law?", I spat out, no-doubt having internalised that response in-part from reading Hayek and in-part from the PREVENT lessons that had been drilled into us as seventeen year-olds). I asked myself, that first summer that I moved to the United States, what exactly <i>is</i> it that's so appealing about the British conception of class? Still further I thought about it, majoring (at SciencesPo) in sociology and economics, reading Bourdieu and whatnot, and concluding that enlightenment ought to be elevated over custom. Don't overanalyse for now; entire volumes could be written on this subject. One day I intend to, and the time for that will come.</p>
+      
+      <p>There I was raised; there I was formed. In a bilingual Franco-British household, with parents who loved me dearly and did – as almost every parent does – what they believe to be the best for you. Another provocative claim: today the calculus of nations dominates. I, too, used to think using that logic: "I am," I told myself, "Franco-British." (Again, don't read too much into the ordering of those words. Were I to be pressed, I consider myself <i>equally</i> British and French, the order above one of linguistic custom). And yet, <i>and yet</i>, you move around a little and pause to think about it and you realise that nations are, at heart, "imagined communities," to use Benedict Anderson's phrase. Those cultures formed me, to be sure. But so too is each of us is heir to a global heritage. London influenced by Moscow, Moscow by New York, New York by Osaka, Osaka by Paris, and so on, and so on. Cities – their cultures and their economies included – continually "pass the torch onto the next," Jane Jacobs beautifully described in Cities and the Wealth of Nations.</p>
+      
+      <p>It was around the age of seventeen that I really began to flourish into the individual I am now. That was the age at which I took – at risk of sounding conceited – what was mere <i>academic</i> excellence, and turned it into quite something else. I did that by reading a lot<i>.</i> A book a week, sometimes two books a week. I would peruse the shelves of my local library and borrow five books at a time, picking them out from the economics and politics sections and studying them closely after school. It helps that the British sixth-form system, whilst fairly rigorous, left me a lot of time to do so. There was no requirement to be in school when we didn't have lessons scheduled, allowing me plenty of time to read, learn to code, apply for internships, and whatnot. Sometimes I'd skip class and go to London where I'd sit in on lectures at the London School of Economics. Lunchtimes were usually dominated by political debates, at the time on the subject of Britain's exit from the European Union, with friends. And it was those same friends that I have to thank for encouraging me to set my sights on higher things.</p>
+      
+      <p>And so it was that in the summer between Upper and Lower Sixth Form, the summer when I was seventeen, I kicked-off the professional side of my life after being selected for a prestigious sixth-form internship program at J.P. Morgan. Before I started, I had a vision, lying there on my bed, in good old Redhill. That vision was, in hindsight, so simplistic, but looked something like this: I would go to J.P. Morgan, ace that internship, land a return offer the next summer (which indeed I did), get into a top university, land the J.P. Morgan Spring Week offer, return the next summer for yet another internship, then make bank as an investment banker. It all looked so easy, it all seemed so sure. And… how glad I am that it never quite worked out.</p>
+      
+      <p>The scene is one year later. I'd finished my A-Levels, and the "grand vision" – let us retrospectively call it that – was already in motion. I'd spent the summer galivanting round Europe, from Normandie to Paris to Barcelona, before returning for another stint at J.P. Morgan, after which I had decided it was time to get serious about the Spanish I'd spent two years perfecting during my A-Levels, which brought me to a small town midway between Pontevedra and Santiago de Compostela in the Galician region of northwest Spain. There I found myself, in a tiny little village where <i>nadie hablaba inglés</i> (not a soul spoke English!), thinking to myself "ouch I was less good at Spanish than I thought" and with ample time on my hands, considering I didn't have a smartphone (conscious choice) and all I had to do was read. Really, I had<i> </i>been drafted in to instruct a proud little Gallegan gentleman, then three years old, to speak English. As one does, as a proud little Gallegan child, he stubbornly refused and insisted we speak Gallego. Since I could not, we compromised, and I would speak to him in <i>Castellano</i> (standard Spanish). That I did, except his parents, who had brought me in, were also at home, leaving me with, as mentioned, plenty of time to think.</p>
+      
+      <p>Come results day, into the inbox of my swanky little two-inch screened Nokia (conscious choice, I repeat!) slide my A-Level grades, and that thinking reached its apex as I puzzled over my future and considered whether I should take a risk and re-apply to Oxford. "Can I really, <i>should</i> I really, throw away an offer to UCL" – that top London university where I had secured a place – "for something that I'm not sure will even work out?" For one, my academic advisor was against it ("well you know I've seen some <i>exceptionally</i> smart people apply and not get in") and so too was dear Mother ("but you have a place at <i>such</i> a good school.") But I <i>knew,</i> I <i><u>knew</u></i> that I had to give it another shot, and that I'd regret it if I didn't. So reluctantly, I dialled UCL's number on my little Nokia, turned down their offer, and took a radically different path to that laid out in the "grand vision" I'd had lying on my bed one summer evening.</p>
+    </div>
+    
+    <!-- Page Break Image with Parallax -->
+    <div class="parallax-container">
+      <img src="site-resources/fred-moon-fk50kc-DzSg-unsplash.jpg" alt="Page Break" class="page-break-image" loading="lazy">
     </div>
     
     <div id="biography-content-box">
       
-      <h3>Lorem Ipsum Section Two</h3>
-      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+      <h3 id="biography-h3-2">an American Dream</h3>
+      <p>It might have started when my aunt and uncle came to visit one summer and started extolling the United States of America. Or maybe it was when I'd get home from school and tell myself I would watch one, <i>singular</i> episode of <i>Sex and the City</i>, only to be there three hours later. (And in the background, my father saying: "don't distract your brother, he's studying so hard!") It became more serious when, at the age of thirteen or fourteen, I'd scroll Google Streetview and plan out my future life commuting to work in New York City, working for none other than Google itself. (After all, at the age of thirteen, wouldn't you too want to work at a place with an actual slide in the office?) It always did remain a dream, at least at the back of my mind.</p>
       
-      <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+      <p>It remained a dream, until it didn't. There I was, taking another gap year – for a global pandemic was now underway. Fortunate I was, however, for after an ultimately unsuccessful second go at Oxford (such is life!), I had by then secured a role working in Parliament with plenty to do.</p>
+      
+      <p>Except I had just returned from a weekend trip to Lisbon, where I revelled in what will, perhaps and hopefully for the only time in our lives, have been an <i>actual</i> speakeasy (given that the government had ordered bars be closed), after striking up conversation with the waitress at a Bairro Alto establishment who ushered me through a curtain into a lively basement party. Returned to London, the work had piled up and was only getting worse. My genius solution: get all the work done <i>at night</i>, when everyone would be sleeping and I could lock in distraction-free. For stimulation, I turned to podcasts. I shan't trace out exactly how I discovered the dual-degree program, though it was, indirectly, through one of these podcasts on the salacious life of one European politician that I came to learn of the SciencesPo-Columbia dual-degree program. From that moment on, I knew, just as I had before that time I first took the gap year, I <i>knew</i> that I had to apply. In French there is a phrase: "<i>Mieux vaut des remords que des regrets.</i>" <i>C'est vrai</i>; it is true. I went all in, perfecting that admissions essay, sharpening my SAT skills, and doing everything in my power to make my application as competitive as possible. The future was still so indeterminate. Until everything fell into place that April morning when I awoke, from a Mexico City hotel room, to the news that I had been accepted on SciencesPo – Columbia University dual-BA program. That's the kind of news, that feels better than sex.</p>
     </div>
     
     <div id="biography-content-box">
@@ -454,7 +656,7 @@
   	// Page fade transition
   	document.addEventListener('DOMContentLoaded', function() {
   		console.log('DOMContentLoaded event fired - JavaScript is running');
-  		// Handle video background
+  		// Enhanced video loading with low battery mode support
 		const video = document.querySelector('.biography-video-background');
 		const fallbackBg = document.querySelector('.biography-fallback-background');
 		
@@ -464,7 +666,7 @@
 			
 			video.load();
 			
-			// Multiple attempts to play the video
+			// Multiple attempts to play the video with enhanced error handling
 			function attemptPlay() {
 				const playPromise = video.play();
 				if (playPromise !== undefined) {
@@ -583,28 +785,182 @@
 			});
 		}
 		
+		// Typewriter effect for h3 - triggered by Intersection Observer
+		function startH3Typewriter(h3Element) {
+			if (!h3Element) {
+				console.error('H3 element not provided');
+				return;
+			}
+			
+			// Check if already animated to prevent multiple triggers
+			if (h3Element.dataset.animated === 'true') {
+				return;
+			}
+			
+			console.log('Starting H3 typewriter effect for:', h3Element.id);
+			
+			// Mark as animated to prevent re-triggering
+			h3Element.dataset.animated = 'true';
+			
+			// Determine text to type based on element ID
+			let h3TextToType;
+			if (h3Element.id === 'biography-h3') {
+				h3TextToType = 'where it all started';
+			} else if (h3Element.id === 'biography-h3-2') {
+				h3TextToType = 'an American Dream';
+			} else {
+				h3TextToType = h3Element.textContent || 'Section';
+			}
+			
+			let h3CurrentIndex = 0;
+			
+			// Clear the text initially
+			h3Element.textContent = '';
+			
+			function typeH3NextChar() {
+				if (h3CurrentIndex < h3TextToType.length) {
+					h3Element.textContent += h3TextToType[h3CurrentIndex];
+					h3CurrentIndex++;
+					setTimeout(typeH3NextChar, 100); // Slightly faster than main title
+				} else {
+					// Show cursor when typing is complete
+					console.log('H3 typewriter effect complete for:', h3Element.id);
+				}
+			}
+			
+			typeH3NextChar();
+		}
+		
+		// Set up Intersection Observer for h3 typewriter effects
+		function setupH3IntersectionObserver() {
+			const h3Elements = [
+				document.getElementById('biography-h3'),
+				document.getElementById('biography-h3-2')
+			];
+			
+			// Create intersection observer
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						console.log('H3 element is now visible - starting typewriter effect');
+						startH3Typewriter(entry.target);
+						// Stop observing after triggering
+						observer.unobserve(entry.target);
+					}
+				});
+			}, {
+				// Trigger when 50% of the element is visible
+				threshold: 0.5,
+				// Start observing when element is 100px from viewport
+				rootMargin: '0px 0px -100px 0px'
+			});
+			
+			// Start observing all h3 elements
+			h3Elements.forEach(h3Element => {
+				if (h3Element) {
+					observer.observe(h3Element);
+					console.log('Intersection observer set up for H3 element:', h3Element.id);
+				}
+			});
+		}
+		
+		// Initialize intersection observer after DOM is loaded
+		setupH3IntersectionObserver();
+		
+		// Parallax effect for page break image
+		function setupParallaxEffect() {
+			const parallaxImage = document.querySelector('.page-break-image');
+			if (!parallaxImage) {
+				console.log('Parallax image not found');
+				return;
+			}
+			
+			console.log('Setting up parallax effect for page break image');
+			
+			// Throttle function to limit scroll events
+			function throttle(func, limit) {
+				let inThrottle;
+				return function() {
+					const args = arguments;
+					const context = this;
+					if (!inThrottle) {
+						func.apply(context, args);
+						inThrottle = true;
+						setTimeout(() => inThrottle = false, limit);
+					}
+				}
+			}
+			
+			// Parallax scroll handler
+			function handleParallaxScroll() {
+				const scrolled = window.pageYOffset;
+				const imageRect = parallaxImage.getBoundingClientRect();
+				const imageTop = imageRect.top + scrolled;
+				const imageHeight = imageRect.height;
+				const windowHeight = window.innerHeight;
+				
+				// Calculate when image is in viewport
+				const imageInView = scrolled + windowHeight > imageTop && scrolled < imageTop + imageHeight;
+				
+				if (imageInView) {
+					// Calculate parallax offset (subtle movement)
+					const parallaxOffset = (scrolled - imageTop + windowHeight) * 0.3;
+					parallaxImage.style.transform = `translateY(${parallaxOffset}px)`;
+				}
+			}
+			
+			// Throttled scroll handler for better performance
+			const throttledParallax = throttle(handleParallaxScroll, 16); // ~60fps
+			
+			// Add scroll event listener
+			window.addEventListener('scroll', throttledParallax);
+			
+			console.log('Parallax effect initialized');
+		}
+		
+		// Initialize parallax effect
+		setupParallaxEffect();
+		
 
 		
-		// Add user interaction trigger for localhost autoplay issues
+		// Enhanced user interaction triggers for low battery mode and autoplay issues
 		document.addEventListener('click', function() {
-			if (video.paused) {
+			if (video && video.paused) {
 				console.log('User interaction detected - attempting to play video');
 				video.play().then(() => {
 					console.log('Video started playing after user interaction');
+					fallbackBg.style.display = 'none';
 				}).catch((error) => {
 					console.error('Video play failed after user interaction:', error);
+					fallbackBg.style.display = 'block';
 				});
 			}
 		}, { once: true });
 		
-		// Also try on any user interaction
+		// Touch interaction for mobile devices
 		document.addEventListener('touchstart', function() {
-			if (video.paused) {
+			if (video && video.paused) {
 				console.log('Touch interaction detected - attempting to play video');
 				video.play().then(() => {
 					console.log('Video started playing after touch interaction');
+					fallbackBg.style.display = 'none';
 				}).catch((error) => {
 					console.error('Video play failed after touch interaction:', error);
+					fallbackBg.style.display = 'block';
+				});
+			}
+		}, { once: true });
+		
+		// Additional triggers for low battery mode
+		document.addEventListener('keydown', function() {
+			if (video && video.paused) {
+				console.log('Keyboard interaction detected - attempting to play video');
+				video.play().then(() => {
+					console.log('Video started playing after keyboard interaction');
+					fallbackBg.style.display = 'none';
+				}).catch((error) => {
+					console.error('Video play failed after keyboard interaction:', error);
+					fallbackBg.style.display = 'block';
 				});
 			}
 		}, { once: true });
