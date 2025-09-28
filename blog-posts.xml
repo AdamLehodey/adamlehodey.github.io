@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blogPosts>
-  <post id="10354" featured="true" type="Prose/Verse">
+  <post featured="true" type="Prose/Verse" id="10354">
     <title>PAN-GAIA</title>
     <subtitle>Narratives of a Grand Vision</subtitle>
     <description>floating in a galaxy, far far away from the center of where it all started, is a little dot called Planet Earth. PAN-GAIA is an experimental piece of writing capturing the experience of its eight billion inhabitants. THIS IS A WORK IN PROGRESS</description>
@@ -11,7 +11,7 @@
     <link>/blogs/Pan-Gaia-Narratives-Of-A-New-Vision.pdf</link>
     <link-text>View Essay</link-text>
   </post>
-  <post id="10353" featured="false" type="Analysis">
+  <post featured="true" type="Analysis" id="10353">
     <title>Government-Run Grocery Stores? These New Yorkers Are Skeptical</title>
     <subtitle>Analysing Mamdani's Proposals</subtitle>
     <description>Zohran Mamdani claims his city-run supermarket proposal would lower prices, but small-business owners and their customers see it as a dubious and costly proposition. Read my analysis of the conversations I had with New Yorkers in City Journal.</description>
@@ -22,7 +22,7 @@
     <link>https://www.city-journal.org/article/zohran-mamdani-government-run-grocery-stores-new-york-city</link>
     <link-text>View Essay</link-text>
   </post>
-  <post id="10352" featured="false" type="Analysis">
+  <post featured="false" type="Analysis" id="10352">
     <title>New York City Landlords Are Trapped in Housing Court Hell</title>
     <subtitle>Urgent Reforms are Needed</subtitle>
     <description>A dysfunctional system has created a nightmare for small property owners, with cases dragging on for years and costs piling up. I spoke to New Yorkers affected by these delays to understand how they are being affected and what needs to change.</description>
@@ -33,7 +33,7 @@
     <link>https://www.city-journal.org/article/tenants-landlords-new-york-city-housing-courts</link>
     <link-text>View Essay</link-text>
   </post>
-  <post id="10351" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10351">
     <title>Choreographing a renewed Euro-American relationship</title>
     <subtitle>What the future could look like</subtitle>
     <description>Now at a crossroads, Europe and America must unite to advance human flourishing and overcome global problems. Read my winning essay to the 2025 SciencesPo American Foundation's essay contest, below.</description>
@@ -44,7 +44,7 @@
     <link>https://adyleho.medium.com/the-choreographing-of-a-renewed-euro-american-relationship-25d0b482c008</link>
     <link-text>View Essay</link-text>
   </post>
-  <post id="10350" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10350">
     <title>Are we spiralling into a new Dark Age?</title>
     <subtitle>Analysis and review of Jacobs' Dark Age Ahead</subtitle>
     <description>'Society shows signs of rushing headlong into a dark age,' writes Jane Jacobs in Dark Age Ahead. But are we really? This essay is an extensive analysis of the good, the bad, and the constructive from Jacobs final work.</description>
@@ -55,7 +55,7 @@
     <link>https://marketurbanism.com/2024/07/25/are-we-spiralling-into-a-new-dark-age-analysis-and-review-of-jacobs-dark-age-ahead/</link>
     <link-text>View Essay</link-text>
   </post>
-  <post id="10349" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10349">
     <title>Law, Liberty and the Limits of Selfhood</title>
     <subtitle>On the relationship between self and state</subtitle>
     <description>This paper - published in the Brown Journal of Philosophy explores many topics, from the nature of the self, justifications for state action, and consent of the governed. It coalesces around the central research question of whether the state has the right to protect individuals from themselves.</description>
@@ -66,7 +66,7 @@
     <link>https://adyleho.medium.com/law-liberty-and-the-limits-of-selfhood-a2e06c024a5d</link>
     <link-text>View Essay</link-text>
   </post>
-  <post id="10348" featured="false" type="Analysis">
+  <post featured="false" type="Analysis" id="10348">
     <title>Cities and the Wealth of Nations</title>
     <subtitle>A manual for urban policymakers</subtitle>
     <description>Urban policymakers should focus on cultivating import-replacement as a means of growing their cities. Explore lessons from Jacobs' Cities and the Wealth of Nations in this piece below.</description>
@@ -77,7 +77,7 @@
     <link>https://marketurbanism.com/2024/07/12/lessons-from-cities-and-the-wealth-of-nations-a-manual-for-urban-policymakers/</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10347" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10347">
     <title>Morte e Vida de Grandes Cidades, revisitado</title>
     <subtitle>A Portuguese republication</subtitle>
     <description>[Portuguese translation and republication and of my The Death and Life of Great American Cities, Revisited essay] Uma exploração das ideias influentes de Jacobs e seu potencial para abordar os desafios urbanos de hoje e melhorar a vida nas cidades.</description>
@@ -88,7 +88,7 @@
     <link>https://caosplanejado.com/morte-e-vida-de-grandes-cidades-revisitado/</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10346" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10346">
     <title>From Wealth to Well-Being</title>
     <subtitle>Critical review of Amartya Sen's Development as Freedom</subtitle>
     <description>Development as Freedom - Amartya Sen's magnum opus, transformed how we view progress. By re-conceptualising development as freedom, economists and politicians shift their focus on to the basic goods that really matter: education, democracy, and civic equality.</description>
@@ -99,7 +99,7 @@
     <link>https://adyleho.medium.com/from-wealth-to-well-being-notes-and-analysis-of-amartya-sens-development-as-freedom-95b8c424479a</link>
     <link-text>View Essay</link-text>
   </post>
-  <post id="10345" featured="false" type="Analysis">
+  <post featured="false" type="Analysis" id="10345">
     <title>Lessons from The Economy of Cities</title>
     <subtitle>Looking back at Jane Jacobs' seminal work</subtitle>
     <description>In the Economy of Cities, Jacobs starts with a provocative claim: that the city in fact proceeds agriculture. From here, she shows how the city is the essential and basic unit of the growth of our civilisation.</description>
@@ -110,7 +110,7 @@
     <link>https://marketurbanism.com/2024/06/21/lessons-from-jacobs-the-economy-of-cities/</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10344" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10344">
     <title>The Death and Life of Great American Cities, Revisited</title>
     <subtitle>In defence of the city</subtitle>
     <description>Jane Jacobs' The Death and Life of Great American Cities, published in 1961, revolutionised urban theory. This essay kicks off a series exploring Jacobs' influential ideas and their potential to address today's urban challenges and enhance city living.</description>
@@ -121,7 +121,7 @@
     <link>https://marketurbanism.com/2024/06/13/the-death-and-life-of-great-american-cities-revisited/</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10343" featured="false" type="Analysis">
+  <post featured="false" type="Analysis" id="10343">
     <title>Free Speech is Alive and Well at Columbia</title>
     <subtitle>Just look around you.</subtitle>
     <description>There's reason for hope! Free speech isn't dead at Columbia University, in fact it's alive and well, as evidence all around us shows. Explore my thoughts in the Columbia Sundial below.</description>
@@ -132,7 +132,7 @@
     <link>https://www.sundial-cu.org/p/free-speech-at-columbia-is-alive</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10342" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10342">
     <title>Andy Warhol and the Masterpiece of Consumption</title>
     <subtitle>Capturing an epoch</subtitle>
     <description>In a world where Andy Warhol is synonymous with contemporary art and a single one of his paintings sells for hundreds of millions of dollars, it is hard not to have an opinion on his work. My goal: to make the case that Warhol's works are indeed masterpieces of art...</description>
@@ -143,7 +143,7 @@
     <link>https://adyleho.medium.com/on-the-genius-of-andy-warhol-87edf2af0474</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10341" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10341">
     <title>Government, tech, and the outsourcing of virtue</title>
     <subtitle>Virtue cannot be abdicated to the state</subtitle>
     <description>In response to social media addiction, substance abuse and obscene online content, we increasingly look to government and big-tech to regulate excess. Yet this abdication of virtue to government cannot continue and will have very dangerous consequences if it does.</description>
@@ -154,7 +154,7 @@
     <link>https://adyleho.medium.com/government-tech-and-the-outsourcing-of-virtue-0ef668dd2254</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10340" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10340">
     <title>The Case for Virtue</title>
     <subtitle>Striving for excellence and balance</subtitle>
     <description>In choosing virtue, one opens the door to a fuller, more complete and fulfilling life. This essay is an unapologetic defence of Aristotelian virtue.</description>
@@ -165,7 +165,7 @@
     <link>https://medium.com/@adyleho/the-case-for-virtue-striving-for-excellence-and-balance-790112651aab</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10339" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10339">
     <title>Decoding the Self</title>
     <subtitle>An exploration through Paul Auster's City of Glass</subtitle>
     <description>What does it mean to be yourself? The answer is more than just the physical - the self is a narrative that one creates around their life, constantly shifting and evolving over time. Below I explore this theme through the lens of Paul Auster's City of Glass.</description>
@@ -176,7 +176,7 @@
     <link>https://adyleho.medium.com/decoding-the-self-through-austers-city-of-glass-the-new-york-trilogy-f09c5c49ed64</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10338" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10338">
     <title>Voyage to another country: L.P Hartley's The Go Between</title>
     <subtitle>Analysis and notes</subtitle>
     <description>If the past is 'a foreign country,' L.P. Hartley's The Go-Between is a first class ticket on that voyage. Read my notes and analysis on Hartley's acclaimed novel.</description>
@@ -187,7 +187,7 @@
     <link>https://adyleho.medium.com/travels-to-a-foreign-country-analysis-and-notes-on-l-p-hartleys-the-go-between-d0e922589bec</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10337" featured="false" type="Prose/Verse">
+  <post featured="false" type="Prose/Verse" id="10337">
     <title>Morocco and notes as a global citizen</title>
     <subtitle>Memories from an amazing trip</subtitle>
     <description>I wanted a reminder of the endless possibilities of life; an adventure and a radically different experience. In Morocco, I found all of these things.</description>
@@ -198,7 +198,7 @@
     <link>https://adyleho.medium.com/morocco-and-notes-as-a-global-citizen-ffc93ef9a360</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10336" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10336">
     <title>Into the complex world of Mrs Dalloway</title>
     <subtitle>Critical analysis of Woolf's masterpiece</subtitle>
     <description>'What Virginia Woolf created, in Mrs Dalloway, is not so much a novel but a rich canvas of life in post-World War I London.' Explore the context, ideas and impacts of Woolf's seminal work.</description>
@@ -209,7 +209,7 @@
     <link>https://medium.com/p/769076d8b70b</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10335" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10335">
     <title>Lessons from the twentieth century for the twenty-first</title>
     <subtitle>A re-examination of events.</subtitle>
     <description>It may be almost a quarter of a century since the twentieth century drew to a close and we crossed over into the then unknown frontier of the twenty first, though a careful examination of history reveals that many of the origins of today's problems can be found in the twentieth century.</description>
@@ -220,7 +220,7 @@
     <link>https://adyleho.medium.com/lessons-from-the-twentieth-century-for-the-twenty-first-bc3034a4a4e3</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10334" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10334">
     <title>Towards the metaverse</title>
     <subtitle>The next frontier?</subtitle>
     <description>The metaverse has been hyped. A lot. This long-read essay collection, a collaboration with other students for a class project, explores the nature, potential, and opportunities that the metaverse presents.</description>
@@ -231,7 +231,7 @@
     <link>/blogs/into-the-metaverse</link>
     <link-text>View Essay</link-text>
   </post>
-  <post id="10333" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10333">
     <title>A world where only money matters</title>
     <subtitle>Comparative analysis of Ellis' American Psycho and Amis' Money</subtitle>
     <description>We live in a world of hyper-consumption, constantly defining ourselves by our position relative to others and the extent to which we consume. An analysis of these two important works of literature gives us a gimpse of the implications of this.</description>
@@ -242,7 +242,7 @@
     <link>https://adyleho.medium.com/a-world-where-only-money-matters-comparative-analysis-of-amis-money-and-ellis-american-psycho-410ccc372a31</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10332" featured="false" type="Analysis">
+  <post featured="false" type="Analysis" id="10332">
     <title>The troubled foundations of Rishinomics</title>
     <subtitle>Sunak's leadersip plan contains many flaws</subtitle>
     <description>A successful political campaign has two ingredients: (1) a message that is coherent, and (2) a message that is sound. Unfortunately for Rishi Sunak, 'Rishinomics' delivers on neither of these...</description>
@@ -253,7 +253,7 @@
     <link>https://www.friedmanomics.co.uk/post/the-troubled-foundations-of-rishinomics</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10331" featured="false" type="Prose/Verse">
+  <post featured="false" type="Prose/Verse" id="10331">
     <title>On the road: stories from an American adventure</title>
     <subtitle>Memories from the summer</subtitle>
     <description>Travelling, including 2000 miles of hitchhiking, across the United States for the past few weeks has been an incredibly eye-opening experience. I have had so many adventures, heard so many stories, and met so many great people, that I decided to document it all in writing.</description>
@@ -264,7 +264,7 @@
     <link>https://adyleho.medium.com/on-the-road-stories-from-an-american-adventure-2f650a5601fa</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10330" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10330">
     <title>Politics: when it works and when it doesn't</title>
     <subtitle>On the merits and demerits of political decision making</subtitle>
     <description>Political decision making appeals to activists, politicians and voters because it is quick and visible. Yet if we are to continue living in a free and open society, it is essential that we examine the merits and demerits of political decision making.</description>
@@ -275,7 +275,7 @@
     <link>https://adyleho.medium.com/politics-when-it-works-and-when-it-doesnt-d81d2f3390a9</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10329" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10329">
     <title>Critique of Debt: the first 5000 years</title>
     <subtitle>This popular book has many flaws</subtitle>
     <description>I was previously unacquainted with the field of 'economic anthropology,' and it was therefore with interest that I picked up David Graeber's 'Debt: the first 5000 years.' Read my thoughts and critiques below.</description>
@@ -286,7 +286,7 @@
     <link>https://adyleho.medium.com/debt-the-first-5000-years-a-critique-e2153eb5c506</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10328" featured="false" type="Analysis">
+  <post featured="false" type="Analysis" id="10328">
     <title>Billionaires have the right to exist</title>
     <subtitle>Claudia Webbe's attack on billionaires is baseless</subtitle>
     <description>Claudia Webbe, the Member of Parliament for Leicester East, recently restated her dislike for billioniares in a series of tweets. Her comments are underpinned by a number of fallacies.</description>
@@ -297,7 +297,7 @@
     <link>https://www.adamsmith.org/blog/sorry-claudia-billionaires-have-the-right-to-exist</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10327" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10327">
     <title>Tender is the Night</title>
     <subtitle>Analysis, thoughts and ideas</subtitle>
     <description>The sprawling and complex novel explores mental illness, the ephemerality of our experiences, but also the metamorphosis of individual relationships. For me, it is Fitzgerald's best work.</description>
@@ -308,7 +308,7 @@
     <link>https://adyleho.medium.com/tender-is-the-night-notes-and-ideas-e28779733866</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10326" featured="false" type="Analysis">
+  <post featured="false" type="Analysis" id="10326">
     <title>Fracking can play an important role in lowering energy costs</title>
     <subtitle>The Government should revisit its policy on hydraulic fracturing</subtitle>
     <description>When energy costs rise, people feel the hit directly. Not only do their own energy bills go up, but so too does the price of food, electronics, and almost all other goods. Hydraulic fracturing could be the answer.</description>
@@ -319,7 +319,7 @@
     <link>https://www.adamsmith.org/blog/fracking-can-play-an-important-role-in-lowering-energy-costs</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10325" featured="false" type="Prose/Verse">
+  <post featured="false" type="Prose/Verse" id="10325">
     <title>A Letter to Great Britain</title>
     <subtitle>An incredible place.</subtitle>
     <description>There is no greater pleasure than returning home to a place you love. For me, that is Great Britain, the place of dreams and opportunity...</description>
@@ -330,7 +330,7 @@
     <link>https://adyleho.medium.com/a-letter-to-great-britain-ee6fed1b834a</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10324" featured="false" type="Analysis">
+  <post featured="false" type="Analysis" id="10324">
     <title>Levelling up risks becoming Levelling Down</title>
     <subtitle>There are flaws to the Government's current policy</subtitle>
     <description>We are at risk of 'levelling up' becoming a proxy for one set of vested interests grabbing resources at the expense of everyone else.</description>
@@ -341,7 +341,7 @@
     <link>https://www.1828.org.uk/2021/10/11/the-levelling-up-agenda-risks-levelling-down-britain/</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10323" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10323">
     <title>Veblen's Theory of the Leisure Class</title>
     <subtitle>Summary, Notes and Critiques</subtitle>
     <description>Consumption is driven by a desire to illustrate power and status. This is the important takeaway of Veblen's Theory of the Leisure Class which completely transforms how one views human decisions. Along with this summary of Veblen's work, I analyse how society has changed and in what ways these ideas apply.</description>
@@ -352,7 +352,7 @@
     <link>https://adyleho.medium.com/summary-notes-and-critiques-of-veblens-theory-of-the-leisure-class-eb699ee5008a</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10322" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10322">
     <title>History and Identity</title>
     <subtitle>Exploring the complex links between them</subtitle>
     <description>The trouble with history is, of course, that we can't study everything. What we choose to study or not to study matters immensely - it one of the foundations for our identities.</description>
@@ -363,7 +363,7 @@
     <link>https://adyleho.medium.com/exploring-the-complex-links-between-history-and-identity-315aeab23c9a</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10321" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10321">
     <title>American Psycho</title>
     <subtitle>Bret Easton Ellis on the American Dream</subtitle>
     <description>Forceful and raw, Bret Easton Ellis' American Psycho certainly left its mark upon society. To call this work of literature violent would be an understatement. Yet to some extent, it's as if this was not a fictional story but a mirror held up to the societies in which we live.</description>
@@ -374,7 +374,7 @@
     <link>https://adyleho.medium.com/american-psycho-and-bret-easton-ellis-on-the-american-dream-41a41c03e057</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10320" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10320">
     <title>Rights, Freedom, and the Welfare State</title>
     <subtitle>All rights are based on a social contract</subtitle>
     <description>Does a gazelle have a 'right' not to be eaten by a lion? No - because rights are things we have created, based on a social contract. Here, I explore the relationship between rights, freedom, and the welfare state.</description>
@@ -385,7 +385,7 @@
     <link>https://adyleho.medium.com/rights-freedom-and-the-welfare-state-c072cd768335</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10319" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10319">
     <title>On the creation of wealth</title>
     <subtitle>Wealth and money are often conflated, but very different</subtitle>
     <description>The origins of wealth are often misunderstood. Many believe the only way to become wealthy is to exploit or take that wealth from somebody else. Yet this premise is deeply flawed.</description>
@@ -396,7 +396,7 @@
     <link>https://adyleho.medium.com/on-the-creation-of-wealth-wealth-money-and-redistribution-c868a64078b7</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10318" featured="false" type="Analysis">
+  <post featured="false" type="Analysis" id="10318">
     <title>The Conservatives' worrying move away from economic liberalism</title>
     <subtitle>The way forward: markets and trade</subtitle>
     <description>To truly deliver on the 'levelling-up' agenda and create opportunities for all, the choice is clear: we must embrace trade, markets, and the freedom to choose.</description>
@@ -407,7 +407,7 @@
     <link>https://www.1828.org.uk/2021/05/21/the-conservative-partys-move-away-from-economic-liberalism-should-worry-us-all/</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10317" featured="false" type="Analysis">
+  <post featured="false" type="Analysis" id="10317">
     <title>Tyranny can't stop climate change</title>
     <subtitle>The troubling rise of neo-luddism</subtitle>
     <description>Building a better, greener and cleaner world to enable us to live meaninfully and enjoy our lives will require co-operation and depend on technology. It can't be solved by coercion.</description>
@@ -418,7 +418,7 @@
     <link>https://adyleho.medium.com/tyranny-cant-stop-climate-change-the-troubling-rise-of-neo-luddism-1773e78d5a8</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10316" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10316">
     <title>American Dream</title>
     <subtitle>How to live the good life</subtitle>
     <description>What is the American Dream? The embodiment of hope and opportunity, or a failed idea swallowed up by Corporate America?</description>
@@ -429,7 +429,7 @@
     <link>https://adyleho.medium.com/american-dream-sue%C3%B1o-americano-77740cd3b581</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10315" featured="false" type="Prose/Verse">
+  <post featured="false" type="Prose/Verse" id="10315">
     <title>Postcard from Mexico City</title>
     <subtitle>La vida está buena.</subtitle>
     <description>México, mi amor. It's a city full of life, of spirit, of joy. Se puede vivir, no sólo existir. Here, one feels the richness, the wholeness, of our existence, in all its splendour.</description>
@@ -440,7 +440,7 @@
     <link>https://adyleho.medium.com/postcard-from-mexico-city-195962b4b958</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10314" featured="false" type="Analysis">
+  <post featured="false" type="Analysis" id="10314">
     <title>We must wake up to Britain's disastrous policy on cannabis</title>
     <subtitle>Prohibition has always done more harm than good.</subtitle>
     <description>The clash between reality and the ideal is not a new one. It is present throughout history, and in all aspects of life and culture. In contemporary Britain, nowhere has this done more harm than in the current policy on the prohibition of marijuana...</description>
@@ -451,7 +451,7 @@
     <link>https://adyleho.medium.com/we-must-wake-up-now-to-britains-disastrous-cannabis-policy-63ae1c5cce2e</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10313" featured="false" type="Analysis">
+  <post featured="false" type="Analysis" id="10313">
     <title>US Elections: There's a Lot to be Optimistic About</title>
     <subtitle>A turning point in US politics</subtitle>
     <description>It's official: Biden has won the US election and is set to become the 46th President of the USA. Although America remains divided, there are many reasons to be optimistic, and his Presidency could mark the start of a new era in US and international politics.</description>
@@ -462,7 +462,7 @@
     <link>https://www.1828.org.uk/2020/11/09/us-elections-theres-a-lot-to-be-optimistic-about/</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10312" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10312">
     <title>Long Live Liberalism!</title>
     <subtitle>Despite its flaws, it's still the best system we've got.</subtitle>
     <description>When a wave of populism swept through the world in the mid-2010s, some considered liberalism to be dead. Whilst not all the predictions made about liberalism's fate came true, the Coronavirus is undoubtedly the greatest challenge it has faced since World War II.</description>
@@ -473,7 +473,7 @@
     <link>https://adyleho.medium.com/long-live-liberalism-1458984a79c8</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10311" featured="false" type="Analysis">
+  <post featured="false" type="Analysis" id="10311">
     <title>Education reform is the key to social mobility</title>
     <subtitle>Social mobility in the 21st Century</subtitle>
     <description>Such a large part of social mobility and equality of opportunity lies in education, that we need to ask ourselves how best to improve the system to tap into the full potential of the thousands of children going through it each year.</description>
@@ -484,7 +484,7 @@
     <link>https://www.1828.org.uk/2020/08/20/how-education-reform-can-unlock-social-mobility/</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10310" featured="false" type="Analysis">
+  <post featured="false" type="Analysis" id="10310">
     <title>How to reinvigorate our cities</title>
     <subtitle>Build back better.</subtitle>
     <description>With with thousands of city workers being ordered to work from home when the coronavirus pandemic hit, our use of land has changed drastically. In light of this, it is worth assessing why we live in cities in the first place, and what the future challenges will be.</description>
@@ -495,7 +495,7 @@
     <link>https://www.1828.org.uk/2020/08/05/how-to-reinvigorate-our-cities/</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10309" featured="false" type="Analysis">
+  <post featured="false" type="Analysis" id="10309">
     <title>Why vaping could be a silver bullet</title>
     <subtitle>The evidence looks promising.</subtitle>
     <description>If we are serious about improving our health outcomes after coronavirus, it is essential that we take action to combat nicotine-related deaths. Fortunately, we already have the answer: e-cigarettes.</description>
@@ -506,7 +506,7 @@
     <link>https://www.1828.org.uk/2020/06/24/how-vaping-could-end-nicotine-related-deaths-for-good/</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10308" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10308">
     <title>The History and Future of Smoking</title>
     <subtitle>LONG READ: Examining the roots and next steps.</subtitle>
     <description>It's the largest preventable cause of death, amounts to millions of hours of lost productivity, and costs our health systems billions. Where did it start, why is it actually bad for you, and how can we end nicotine related deaths for good?</description>
@@ -517,7 +517,7 @@
     <link>https://medium.com/@adyleho/the-history-and-future-of-smoking-a7ab84351ad0</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10307" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10307">
     <title>Inequality in a Meritocratic World</title>
     <subtitle>How to reconcile the two?</subtitle>
     <description>Inequality poses numerous problems: social unrest, the rise of extremist parties, and some would say, moral issues. How to deal with the problem of inequality in an increasingly meritocratic world? What does meritocracy even mean?</description>
@@ -528,7 +528,7 @@
     <link>https://medium.com/@adyleho/inequality-in-a-meritocratic-world-ce84c6f03944</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10306" featured="false" type="Analysis">
+  <post featured="false" type="Analysis" id="10306">
     <title>Inside Amazon</title>
     <subtitle>Taking a look inside one of the tech world's largest giants.</subtitle>
     <description>In November 2019, I toured Amazon's second largest Fulfilment Centre (FC). Upon arrival, it felt like I had teleported to the year 2100...</description>
@@ -539,7 +539,7 @@
     <link>https://medium.com/@adyleho/inside-amazon-dc85c5a90593</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10305" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10305">
     <title>On Minimalism, Part Two</title>
     <subtitle>Digital Minimalism</subtitle>
     <description>How can appyling the philosophy of minimalism to our digital lives improve our productivity and make us happer and better people? explore the ideas of 'Digital Minimalism' in this article.</description>
@@ -550,7 +550,7 @@
     <link>https://medium.com/@adyleho/on-minimalism-part-two-digital-minimalism-f88effd40b4e</link>
     <link-text>View Article</link-text>
   </post>
-  <post id="10304" featured="false" type="Essays">
+  <post featured="false" type="Essays" id="10304">
     <title>On Minimalism, Part One</title>
     <subtitle>There's a better alternative to the way we live.</subtitle>
     <description>Minimalism is not about owning a set number of items. It is about mindfulness, focussing on what truly matters, and not being constrained by material possessions....</description>
