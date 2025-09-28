@@ -7,7 +7,7 @@
   left: 0;
   width: 100vw;
   height: 52vh; /* 52% of viewport height */
-  background-image: url('../site-resources/cover-photos/essays.jpg');
+  background-image: url('site-resources/cover-photos/essays.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
