@@ -649,6 +649,7 @@ body.blog-page {
     width: 100%;
     box-sizing: border-box;
     border-radius: 0;
+    background: rgba(64, 64, 64, 0.2); /* Dark grey with same transparency level */
   }
   
   .filter-btn {
