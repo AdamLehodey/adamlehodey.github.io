@@ -619,15 +619,17 @@ body.blog-page {
     padding: 6px 10px;
   }
   
-  .filter-btn[data-filter="Analysis"] {
+  /* Responsive behavior for filter buttons */
+  .filter-btn {
     flex: 0 1 auto;
     min-width: fit-content;
     white-space: nowrap;
-    max-width: none;
+    max-width: calc(50% - 5px);
   }
   
-  .filter-btn:not([data-filter="Analysis"]) {
-    max-width: calc(50% - 5px);
+  /* Special handling for longer button text */
+  .filter-btn[data-filter="Analysis"] {
+    max-width: none;
   }
 }
 
@@ -659,17 +661,11 @@ body.blog-page {
     word-wrap: break-word;
   }
   
-  /* Special handling for "Analysis / Opinion" button */
+  /* Special handling for longer button text */
   .filter-btn[data-filter="Analysis"] {
-    flex: 0 1 auto;
     min-width: fit-content;
     white-space: nowrap;
     max-width: none;
-  }
-  
-  /* Other buttons can wrap more flexibly */
-  .filter-btn:not([data-filter="Analysis"]) {
-    max-width: calc(50% - 3px);
   }
   
   #blog-container {

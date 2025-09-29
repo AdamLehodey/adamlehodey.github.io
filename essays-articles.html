@@ -67,11 +67,8 @@
   <div class="block_1"></div> <hr class="content-divider" />
 
   <!-- Blog Filter Bar -->
-  <div class="blog-filter-bar">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="Analysis">Analysis / Opinion</button>
-    <button class="filter-btn" data-filter="Essays">Essays</button>
-    <button class="filter-btn" data-filter="Prose/Verse">Verse / Prose</button>
+  <div class="blog-filter-bar" id="blog-filter-bar">
+    <!-- Filter buttons will be dynamically generated here -->
   </div>
 
   <div class="container" id="blog-container">
@@ -221,22 +218,59 @@
   				return dateB - dateA;
   			});
   			
-  			// Store all posts globally for filtering
-  			allPosts = [...featuredPosts, ...regularPosts];
-  			
-  			// Display all posts initially
-  			displayPosts(allPosts);
-  			
-  			// Initialize filter buttons
-  			initFilterButtons();
+			// Store all posts globally for filtering
+			allPosts = [...featuredPosts, ...regularPosts];
+			
+			// Generate filter buttons dynamically
+			generateFilterButtons(allPosts);
+			
+			// Display all posts initially
+			displayPosts(allPosts);
+			
+			// Initialize filter buttons
+			initFilterButtons();
   			
   		} catch (error) {
   			console.error('Error loading blog posts:', error);
   			document.getElementById('blog-container').innerHTML = '<p>Error loading blog posts. Please try again later.</p>';
   		}
-  	}
-  	
-  	// Function to display posts
+	}
+	
+	// Function to generate filter buttons dynamically
+	function generateFilterButtons(posts) {
+		// Get unique post types from all posts
+		const postTypes = [...new Set(posts.map(post => post.type))].sort();
+		
+		// Create filter bar HTML
+		let filterHTML = '<button class="filter-btn active" data-filter="all">All</button>';
+		
+		// Add buttons for each post type
+		postTypes.forEach(type => {
+			// Create display name for the filter button
+			let displayName = type;
+			switch(type) {
+				case 'Analysis':
+					displayName = 'Analysis / Opinion';
+					break;
+				case 'Prose/Verse':
+					displayName = 'Verse / Prose';
+					break;
+				case 'Essays':
+					displayName = 'Essays';
+					break;
+				default:
+					// For any new post types, use the type name as-is
+					displayName = type;
+			}
+			
+			filterHTML += `<button class="filter-btn" data-filter="${type}">${displayName}</button>`;
+		});
+		
+		// Update the filter bar
+		document.getElementById('blog-filter-bar').innerHTML = filterHTML;
+	}
+	
+	// Function to display posts
   	function displayPosts(postsToShow) {
   		const container = document.getElementById('blog-container');
   		let html = '';
