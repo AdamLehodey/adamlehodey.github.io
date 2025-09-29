@@ -35,7 +35,16 @@
 		.page-fade.fade-in { opacity: 1; }
 		.video-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2; }
 		.hero-container { width: 60vw; height: auto; top: 25vh; margin-left: 5vw; position: absolute; z-index: 2; }
+		.hero-name { text-align: left; font-size: 4.2vw; font-weight: 500; font-family: "Libre Bodoni", serif; letter-spacing: 0.15vw; line-height: 1.1; margin-bottom: 1vh; text-transform: uppercase; color: white; }
+		.hero-subtitle { text-align: left; font-size: 1.5vw; font-weight: 400; font-family: "Bodoni Moda", serif; letter-spacing: 0.05vw; color: rgba(255, 255, 255, 0.9); }
+		.homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-top: 5vh; margin-left: 5vw; font-family: "Bodoni Moda", serif; font-size: 1.4vw; font-weight: 300; color: white; z-index: 2; }
 		.social-container { position: relative; margin-right: 5vw; margin-bottom: 0px; z-index: 2; }
+		@media (max-width: 1000px) {
+			.hero-name { font-size: 42px; text-align: center; }
+			.hero-subtitle { font-size: 16px; text-align: center; }
+			.homepage-nav { font-size: 16px; text-align: center; width: 90vw; margin-left: 5vw; }
+			.social-icon { width: 34px; height: 34px; }
+		}
 	</style>
 
 	<link rel="stylesheet" type="text/css" href="Styling.css">
