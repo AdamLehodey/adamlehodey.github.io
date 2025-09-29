@@ -21,9 +21,6 @@
   <!-- Preload critical resources - TOP PRIORITY -->
   <link rel="preload" href="site-resources/topography.png" as="image" fetchpriority="high">
   <link rel="preload" href="site-resources/cover-photos/essays.jpg" as="image" fetchpriority="high">
-  <link rel="preload" href="site-resources/cover-photos/contemporary-art.jpg" as="image" fetchpriority="high">
-  <link rel="preload" href="site-resources/cover-photos/expressionist-art.jpg" as="image" fetchpriority="high">
-  <link rel="preload" href="site-resources/cover-photos/etching.jpg" as="image" fetchpriority="high">
   <link rel="preload" href="Styling.css" as="style" fetchpriority="high">
   <link rel="preload" href="blogstyling.css" as="style" fetchpriority="high">
   
@@ -66,7 +63,7 @@
 		<a href="https://x.com/adamlehodey" target="_blank"><img class="social-icon" src="site-resources/x-logo-white.png" alt="X Link" loading="eager"></a>
 		<a href="https://www.linkedin.com/in/adamlehodey/" target="_blank"><img class="social-icon" src="site-resources/LinkedIn.png" alt="LinkedIn Link" loading="eager"></a>
 	</div>
-  <div class="homepage-nav"><a class="homepage-nav-link" href="/">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="blog">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="tutoring.html">INSTRUCTION</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
+  <div class="homepage-nav"><a class="homepage-nav-link" href="/">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="essays-articles">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="tutoring.html">INSTRUCTION</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
   <div class="block_1"></div> <hr class="content-divider" />
 
   <!-- Blog Filter Bar -->
@@ -125,7 +122,7 @@
   		loadBlogPosts();
   		
   		// Highlight current page in navigation
-  		const currentPage = 'blog';
+  		const currentPage = 'essays-articles';
   		const currentNavLinks = document.querySelectorAll('.homepage-nav-link');
   		currentNavLinks.forEach(link => {
   			if (link.getAttribute('href') === currentPage) {
@@ -278,37 +275,20 @@
   			button.addEventListener('click', function() {
   				const filter = this.getAttribute('data-filter');
   				
-  				// IMMEDIATE: Change background image first for instant visual feedback
-  				const backgroundElement = document.querySelector('.blog-background-image');
-  				if (backgroundElement) {
-  					const newImage = backgroundImages[filter] || backgroundImages['all'];
-  					backgroundElement.style.backgroundImage = `url('${newImage}')`;
-  				}
-  				
-  				// IMMEDIATE: Update active button styling
+  				// Update active button styling
   				filterButtons.forEach(btn => btn.classList.remove('active'));
   				this.classList.add('active');
   				
-  				// Then filter posts (this can happen after visual feedback)
+  				// Filter posts
   				filterPosts(filter);
   			});
   		});
   	}
   	
-  	// Background image mapping for efficient switching
-  	const backgroundImages = {
-  		'all': 'site-resources/cover-photos/essays.jpg',
-  		'Analysis': 'site-resources/cover-photos/contemporary-art.jpg',
-  		'Essays': 'site-resources/cover-photos/expressionist-art.jpg',
-  		'Prose/Verse': 'site-resources/cover-photos/etching.jpg'
-  	};
-  	
-  	// Preload background images for instant switching
+  	// Preload background image
   	function preloadBackgroundImages() {
-  		Object.values(backgroundImages).forEach(src => {
-  			const img = new Image();
-  			img.src = src;
-  		});
+  		const img = new Image();
+  		img.src = 'site-resources/cover-photos/essays.jpg';
   	}
   	
   	// Function to filter posts
