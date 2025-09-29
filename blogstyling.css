@@ -21,6 +21,11 @@
   transform: translate3d(0,0,0); /* Force hardware acceleration */
 }
 
+/* Contact page specific background */
+body:has(.contact-form-layout) .blog-background-image {
+  background-image: url('site-resources/cover-photos/midtown-nyc-bg.jpg') !important;
+}
+
 /* Blog page gradient overlay */
 .blog-gradient-overlay {
   position: absolute;
