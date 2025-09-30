@@ -298,7 +298,11 @@ body.blog-page {
   position: relative;
   overflow: hidden;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex; /* was inline-block */
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .brutalist-minimal-card .card-button::after {
@@ -468,6 +472,8 @@ body.blog-page {
   align-self: center !important;
   margin-left: auto !important;
   margin-right: auto !important;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .brutalist-minimal-card.featured .card-meta-header {
