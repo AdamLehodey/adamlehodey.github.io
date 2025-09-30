@@ -11,17 +11,6 @@
     <link>https://www.city-journal.org/article/new-york-city-democratic-socialists-america-zohran-mamdani-decarceration</link>
     <link-text>Read article</link-text>
   </post>
-  <post featured="false" type="Analysis" id="10353">
-    <title>Government-Run Grocery Stores? These New Yorkers Are Skeptical</title>
-    <subtitle>Analysing Mamdani's Proposals</subtitle>
-    <description>Zohran Mamdani claims his city-run supermarket proposal would lower prices, but small-business owners and their customers see it as a dubious and costly proposition. Read my analysis of the conversations I had with New Yorkers in City Journal.</description>
-    <author>Adam Lehodey</author>
-    <date>June 2025</date>
-    <publication>City Journal</publication>
-    <image>https://media5.manhattan-institute.org/iiif/2/wp-content%2Fuploads%2Fsites%2F5%2FZohran-Mamdani-government-run-grocery-stores-New-York-City.jpg/full/!99999,710/0/default.jpg</image>
-    <link>https://www.city-journal.org/article/zohran-mamdani-government-run-grocery-stores-new-york-city</link>
-    <link-text>View Essay</link-text>
-  </post>
   <post featured="true" type="Prose/Verse" id="10354">
     <title>PAN-GAIA</title>
     <subtitle>Narratives of a Grand Vision</subtitle>
@@ -31,6 +20,17 @@
     <publication>Personal</publication>
     <image>blog-assets/pangaia.jpg</image>
     <link>/blogs/Pan-Gaia-Narratives-Of-A-New-Vision.pdf</link>
+    <link-text>View Essay</link-text>
+  </post>
+  <post featured="false" type="Searches" id="10353">
+    <title>Government-Run Grocery Stores? These New Yorkers Are Skeptical</title>
+    <subtitle>Analysing Mamdani's Proposals</subtitle>
+    <description>Zohran Mamdani claims his city-run supermarket proposal would lower prices, but small-business owners and their customers see it as a dubious and costly proposition. Read my analysis of the conversations I had with New Yorkers in City Journal.</description>
+    <author>Adam Lehodey</author>
+    <date>June 2025</date>
+    <publication>City Journal</publication>
+    <image>https://media5.manhattan-institute.org/iiif/2/wp-content%2Fuploads%2Fsites%2F5%2FZohran-Mamdani-government-run-grocery-stores-New-York-City.jpg/full/!99999,710/0/default.jpg</image>
+    <link>https://www.city-journal.org/article/zohran-mamdani-government-run-grocery-stores-new-york-city</link>
     <link-text>View Essay</link-text>
   </post>
   <post featured="false" type="Analysis" id="10352">
