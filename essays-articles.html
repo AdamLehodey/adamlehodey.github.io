@@ -52,7 +52,7 @@
 
   <link rel="stylesheet" type="text/css" href="Styling.css">
   <link rel="stylesheet" type="text/css" href="blogstyling.css">
-  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bentham&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Droid+Serif&family=Josefin+Sans&family=Lora&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Quicksand&family=Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bentham&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Droid+Serif&family=Josefin+Sans&family=Lora&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Quicksand&family=Raleway&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body class="page-fade subpage blog-page">
@@ -63,7 +63,7 @@
 		<a href="https://x.com/adamlehodey" target="_blank"><img class="social-icon" src="site-resources/x-logo-white.png" alt="X Link" loading="eager"></a>
 		<a href="https://www.linkedin.com/in/adamlehodey/" target="_blank"><img class="social-icon" src="site-resources/LinkedIn.png" alt="LinkedIn Link" loading="eager"></a>
 	</div>
-  <div class="homepage-nav"><a class="homepage-nav-link" href="/">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="essays-articles">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="tutoring.html">INSTRUCTION</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
+  <div class="homepage-nav"><a class="homepage-nav-link" href="/">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="essays-articles">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
   <div class="block_1"></div> <hr class="content-divider" />
 
   <!-- Blog Filter Bar -->
@@ -150,8 +150,8 @@
   			threshold: 0.1
   		});
   		
-  		// Observe all photo elements with data-src
-  		document.querySelectorAll('.photo[data-src]').forEach(photo => {
+  		// Observe all card-image elements with data-src
+  		document.querySelectorAll('.card-image[data-src]').forEach(photo => {
   			imageObserver.observe(photo);
   		});
   	}
@@ -342,45 +342,45 @@
   	// Function to generate featured post HTML
   	function generateFeaturedPostHTML(post) {
   		return `
-  			<div class="blog-card-featured">
-  				<div class="featured-banner">featured</div>
-  				<div class="photo" data-src="${post.image}" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmMGYwZjAiLz48L3N2Zz4=');"></div>
-  				<div class="description">
-  					<h1>${post.title}</h1>
-  					<h2>${post.subtitle}</h2>
-  					<p>${post.description}</p>
-  					<div class="read-more">
-  						<a href="${post.link}" target="_blank">${post.linkText}</a>
+  			<div class="brutalist-minimal-card featured">
+  				<div class="card-content">
+  					<div class="card-image" data-src="${post.image}" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmMGYwZjAiLz48L3N2Zz4=');"></div>
+  					<div class="card-text">
+  						<div class="card-meta-header">
+  							<span class="post-type">${post.type}</span>
+  							<span class="read-time">${post.date} | ${post.publication}</span>
+  						</div>
+  						<h3 class="card-title" onclick="window.open('${post.link}', '_blank')">${post.title}</h3>
+  						<p class="card-subtitle">${post.subtitle}</p>
+  						<p class="card-excerpt">${post.description}</p>
+  						<button class="card-button" onclick="window.open('${post.link}', '_blank')">${post.linkText}</button>
   					</div>
   				</div>
   			</div>
   		`;
   	}
 
-  	// Function to generate regular post HTML
-  	function generateRegularPostHTML(post, altClass) {
-  		const altClassStr = altClass ? ' alt' : '';
-  		return `
-  			<div class="blog-card${altClassStr}">
-  				<div class="meta">
-  					<div class="photo" data-src="${post.image}" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmMGYwZjAiLz48L3N2Zz4=');"></div>
-  					<ul class="details">
-  						<li class="author">${post.author}</li>
-  						<li class="date">${post.date}</li>
-  						<li class="publication">${post.publication}</li>
-  					</ul>
-  				</div>
-  				<div class="description">
-  					<h1>${post.title}</h1>
-  					<h2>${post.subtitle}</h2>
-  					<p>${post.description}</p>
-  					<p class="read-more">
-  						<a href="${post.link}" target="_blank">${post.linkText}</a>
-  					</p>
-  				</div>
-  			</div>
-  		`;
-  	}
+	// Function to generate regular post HTML
+	function generateRegularPostHTML(post, altClass) {
+		const altClassStr = altClass ? ' alt' : '';
+		return `
+			<div class="brutalist-minimal-card${altClassStr}">
+				<div class="card-content">
+					<div class="card-image" data-src="${post.image}" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmMGYwZjAiLz48L3N2Zz4=');"></div>
+					<div class="card-text">
+						<div class="card-meta-header">
+							<span class="post-type">${post.type}</span>
+							<span class="read-time">${post.date} | ${post.publication}</span>
+						</div>
+						<h3 class="card-title" onclick="window.open('${post.link}', '_blank')">${post.title}</h3>
+						<p class="card-subtitle">${post.subtitle}</p>
+						<p class="card-excerpt">${post.description}</p>
+						<button class="card-button" onclick="window.open('${post.link}', '_blank')">${post.linkText}</button>
+					</div>
+				</div>
+			</div>
+		`;
+	}
   </script>
 </body>
 </html>
