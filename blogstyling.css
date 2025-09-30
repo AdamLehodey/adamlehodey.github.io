@@ -1,10 +1,5 @@
 /*PEN STYLES*/
 
-/* Override body font for blog page to ensure Inter is used */
-body.blog-page {
-  font-family: 'Inter', sans-serif !important;
-}
-
 /* Blog page background image for top 52% */
 .blog-background-image {
   position: absolute;
@@ -270,8 +265,7 @@ body.blog-page {
 }
 
 /* Card subtitle */
-.brutalist-minimal-card .card-subtitle,
-body.blog-page .brutalist-minimal-card .card-subtitle {
+.brutalist-minimal-card .card-subtitle {
   font-family: 'Inter', sans-serif !important;
   font-size: 0.9rem;
   color: #666;
@@ -280,8 +274,7 @@ body.blog-page .brutalist-minimal-card .card-subtitle {
 }
 
 /* Card excerpt */
-.brutalist-minimal-card .card-excerpt,
-body.blog-page .brutalist-minimal-card .card-excerpt {
+.brutalist-minimal-card .card-excerpt {
   font-family: 'Inter', sans-serif !important;
   font-size: 0.9rem;
   color: #555;
@@ -289,8 +282,7 @@ body.blog-page .brutalist-minimal-card .card-excerpt {
 }
 
 /* Card button */
-.brutalist-minimal-card .card-button,
-body.blog-page .brutalist-minimal-card .card-button {
+.brutalist-minimal-card .card-button {
   background: #4CAF50;
   color: #fff;
   padding: 0.6rem 1.2rem;
@@ -473,7 +465,9 @@ body.blog-page .brutalist-minimal-card .card-button {
 }
 
 .brutalist-minimal-card.featured .card-button {
-  align-self: center;
+  align-self: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .brutalist-minimal-card.featured .card-meta-header {
@@ -579,6 +573,12 @@ body.blog-page .brutalist-minimal-card .card-button {
   
   .brutalist-minimal-card.featured .card-image::after {
     display: none;
+  }
+  
+  .brutalist-minimal-card.featured .card-button {
+    align-self: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
