@@ -1,5 +1,10 @@
 /*PEN STYLES*/
 
+/* Override body font for blog page to ensure Inter is used */
+body.blog-page {
+  font-family: 'Inter', sans-serif !important;
+}
+
 /* Blog page background image for top 52% */
 .blog-background-image {
   position: absolute;
@@ -265,8 +270,9 @@ body.blog-page {
 }
 
 /* Card subtitle */
-.brutalist-minimal-card .card-subtitle {
-  font-family: 'Inter', sans-serif;
+.brutalist-minimal-card .card-subtitle,
+body.blog-page .brutalist-minimal-card .card-subtitle {
+  font-family: 'Inter', sans-serif !important;
   font-size: 0.9rem;
   color: #666;
   margin: 0.8rem 0;
@@ -274,20 +280,22 @@ body.blog-page {
 }
 
 /* Card excerpt */
-.brutalist-minimal-card .card-excerpt {
-  font-family: 'Inter', sans-serif;
+.brutalist-minimal-card .card-excerpt,
+body.blog-page .brutalist-minimal-card .card-excerpt {
+  font-family: 'Inter', sans-serif !important;
   font-size: 0.9rem;
   color: #555;
   margin: 0.5rem 0;
 }
 
 /* Card button */
-.brutalist-minimal-card .card-button {
+.brutalist-minimal-card .card-button,
+body.blog-page .brutalist-minimal-card .card-button {
   background: #4CAF50;
   color: #fff;
   padding: 0.6rem 1.2rem;
   border: none;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif !important;
   font-weight: 700;
   font-size: 0.85rem;
   text-transform: uppercase;
