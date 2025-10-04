@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blogPosts>
+  <post featured="false" type="Analysis" id="10357">
+    <title>Here's What Rent Control Looks like in New York City</title>
+    <subtitle>The policy degrades the housing stock, distorts the market, and inhibits new development</subtitle>
+    <description>Behind the headlines and catchy campaign slogans is a policy that in fact overlooks the fundamental workings of the economics of housing, resulting in worse housing for a higher costs. Read more in City Journal.</description>
+    <author>Adam Lehodey</author>
+    <date>September 2025</date>
+    <publication>City Journal</publication>
+    <image>https://media5.manhattan-institute.org/iiif/2/wp-content%2Fuploads%2Fsites%2F5%2FNew-York-City-rent-control-landlords-tenants.jpg/full/!99999,710/0/default.jpg</image>
+    <link>https://www.city-journal.org/article/new-york-city-rent-control-landlords-tenants</link>
+    <link-text>Read article</link-text>
+  </post>
   <post featured="false" type="Analysis" id="10355">
     <title>This Decarceration Agenda Would Spell Disaster for New York City</title>
     <subtitle>A plan that Zohran Mamdani once backed raises questions about public safety</subtitle>
@@ -21,17 +32,6 @@
     <image>blog-assets/pangaia.jpg</image>
     <link>/blogs/Pan-Gaia-Narratives-Of-A-New-Vision.pdf</link>
     <link-text>View Essay</link-text>
-  </post>
-  <post featured="false" type="Analysis" id="10357">
-    <title>Here's What Rent Control Looks like in New York City</title>
-    <subtitle>The policy degrades the housing stock, distorts the market, and inhibits new development</subtitle>
-    <description>Behind the headlines and catchy campaign slogans is a policy that in fact overlooks the fundamental workings of the economics of housing, resulting in worse housing for a higher costs. Read more in City Journal.</description>
-    <author>Adam Lehodey</author>
-    <date>September 2025</date>
-    <publication>City Journal</publication>
-    <image>https://media5.manhattan-institute.org/iiif/2/wp-content%2Fuploads%2Fsites%2F5%2FNew-York-City-rent-control-landlords-tenants.jpg/full/!99999,710/0/default.jpg</image>
-    <link>https://www.city-journal.org/article/new-york-city-rent-control-landlords-tenants</link>
-    <link-text>Read article</link-text>
   </post>
   <post featured="false" type="Analysis" id="10353">
     <title>Government-Run Grocery Stores? These New Yorkers Are Skeptical</title>
