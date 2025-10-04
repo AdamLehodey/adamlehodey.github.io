@@ -112,7 +112,7 @@ body.fallback-mode::before {
 	background: transparent !important; 
 	border-radius: 8px; 
 	margin-bottom: 40px; 
-	font-family: "Bodoni Moda", serif; 
+	font-family: "Libre Bodoni", serif; 
 }
 
 /* Background - Twinkle Twinkle */
@@ -141,7 +141,7 @@ body.fallback-mode::before {
 }
 
 #typewriter-title { 
-	font-family: "Bodoni Moda", serif; 
+	font-family: "Libre Bodoni", serif; 
 	font-size: 4rem; 
 	margin-bottom: 0.3vw; 
 	text-align: left; 
@@ -151,7 +151,7 @@ body.fallback-mode::before {
 }
 
 #typewriter-cursor {
-	font-family: "Bodoni Moda", serif;
+	font-family: "Libre Bodoni", serif;
 	font-size: 4rem;
 	color: white;
 	margin-left: 2px;
@@ -197,7 +197,7 @@ body.fallback-mode::before {
 	background: transparent !important;
 	border-radius: 8px;
 	margin-bottom: 40px;
-	font-family: "Bodoni Moda", serif;
+	font-family: "Libre Bodoni", serif;
 	color: white !important;
 	/* Removed border as requested */
 }
@@ -210,7 +210,7 @@ body.fallback-mode::before {
 
 /* Enhanced h2 styling for "where it all started" - just over half the title size */
 #biography-content-box h3 {
-	font-family: "Bodoni Moda", serif; 
+	font-family: "Libre Bodoni", serif; 
 	font-size: 2.2rem; /* Just over half of 4rem title size */
 	margin-bottom: 2vh; 
 	margin-top: 3vh; 
@@ -398,7 +398,7 @@ a {
 	line-height: 1;
 	margin-left: 5vw;
 	align-content: center;
-	font-family: "Bodoni Moda", serif;
+	font-family: "Libre Bodoni", serif;
 	font-size: 1.4vw;
 	font-weight: 300;
 	color: black;
@@ -425,7 +425,7 @@ body.subpage:not(.blog-page) .homepage-nav {
 	vertical-align: top;
 	line-height: 1;
 	margin-left: 5vw;
-	font-family: "Bodoni Moda", serif;
+	font-family: "Libre Bodoni", serif;
 	font-size: 1.4vw;
 	font-weight: 300;
 	color: black;
@@ -511,7 +511,7 @@ body.subpage:not(.blog-page) .social-container {
 	text-align: left;
 	font-size: 1.5vw;
 	font-weight: 400;
-	font-family: "Bodoni Moda", serif;
+	font-family: "Libre Bodoni", serif;
 	letter-spacing: 0.05vw;
 	color: rgba(255, 255, 255, 0.9);
 }
@@ -599,9 +599,15 @@ body:not(.fallback-mode) .main-content-container {
 }
 
 .about-section {
-	font-family: "Bodoni Moda", serif;
+	font-family: "Libre Bodoni", serif;
 	text-align: justify;
 	font-size: 1.05vw;
+	line-height: 1.6;
+}
+
+.about-section p {
+	line-height: 1.6;
+	margin-bottom: 1.5em;
 }
 
 .profile-column {
@@ -620,9 +626,15 @@ body:not(.fallback-mode) .main-content-container {
 }
 
 .about-text {
-	font-family: "Bodoni Moda", serif;
+	font-family: "Libre Bodoni", serif;
 	text-align: justify;
 	font-size: 1.05vw;
+	line-height: 1.6;
+}
+
+.about-text p {
+	line-height: 1.6;
+	margin-bottom: 1.5em;
 }
 
 /* Responsive Design - Homepage */
@@ -636,7 +648,7 @@ body:not(.fallback-mode) .main-content-container {
 		margin-right: 5vw;
 		overflow-wrap: break-word;
 		text-align: center;
-		font-family: "Bodoni Moda", serif;
+		font-family: "Libre Bodoni", serif;
 		font-size: 16px;
 		font-weight: 300;
 		color: black;
@@ -674,7 +686,7 @@ body:not(.fallback-mode) .main-content-container {
 		text-align: center;
 		font-size: 16px;
 		font-weight: 400;
-		font-family: "Bodoni Moda", serif;
+		font-family: "Libre Bodoni", serif;
 		letter-spacing: 0.05vw;
 		color: rgba(255, 255, 255, 0.9);
 	}
@@ -745,10 +757,16 @@ body:not(.fallback-mode) .main-content-container {
 		width: 100%;
 		margin: 0;
 		padding: 0;
-		font-family: "Bodoni Moda", serif;
+		font-family: "Libre Bodoni", serif;
 		text-align: center;
 		font-size: 16px;
+		line-height: 1.6;
 		overflow-x: hidden;
+	}
+
+	.about-section p {
+		line-height: 1.6;
+		margin-bottom: 1.5em;
 	}
 
 	.profile-column {
@@ -766,12 +784,18 @@ body:not(.fallback-mode) .main-content-container {
 
 	.about-text {
 		width: 100%;
-		font-family: "Bodoni Moda", serif;
+		font-family: "Libre Bodoni", serif;
 		text-align: center;
 		font-size: 16px;
+		line-height: 1.6;
 		overflow-x: hidden;
 		margin-top: 0;
 		padding-top: 0;
+	}
+
+	.about-text p {
+		line-height: 1.6;
+		margin-bottom: 1.5em;
 	}
 
 	.language-selector {
@@ -825,7 +849,7 @@ body:not(.fallback-mode) .main-content-container {
 		text-align: center;
 		font-size: 16px;
 		font-weight: 400;
-		font-family: "Bodoni Moda", serif;
+		font-family: "Libre Bodoni", serif;
 		letter-spacing: 0.05vw;
 		color: rgba(255, 255, 255, 0.9);
 	}
@@ -929,7 +953,7 @@ body.subpage:not(.blog-page) .page-container {
 	height: auto;
 	text-align: center;
 	border: 2px solid dimgrey;
-	font-family: "Bodoni Moda", serif;
+	font-family: "Libre Bodoni", serif;
 	margin: 0 auto;
 }
 
@@ -944,7 +968,7 @@ body.subpage:not(.blog-page) .content-intro {
 	width: 100%;
 	top: 3vh;
 	padding-bottom: 3.8vh;
-	font-family: "Bodoni Moda", serif;
+	font-family: "Libre Bodoni", serif;
 	font-weight: bold;
 	margin: 0 auto;
 }
@@ -958,7 +982,7 @@ body.subpage:not(.blog-page) .content-search {
 .content-main {
 	position: relative;
 	text-align: center;
-	font-family: "Bodoni Moda", serif;
+	font-family: "Libre Bodoni", serif;
 	top: 15vh;
 	width: 100%;
 	padding: 0;
@@ -966,7 +990,7 @@ body.subpage:not(.blog-page) .content-search {
 }
 
 .content-main h2 {
-	font-family: "Bodoni Moda", serif;
+	font-family: "Libre Bodoni", serif;
 	font-size: 205%;
 	letter-spacing: 0.2vw;
 	text-align: center;
@@ -975,7 +999,7 @@ body.subpage:not(.blog-page) .content-search {
 .content-pitch {
 	position: relative;
 	text-align: center;
-	font-family: "Bodoni Moda", serif;
+	font-family: "Libre Bodoni", serif;
 	top: 15vh;
 	left: 8vw;
 	padding-bottom: 5vh;
@@ -983,7 +1007,7 @@ body.subpage:not(.blog-page) .content-search {
 }
 
 .content-pitch h2 {
-	font-family: "Bodoni Moda", serif;
+	font-family: "Libre Bodoni", serif;
 	font-size: 205%;
 	letter-spacing: 0.2vw;
 }
@@ -1114,20 +1138,20 @@ body.subpage:not(.blog-page) .content-search {
 	justify-content: space-between;
 	align-items: center;
 	z-index: +11;
-	font-family: "Bodoni Moda", serif;
+	font-family: "Libre Bodoni", serif;
 	box-sizing: border-box;
 }
 
 /* LANGUAGE SELECTOR STYLES */
 .language-selector {
 	text-align: center;
-	font-family: "Bodoni Moda", serif;
+	font-family: "Libre Bodoni", serif;
 }
 
 /* COPYRIGHT NOTICE STYLES // */
 .copyright-notice {
 	text-align: right;
-	font-family: "Bodoni Moda", serif;
+	font-family: "Libre Bodoni", serif;
 	font-size: 0.9vw;
 	font-weight: 300;
 	color: white;
@@ -1184,7 +1208,7 @@ body.subpage:not(.blog-page) .content-search {
 	cursor: pointer;
 	padding: 0.3vh 0.6vw;
 	transition: color 0.3s ease;
-	font-family: "Bodoni Moda", serif;
+	font-family: "Libre Bodoni", serif;
 	white-space: nowrap;
 }
 
@@ -1207,7 +1231,7 @@ body.subpage:not(.blog-page) .content-search {
 	color: rgba(255, 255, 255, 0.7);
 	font-size: 0.9vw;
 	margin: 0 0.2vw;
-	font-family: "Bodoni Moda", serif;
+	font-family: "Libre Bodoni", serif;
 }
 
 .language-content {
@@ -1279,14 +1303,14 @@ body.subpage:not(.blog-page) .content-search {
 	.language-selector {
 		width: 100%;
 		text-align: center;
-		font-family: "Bodoni Moda", serif;
+		font-family: "Libre Bodoni", serif;
 		margin-bottom: 1vh;
 	}
 	
 	.lang-btn {
 		font-size: 14px;
 		padding: 0.4vh 0.8vw;
-		font-family: "Bodoni Moda", serif;
+		font-family: "Libre Bodoni", serif;
 		font-weight: 300;
 		color: white;
 	}
@@ -1294,7 +1318,7 @@ body.subpage:not(.blog-page) .content-search {
 	.lang-separator {
 		font-size: 14px;
 		margin: 0 0.2vw;
-		font-family: "Bodoni Moda", serif;
+		font-family: "Libre Bodoni", serif;
 		color: white;
 	}
 	
@@ -1339,14 +1363,14 @@ body.subpage:not(.blog-page) .content-search {
 	.language-selector {
 		width: 100%;
 		text-align: center;
-		font-family: "Bodoni Moda", serif;
+		font-family: "Libre Bodoni", serif;
 		margin-bottom: 1vh;
 	}
 	
 	.lang-btn {
 		font-size: 14px;
 		padding: 0.4vh 0.8vw;
-		font-family: "Bodoni Moda", serif;
+		font-family: "Libre Bodoni", serif;
 		font-weight: 300;
 		color: white;
 	}
@@ -1354,7 +1378,7 @@ body.subpage:not(.blog-page) .content-search {
 	.lang-separator {
 		font-size: 14px;
 		margin: 0 0.2vw;
-		font-family: "Bodoni Moda", serif;
+		font-family: "Libre Bodoni", serif;
 		color: white;
 	}
 	
@@ -1798,7 +1822,7 @@ fieldset {
 }
 
 .social-media-section h3 {
-  font-family: "Bodoni Moda", serif;
+  font-family: "Libre Bodoni", serif;
   font-size: 1.2rem;
   margin: 0 0 1.5rem 0;
   color: #000000;
@@ -1818,7 +1842,7 @@ fieldset {
   gap: 0.5rem;
   color: #000000;
   text-decoration: none;
-  font-family: "Bodoni Moda", serif;
+  font-family: "Libre Bodoni", serif;
   font-size: 0.9rem;
   transition: opacity 0.3s ease;
 }
@@ -1835,7 +1859,7 @@ fieldset {
 
 .social-separator {
   color: #000000;
-  font-family: "Bodoni Moda", serif;
+  font-family: "Libre Bodoni", serif;
   font-size: 0.9rem;
 }
 
