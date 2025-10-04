@@ -389,6 +389,18 @@ a {
 	text-decoration: none;
 }
 
+/* White underlined links in content sections */
+.fade-text a {
+	color: white;
+	text-decoration: underline;
+	text-decoration-color: white;
+	text-underline-offset: 2px;
+}
+
+.fade-text a:hover {
+	text-decoration-color: rgba(255, 255, 255, 0.7);
+}
+
 /* HOMEPAGE STYLES // */
 
 /* Navigation */
@@ -399,7 +411,7 @@ a {
 	margin-left: 5vw;
 	align-content: center;
 	font-family: "Libre Bodoni", serif;
-	font-size: 1.4vw;
+	font-size: 20px; /* Constant size on desktop */
 	font-weight: 300;
 	color: black;
 	z-index: +2;
@@ -426,7 +438,7 @@ body.subpage:not(.blog-page) .homepage-nav {
 	line-height: 1;
 	margin-left: 5vw;
 	font-family: "Libre Bodoni", serif;
-	font-size: 1.4vw;
+	font-size: 20px; /* Constant size on desktop */
 	font-weight: 300;
 	color: black;
 	z-index: 2;
@@ -486,22 +498,37 @@ body.subpage:not(.blog-page) .social-container {
 	margin-right: 1vw;
 }
 
-/* Hero Section */
-.hero-container {
-	width: 60vw;
-	height: auto;
-	top: 25vh;
-	margin-left: 5vw;
-	position: absolute;
-	z-index: +2;
+
+/* Hero Section - Medium Desktop (scaled down to prevent 3-line wrapping) */
+@media (min-width: 1001px) and (max-width: 1222px) {
+	.hero-name {
+		font-size: clamp(42px, 48px, 48px);
+		letter-spacing: clamp(1.5px, 2px, 2px);
+	}
+	
+	.hero-subtitle {
+		font-size: clamp(18px, 20px, 20px);
+	}
+}
+
+/* Hero Container - Desktop positioning (1001px+) */
+@media (min-width: 1001px) {
+	.hero-container {
+		width: 60vw;
+		height: auto;
+		top: 22vh;
+		margin-left: 5vw;
+		position: absolute;
+		z-index: +2;
+	}
 }
 
 .hero-name {
 	text-align: left;
-	font-size: 4.2vw;
+	font-size: 56px;
 	font-weight: 500;
 	font-family: "Libre Bodoni", serif;
-	letter-spacing: 0.15vw;
+	letter-spacing: 2px;
 	line-height: 1.1;
 	margin-bottom: 1vh;
 	text-transform: uppercase;
@@ -509,10 +536,10 @@ body.subpage:not(.blog-page) .social-container {
 
 .hero-subtitle {
 	text-align: left;
-	font-size: 1.5vw;
+	font-size: 22px;
 	font-weight: 400;
 	font-family: "Libre Bodoni", serif;
-	letter-spacing: 0.05vw;
+	letter-spacing: 1px;
 	color: rgba(255, 255, 255, 0.9);
 }
 
@@ -561,6 +588,20 @@ body.subpage:not(.blog-page) .social-container {
 	box-shadow: none;
 }
 
+/* Dynamic Hero Spacer */
+.hero-spacer {
+	width: 100%;
+	height: 0;
+	transition: height 0.1s ease;
+}
+
+/* Faster transition on desktop for snappier movement */
+@media (min-width: 1001px) {
+	.hero-spacer {
+		transition: height 0.05s ease;
+	}
+}
+
 /* Black divider for subpages */
 body.subpage .content-divider {
 	background: black;
@@ -572,15 +613,11 @@ body.subpage .content-divider {
 	justify-content: flex-start;
 	align-items: center;
 	width: 100%;
-	margin-top: 3.5vh;
+	margin-top: 0;
 	margin-left: 5vw;
 	margin-right: 5vw;
 	z-index: +2;
-}
-
-/* Add extra spacing when video is working (no stars image) */
-body:not(.fallback-mode) .main-content-container {
-	margin-top: 41.5vh; /* 3.5vh + 38vh to compensate for missing stars image */
+	position: relative;
 }
 
 .about-container {
@@ -588,53 +625,158 @@ body:not(.fallback-mode) .main-content-container {
 	flex-direction: column;
 	align-items: center;
 	width: 90vw;
+	position: relative;
+	margin-top: 0;
 }
 
+/* Base styles - Mobile first approach */
 .content-wrapper {
-	display: grid;
-	grid-template-columns: 1fr auto 1fr;
-	justify-content: center;
-	align-items: start;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2vh;
+	margin-bottom: 3vh;
 	width: 90vw;
+	overflow-x: hidden;
+	min-height: auto;
 }
 
+/* Base styles - Mobile first approach */
 .about-section {
+	width: 100%;
+	margin: 0;
+	padding: 0;
 	font-family: "Libre Bodoni", serif;
-	text-align: justify;
-	font-size: 1.05vw;
-	line-height: 1.6;
+	text-align: center;
+	font-size: 14px;
+	line-height: 1.5;
+	overflow-x: hidden;
 }
 
-.about-section p {
-	line-height: 1.6;
-	margin-bottom: 1.5em;
-}
+	.about-section p {
+		line-height: 1.5;
+		margin-bottom: 0.6em;
+	}
 
+/* Base styles - Mobile first approach */
 .profile-column {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 15vw;
-	gap: 1.5vh;
-	margin-top: 3vh;
+	width: 100%;
+	gap: 0;
+	margin-top: 0;
 }
 
 .profile-image {
-	width: 12vw;
+	width: 10vw;
 	border-radius: 50%;
+	box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.1);
+	transition: box-shadow 0.3s ease;
 }
 
+.profile-image:hover {
+	box-shadow: 0 0 25px rgba(255, 255, 255, 0.4), 0 0 50px rgba(255, 255, 255, 0.2);
+}
+
+/* Base styles - Mobile first approach */
 .about-text {
+	width: 100%;
 	font-family: "Libre Bodoni", serif;
-	text-align: justify;
-	font-size: 1.05vw;
-	line-height: 1.6;
+	text-align: center;
+	font-size: 14px;
+	line-height: 1.5;
+	overflow-x: hidden;
+	margin-top: 0;
+	padding-top: 0;
+	margin-block-start: 1em;
 }
 
-.about-text p {
-	line-height: 1.6;
-	margin-bottom: 1.5em;
+	.about-text p {
+		line-height: 1.5;
+		margin-bottom: 0.6em;
+	}
+
+/* DESKTOP LAYOUT - Two equal columns with divider */
+@media (min-width: 1001px) {
+	.content-wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-content: center;
+		align-items: stretch;
+		width: 90vw;
+		gap: 0;
+		min-height: 60vh;
+		position: relative;
+		overflow-x: visible;
+		margin-bottom: 0;
+	}
+	
+	.content-wrapper::before {
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: 0;
+		height: 35vh;
+		width: 1px;
+		background-color: rgba(255, 255, 255, 0.3);
+		transform: translateX(-50%);
+		z-index: 1;
+	}
+	
+	.about-section {
+		font-family: "Libre Bodoni", serif;
+		text-align: justify;
+		font-size: clamp(13px, 15px, 15px);
+		line-height: 1.5;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		height: 100%;
+		padding-right: 1vw;
+		padding-left: 0;
+		grid-column: 1;
+		margin: 0;
+		padding-top: 0;
+	}
+	
+	.about-section p {
+		line-height: 1.5;
+		margin-bottom: 0.6em;
+	}
+	
+	.about-text {
+		font-family: "Libre Bodoni", serif;
+		text-align: justify;
+		font-size: clamp(13px, 15px, 15px);
+		line-height: 1.5;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		height: 100%;
+		padding-left: 1vw;
+		padding-right: 0;
+		grid-column: 2;
+		margin: 0;
+		padding-top: 0;
+	}
+	
+	.about-text p {
+		line-height: 1.5;
+		margin-bottom: 0.6em;
+	}
+	
+	.profile-column {
+		display: none;
+		width: 0;
+		height: 0;
+		overflow: hidden;
+	}
+	
+	.profile-image {
+		display: none;
+	}
 }
 
 /* Responsive Design - Homepage */
@@ -719,7 +861,7 @@ body:not(.fallback-mode) .main-content-container {
 	}
 	
 	.profile-image {
-		width: 20vw;
+		width: 25vw;
 		border-radius: 50%;
 	}
 
@@ -728,7 +870,7 @@ body:not(.fallback-mode) .main-content-container {
 		justify-content: flex-start;
 		align-items: center;
 		width: 100%;
-		margin-top: 8vh;
+		margin-top: 0;
 		margin-left: 5vw;
 		margin-right: 5vw;
 		overflow-x: hidden;
@@ -741,40 +883,12 @@ body:not(.fallback-mode) .main-content-container {
 		width: 90vw;
 		overflow-x: hidden;
 		gap: 2vh;
+		position: relative;
+		margin-top: 0;
 	}
 
-	.content-wrapper {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 2vh;
-		margin-bottom: 4vh;
-		width: 90vw;
-		overflow-x: hidden;
-	}
-
-	.about-section {
-		width: 100%;
-		margin: 0;
-		padding: 0;
-		font-family: "Libre Bodoni", serif;
-		text-align: center;
-		font-size: 16px;
-		line-height: 1.6;
-		overflow-x: hidden;
-	}
-
-	.about-section p {
-		line-height: 1.6;
-		margin-bottom: 1.5em;
-	}
-
-	.profile-column {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-top: 2vh;
+	.content-wrapper::before {
+		display: none;
 	}
 
 	.profile-image {
@@ -782,24 +896,10 @@ body:not(.fallback-mode) .main-content-container {
 		border-radius: 50%;
 	}
 
-	.about-text {
-		width: 100%;
-		font-family: "Libre Bodoni", serif;
-		text-align: center;
-		font-size: 16px;
-		line-height: 1.6;
-		overflow-x: hidden;
-		margin-top: 0;
-		padding-top: 0;
-	}
-
-	.about-text p {
-		line-height: 1.6;
-		margin-bottom: 1.5em;
-	}
-
 	.language-selector {
 		margin-bottom: 2vh;
+		position: relative;
+		top: auto;
 	}
 }
 
@@ -1129,17 +1229,20 @@ body.subpage:not(.blog-page) .content-search {
 /* BOTTOM CONTAINER STYLES */
 .bottom-container {
 	position: fixed;
-	bottom: 3vh;
+	bottom: 0;
 	left: 0;
 	right: 0;
 	width: 100%;
-	padding: 0 5vw;
+	padding: 0vh 5vw 0vh 5vw;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	z-index: +11;
 	font-family: "Libre Bodoni", serif;
 	box-sizing: border-box;
+	background: rgba(0, 0, 0, 0.9);
+	border-top: 0.3px solid white;
+	min-height: 5vh;
 }
 
 /* LANGUAGE SELECTOR STYLES */
@@ -1152,7 +1255,7 @@ body.subpage:not(.blog-page) .content-search {
 .copyright-notice {
 	text-align: right;
 	font-family: "Libre Bodoni", serif;
-	font-size: 0.9vw;
+	font-size: 14px; /* Constant size on desktop */
 	font-weight: 300;
 	color: white;
 	white-space: nowrap;
@@ -1203,7 +1306,7 @@ body.subpage:not(.blog-page) .content-search {
 	background: none;
 	border: none;
 	color: white;
-	font-size: 0.9vw;
+	font-size: 14px; /* Constant size on desktop */
 	font-weight: 300;
 	cursor: pointer;
 	padding: 0.3vh 0.6vw;
@@ -1229,7 +1332,7 @@ body.subpage:not(.blog-page) .content-search {
 
 .lang-separator {
 	color: rgba(255, 255, 255, 0.7);
-	font-size: 0.9vw;
+	font-size: 14px; /* Constant size on desktop */
 	margin: 0 0.2vw;
 	font-family: "Libre Bodoni", serif;
 }
@@ -1262,29 +1365,7 @@ body.subpage:not(.blog-page) .content-search {
 }
 
 /* Responsive Design - Language Selector */
-@media (max-width: 1200px) {
-	.lang-btn {
-		font-size: 1.1vw;
-		padding: 0.3vh 0.6vw;
-	}
-	
-	.lang-separator {
-		font-size: 1.1vw;
-		margin: 0 0.2vw;
-	}
-}
-
-@media (max-width: 800px) {
-	.lang-btn {
-		font-size: 1.3vw;
-		padding: 0.3vh 0.6vw;
-	}
-	
-	.lang-separator {
-		font-size: 1.3vw;
-		margin: 0 0.2vw;
-	}
-}
+/* Desktop sizes now use constant 14px font size */
 
 @media (max-width: 1000px) {
 	.bottom-container {
@@ -1296,8 +1377,11 @@ body.subpage:not(.blog-page) .content-search {
 		flex-direction: column;
 		background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
 		padding: 1.2vh 0;
-		margin: 0;
+		margin: 2vh 0 0 0;
 		z-index: +11;
+		order: 999;
+		justify-content: center;
+		align-items: center;
 	}
 	
 	.language-selector {
@@ -1356,8 +1440,11 @@ body.subpage:not(.blog-page) .content-search {
 		flex-direction: column;
 		background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
 		padding: 1.2vh 0;
-		margin: 0;
+		margin: 2vh 0 0 0;
 		z-index: +11;
+		order: 999;
+		justify-content: center;
+		align-items: center;
 	}
 	
 	.language-selector {
