@@ -11,6 +11,8 @@ html, body {
 :root {
 	/* Will be updated by JS to handle iOS dynamic toolbars */
 	--vh: 1vh;
+	/* Modern viewport units fallbacks */
+	--full-vh: 100dvh;
 }
 
 /* VIDEO BACKGROUND // */
@@ -38,9 +40,10 @@ body.fallback-mode::before {
 	top: 0;
 	left: 0;
 	width: 100%;
-	/* Prefer dynamic viewport height on modern browsers with fallbacks */
-	height: calc(var(--vh, 1vh) * 100);
+	/* Prefer modern viewport units with JS and safe-area fallbacks */
+	height: 100svh;
 	min-height: 100dvh;
+	height: calc(var(--vh, 1vh) * 100);
 	object-fit: cover;
 	z-index: -2;
 	min-width: 100%;
@@ -70,6 +73,8 @@ body.fallback-mode::before {
 	top: 0 !important; 
 	left: 0 !important; 
 	width: 100vw !important; 
+	height: 100svh !important; 
+	min-height: 100dvh !important;
 	height: calc(var(--vh, 1vh) * 100) !important; 
 	object-fit: cover !important; 
 	z-index: -1 !important; 
@@ -86,6 +91,8 @@ body.fallback-mode::before {
 	top: 0 !important; 
 	left: 0 !important; 
 	width: 100vw !important; 
+	height: 100svh !important; 
+	min-height: 100dvh !important; 
 	height: calc(var(--vh, 1vh) * 100) !important; 
 	background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%) !important;
 	z-index: -1 !important; 
@@ -98,6 +105,8 @@ body.fallback-mode::before {
 	top: 0 !important; 
 	left: 0 !important; 
 	width: 100vw !important; 
+	height: 100svh !important; 
+	min-height: 100dvh !important; 
 	height: calc(var(--vh, 1vh) * 100) !important; 
 	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 90%, rgba(0, 0, 0, 0.6) 93%, rgba(0, 0, 0, 0.8) 96%, rgba(0, 0, 0, 1) 100%) !important; 
 	z-index: 0 !important; 
@@ -135,8 +144,9 @@ body.fallback-mode::before {
 /* Ensure any generic video overlay fills iOS viewport even with inline styles */
 .video-overlay {
 	width: 100vw !important;
-	height: calc(var(--vh, 1vh) * 100) !important;
+	height: 100svh !important;
 	min-height: 100dvh !important;
+	height: calc(var(--vh, 1vh) * 100) !important;
 }
 
 #title-section {
