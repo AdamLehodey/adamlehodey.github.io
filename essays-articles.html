@@ -35,7 +35,7 @@
     html, body { margin: 0; padding: 0; }
     .page-fade { opacity: 0; transition: opacity 0.1s ease-in-out; }
     .page-fade.fade-in { opacity: 1; }
-    .hero-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2; }
+    .hero-background { position: fixed; top: 0; left: 0; width: 100vw; height: calc(var(--vh, 1vh) * 100); object-fit: cover; z-index: -2; }
     .homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-top: 5vh; margin-left: 5vw; font-family: "Libre Bodoni", serif; font-size: 1.4vw; font-weight: 300; color: black; z-index: 2; }
     .social-container { position: relative; margin-right: 5vw; margin-bottom: 0px; z-index: 2; }
     .blog-background-image { position: absolute; top: 0; left: 0; width: 100vw; height: 52vh; background-image: url('site-resources/cover-photos/essays.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: -1; }
@@ -49,6 +49,19 @@
       #blog-container { margin-top: 10vh; }
     }
   </style>
+
+  <script>
+    // iOS-safe viewport height variable
+    (function() {
+      function setVh() {
+        var vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', vh + 'px');
+      }
+      setVh();
+      window.addEventListener('resize', setVh);
+      window.addEventListener('orientationchange', setVh);
+    })();
+  </script>
 
   <link rel="stylesheet" type="text/css" href="Styling.css">
   <link rel="stylesheet" type="text/css" href="blogstyling.css">

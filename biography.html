@@ -35,7 +35,7 @@
       html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
       .page-fade { opacity: 0; transition: opacity 0.1s ease-in-out; }
       .page-fade.fade-in { opacity: 1; }
-      .hero-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2; }
+      .hero-background { position: fixed; top: 0; left: 0; width: 100vw; height: calc(var(--vh, 1vh) * 100); object-fit: cover; z-index: -2; }
       .homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-top: 5vh; margin-left: 5vw; font-family: "Libre Bodoni", serif; font-size: 1.4vw; font-weight: 300; color: white; z-index: 2; }
       .social-container { position: relative; margin-right: 5vw; margin-bottom: 0px; z-index: 2; }
       .blog-background-image { position: absolute; top: 0; left: 0; width: 100vw; height: 52vh; background-image: url('site-resources/cover-photos/midtown-nyc-bg.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: -1; }
@@ -60,7 +60,7 @@
         top: 0; 
         left: 0; 
         width: 100vw; 
-        height: 100vh; 
+        height: calc(var(--vh, 1vh) * 100); 
         background: rgba(255, 255, 255, 0.85); 
         backdrop-filter: blur(10px); 
         -webkit-backdrop-filter: blur(10px);
@@ -163,6 +163,18 @@
   <link rel="stylesheet" type="text/css" href="Styling.css">
   <link rel="stylesheet" type="text/css" href="blogstyling.css">
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bentham&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Droid+Serif&family=Josefin+Sans&family=Lora&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Quicksand&family=Raleway&display=swap" rel="stylesheet">
+  <script>
+    // iOS-safe viewport height variable for dynamic toolbars
+    (function() {
+      function setVh() {
+        var vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', vh + 'px');
+      }
+      setVh();
+      window.addEventListener('resize', setVh);
+      window.addEventListener('orientationchange', setVh);
+    })();
+  </script>
 </head>
 
 <body id="biography-page" class="page-fade subpage blog-page">

@@ -7,6 +7,12 @@ html, body {
 	overflow-x: hidden;
 }
 
+/* iOS-safe viewport unit fallback */
+:root {
+	/* Will be updated by JS to handle iOS dynamic toolbars */
+	--vh: 1vh;
+}
+
 /* VIDEO BACKGROUND // */
 /* Fallback background - only show when video fails */
 body::before {
@@ -32,7 +38,9 @@ body.fallback-mode::before {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100vh;
+	/* Prefer dynamic viewport height on modern browsers with fallbacks */
+	height: calc(var(--vh, 1vh) * 100);
+	min-height: 100dvh;
 	object-fit: cover;
 	z-index: -2;
 	min-width: 100%;
@@ -62,14 +70,14 @@ body.fallback-mode::before {
 	top: 0 !important; 
 	left: 0 !important; 
 	width: 100vw !important; 
-	height: 100vh !important; 
+	height: calc(var(--vh, 1vh) * 100) !important; 
 	object-fit: cover !important; 
 	z-index: -1 !important; 
 	background-size: cover !important;
 	background-position: center !important;
 	background-repeat: no-repeat !important;
 	min-width: 100vw !important;
-	min-height: 100vh !important;
+	min-height: 100dvh !important;
 }
 
 /* Biography fallback background for when video fails to load */
@@ -78,7 +86,7 @@ body.fallback-mode::before {
 	top: 0 !important; 
 	left: 0 !important; 
 	width: 100vw !important; 
-	height: 100vh !important; 
+	height: calc(var(--vh, 1vh) * 100) !important; 
 	background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%) !important;
 	z-index: -1 !important; 
 	display: none;
@@ -90,7 +98,7 @@ body.fallback-mode::before {
 	top: 0 !important; 
 	left: 0 !important; 
 	width: 100vw !important; 
-	height: 100vh !important; 
+	height: calc(var(--vh, 1vh) * 100) !important; 
 	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 90%, rgba(0, 0, 0, 0.6) 93%, rgba(0, 0, 0, 0.8) 96%, rgba(0, 0, 0, 1) 100%) !important; 
 	z-index: 0 !important; 
 	pointer-events: none !important;
@@ -122,6 +130,13 @@ body.fallback-mode::before {
 	background-size: auto !important;
 	background-position: top left !important;
 	background-attachment: scroll !important;
+}
+
+/* Ensure any generic video overlay fills iOS viewport even with inline styles */
+.video-overlay {
+	width: 100vw !important;
+	height: calc(var(--vh, 1vh) * 100) !important;
+	min-height: 100dvh !important;
 }
 
 #title-section {
@@ -1004,7 +1019,7 @@ body.subpage:not(.blog-page) .Quote {
 /* Fix scrolling issues for subpages */
 body.subpage:not(.blog-page) {
 	height: auto;
-	min-height: 100vh;
+	min-height: 100dvh;
 	-webkit-overflow-scrolling: touch;
 	scroll-behavior: smooth;
 }
@@ -2103,7 +2118,7 @@ body.biography-page .biography-video-background {
   top: 0 !important;
   left: 0 !important;
   width: 100vw !important;
-  height: 100vh !important;
+  height: calc(var(--vh, 1vh) * 100) !important;
   z-index: -1 !important;
 }
 
