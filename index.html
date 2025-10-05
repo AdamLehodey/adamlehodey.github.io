@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <link rel="shortcut icon" href="/site-resources/favicon.png" type="image/x-icon">
   <link rel="icon" href="/site-resources/favicon.png" type="image/x-icon">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
   <meta name="keywords" content="Adam Lehodey, Lehodey, Adam Louis Sebastian Lehodey, Adventures, Ideas, Global Denizen"> 
@@ -21,8 +21,9 @@
 	<link rel="dns-prefetch" href="https://fonts.gstatic.com">
 	
 	<!-- Preload critical resources -->
-	<link rel="preload" href="site-resources/midtown.mp4" as="video" type="video/mp4" crossorigin>
+	<link rel="preload" href="site-resources/midtown.mp4" as="video" type="video/mp4">
 	<link rel="preload" href="site-resources/cover-photos/midtown-nyc-bg.jpg" as="image">
+	<link rel="preload" href="site-resources/ProfilePicture.jpg" as="image">
 	<link rel="preload" href="site-resources/LinkedIn.png" as="image">
 	<link rel="preload" href="Styling.css" as="style">
 	
@@ -46,14 +47,6 @@
 			.homepage-nav { font-size: 16px; text-align: center; width: 90vw; margin-left: 5vw; }
 			.social-icon { width: 34px; height: 34px; }
 		}
-
-		/* Portrait-only experience helper: on small screens in landscape, show an overlay */
-		.rotate-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); color: #fff; display: none; align-items: center; justify-content: center; text-align: center; z-index: 9999; font-family: "Libre Bodoni", serif; padding: 4vh 6vw; }
-		.rotate-overlay p { font-size: 18px; line-height: 1.5; }
-		/* Show overlay only for phones in landscape (exclude tablets/desktop) */
-		@media (orientation: landscape) and (max-width: 812px) and (hover: none) and (pointer: coarse) {
-			.rotate-overlay { display: flex; }
-		}
 	</style>
 
   <script>
@@ -70,32 +63,30 @@
   </script>
 
 	<link rel="stylesheet" type="text/css" href="Styling.css">
-	<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Droid+Serif&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Open+Sans&display=swap" rel="stylesheet">
 
 </head>
 
 <body class="page-fade">
- <!-- Optional portrait-only helper overlay for small screens -->
- <div class="rotate-overlay"><p>Please rotate your device to portrait for the best experience.</p></div>
  <!-- Main English video - loads immediately -->
-<video class="video-background active-video" autoplay muted loop playsinline preload="metadata" poster="site-resources/cover-photos/midtown-nyc-bg.jpg" data-lang="en" fetchpriority="high" data-playback-rate="0.75" webkit-playsinline="true" x5-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="false" x5-video-orientation="landscape">
+<video class="video-background active-video" autoplay muted loop playsinline preload="auto" poster="site-resources/cover-photos/midtown-nyc-bg.jpg" data-lang="en" fetchpriority="high" data-playback-rate="0.75" webkit-playsinline="true" x5-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="false" x5-video-orientation="landscape">
   <source src="site-resources/midtown.mp4" type="video/mp4">
   Your browser does not support the video tag.
  </video>
  
  <!-- Lazy-loaded videos - only created when needed -->
  <div id="lazy-video-container" style="display: none;">
-  <video class="video-background" muted loop playsinline preload="metadata" data-lang="fr" style="display: none;" data-playback-rate="0.75" webkit-playsinline="true" x5-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="false" x5-video-orientation="landscape">
+  <video class="video-background" muted loop playsinline preload="none" data-lang="fr" style="display: none;" data-playback-rate="0.75" webkit-playsinline="true" x5-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="false" x5-video-orientation="landscape">
    <source src="site-resources/nice.mp4" type="video/mp4">
    Your browser does not support the video tag.
   </video>
   
-  <video class="video-background" muted loop playsinline preload="metadata" data-lang="es" style="display: none;" webkit-playsinline="true" x5-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="false" x5-video-orientation="landscape">
+  <video class="video-background" muted loop playsinline preload="none" data-lang="es" style="display: none;" webkit-playsinline="true" x5-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="false" x5-video-orientation="landscape">
    <source src="site-resources/cdmx.mp4" type="video/mp4">
    Your browser does not support the video tag.
   </video>
   
-  <video class="video-background" muted loop playsinline preload="metadata" data-lang="it" style="display: none;" data-playback-rate="0.75" webkit-playsinline="true" x5-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="false" x5-video-orientation="landscape">
+  <video class="video-background" muted loop playsinline preload="none" data-lang="it" style="display: none;" data-playback-rate="0.75" webkit-playsinline="true" x5-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="false" x5-video-orientation="landscape">
    <source src="site-resources/italia.mp4" type="video/mp4">
    Your browser does not support the video tag.
   </video>
@@ -229,7 +220,6 @@
  	let lazyVideosLoaded = false;
  	let videoCache = new Map();
 	let fallbackMode = false;
-	let autoplaySucceeded = false;
  	
  	// Function to load lazy videos in background
  	function loadLazyVideos() {
@@ -261,8 +251,14 @@
 
 	// Language switching functionality with fade animation for text only
 	document.addEventListener('DOMContentLoaded', function() {
-		// If autoplay is blocked, aggressively try to start playback
-		setTimeout(function() { aggressiveAutoplay(); }, 300);
+		// Automatic fallback if the initial video hasn't started promptly
+		setTimeout(function() {
+			if (fallbackMode) return;
+			const active = document.querySelector('.video-background.active-video');
+			if (active && (active.paused || active.readyState < 2)) {
+				enableFallbackMode();
+			}
+		}, 4500);
 
  		const langButtons = document.querySelectorAll('.lang-btn');
  		const langContents = document.querySelectorAll('.language-content');
@@ -344,16 +340,12 @@
  					overlay.style.display = 'none';
  				}
  				
-				// Try to play the video
-				targetVideo.play().then(() => {
-					autoplaySucceeded = true;
-					console.log('Video playing successfully for:', selectedLang);
-				}).catch((error) => {
-					console.error('Video play failed for:', selectedLang, error);
-					// Show controls and attempt aggressive autoplay strategies
-					targetVideo.controls = true;
-					aggressiveAutoplay();
-				});
+ 				// Try to play the video
+ 				targetVideo.play().then(() => {
+ 					console.log('Video playing successfully for:', selectedLang);
+ 				}).catch((error) => {
+ 					console.error('Video play failed for:', selectedLang, error);
+ 				});
  			}
  		}
  		
@@ -404,12 +396,11 @@
  			video.load();
  			
  			// Multiple attempts to play the video
-			function attemptPlay() {
+ 			function attemptPlay() {
  				const playPromise = video.play();
  				if (playPromise !== undefined) {
  					playPromise.then(() => {
  						console.log('Video playing successfully');
-						autoplaySucceeded = true;
  					}).catch((error) => {
  						console.error('Video play failed:', error);
  						// Try again after a short delay
@@ -434,18 +425,27 @@
  			});
  			
  			// Check if video is actually playing after a delay
-			setTimeout(function() {
-				console.log('Initial video readyState:', video.readyState);
-				console.log('Video paused:', video.paused);
-				console.log('Video currentTime:', video.currentTime);
-				
-				if (video.readyState < 2 || video.paused) {
-					console.log('Video not playing - attempting aggressive autoplay');
-					aggressiveAutoplay();
-				} else {
-					console.log('Initial video loaded successfully');
-				}
-			}, 2000);
+ 			setTimeout(function() {
+ 				console.log('Initial video readyState:', video.readyState);
+ 				console.log('Video paused:', video.paused);
+ 				console.log('Video currentTime:', video.currentTime);
+ 				
+ 				if (video.readyState < 2 || video.paused) {
+ 					console.log('Video not playing - attempting one more time');
+ 					attemptPlay();
+ 					
+ 					// Final check
+ 					setTimeout(function() {
+ 						if (video.paused) {
+ 							console.log('Video still not playing');
+ 						} else {
+ 							console.log('Video playing successfully');
+ 						}
+ 					}, 1000);
+ 				} else {
+ 					console.log('Initial video loaded successfully');
+ 				}
+ 			}, 2000);
  		}
 
  		// Initial setup for the default video
@@ -486,42 +486,6 @@
  			}
 		});
 	});
-
-	// Aggressive autoplay strategy for iOS (esp. Low Power Mode):
-	// - multiple rapid retries
-	// - enable controls for manual start
-	// - bind user-gesture events to re-attempt play
-	// - resume on visibility change
-	function aggressiveAutoplay() {
-		if (fallbackMode || autoplaySucceeded) return;
-		const video = document.querySelector('.video-background.active-video');
-		if (!video) return;
-		video.muted = true;
-		video.playsInline = true;
-		video.controls = true; // allow manual play if blocked
-		// Burst of retries over ~3s
-		let attempts = 0;
-		const maxAttempts = 12; // 12 * 250ms ~ 3s
-		const interval = setInterval(() => {
-			if (fallbackMode || autoplaySucceeded) { clearInterval(interval); return; }
-			attempts++;
-			video.play().then(() => { autoplaySucceeded = true; video.controls = false; clearInterval(interval); }).catch(() => {});
-			if (attempts >= maxAttempts) clearInterval(interval);
-		}, 250);
-
-		// Gesture-based triggers (one-shot)
-		const oneShot = () => {
-			if (fallbackMode || autoplaySucceeded) return cleanup();
-			video.play().then(() => { autoplaySucceeded = true; video.controls = false; cleanup(); }).catch(() => {});
-		};
-		function cleanup(){
-			['touchstart','pointerdown','click','keydown','scroll'].forEach(ev=>document.removeEventListener(ev, oneShot, { once: true }));
-			document.removeEventListener('visibilitychange', visHandler);
-		}
-		function visHandler(){ if (!document.hidden) oneShot(); }
-		['touchstart','pointerdown','click','keydown','scroll'].forEach(ev=>document.addEventListener(ev, oneShot, { once: true, passive: true }));
-		document.addEventListener('visibilitychange', visHandler);
-	}
 
 	// Fallback mode toggle helpers
 	function enableFallbackMode() {
