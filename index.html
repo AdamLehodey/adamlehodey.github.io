@@ -50,7 +50,8 @@
 		/* Portrait-only experience helper: on small screens in landscape, show an overlay */
 		.rotate-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); color: #fff; display: none; align-items: center; justify-content: center; text-align: center; z-index: 9999; font-family: "Libre Bodoni", serif; padding: 4vh 6vw; }
 		.rotate-overlay p { font-size: 18px; line-height: 1.5; }
-		@media (orientation: landscape) and (max-width: 900px) {
+		/* Show overlay only for phones in landscape (exclude tablets/desktop) */
+		@media (orientation: landscape) and (max-width: 812px) and (hover: none) and (pointer: coarse) {
 			.rotate-overlay { display: flex; }
 		}
 	</style>
