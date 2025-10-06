@@ -13,6 +13,19 @@ html, body {
 	--vh: 1vh;
 }
 
+/* Screen reader only content */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
 /* VIDEO BACKGROUND // */
 /* Fallback background - only show when video fails */
 body::before {
@@ -37,14 +50,10 @@ body.fallback-mode::before {
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 100%;
-	/* Prefer dynamic viewport height on modern browsers with fallbacks */
-	height: calc(var(--vh, 1vh) * 100);
-	min-height: 100dvh;
+	width: 100vw;
+	height: 100vh;
 	object-fit: cover;
 	z-index: -2;
-	min-width: 100%;
-	min-height: 100%;
 	transition: opacity 0.3s ease-in-out;
 	will-change: opacity; /* Optimize for opacity transitions */
 	transform: translateZ(0); /* Force hardware acceleration */
@@ -529,7 +538,7 @@ body.subpage:not(.blog-page) .social-container {
 /* Hero Container - Desktop positioning (1001px+) */
 @media (min-width: 1001px) {
 	.hero-container {
-		width: 60vw;
+		width: 70vw;
 		height: auto;
 		top: 22vh;
 		margin-left: 5vw;
@@ -537,6 +546,61 @@ body.subpage:not(.blog-page) .social-container {
 		z-index: +2;
 	}
 }
+
+/* Desktop Profile Picture - positioned to the right of hero-container */
+.desktop-profile-container {
+	display: none; /* Hidden by default, shown on desktop */
+}
+
+.desktop-profile-image {
+	width: clamp(140px, 12vw, 220px);
+	height: clamp(140px, 12vw, 220px);
+	border-radius: 50%;
+	object-fit: cover;
+	box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.1);
+	transition: box-shadow 0.3s ease;
+}
+
+.desktop-profile-image:hover {
+	box-shadow: 0 0 25px rgba(255, 255, 255, 0.4), 0 0 50px rgba(255, 255, 255, 0.2);
+}
+
+/* Show desktop profile picture on desktop (1001px+) */
+@media (min-width: 1001px) {
+	.desktop-profile-container {
+		display: block;
+		position: absolute;
+		top: 22vh;
+		right: 5vw;
+		z-index: +2;
+	}
+}
+
+/* Responsive sizing for different desktop screen sizes */
+/* Large desktop screens (1400px+) */
+@media (min-width: 1400px) {
+	.desktop-profile-image {
+		width: clamp(160px, 10vw, 240px);
+		height: clamp(160px, 10vw, 240px);
+	}
+}
+
+/* Medium desktop screens (1200px - 1399px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+	.desktop-profile-image {
+		width: clamp(150px, 11vw, 220px);
+		height: clamp(150px, 11vw, 220px);
+	}
+}
+
+/* Smaller desktop screens (1001px - 1199px) */
+@media (min-width: 1001px) and (max-width: 1199px) {
+	.desktop-profile-image {
+		width: clamp(140px, 12vw, 200px);
+		height: clamp(140px, 12vw, 200px);
+	}
+}
+
 
 .hero-name {
 	text-align: left;
@@ -792,10 +856,20 @@ body.subpage .content-divider {
 	.profile-image {
 		display: none;
 	}
+	
+	/* Ensure mobile profile picture is hidden on desktop */
+	.desktop-profile-container {
+		display: block;
+	}
 }
 
 /* Responsive Design - Homepage */
 @media (max-width: 1000px) {
+	/* Hide desktop profile picture on mobile */
+	.desktop-profile-container {
+		display: none;
+	}
+	
 	.homepage-nav {
 		position: relative;
 		display: inline-block;
