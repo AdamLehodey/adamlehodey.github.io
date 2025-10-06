@@ -69,13 +69,13 @@
 		.hero-subtitle { text-align: left; font-size: 1.5vw; font-weight: 400; font-family: "Libre Bodoni", serif; letter-spacing: 0.05vw; color: rgba(255, 255, 255, 0.9); }
 		.homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-top: 5vh; margin-left: 5vw; font-family: "Libre Bodoni", serif; font-size: 20px; font-weight: 300; color: white; z-index: 2; }
 		.social-container { position: relative; margin-right: 5vw; margin-bottom: 0px; z-index: 2; }
-		/* Provide a safe default spacer to prevent early overlap on slow connections */
-		.hero-spacer { height: 6vh; }
+		/* Provide a more accurate default spacer to prevent layout shift */
+		.hero-spacer { height: 8vh; }
 		/* Pre-calculate spacer for common mobile viewports to prevent layout shift */
-		@media (max-width: 480px) { .hero-spacer { height: 8vh; } }
-		@media (min-width: 481px) and (max-width: 768px) { .hero-spacer { height: 7vh; } }
-		@media (min-width: 769px) and (max-width: 1024px) { .hero-spacer { height: 6vh; } }
-		@media (min-width: 1025px) { .hero-spacer { height: 5vh; } }
+		@media (max-width: 480px) { .hero-spacer { height: 10vh; } }
+		@media (min-width: 481px) and (max-width: 768px) { .hero-spacer { height: 9vh; } }
+		@media (min-width: 769px) and (max-width: 1024px) { .hero-spacer { height: 8vh; } }
+		@media (min-width: 1025px) { .hero-spacer { height: 7vh; } }
 		@media (max-width: 1000px) {
 			.hero-name { font-size: 42px; text-align: center; }
 			.hero-subtitle { font-size: 16px; text-align: center; }
@@ -121,12 +121,23 @@
         }
       }
       
+      // Run immediately and multiple times to ensure it works
+      function runSpacerCalculation() {
+        calculateSpacer();
+        // Run again after a short delay to catch any late-loading elements
+        setTimeout(calculateSpacer, 100);
+        setTimeout(calculateSpacer, 500);
+      }
+      
       // Run immediately when DOM is ready
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', calculateSpacer);
+        document.addEventListener('DOMContentLoaded', runSpacerCalculation);
       } else {
-        calculateSpacer();
+        runSpacerCalculation();
       }
+      
+      // Also run when window loads (after all resources)
+      window.addEventListener('load', calculateSpacer);
       
       // Recalculate on resize with debouncing
       let resizeTimeout;
