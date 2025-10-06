@@ -64,9 +64,9 @@
 		.page-fade { opacity: 0; transition: opacity 0.1s ease-in-out; }
 		.page-fade.fade-in { opacity: 1; }
 		.video-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2; }
-		.hero-container { width: 60vw; height: auto; top: 25vh; margin-left: 5vw; position: absolute; z-index: 2; }
-		.hero-name { text-align: left; font-size: 4.2vw; font-weight: 500; font-family: "Libre Bodoni", serif; letter-spacing: 0.15vw; line-height: 1.1; margin-bottom: 1vh; text-transform: uppercase; color: white; }
-		.hero-subtitle { text-align: left; font-size: 1.5vw; font-weight: 400; font-family: "Libre Bodoni", serif; letter-spacing: 0.05vw; color: rgba(255, 255, 255, 0.9); }
+		.hero-container { width: 70vw; height: auto; top: 22vh; margin-left: 5vw; position: absolute; z-index: 2; }
+		.hero-name { text-align: left; font-size: 56px; font-weight: 500; font-family: "Libre Bodoni", serif; letter-spacing: 2px; line-height: 1.1; margin-bottom: 1vh; text-transform: uppercase; color: white; }
+		.hero-subtitle { text-align: left; font-size: 22px; font-weight: 400; font-family: "Libre Bodoni", serif; letter-spacing: 1px; color: rgba(255, 255, 255, 0.9); }
 		.homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-top: 5vh; margin-left: 5vw; font-family: "Libre Bodoni", serif; font-size: 20px; font-weight: 300; color: white; z-index: 2; }
 		.social-container { position: relative; margin-right: 5vw; margin-bottom: 0px; z-index: 2; }
 		/* Provide a more accurate default spacer to prevent layout shift */
@@ -80,7 +80,7 @@
 			.hero-name { font-size: 42px; text-align: center; }
 			.hero-subtitle { font-size: 16px; text-align: center; }
 			.homepage-nav { font-size: 16px; text-align: center; width: 90vw; margin-left: 5vw; }
-			.social-icon { width: 34px; height: 34px; }
+			.social-icon { width: 28px; height: 28px; }
 		}
 	</style>
 
@@ -222,6 +222,17 @@
  <!-- Dynamic spacer that adjusts based on hero content height -->
  <div class="hero-spacer"></div>
  
+ <!-- Mobile Language Selector - positioned between hero and main content -->
+ <div class="mobile-language-selector" role="group" aria-label="Language selection">
+ 	<button class="lang-btn active" id="mobile-en-btn" data-lang="en" lang="en" aria-pressed="true" aria-label="Switch to English">EN</button>
+ 	<span class="lang-separator" aria-hidden="true">|</span>
+ 	<button class="lang-btn" data-lang="fr" lang="fr" aria-pressed="false" aria-label="Switch to French">FR</button>
+ 	<span class="lang-separator" aria-hidden="true">|</span>
+ 	<button class="lang-btn" data-lang="es" lang="es" aria-pressed="false" aria-label="Switch to Spanish">SP</button>
+ 	<span class="lang-separator" aria-hidden="true">|</span>
+ 	<button class="lang-btn" data-lang="it" lang="it" aria-pressed="false" aria-label="Switch to Italian">IT</button>
+ </div>
+ 
  <main class="main-content-container" role="main">
  	<section class="about-container" aria-labelledby="about-heading">
 		<h2 id="about-heading" class="sr-only">About Adam Louis Sebastian Lehodey</h2>
@@ -306,6 +317,15 @@
  	</section>
  </main>
  
+<!-- Substack Container -->
+<div class="substack-container" id="subscribe">
+ 	<div class="substack-content">
+ 		<h3 class="stay-in-loop-heading">Stay in the Loop</h3>
+ 		<p class="stay-in-loop-text">Get exclusive insights on urban policy, investigative journalism, and the ideas shaping our cities. Join thoughtful readers who value depth over headlines.</p>
+ 		<iframe src="https://adamlehodey.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no" loading="eager" allowtransparency="true" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>
+ 	</div>
+ </div>
+ 
 
 
 <div class="bottom-container">
@@ -318,13 +338,17 @@
 		<span class="lang-separator" aria-hidden="true">|</span>
 		<button class="lang-btn" data-lang="it" lang="it" aria-pressed="false" aria-label="Switch to Italian">IT</button>
 	</div>
- 	
- 	 <div class="copyright-notice">
- 	<span class="copyright-short">© Adam Lehodey — 2025</span>
- 	<span class="copyright-full">© Designed and coded by Adam Lehodey — 2025</span>
- 	<span class="copyright-main">Adam Lehodey — 2025</span>
- </div>
- </div>
+	
+	<div class="subscribe-link">
+		<a href="#subscribe" class="subscribe-text" aria-label="Go to subscription form">Subscribe</a>
+	</div>
+	
+	 <div class="copyright-notice">
+	<span class="copyright-short">© Adam Lehodey — 2025</span>
+	<span class="copyright-full">© Designed and coded by Adam Lehodey — 2025</span>
+	<span class="copyright-main">Adam Lehodey — 2025</span>
+</div>
+</div>
  
  
 
@@ -383,13 +407,8 @@
  				const selectedLang = this.getAttribute('data-lang');
  				console.log('Language switched to:', selectedLang);
  				
-				// Update button states
-				langButtons.forEach(btn => {
-					btn.classList.remove('active');
-					btn.setAttribute('aria-pressed', 'false');
-				});
-				this.classList.add('active');
-				this.setAttribute('aria-pressed', 'true');
+ 				// Sync all language selectors
+ 				syncLanguageSelectors(selectedLang);
  				
  				// Handle video switching with lazy loading
  				if (selectedLang === 'en') {
@@ -498,6 +517,49 @@
  				});
  			}, 150); // Smooth transition timing
  		}
+ 		
+ 		// Sync mobile and desktop language selectors
+ 		function syncLanguageSelectors(selectedLang) {
+ 			// Update all language buttons (both mobile and desktop)
+ 			document.querySelectorAll('.lang-btn').forEach(btn => {
+ 				btn.classList.remove('active');
+ 				btn.setAttribute('aria-pressed', 'false');
+ 				if (btn.getAttribute('data-lang') === selectedLang) {
+ 					btn.classList.add('active');
+ 					btn.setAttribute('aria-pressed', 'true');
+ 				}
+ 			});
+ 		}
+ 		
+ 		// Add event listeners to mobile language selector
+ 		document.querySelectorAll('.mobile-language-selector .lang-btn').forEach(button => {
+ 			button.addEventListener('click', function() {
+ 				const selectedLang = this.getAttribute('data-lang');
+ 				console.log('Mobile language switched to:', selectedLang);
+ 				
+ 				// Sync all language selectors
+ 				syncLanguageSelectors(selectedLang);
+ 				
+ 				// Handle video switching with lazy loading
+ 				if (selectedLang === 'en') {
+ 					// English video is already loaded
+ 					switchToVideo(selectedLang);
+ 				} else {
+ 					// For other languages, ensure lazy videos are loaded
+ 					if (!lazyVideosLoaded) {
+ 						loadLazyVideos();
+ 					}
+ 					
+ 					// Small delay to ensure video is available
+ 					setTimeout(() => {
+ 						switchToVideo(selectedLang);
+ 					}, 100);
+ 				}
+ 				
+ 				// Handle text content switching
+ 				switchTextContent(selectedLang);
+ 			});
+ 		});
  	});
 
 
@@ -674,7 +736,9 @@
 
 
 
+
 </script>
 
 </body>
 </html>
+
