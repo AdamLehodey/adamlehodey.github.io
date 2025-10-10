@@ -64,11 +64,11 @@
 		.page-fade { opacity: 0; transition: opacity 0.1s ease-in-out; }
 		.page-fade.fade-in { opacity: 1; }
 		.video-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2; }
-		.hero-container { width: 70vw; height: auto; top: 22vh; margin-left: 5vw; position: absolute; z-index: 2; }
+		.hero-container { width: 70vw; height: auto; top: 22vh; margin-left: 5vw; position: absolute; z-index: 2; padding-left: max(0px, env(safe-area-inset-left, 0)); padding-right: max(0px, env(safe-area-inset-right, 0)); padding-top: max(0px, env(safe-area-inset-top, 0)); }
 		.hero-name { text-align: left; font-size: 56px; font-weight: 500; font-family: "Libre Bodoni", serif; letter-spacing: 2px; line-height: 1.1; margin-bottom: 1vh; text-transform: uppercase; color: white; }
 		.hero-subtitle { text-align: left; font-size: 22px; font-weight: 400; font-family: "Libre Bodoni", serif; letter-spacing: 1px; color: rgba(255, 255, 255, 0.9); }
-		.homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-top: 5vh; margin-left: 5vw; font-family: "Libre Bodoni", serif; font-size: 20px; font-weight: 300; color: white; z-index: 2; }
-		.social-container { position: relative; margin-right: 5vw; margin-bottom: 0px; z-index: 2; }
+		.homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-top: 5vh; margin-left: 5vw; font-family: "Libre Bodoni", serif; font-size: 20px; font-weight: 300; color: white; z-index: 2; padding-left: max(0px, env(safe-area-inset-left, 0)); padding-top: max(0px, env(safe-area-inset-top, 0)); }
+		.social-container { position: relative; margin-right: 5vw; margin-bottom: 0px; z-index: 2; padding-right: max(0px, env(safe-area-inset-right, 0)); padding-top: max(0px, env(safe-area-inset-top, 0)); }
 		/* Provide a more accurate default spacer to prevent layout shift */
 		.hero-spacer { height: 8vh; }
 		/* Pre-calculate spacer for common mobile viewports to prevent layout shift */
@@ -190,7 +190,7 @@
  <div class="center-line"></div>
 <div class="video-overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.4); z-index: -1; display: none; pointer-events: none;"></div>
 <!-- Fallback background for testing/slow connections (hidden by default) -->
-<div id="fallback-bg" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: url('site-resources/cover-photos/midtown-nyc-bg.jpg') no-repeat center center / cover; z-index: -2; display: none;"></div>
+<div id="fallback-bg" style="position: fixed; top: env(safe-area-inset-top, 0); left: env(safe-area-inset-left, 0); width: calc(100vw - env(safe-area-inset-left, 0) - env(safe-area-inset-right, 0)); height: calc(100vh - env(safe-area-inset-top, 0) - env(safe-area-inset-bottom, 0)); background: url('site-resources/cover-photos/midtown-nyc-bg.jpg') no-repeat center center / cover; z-index: -2; display: none;"></div>
  <header class="hero-container" role="banner">
  	<h1 class="hero-name">Adam Louis Sebastian Lehodey</h1>
  	<p class="hero-subtitle">is an investigative reporter, explorer and thinker.</p>
