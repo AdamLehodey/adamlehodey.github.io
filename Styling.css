@@ -62,234 +62,6 @@ body.fallback-mode::before {
 	transition: opacity 0.3s ease-in-out;
 	will-change: opacity; /* Optimize for opacity transitions */
 	transform: translateZ(0); /* Force hardware acceleration */
-	/* Fill entire screen including safe areas - video should cover everything */
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-}
-
-/* Safari-Specific Optimizations - Only affects Safari browsers */
-@supports (-webkit-touch-callout: none) and (not (-moz-appearance: none)) {
-	/* Target Safari specifically (excludes Firefox and other browsers) */
-	@media screen and (max-width: 1024px) {
-		/* Ensure body and html use proper height on Safari */
-		html, body {
-			height: -webkit-fill-available;
-			height: 100dvh;
-			min-height: -webkit-fill-available;
-			min-height: 100dvh;
-		}
-		
-		.video-background {
-			/* Use -webkit-fill-available for better Safari support */
-			height: -webkit-fill-available;
-			/* Fallback to 100dvh for newer Safari versions */
-			height: 100dvh;
-			/* Ensure full coverage on Safari - video should fill entire screen */
-			min-height: -webkit-fill-available;
-			min-height: 100dvh;
-			/* Override any safe area restrictions for video background */
-			top: 0 !important;
-			left: 0 !important;
-			width: 100vw !important;
-			height: 100vh !important;
-		}
-		
-		.video-overlay {
-			/* Match video background height on Safari */
-			height: -webkit-fill-available !important;
-			height: 100dvh !important;
-			min-height: -webkit-fill-available !important;
-			min-height: 100dvh !important;
-			/* Override any safe area restrictions for video overlay */
-			top: 0 !important;
-			left: 0 !important;
-			width: 100vw !important;
-			height: 100vh !important;
-		}
-		
-		#fallback-bg {
-			/* Ensure fallback background also uses Safari optimizations */
-			height: -webkit-fill-available !important;
-			height: 100dvh !important;
-			min-height: -webkit-fill-available !important;
-			min-height: 100dvh !important;
-			/* Override any safe area restrictions for fallback background */
-			top: 0 !important;
-			left: 0 !important;
-			width: 100vw !important;
-			height: 100vh !important;
-		}
-	}
-}
-
-/* iPhone Model Specific Optimizations */
-/* iPhone 11, 11 Pro, 11 Pro Max */
-@media screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2),
-       screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3),
-       screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
-	@supports (-webkit-touch-callout: none) {
-		.video-background {
-			height: -webkit-fill-available;
-			height: 100dvh;
-		}
-	}
-}
-
-/* iPhone 12, 12 Pro, 12 Pro Max, 12 mini */
-@media screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3),
-       screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3),
-       screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
-	@supports (-webkit-touch-callout: none) {
-		.video-background {
-			height: -webkit-fill-available;
-			height: 100dvh;
-		}
-	}
-}
-
-/* iPhone 13, 13 Pro, 13 Pro Max, 13 mini */
-@media screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3),
-       screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3),
-       screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
-	@supports (-webkit-touch-callout: none) {
-		.video-background {
-			height: -webkit-fill-available;
-			height: 100dvh;
-		}
-	}
-}
-
-/* iPhone 14, 14 Plus, 14 Pro, 14 Pro Max */
-@media screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3),
-       screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3),
-       screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3),
-       screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) {
-	@supports (-webkit-touch-callout: none) {
-		.video-background {
-			height: -webkit-fill-available;
-			height: 100dvh;
-		}
-	}
-}
-
-/* iPhone 15, 15 Plus, 15 Pro, 15 Pro Max */
-@media screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3),
-       screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) {
-	@supports (-webkit-touch-callout: none) {
-		.video-background {
-			height: -webkit-fill-available;
-			height: 100dvh;
-		}
-	}
-}
-
-/* iPhone 16, 16 Plus, 16 Pro, 16 Pro Max */
-@media screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3),
-       screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) {
-	@supports (-webkit-touch-callout: none) {
-		.video-background {
-			height: -webkit-fill-available;
-			height: 100dvh;
-		}
-	}
-}
-
-/* iPhone 17, 17 Plus, 17 Pro, 17 Pro Max (Future-proofing) */
-@media screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3),
-       screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) {
-	@supports (-webkit-touch-callout: none) {
-		.video-background {
-			height: -webkit-fill-available;
-			height: 100dvh;
-		}
-	}
-}
-
-/* iPhone Air and iPad Air (when in Safari) */
-@media screen and (device-width: 820px) and (device-height: 1180px) and (-webkit-device-pixel-ratio: 2),
-       screen and (device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) {
-	@supports (-webkit-touch-callout: none) {
-		.video-background {
-			height: -webkit-fill-available;
-			height: 100dvh;
-		}
-	}
-}
-
-/* Dynamic Island Specific Optimizations (iPhone 14 Pro, 14 Pro Max, 15 Pro, 15 Pro Max, 16 Pro, 16 Pro Max) */
-@media screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3),
-       screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) {
-	@supports (-webkit-touch-callout: none) {
-		/* Enhanced safe area support for Dynamic Island */
-		.video-background {
-			height: -webkit-fill-available;
-			height: 100dvh;
-			/* Ensure video covers Dynamic Island area */
-			top: 0;
-			left: 0;
-			width: 100vw;
-			height: 100vh;
-		}
-		
-		/* Content adjustments for Dynamic Island */
-		.hero-container {
-			padding-top: max(44px, env(safe-area-inset-top, 0));
-		}
-		
-		.social-container {
-			padding-top: max(44px, env(safe-area-inset-top, 0));
-		}
-		
-		.homepage-nav {
-			padding-top: max(44px, env(safe-area-inset-top, 0));
-		}
-	}
-}
-
-/* Additional Safari-specific optimizations for better video performance */
-@supports (-webkit-touch-callout: none) and (not (-moz-appearance: none)) {
-	@media screen and (max-width: 1024px) {
-		/* Optimize video rendering for Safari */
-		.video-background {
-			/* Safari-specific video optimizations */
-			-webkit-transform: translateZ(0);
-			-webkit-backface-visibility: hidden;
-			-webkit-perspective: 1000;
-			-webkit-transform-style: preserve-3d;
-		}
-		
-		/* Ensure smooth video transitions on Safari */
-		.video-background.active-video {
-			-webkit-transition: opacity 0.3s ease-in-out;
-		}
-		
-		/* Safari-specific content positioning adjustments */
-		.hero-container {
-			/* Ensure hero content works with Safari viewport units */
-			position: absolute;
-			z-index: 2;
-		}
-		
-		.social-container {
-			/* Ensure social icons work with Safari viewport units */
-			position: absolute;
-			z-index: 2;
-		}
-		
-		.homepage-nav {
-			/* Ensure navigation works with Safari viewport units */
-			position: relative;
-			z-index: 2;
-		}
-		
-		.bottom-container {
-			/* Ensure bottom container works with Safari viewport units */
-			position: fixed;
-			z-index: 11;
-		}
-	}
 }
 
 .video-background.active-video {
@@ -379,11 +151,6 @@ body.fallback-mode::before {
 	width: 100vw !important;
 	height: calc(var(--vh, 1vh) * 100) !important;
 	min-height: 100dvh !important;
-	/* iPhone X safe area support - match video background positioning */
-	top: env(safe-area-inset-top, 0) !important;
-	left: env(safe-area-inset-left, 0) !important;
-	width: calc(100vw - env(safe-area-inset-left, 0) - env(safe-area-inset-right, 0)) !important;
-	height: calc(100vh - env(safe-area-inset-top, 0) - env(safe-area-inset-bottom, 0)) !important;
 }
 
 #title-section {
@@ -677,9 +444,6 @@ a {
 	font-weight: 300;
 	color: black;
 	z-index: +2;
-	/* iPhone X safe area support - ensure content is not obscured */
-	padding-left: max(0px, env(safe-area-inset-left, 0));
-	padding-top: max(0px, env(safe-area-inset-top, 0));
 }
 
 .homepage-nav-link {
@@ -786,10 +550,6 @@ body.subpage:not(.blog-page) .social-container {
 		margin-left: 5vw;
 		position: absolute;
 		z-index: +2;
-		/* iPhone X safe area support - ensure content is not obscured */
-		padding-left: max(0px, env(safe-area-inset-left, 0));
-		padding-right: max(0px, env(safe-area-inset-right, 0));
-		padding-top: max(0px, env(safe-area-inset-top, 0));
 	}
 }
 
@@ -898,9 +658,6 @@ body.subpage:not(.blog-page) .social-container {
 	gap: 1vw;
 	justify-content: center;
 	align-items: center;
-	/* iPhone X safe area support - ensure content is not obscured */
-	padding-right: max(0px, env(safe-area-inset-right, 0));
-	padding-top: max(0px, env(safe-area-inset-top, 0));
 }
 
 /* Divider */
@@ -1729,10 +1486,6 @@ body.subpage:not(.blog-page) .content-search {
 	background: rgba(0, 0, 0, 0.9);
 	border-top: 0.3px solid white;
 	min-height: 5vh;
-	/* iPhone X safe area support - ensure content is not obscured by home indicator */
-	padding-bottom: max(0vh, env(safe-area-inset-bottom, 0));
-	padding-left: max(5vw, calc(5vw + env(safe-area-inset-left, 0)));
-	padding-right: max(5vw, calc(5vw + env(safe-area-inset-right, 0)));
 }
 
 /* SUBSCRIBE LINK STYLES */
