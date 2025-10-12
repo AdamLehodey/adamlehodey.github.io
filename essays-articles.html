@@ -271,11 +271,11 @@
 			// Generate filter buttons dynamically
 			generateFilterButtons(allPosts);
 			
-			// Display all posts initially
-			displayPosts(allPosts);
-			
 			// Initialize filter buttons FIRST to ensure they work properly
 			initFilterButtons();
+			
+			// Display all posts initially (excluding podcasts)
+			filterPosts('all');
 			
 		} catch (error) {
 			console.error('Error loading blog posts:', error);
