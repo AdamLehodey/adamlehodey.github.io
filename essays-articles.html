@@ -88,6 +88,9 @@
    <!-- Blog posts will be loaded here dynamically -->
   </div>
 
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top">↑</a>
+
   <script>
   	// Page fade transition
   	document.addEventListener('DOMContentLoaded', function() {
@@ -142,11 +145,55 @@
   		
   		// Initialize lazy loading for blog post images
   		initLazyLoading();
+  		
+  		// Initialize back to top button
+  		initBackToTop();
+  		
+		// Smooth resize handling - only at 640px breakpoint, only featured cards
+		let currentViewport = window.innerWidth <= 640 ? 'mobile' : 'desktop';
+		
+		window.addEventListener('resize', function() {
+			// Only regenerate if we have posts loaded
+			if (allPosts.length > 0) {
+				const newViewport = window.innerWidth <= 640 ? 'mobile' : 'desktop';
+				
+				// Only regenerate if we've crossed the 640px threshold
+				if (newViewport !== currentViewport) {
+					currentViewport = newViewport;
+					
+					// Get current filtered posts
+					const filteredPosts = allPosts.filter(post => currentFilter === 'all' ? true : post.type === currentFilter);
+					const featuredPosts = filteredPosts.filter(post => post.featured);
+					
+					// Only regenerate featured cards
+					const featuredCards = document.querySelectorAll('.featured-card');
+					featuredPosts.forEach(post => {
+						const newHTML = generateFeaturedPostHTML(post);
+						// Find the matching featured card by title and replace it
+						const existingCard = Array.from(featuredCards).find(card => {
+							const titleElement = card.querySelector('.featured-card-title');
+							return titleElement && titleElement.textContent.trim() === post.title;
+						});
+						if (existingCard) {
+							existingCard.outerHTML = newHTML;
+						}
+					});
+					
+					// Reinitialize lazy loading for the new featured cards
+					initLazyLoading();
+				}
+			}
+		});
   	});
   	
-  	// Lazy loading for blog post images
+  	// Lazy loading for blog post images only
   	function initLazyLoading() {
-  		const imageObserver = new IntersectionObserver((entries, observer) => {
+  		// Only initialize if not already initialized
+  		if (window.imageObserver) {
+  			window.imageObserver.disconnect();
+  		}
+  		
+  		window.imageObserver = new IntersectionObserver((entries, observer) => {
   			entries.forEach(entry => {
   				if (entry.isIntersecting) {
   					const photo = entry.target;
@@ -163,9 +210,12 @@
   			threshold: 0.1
   		});
   		
-  		// Observe all card-image elements with data-src
-  		document.querySelectorAll('.card-image[data-src]').forEach(photo => {
-  			imageObserver.observe(photo);
+  		// Only observe card images with data-src - explicitly exclude filter buttons
+  		document.querySelectorAll('.card-image[data-src], .featured-card-image[data-src]').forEach(photo => {
+  			// Double-check it's not a filter button
+  			if (!photo.closest('.blog-filter-bar') && !photo.classList.contains('filter-btn')) {
+  				window.imageObserver.observe(photo);
+  			}
   		});
   	}
 
@@ -201,28 +251,28 @@
   			const featuredPosts = [];
   			const regularPosts = [];
   			
-  			// Parse all posts
-  			posts.forEach(post => {
-  				const postData = {
-  					featured: post.getAttribute('featured') === 'true',
-  					type: post.getAttribute('type'),
-  					title: post.querySelector('title')?.textContent || '',
-  					subtitle: post.querySelector('subtitle')?.textContent || '',
-  					description: post.querySelector('description')?.textContent || '',
-  					author: post.querySelector('author')?.textContent || '',
-  					date: post.querySelector('date')?.textContent || '',
-  					publication: post.querySelector('publication')?.textContent || '',
-  					image: post.querySelector('image')?.textContent || '',
-  					link: post.querySelector('link')?.textContent || '',
-  					linkText: post.querySelector('link-text')?.textContent || 'View Article'
-  				};
-  				
-  				if (postData.featured) {
-  					featuredPosts.push(postData);
-  				} else {
-  					regularPosts.push(postData);
-  				}
-  			});
+			// Parse all posts
+			posts.forEach(post => {
+				const postData = {
+					featured: post.getAttribute('featured') === 'true',
+					type: post.getAttribute('type'),
+					title: post.querySelector('title')?.textContent || '',
+					subtitle: post.querySelector('subtitle')?.textContent || '',
+					description: post.querySelector('description')?.textContent || '',
+					author: post.querySelector('author')?.textContent || '',
+					date: post.querySelector('date')?.textContent || '',
+					publication: post.querySelector('publication')?.textContent || '',
+					image: post.querySelector('image')?.textContent || '',
+					link: post.querySelector('link')?.textContent || '',
+					linkText: post.querySelector('link-text')?.textContent || 'View Article'
+				};
+				
+				if (postData.featured) {
+					featuredPosts.push(postData);
+				} else {
+					regularPosts.push(postData);
+				}
+			});
   			
   			// Sort regular posts by date (newest first)
   			regularPosts.sort((a, b) => {
@@ -240,13 +290,13 @@
 			// Display all posts initially
 			displayPosts(allPosts);
 			
-			// Initialize filter buttons
+			// Initialize filter buttons FIRST to ensure they work properly
 			initFilterButtons();
-  			
-  		} catch (error) {
-  			console.error('Error loading blog posts:', error);
-  			document.getElementById('blog-container').innerHTML = '<p>Error loading blog posts. Please try again later.</p>';
-  		}
+			
+		} catch (error) {
+			console.error('Error loading blog posts:', error);
+			document.getElementById('blog-container').innerHTML = '<p>Error loading blog posts. Please try again later.</p>';
+		}
 	}
 	
 	// Function to generate filter buttons dynamically
@@ -311,8 +361,10 @@
   			container.appendChild(temp.firstChild);
   		}
   		
-  		// Reinitialize lazy loading for new content
-  		initLazyLoading();
+		// Reinitialize lazy loading for new content with small delay to ensure filter buttons work
+		setTimeout(() => {
+			initLazyLoading();
+		}, 100);
   	}
   	
   	// Function to initialize filter buttons
@@ -354,23 +406,41 @@
 
   	// Function to generate featured post HTML
   	function generateFeaturedPostHTML(post) {
-  		return `
-  			<div class="brutalist-minimal-card featured">
-  				<div class="card-content">
-  					<div class="card-image" data-src="${post.image}" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmMGYwZjAiLz48L3N2Zz4=');"></div>
-  					<div class="card-text">
-  						<div class="card-meta-header">
-  							<span class="post-type">${post.type}</span>
-  							<span class="read-time">${post.date} | ${post.publication}</span>
+  		// Check if mobile view (screen width <= 640px)
+  		const isMobile = window.innerWidth <= 640;
+  		
+  		if (isMobile) {
+  			// Mobile HTML structure - stacked layout
+  			return `
+  				<div class="featured-card">
+  					<div class="featured-card-content">
+  						<div class="featured-card-image" data-src="${post.image}" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmMGYwZjAiLz48L3N2Zz4=');"></div>
+  						<div class="featured-card-text">
+  							<h3 class="featured-card-title" onclick="window.open('${post.link}', '_blank')">${post.title}</h3>
+  							<p class="featured-card-subtitle">${post.subtitle}</p>
+  							<p class="featured-card-excerpt">${post.description}</p>
+  							<button class="card-button" onclick="window.open('${post.link}', '_blank')">${post.linkText}</button>
   						</div>
-  						<h3 class="card-title" onclick="window.open('${post.link}', '_blank')">${post.title}</h3>
-  						<p class="card-subtitle">${post.subtitle}</p>
-  						<p class="card-excerpt">${post.description}</p>
-  						<button class="card-button" onclick="window.open('${post.link}', '_blank')">${post.linkText}</button>
   					</div>
   				</div>
-  			</div>
-  		`;
+  			`;
+  		} else {
+  			// Desktop HTML structure - overlay text on image
+  			return `
+  				<div class="featured-card">
+  					<div class="featured-card-content">
+  						<div class="featured-card-image" data-src="${post.image}" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmMGYwZjAiLz48L3N2Zz4=');">
+  							<div class="featured-card-text">
+  								<h3 class="featured-card-title" onclick="window.open('${post.link}', '_blank')">${post.title}</h3>
+  								<p class="featured-card-subtitle">${post.subtitle}</p>
+  								<p class="featured-card-excerpt">${post.description}</p>
+  								<button class="card-button" onclick="window.open('${post.link}', '_blank')">${post.linkText}</button>
+  							</div>
+  						</div>
+  					</div>
+  				</div>
+  			`;
+  		}
   	}
 
 	// Function to generate regular post HTML
@@ -393,6 +463,35 @@
 				</div>
 			</div>
 		`;
+	}
+	
+	// Function to initialize back to top button
+	function initBackToTop() {
+		const backToTopBtn = document.getElementById('back-to-top');
+		
+		// Show/hide button based on scroll position
+		function toggleBackToTop() {
+			if (window.pageYOffset > 300) {
+				backToTopBtn.classList.add('visible');
+			} else {
+				backToTopBtn.classList.remove('visible');
+			}
+		}
+		
+		// Smooth scroll to top
+		backToTopBtn.addEventListener('click', function(e) {
+			e.preventDefault();
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		});
+		
+		// Listen for scroll events
+		window.addEventListener('scroll', toggleBackToTop);
+		
+		// Initial check
+		toggleBackToTop();
 	}
   </script>
 </body>
