@@ -5,6 +5,13 @@ html, body {
 	padding: 0px;
 	scroll-behavior: smooth;
 	overflow-x: hidden;
+	/* Hide iOS home indicator */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
+	/* Force full viewport height on iOS */
+	height: 100vh;
+	height: -webkit-fill-available;
 }
 
 /* Smooth scrolling for anchor links */
@@ -51,17 +58,6 @@ body::before {
 
 body.fallback-mode::before {
 	display: block; /* Show only in fallback mode */
-}
-
-/* Webkit-specific mobile viewport fixes for iOS Safari */
-@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
-	.video-background {
-		height: calc(var(--vh, 1vh) * 100); /* Use JS-calculated height for iOS Safari */
-	}
-	
-	body::before {
-		height: calc(var(--vh, 1vh) * 100); /* Use JS-calculated height for fallback background */
-	}
 }
 
 .video-background {
