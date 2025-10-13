@@ -41,7 +41,8 @@ body::before {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
+	height: calc(var(--vh, 1vh) * 100);
+	min-height: 100dvh;
 	z-index: -1;
 	background-image: url("site-resources/Stars.jpg");
 	background-size: cover;
@@ -58,7 +59,8 @@ body.fallback-mode::before {
 	top: 0;
 	left: 0;
 	width: 100vw;
-	height: 100vh;
+	height: calc(var(--vh, 1vh) * 100);
+	min-height: 100dvh;
 	object-fit: cover;
 	z-index: -2;
 	transition: opacity 0.3s ease-in-out;
@@ -956,7 +958,9 @@ body.subpage .content-divider {
 	backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
 	-webkit-transform: translateZ(0);
+	perspective: 1000;
 	-webkit-perspective: 1000;
+	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
 }
 
@@ -989,7 +993,9 @@ body.subpage .content-divider {
 	backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
 	-webkit-transform: translateZ(0);
+	perspective: 1000;
 	-webkit-perspective: 1000;
+	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
 }
 
