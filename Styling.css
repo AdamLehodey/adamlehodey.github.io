@@ -41,20 +41,12 @@ body::before {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%; /* Default: Standard height for desktop */
+	height: 100%;
 	z-index: -1;
 	background-image: url("site-resources/Stars.jpg");
 	background-size: cover;
 	background-position: center;
 	display: none; /* Hide by default, show only in fallback mode */
-}
-
-/* Mobile-specific viewport fixes for fallback background */
-@media (max-width: 1000px) {
-	body::before {
-		height: 100dvh; /* Primary: Dynamic viewport height for iOS Safari */
-		height: calc(var(--vh, 1vh) * 100); /* Fallback: JavaScript-calculated height */
-	}
 }
 
 body.fallback-mode::before {
@@ -66,20 +58,12 @@ body.fallback-mode::before {
 	top: 0;
 	left: 0;
 	width: 100vw;
-	height: 100vh; /* Default: Standard viewport height for desktop */
+	height: 100vh;
 	object-fit: cover;
 	z-index: -2;
 	transition: opacity 0.3s ease-in-out;
 	will-change: opacity; /* Optimize for opacity transitions */
 	transform: translateZ(0); /* Force hardware acceleration */
-}
-
-/* Mobile-specific viewport fixes for iOS Safari */
-@media (max-width: 1000px) {
-	.video-background {
-		height: 100dvh; /* Primary: Dynamic viewport height for iOS Safari */
-		height: calc(var(--vh, 1vh) * 100); /* Fallback: JavaScript-calculated height */
-	}
 }
 
 .video-background.active-video {
