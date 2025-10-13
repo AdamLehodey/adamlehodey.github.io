@@ -53,6 +53,17 @@ body.fallback-mode::before {
 	display: block; /* Show only in fallback mode */
 }
 
+/* Webkit-specific mobile viewport fixes for iOS Safari */
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+	.video-background {
+		height: calc(var(--vh, 1vh) * 100); /* Use JS-calculated height for iOS Safari */
+	}
+	
+	body::before {
+		height: calc(var(--vh, 1vh) * 100); /* Use JS-calculated height for fallback background */
+	}
+}
+
 .video-background {
 	position: fixed;
 	top: 0;
