@@ -5,13 +5,6 @@ html, body {
 	padding: 0px;
 	scroll-behavior: smooth;
 	overflow-x: hidden;
-	/* Hide iOS home indicator */
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	user-select: none;
-	/* Force full viewport height on iOS */
-	height: 100vh;
-	height: -webkit-fill-available;
 }
 
 /* Smooth scrolling for anchor links */
