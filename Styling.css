@@ -16,6 +16,8 @@ html {
 :root {
 	/* Will be updated by JS to handle iOS dynamic toolbars */
 	--vh: 1vh;
+	/* Mobile social-container to navigation spacing */
+	--mobile-social-nav-spacing: 4vh;
 }
 
 /* Screen reader only content */
@@ -432,6 +434,17 @@ a {
 
 /* HOMEPAGE STYLES // */
 
+/* Top Navigation Container - holds both nav and social icons */
+.top-nav-container {
+	position: static;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 100%;
+	margin-top: 5vh;
+	z-index: +2;
+}
+
 /* Navigation */
 .homepage-nav {
 	display: inline-block;
@@ -440,7 +453,7 @@ a {
 	margin-left: 5vw;
 	align-content: center;
 	font-family: "Libre Bodoni", serif;
-	font-size: 20px; /* Constant size on desktop */
+	font-size: var(--navigation-desktop, 1.25rem);
 	font-weight: 300;
 	color: black;
 	z-index: +2;
@@ -460,7 +473,17 @@ body:not(.subpage) .homepage-nav-link[href="/"] + .nav-separator {
 	display: none;
 }
 
-/* Subpage navbar and social icons styling - matching blog page spacing but with black color */
+/* Subpage navbar and social icons styling - using top-nav-container approach */
+body.subpage:not(.blog-page) .top-nav-container {
+	position: static;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 100%;
+	margin-top: 5vh;
+	z-index: 2;
+}
+
 body.subpage:not(.blog-page) .homepage-nav {
 	display: inline-block;
 	vertical-align: top;
@@ -474,9 +497,9 @@ body.subpage:not(.blog-page) .homepage-nav {
 }
 
 body.subpage:not(.blog-page) .social-container {
-	position: relative;
+	position: static;
 	margin-right: 5vw;
-	margin-bottom: 0px;
+	margin-top: 0;
 	z-index: 2;
 	display: flex;
 	justify-content: center;
@@ -494,27 +517,41 @@ body.subpage:not(.blog-page) .social-container {
 	}
 }
 
-/* Mobile responsive styling for subpages - EXACTLY like blog page */
+/* Mobile responsive styling for subpages - using top-nav-container approach */
 @media (max-width: 700px) {
-	body.subpage:not(.blog-page) .homepage-nav {
-		font-size: 16px;
+	body.subpage:not(.blog-page) .top-nav-container {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		margin-top: 5vh;
+		width: 100%;
 		text-align: center;
-		width: 90vw;
-		margin-left: 5vw;
+		align-items: center;
 	}
 	
-	body.subpage:not(.blog-page) .social-container {
-		display: flex;
+	/* Reorder elements for mobile: social icons first, then navigation */
+	body.subpage:not(.blog-page) .top-nav-container .social-container {
+		order: 1;
+		display: flex !important;
 		justify-content: center;
 		align-items: center;
 		gap: 1vw;
 		position: relative;
 		top: auto;
-		left: 50%;
-		transform: translateX(-50%);
-		margin: 5vh auto 0 auto;
+		left: auto;
+		transform: none;
+		margin: 0 auto var(--mobile-social-nav-spacing) auto;
 		width: auto;
 		text-align: center;
+	}
+	
+	body.subpage:not(.blog-page) .top-nav-container .homepage-nav {
+		order: 2;
+		font-size: 16px;
+		text-align: center;
+		width: 90vw;
+		margin-left: 5vw;
+		margin-top: 0;
 	}
 	
 	body.subpage:not(.blog-page) .social-icon {
@@ -541,14 +578,24 @@ body.subpage:not(.blog-page) .social-container {
 	}
 }
 
-/* Hero Container - Desktop positioning (1001px+) */
+/* Hero Section Container - Desktop positioning (1001px+) */
 @media (min-width: 1001px) {
+	.hero-section-container {
+		position: static;
+		margin-top: 9vh;
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		width: 100%;
+		z-index: +2;
+	}
+	
 	.hero-container {
 		width: 70vw;
-		height: auto;
-		top: 22vh;
+		height: var(--hero-height, auto);
+		margin-top: 0;
 		margin-left: 5vw;
-		position: absolute;
+		position: static;
 		z-index: +2;
 	}
 }
@@ -558,26 +605,33 @@ body.subpage:not(.blog-page) .social-container {
 	display: none; /* Hidden by default, shown on desktop */
 }
 
+@media (min-width: 1001px) {
+	.desktop-profile-container {
+		display: block;
+		margin-top: 0;
+		margin-left: auto;
+		margin-right: 5vw;
+		position: static;
+		z-index: +2;
+	}
+}
+
 .desktop-profile-image {
 	width: clamp(140px, 12vw, 220px);
 	height: clamp(140px, 12vw, 220px);
 	border-radius: 50%;
 	object-fit: cover;
-	box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.1);
-	transition: box-shadow 0.3s ease;
-}
-
-.desktop-profile-image:hover {
-	box-shadow: 0 0 25px rgba(255, 255, 255, 0.4), 0 0 50px rgba(255, 255, 255, 0.2);
+	box-shadow: 0 0 15px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.08);
 }
 
 /* Show desktop profile picture on desktop (1001px+) */
 @media (min-width: 1001px) {
 	.desktop-profile-container {
 		display: block;
-		position: absolute;
-		top: 22vh;
-		right: 5vw;
+		margin-top: 0;
+		margin-left: auto;
+		margin-right: 5vw;
+		position: static;
 		z-index: +2;
 	}
 }
@@ -610,7 +664,7 @@ body.subpage:not(.blog-page) .social-container {
 
 .hero-name {
 	text-align: left;
-	font-size: 56px;
+	font-size: var(--hero-name-desktop, 3.5rem);
 	font-weight: 500;
 	font-family: "Libre Bodoni", serif;
 	letter-spacing: 2px;
@@ -621,7 +675,7 @@ body.subpage:not(.blog-page) .social-container {
 
 .hero-subtitle {
 	text-align: left;
-	font-size: 22px;
+	font-size: var(--hero-subtitle-desktop, 1.4rem);
 	font-weight: 400;
 	font-family: "Libre Bodoni", serif;
 	letter-spacing: 1px;
@@ -650,20 +704,39 @@ body.subpage:not(.blog-page) .social-container {
 }
 
 .social-container {
-	position: absolute;
-	top: 5vh;
-	right: 0;
+	position: static;
+	margin-right: 5vw;
+	margin-top: 0;
 	z-index: +2;
 	display: flex;
 	gap: 1vw;
 	justify-content: center;
 	align-items: center;
+	width: fit-content;
+}
+
+/* Hide mobile social container on desktop */
+@media (min-width: 1001px) {
+	.social-container.mobile-social {
+		display: none;
+	}
+	
+	/* Top nav container positioning on desktop */
+	.top-nav-container {
+		position: static;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		width: 100%;
+		margin-top: 5vh;
+		z-index: +2;
+	}
 }
 
 /* Divider */
 .content-divider {
-	position: relative;
-	margin-top: 5.1vh;
+	position: static;
+	margin-top: var(--content-divider-margin-top, 5.1vh);
 	margin-left: 5vw;
 	width: 30%;
 	height: 1px;
@@ -673,19 +746,7 @@ body.subpage:not(.blog-page) .social-container {
 	box-shadow: none;
 }
 
-/* Dynamic Hero Spacer */
-.hero-spacer {
-	width: 100%;
-	height: 0;
-	transition: height 0.1s ease;
-}
-
-/* Faster transition on desktop for snappier movement */
-@media (min-width: 1001px) {
-	.hero-spacer {
-		transition: height 0.05s ease;
-	}
-}
+/* Hero spacer removed - now using static positioning with CSS custom properties */
 
 /* Black divider for subpages */
 body.subpage .content-divider {
@@ -698,11 +759,12 @@ body.subpage .content-divider {
 	justify-content: flex-start;
 	align-items: center;
 	width: 100%;
-	margin-top: 0;
+	margin-top: 6vh;
 	margin-left: 5vw;
 	margin-right: 5vw;
 	z-index: +2;
-	position: relative;
+	position: static;
+	min-height: var(--main-content-height, auto);
 }
 
 .about-container {
@@ -958,22 +1020,50 @@ body.subpage .content-divider {
 		display: none;
 	}
 	
-	.homepage-nav {
+	.top-nav-container {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		margin-top: 5vh;
+		width: 100%;
+		text-align: center;
+		align-items: center;
+	}
+	
+	/* Reorder elements for mobile: social icons first, then navigation */
+	.top-nav-container .social-container {
+		order: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1vw;
+		position: relative;
+		top: auto;
+		left: auto;
+		transform: none;
+		margin: 0 auto 2vh auto;
+		width: auto;
+		text-align: center;
+	}
+	
+	.top-nav-container .homepage-nav {
+		order: 2;
 		position: relative;
 		display: inline-block;
-		margin-top: 5vh;
+		margin-top: 0;
 		width: 90vw;
 		margin-left: 5vw;
 		margin-right: 5vw;
 		overflow-wrap: break-word;
 		text-align: center;
 		font-family: "Libre Bodoni", serif;
-		font-size: 16px;
+		font-size: var(--navigation-mobile, 1rem);
 		font-weight: 300;
 		color: black;
 	}
 
 	.content-divider {
+		margin-top: var(--content-divider-margin-top-mobile, 5.1vh);
 		margin-left: 0;
 		margin-right: auto;
 		margin-left: auto;
@@ -1035,20 +1125,28 @@ body.subpage .content-divider {
 	}
 	
 
+	.hero-section-container {
+		position: static;
+		margin-top: 8vh;
+		display: block;
+		width: 100%;
+		z-index: +1;
+	}
+	
 	.hero-container {
 		width: 90vw;
-		height: auto;
+		height: var(--hero-height-mobile, auto);
+		margin-top: 0;
 		margin-left: 5vw;
 		margin-right: 5vw;
-		top: 30vh;
-		position: absolute;
+		position: static;
 		z-index: +1;
 		text-align: center;
 	}
 
 	.hero-name {
 		text-align: center;
-		font-size: 42px;
+		font-size: var(--hero-name-mobile, 2.6rem);
 		font-weight: 500;
 		font-family: "Libre Bodoni", serif;
 		letter-spacing: 0.15vw;
@@ -1059,7 +1157,7 @@ body.subpage .content-divider {
 
 	.hero-subtitle {
 		text-align: center;
-		font-size: 16px;
+		font-size: var(--hero-subtitle-mobile, 1rem);
 		font-weight: 400;
 		font-family: "Libre Bodoni", serif;
 		letter-spacing: 0.05vw;
@@ -1080,16 +1178,23 @@ body.subpage .content-divider {
 		object-fit: contain;
 	}
 
-	.social-container {
+	/* Hide the separate mobile-social container on mobile (we use top-nav-container now) */
+	.social-container.mobile-social {
+		display: none;
+	}
+	
+	/* Show social container inside top-nav-container on mobile */
+	.top-nav-container .social-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1vw;
 		position: relative;
 		top: auto;
 		left: auto;
 		transform: none;
-		justify-content: center;
-		gap: 1vw;
-		align-items: center;
-		margin: 5vh auto 0 auto;
-		width: 100%;
+		margin: 0 auto var(--mobile-social-nav-spacing) auto;
+		width: auto;
 		text-align: center;
 	}
 	
@@ -1103,10 +1208,12 @@ body.subpage .content-divider {
 		justify-content: flex-start;
 		align-items: center;
 		width: 100%;
-		margin-top: 0;
+		margin-top: var(--main-content-top-spacing-mobile, 0);
 		margin-left: 5vw;
 		margin-right: 5vw;
 		overflow-x: hidden;
+		position: static;
+		min-height: var(--main-content-height-mobile, auto);
 	}
 
 	.about-container {
@@ -1142,7 +1249,7 @@ body.subpage .content-divider {
 		justify-content: center;
 		align-items: center;
 		gap: 1vw;
-		margin-bottom: 4vh !important;
+		margin-bottom: 3.75vh !important;
 	}
 }
 
@@ -1179,7 +1286,7 @@ body.subpage .content-divider {
 @media (max-width: 400px) {
 	.hero-name {
 		text-align: center;
-		font-size: 32px;
+		font-size: var(--hero-name-mobile, 2.6rem);
 		font-weight: 500;
 		font-family: "Libre Bodoni", serif;
 		letter-spacing: 0.15vw;
@@ -1529,7 +1636,7 @@ body.subpage:not(.blog-page) .content-search {
 	display: none; /* Hidden by default, shown on mobile */
 	text-align: center;
 	font-family: "Libre Bodoni", serif;
-	margin: 2vh auto;
+	margin: var(--mobile-language-selector-spacing, 7.5vh) auto;
 	width: 90vw;
 	position: relative;
 }
@@ -1558,7 +1665,7 @@ body.subpage:not(.blog-page) .content-search {
 	border: none;
 	color: rgba(255, 255, 255, 0.8);
 	font-family: "Libre Bodoni", serif;
-	font-size: 14px;
+	font-size: var(--language-buttons, 0.875rem);
 	cursor: pointer;
 	padding: 0.5vh 1vw;
 	transition: color 0.3s ease;
@@ -1576,13 +1683,14 @@ body.subpage:not(.blog-page) .content-search {
 .mobile-language-selector .lang-separator {
 	color: rgba(255, 255, 255, 0.5);
 	margin: 0 0.5vw;
+	font-size: var(--language-buttons, 0.875rem);
 }
 
 /* COPYRIGHT NOTICE STYLES // */
 .copyright-notice {
 	text-align: right;
 	font-family: "Libre Bodoni", serif;
-	font-size: 14px; /* Constant size on desktop */
+	font-size: var(--copyright-notice, 0.875rem);
 	font-weight: 300;
 	color: white;
 	white-space: nowrap;
@@ -1633,7 +1741,7 @@ body.subpage:not(.blog-page) .content-search {
 	background: none;
 	border: none;
 	color: white;
-	font-size: 14px; /* Constant size on desktop */
+	font-size: var(--language-buttons, 0.875rem);
 	font-weight: 300;
 	cursor: pointer;
 	padding: 0.3vh 0.6vw;
@@ -1659,7 +1767,7 @@ body.subpage:not(.blog-page) .content-search {
 
 .lang-separator {
 	color: rgba(255, 255, 255, 0.7);
-	font-size: 14px; /* Constant size on desktop */
+	font-size: var(--language-buttons, 0.875rem);
 	margin: 0 0.2vw;
 	font-family: "Libre Bodoni", serif;
 }
@@ -1720,7 +1828,7 @@ body.subpage:not(.blog-page) .content-search {
 	}
 	
 	.lang-btn {
-		font-size: 14px;
+		font-size: var(--language-buttons, 0.875rem);
 		padding: 0.4vh 0.8vw;
 		font-family: "Libre Bodoni", serif;
 		font-weight: 300;
@@ -1728,7 +1836,7 @@ body.subpage:not(.blog-page) .content-search {
 	}
 	
 	.lang-separator {
-		font-size: 14px;
+		font-size: var(--language-buttons, 0.875rem);
 		margin: 0 0.2vw;
 		font-family: "Libre Bodoni", serif;
 		color: white;
@@ -1737,7 +1845,7 @@ body.subpage:not(.blog-page) .content-search {
 	.copyright-notice {
 		width: 100%;
 		text-align: center;
-		font-size: 14px;
+		font-size: var(--copyright-notice, 0.875rem);
 		padding: 1vh 0;
 		margin: 0;
 		overflow: visible;
@@ -1783,7 +1891,7 @@ body.subpage:not(.blog-page) .content-search {
 	}
 	
 	.lang-btn {
-		font-size: 14px;
+		font-size: var(--language-buttons, 0.875rem);
 		padding: 0.4vh 0.8vw;
 		font-family: "Libre Bodoni", serif;
 		font-weight: 300;
@@ -1791,7 +1899,7 @@ body.subpage:not(.blog-page) .content-search {
 	}
 	
 	.lang-separator {
-		font-size: 14px;
+		font-size: var(--language-buttons, 0.875rem);
 		margin: 0 0.2vw;
 		font-family: "Libre Bodoni", serif;
 		color: white;
@@ -1800,7 +1908,7 @@ body.subpage:not(.blog-page) .content-search {
 	.copyright-notice {
 		width: 100%;
 		text-align: center;
-		font-size: 14px;
+		font-size: var(--copyright-notice, 0.875rem);
 		padding: 1vh 0;
 		margin: 0;
 		overflow: visible;

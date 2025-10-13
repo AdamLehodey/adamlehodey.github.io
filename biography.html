@@ -33,11 +33,13 @@
     <style>
       /* Critical CSS for immediate rendering */
       html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+      :root { --mobile-social-nav-spacing: 4vh; }
       .page-fade { opacity: 0; transition: opacity 0.1s ease-in-out; }
       .page-fade.fade-in { opacity: 1; }
       .hero-background { position: fixed; top: 0; left: 0; width: 100vw; height: calc(var(--vh, 1vh) * 100); object-fit: cover; z-index: -2; }
-      .homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-top: 5vh; margin-left: 5vw; font-family: "Libre Bodoni", serif; font-size: 1.4vw; font-weight: 300; color: white; z-index: 2; }
-      .social-container { position: relative; margin-right: 5vw; margin-bottom: 0px; z-index: 2; }
+      .top-nav-container { position: static; display: flex; justify-content: space-between; align-items: flex-start; width: 100%; margin-top: 5vh; z-index: 100; }
+      .homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-left: 5vw; font-family: "Libre Bodoni", serif; font-size: 1.4vw; font-weight: 300; color: white; z-index: 100; }
+      .social-container { position: static; margin-right: 5vw; margin-top: 0; z-index: 100; }
       .blog-background-image { position: absolute; top: 0; left: 0; width: 100vw; height: 52vh; background-image: url('site-resources/cover-photos/midtown-nyc-bg.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: -1; }
       .blog-gradient-overlay { position: absolute; top: 0; left: 0; width: 100vw; height: 52vh; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)); z-index: 0; pointer-events: none; }
       #content-container { margin-top: 10vh; padding-top: 2rem; position: relative; z-index: 1; }
@@ -79,7 +81,7 @@
         line-height: 1.4;
       }
       .homepage-nav, .social-container { 
-        z-index: 15 !important; 
+        z-index: 100 !important; 
         position: relative; 
       }
       
@@ -158,6 +160,13 @@
       @media (max-width: 1000px) {
         .coming-soon-text { font-size: 24px; }
       }
+      
+      /* Mobile responsive for top-nav-container */
+      @media (max-width: 1000px) {
+        .top-nav-container { position: relative; display: flex; flex-direction: column; margin-top: 5vh; width: 100%; text-align: center; align-items: center; z-index: 100 !important; }
+        .top-nav-container .social-container { order: 1; display: flex !important; margin: 0 auto var(--mobile-social-nav-spacing) auto; z-index: 100 !important; }
+        .top-nav-container .homepage-nav { order: 2; font-size: 16px; text-align: center; width: 90vw; margin-left: 5vw; margin-top: 0; z-index: 100 !important; }
+      }
     </style>
 
   <link rel="stylesheet" type="text/css" href="Styling.css">
@@ -186,11 +195,13 @@
   <img class="hero-background" src="site-resources/topography.png" alt="Topography Background" loading="eager">
   <div class="blog-background-image"></div>
   <div class="blog-gradient-overlay"></div>
+  <div class="top-nav-container">
+  	<div class="homepage-nav"><a class="homepage-nav-link" href="/">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="essays-articles">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
   	<div class="social-container">
 		<a href="https://x.com/adamlehodey" target="_blank"><img class="social-icon" src="site-resources/x-logo-white.png" alt="X Link" loading="eager"></a>
 		<a href="https://www.linkedin.com/in/adamlehodey/" target="_blank"><img class="social-icon" src="site-resources/LinkedIn.png" alt="LinkedIn Link" loading="eager"></a>
 	</div>
-  <div class="homepage-nav"><a class="homepage-nav-link" href="/">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="essays-articles">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
+  </div>
   <div class="block_1"></div> <hr class="content-divider" />
 
   <!-- Content Container -->

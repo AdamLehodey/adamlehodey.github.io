@@ -57,100 +57,9 @@
 	<link rel="preload" href="site-resources/LinkedIn.png" as="image">
 	<link rel="preload" href="Styling.css" as="style">
 	
-	<!-- Critical CSS inlined for above-the-fold content -->
-	<style>
-		/* Critical CSS for immediate rendering */
-		html, body { margin: 0; padding: 0; }
-		.page-fade { opacity: 0; transition: opacity 0.1s ease-in-out; }
-		.page-fade.fade-in { opacity: 1; }
-		.video-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2; }
-		.hero-container { width: 70vw; height: auto; top: 22vh; margin-left: 5vw; position: absolute; z-index: 2; }
-		.hero-name { text-align: left; font-size: 56px; font-weight: 500; font-family: "Libre Bodoni", serif; letter-spacing: 2px; line-height: 1.1; margin-bottom: 1vh; text-transform: uppercase; color: white; }
-		.hero-subtitle { text-align: left; font-size: 22px; font-weight: 400; font-family: "Libre Bodoni", serif; letter-spacing: 1px; color: rgba(255, 255, 255, 0.9); }
-		.homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-top: 5vh; margin-left: 5vw; font-family: "Libre Bodoni", serif; font-size: 20px; font-weight: 300; color: white; z-index: 2; }
-		.social-container { position: relative; margin-right: 5vw; margin-bottom: 0px; z-index: 2; }
-		/* Provide a more accurate default spacer to prevent layout shift */
-		.hero-spacer { height: 8vh; }
-		/* Pre-calculate spacer for common mobile viewports to prevent layout shift */
-		@media (max-width: 480px) { .hero-spacer { height: 10vh; } }
-		@media (min-width: 481px) and (max-width: 768px) { .hero-spacer { height: 9vh; } }
-		@media (min-width: 769px) and (max-width: 1024px) { .hero-spacer { height: 8vh; } }
-		@media (min-width: 1025px) { .hero-spacer { height: 7vh; } }
-		@media (max-width: 1000px) {
-			.hero-name { font-size: 42px; text-align: center; }
-			.hero-subtitle { font-size: 16px; text-align: center; }
-			.homepage-nav { font-size: 16px; text-align: center; width: 90vw; margin-left: 5vw; }
-			.social-icon { width: 28px; height: 28px; }
-		}
-	</style>
+	<style>html,body{margin:0;padding:0}:root{--mobile-social-nav-spacing:4vh}.page-fade{opacity:0;transition:opacity .1s ease-in-out}.page-fade.fade-in{opacity:1}.video-background{position:fixed;top:0;left:0;width:100vw;height:100vh;object-fit:cover;z-index:-2}.hero-section-container{position:static;margin-top:9vh;display:flex;align-items:flex-start;justify-content:flex-start;width:100%;z-index:2}.hero-container{width:70vw;height:var(--hero-height,auto);margin-top:0;margin-left:5vw;position:static;z-index:2}.hero-name{text-align:left;font-size:var(--hero-name-desktop,3.5rem);font-weight:500;font-family:"Libre Bodoni",serif;letter-spacing:2px;line-height:1.1;margin-bottom:1vh;text-transform:uppercase;color:white}.hero-subtitle{text-align:left;font-size:var(--hero-subtitle-desktop,1.4rem);font-weight:400;font-family:"Libre Bodoni",serif;letter-spacing:1px;color:rgba(255,255,255,.9)}.top-nav-container{position:static;display:flex;justify-content:space-between;align-items:flex-start;width:100%;margin-top:5vh;z-index:2}.homepage-nav{display:inline-block;vertical-align:top;line-height:1;margin-left:5vw;font-family:"Libre Bodoni",serif;font-size:var(--navigation-desktop,1.25rem);font-weight:300;color:white;z-index:2}.social-container{position:static;margin-right:5vw;margin-top:0;z-index:2}@media (max-width:1000px){.social-container.mobile-social{display:none}.hero-section-container{position:static;margin-top:8vh;display:block}.hero-container{width:90vw;margin-left:5vw;margin-right:5vw;text-align:center}.hero-name{font-size:var(--hero-name-mobile,2.6rem);text-align:center}.hero-subtitle{font-size:var(--hero-subtitle-mobile,1rem);text-align:center}.top-nav-container{position:relative;display:flex;flex-direction:column;margin-top:5vh;width:100%;text-align:center;align-items:center}.top-nav-container .social-container{order:1;display:flex;justify-content:center;align-items:center;gap:1vw;position:relative;top:auto;left:auto;transform:none;margin:0 auto var(--mobile-social-nav-spacing) auto;width:auto;text-align:center}.top-nav-container .homepage-nav{order:2;position:relative;display:inline-block;margin-top:0;width:90vw;margin-left:5vw;margin-right:5vw;overflow-wrap:break-word;text-align:center;font-family:"Libre Bodoni",serif;font-size:var(--navigation-mobile,1rem);font-weight:300;color:white}.social-icon{width:28px;height:28px}}</style>
 
-  <script>
-    // iOS-safe viewport height variable
-    (function() {
-      function setVh() {
-        var vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', vh + 'px');
-      }
-      setVh();
-      window.addEventListener('resize', setVh);
-      window.addEventListener('orientationchange', setVh);
-    })();
-
-    // Critical spacer calculation - runs immediately to prevent layout shift
-    (function() {
-      function calculateSpacer() {
-        const heroContainer = document.querySelector('.hero-container');
-        const heroSpacer = document.querySelector('.hero-spacer');
-        const contentDivider = document.querySelector('.content-divider');
-        
-        if (!heroContainer || !heroSpacer || !contentDivider) return;
-        
-        const heroRect = heroContainer.getBoundingClientRect();
-        const heroBottom = heroRect.bottom;
-        const dividerRect = contentDivider.getBoundingClientRect();
-        const dividerTop = dividerRect.top;
-        
-        const viewportHeight = window.innerHeight;
-        const desiredGap = viewportHeight * 0.055; // 5.5vh
-        const currentGap = dividerTop - heroBottom;
-        
-        if (currentGap < desiredGap) {
-          heroSpacer.style.height = (desiredGap - currentGap) + 'px';
-        } else {
-          heroSpacer.style.height = '0px';
-        }
-      }
-      
-      // Run immediately and multiple times to ensure it works
-      function runSpacerCalculation() {
-        calculateSpacer();
-        // Run again after a short delay to catch any late-loading elements
-        setTimeout(calculateSpacer, 100);
-        setTimeout(calculateSpacer, 500);
-      }
-      
-      // Run immediately when DOM is ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', runSpacerCalculation);
-      } else {
-        runSpacerCalculation();
-      }
-      
-      // Also run when window loads (after all resources)
-      window.addEventListener('load', calculateSpacer);
-      
-      // Recalculate on resize with debouncing
-      let resizeTimeout;
-      window.addEventListener('resize', function() {
-        clearTimeout(resizeTimeout);
-        if (window.innerWidth >= 1001) {
-          calculateSpacer();
-        } else {
-          resizeTimeout = setTimeout(calculateSpacer, 16);
-        }
-      });
-    })();
-  </script>
+  <script>(function(){function setVh(){var vh=window.innerHeight*0.01;document.documentElement.style.setProperty('--vh',vh+'px')}setVh();window.addEventListener('resize',setVh);window.addEventListener('orientationchange',setVh)})();</script>
 
 	<link rel="stylesheet" type="text/css" href="Styling.css">
 	<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Droid+Serif&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Open+Sans&display=swap" rel="stylesheet">
@@ -158,6 +67,7 @@
 </head>
 
 <body class="page-fade">
+ 
  <!-- Main English video - loads immediately -->
 <video class="video-background active-video" autoplay muted loop playsinline preload="auto" poster="site-resources/cover-photos/midtown-nyc-bg.jpg" data-lang="en" fetchpriority="high" data-playback-rate="0.75" webkit-playsinline="true" x5-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="false" x5-video-orientation="landscape" aria-label="Background video of New York City skyline and bridge" role="img">
   <source src="site-resources/midtown.mp4" type="video/mp4">
@@ -191,36 +101,44 @@
 <div class="video-overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.4); z-index: -1; display: none; pointer-events: none;"></div>
 <!-- Fallback background for testing/slow connections (hidden by default) -->
 <div id="fallback-bg" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: url('site-resources/cover-photos/midtown-nyc-bg.jpg') no-repeat center center / cover; z-index: -2; display: none;"></div>
- <header class="hero-container" role="banner">
- 	<h1 class="hero-name">Adam Louis Sebastian Lehodey</h1>
- 	<p class="hero-subtitle">is an investigative reporter, explorer and thinker.</p>
- </header>
- 
- <!-- Desktop Profile Picture - appears to the right of hero-container on desktop -->
- <div class="desktop-profile-container">
- 	<img class="desktop-profile-image" src="site-resources/ProfilePicture.png" alt="Profile Picture" loading="eager">
- </div>
- 
- 	<div class="social-container" role="group" aria-label="Social media links">
+ <!-- Mobile Social Container - appears above nav on mobile -->
+ <div class="social-container mobile-social" role="group" aria-label="Social media links">
 		<a href="https://x.com/adamlehodey" target="_blank" rel="noopener noreferrer" aria-label="Follow Adam Lehodey on X (formerly Twitter)"><img class="social-icon" src="site-resources/x-logo-white.png" alt="X (formerly Twitter)" loading="eager" onerror="this.style.display='none'"></a>
 		<a href="https://www.linkedin.com/in/adamlehodey/" target="_blank" rel="noopener noreferrer" aria-label="Connect with Adam Lehodey on LinkedIn"><img class="social-icon" src="site-resources/LinkedIn.png" alt="LinkedIn" loading="eager"></a>
 	</div>
  
+<div class="top-nav-container">
+	<nav class="homepage-nav" role="navigation" aria-label="Main navigation">
+		<a class="homepage-nav-link" href="/" aria-label="Go to homepage">HOME</a>
+		<span class="nav-separator" aria-hidden="true"> • </span>
+		<a class="homepage-nav-link" href="essays-articles" aria-label="Go to essays and articles">ESSAYS AND ARTICLES</a>
+		<span class="nav-separator" aria-hidden="true"> • </span>
+		<a class="homepage-nav-link" href="biography" aria-label="Go to biography">BIOGRAPHY</a>
+		<span class="nav-separator" aria-hidden="true"> • </span>
+		<a class="homepage-nav-link" href="contact" aria-label="Go to contact page">CONTACT</a>
+	</nav>
 
+	<div class="social-container" role="group" aria-label="Social media links">
+		<a href="https://x.com/adamlehodey" target="_blank" rel="noopener noreferrer" aria-label="Follow Adam Lehodey on X (formerly Twitter)"><img class="social-icon" src="site-resources/x-logo-white.png" alt="X (formerly Twitter)" loading="eager" onerror="this.style.display='none'"></a>
+		<a href="https://www.linkedin.com/in/adamlehodey/" target="_blank" rel="noopener noreferrer" aria-label="Connect with Adam Lehodey on LinkedIn"><img class="social-icon" src="site-resources/LinkedIn.png" alt="LinkedIn" loading="eager"></a>
+	</div>
+</div>
+
+<div class="block_1"></div> <hr class="content-divider" />
  
- <nav class="homepage-nav" role="navigation" aria-label="Main navigation">
- 	<a class="homepage-nav-link" href="/" aria-label="Go to homepage">HOME</a>
- 	<span class="nav-separator" aria-hidden="true"> • </span>
- 	<a class="homepage-nav-link" href="essays-articles" aria-label="Go to essays and articles">ESSAYS AND ARTICLES</a>
- 	<span class="nav-separator" aria-hidden="true"> • </span>
- 	<a class="homepage-nav-link" href="biography" aria-label="Go to biography">BIOGRAPHY</a>
- 	<span class="nav-separator" aria-hidden="true"> • </span>
- 	<a class="homepage-nav-link" href="contact" aria-label="Go to contact page">CONTACT</a>
- </nav>
- <div class="block_1"></div> <hr class="content-divider" />
+ <!-- Hero Section Container - holds both hero text and profile picture on desktop -->
+ <div class="hero-section-container">
+ 	<header class="hero-container" role="banner">
+ 		<h1 class="hero-name">Adam Louis Sebastian Lehodey</h1>
+ 		<p class="hero-subtitle">is an investigative reporter, explorer and thinker.</p>
+ 	</header>
+ 	
+ 	<!-- Desktop Profile Picture - appears to the right of hero-container on desktop -->
+ 	<div class="desktop-profile-container">
+ 		<img class="desktop-profile-image" src="site-resources/ProfilePicture.png" alt="Profile Picture" loading="eager">
+ 	</div>
+ </div>
  
- <!-- Dynamic spacer that adjusts based on hero content height -->
- <div class="hero-spacer"></div>
  
  <!-- Mobile Language Selector - positioned between hero and main content -->
  <div class="mobile-language-selector" role="group" aria-label="Language selection">
@@ -353,391 +271,31 @@
  
 
 
- <script>
- 	// Video loading optimization
- 	let lazyVideosLoaded = false;
- 	let videoCache = new Map();
-	let fallbackMode = false;
- 	
- 	// Function to load lazy videos in background
- 	function loadLazyVideos() {
- 		if (lazyVideosLoaded) return;
+<script>let lazyVideosLoaded=false;let videoCache=new Map();let fallbackMode=false;function loadLazyVideos(){if(lazyVideosLoaded)return;const lazyContainer=document.getElementById('lazy-video-container');if(!lazyContainer)return;const lazyVideos=lazyContainer.querySelectorAll('video');lazyVideos.forEach(video=>{document.body.appendChild(video);video.preload='metadata';const lang=video.getAttribute('data-lang');videoCache.set(lang,video)});lazyVideosLoaded=true}window.addEventListener('load',function(){setTimeout(loadLazyVideos,1000)});
+
+document.addEventListener('DOMContentLoaded',function(){setTimeout(function(){if(fallbackMode)return;const active=document.querySelector('.video-background.active-video');if(active&&(active.paused||active.readyState<2)){enableFallbackMode()}},4500);const langButtons=document.querySelectorAll('.lang-btn');const langContents=document.querySelectorAll('.language-content');const videos=document.querySelectorAll('.video-background');langButtons.forEach(button=>{button.addEventListener('click',function(){const selectedLang=this.getAttribute('data-lang');syncLanguageSelectors(selectedLang);if(selectedLang==='en'){switchToVideo(selectedLang)}else{if(!lazyVideosLoaded){loadLazyVideos()}setTimeout(()=>{switchToVideo(selectedLang)},100)}switchTextContent(selectedLang)})});
  		
- 		const lazyContainer = document.getElementById('lazy-video-container');
- 		if (!lazyContainer) return;
+function switchToVideo(selectedLang){if(fallbackMode)return;videos.forEach(video=>{video.style.display='none';video.style.opacity='0';video.style.visibility='hidden';video.classList.remove('active-video');video.pause()});const targetVideo=document.querySelector(`.video-background[data-lang="${selectedLang}"]`);if(targetVideo){targetVideo.style.display='';targetVideo.classList.add('active-video');targetVideo.style.opacity='1';targetVideo.style.visibility='visible';const playbackRate=targetVideo.getAttribute('data-playback-rate');if(playbackRate){targetVideo.playbackRate=parseFloat(playbackRate)}const overlay=document.querySelector('.video-overlay');if(selectedLang==='fr'||selectedLang==='en'||selectedLang==='es'||selectedLang==='it'){overlay.style.display='block';if(selectedLang==='fr'){overlay.style.backgroundColor='rgba(0, 0, 0, 0.45)'}else if(selectedLang==='en'){overlay.style.backgroundColor='rgba(0, 0, 0, 0.65)'}else if(selectedLang==='es'){overlay.style.backgroundColor='rgba(0, 0, 0, 0.5)'}else if(selectedLang==='it'){overlay.style.backgroundColor='rgba(0, 0, 0, 0.35)'}}else{overlay.style.display='none'}targetVideo.play().catch(()=>{})}}
  		
- 		// Move lazy videos to body and start loading them
- 		const lazyVideos = lazyContainer.querySelectorAll('video');
- 		lazyVideos.forEach(video => {
- 			document.body.appendChild(video);
- 			video.preload = 'metadata'; // Start loading metadata
- 			
- 			// Cache the video element
- 			const lang = video.getAttribute('data-lang');
- 			videoCache.set(lang, video);
- 		});
- 		
- 		lazyVideosLoaded = true;
- 		console.log('Lazy videos loaded in background');
- 	}
- 	
- 	// Load lazy videos after page is fully loaded
- 	window.addEventListener('load', function() {
- 		// Small delay to ensure main content is loaded first
- 		setTimeout(loadLazyVideos, 1000);
- 	});
-
-	// Language switching functionality with fade animation for text only
-	document.addEventListener('DOMContentLoaded', function() {
-		// Automatic fallback if the initial video hasn't started promptly
-		setTimeout(function() {
-			if (fallbackMode) return;
-			const active = document.querySelector('.video-background.active-video');
-			if (active && (active.paused || active.readyState < 2)) {
-				enableFallbackMode();
-			}
-		}, 4500);
-
- 		const langButtons = document.querySelectorAll('.lang-btn');
- 		const langContents = document.querySelectorAll('.language-content');
- 		const videos = document.querySelectorAll('.video-background');
- 		
- 		langButtons.forEach(button => {
- 			button.addEventListener('click', function() {
- 				const selectedLang = this.getAttribute('data-lang');
- 				console.log('Language switched to:', selectedLang);
- 				
- 				// Sync all language selectors
- 				syncLanguageSelectors(selectedLang);
- 				
- 				// Handle video switching with lazy loading
- 				if (selectedLang === 'en') {
- 					// English video is already loaded
- 					switchToVideo(selectedLang);
- 				} else {
- 					// For other languages, ensure lazy videos are loaded
- 					if (!lazyVideosLoaded) {
- 						loadLazyVideos();
- 					}
- 					
- 					// Small delay to ensure video is available
- 					setTimeout(() => {
- 						switchToVideo(selectedLang);
- 					}, 100);
- 				}
- 				
- 				// Handle text content switching
- 				switchTextContent(selectedLang);
- 			});
- 		});
- 		
- 		function switchToVideo(selectedLang) {
-			if (fallbackMode) return; // ignore while testing fallback
- 			// Hide all videos first
- 			videos.forEach(video => {
- 				video.style.display = 'none';
- 				video.style.opacity = '0';
- 				video.style.visibility = 'hidden';
- 				video.classList.remove('active-video');
- 				video.pause();
- 			});
- 			
- 			// Show selected video
- 			const targetVideo = document.querySelector(`.video-background[data-lang="${selectedLang}"]`);
- 			if (targetVideo) {
- 				console.log('Activating video for language:', selectedLang);
- 				
- 				// Show and activate the selected video
- 				targetVideo.style.display = '';
- 				targetVideo.classList.add('active-video');
- 				targetVideo.style.opacity = '1';
- 				targetVideo.style.visibility = 'visible';
- 				
- 				// Set playback rate if specified
- 				const playbackRate = targetVideo.getAttribute('data-playback-rate');
- 				if (playbackRate) {
- 					targetVideo.playbackRate = parseFloat(playbackRate);
- 				}
- 				
- 				// Show overlay for specific videos
- 				const overlay = document.querySelector('.video-overlay');
- 				if (selectedLang === 'fr' || selectedLang === 'en' || selectedLang === 'es' || selectedLang === 'it') {
- 					overlay.style.display = 'block';
- 					// Set specific opacity for each language
- 					if (selectedLang === 'fr') {
- 						overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.45)';
- 					} else if (selectedLang === 'en') {
- 						overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.65)';
- 					} else if (selectedLang === 'es') {
- 						overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
- 					} else if (selectedLang === 'it') {
- 						overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.35)';
- 					}
- 				} else {
- 					overlay.style.display = 'none';
- 				}
- 				
- 				// Try to play the video
- 				targetVideo.play().then(() => {
- 					console.log('Video playing successfully for:', selectedLang);
- 				}).catch((error) => {
- 					console.error('Video play failed for:', selectedLang, error);
- 				});
- 			}
- 		}
- 		
- 		function switchTextContent(selectedLang) {
- 			// Fade out all text first
- 			const allFadeTexts = document.querySelectorAll('.fade-text');
- 			allFadeTexts.forEach(text => {
- 				text.classList.add('fade-out');
- 				text.classList.remove('fade-in');
- 			});
-				
- 			// After fade out, show selected content with fade in
- 			setTimeout(() => {
- 				langContents.forEach(content => {
- 					if (content.getAttribute('data-lang') === selectedLang) {
- 						content.style.display = 'block';
- 						// Trigger fade in for text only
- 						setTimeout(() => {
- 							const fadeTexts = content.querySelectorAll('.fade-text');
- 							fadeTexts.forEach(text => {
- 								text.classList.remove('fade-out');
- 								text.classList.add('fade-in');
- 							});
- 						}, 10);
- 					} else {
- 						content.style.display = 'none';
- 						const fadeTexts = content.querySelectorAll('.fade-text');
- 						fadeTexts.forEach(text => {
- 							text.classList.remove('fade-in', 'fade-out');
- 						});
- 					}
- 				});
- 			}, 150); // Smooth transition timing
- 		}
- 		
- 		// Sync mobile and desktop language selectors
- 		function syncLanguageSelectors(selectedLang) {
- 			// Update all language buttons (both mobile and desktop)
- 			document.querySelectorAll('.lang-btn').forEach(btn => {
- 				btn.classList.remove('active');
- 				btn.setAttribute('aria-pressed', 'false');
- 				if (btn.getAttribute('data-lang') === selectedLang) {
- 					btn.classList.add('active');
- 					btn.setAttribute('aria-pressed', 'true');
- 				}
- 			});
- 		}
- 		
- 		// Add event listeners to mobile language selector
- 		document.querySelectorAll('.mobile-language-selector .lang-btn').forEach(button => {
- 			button.addEventListener('click', function() {
- 				const selectedLang = this.getAttribute('data-lang');
- 				console.log('Mobile language switched to:', selectedLang);
- 				
- 				// Sync all language selectors
- 				syncLanguageSelectors(selectedLang);
- 				
- 				// Handle video switching with lazy loading
- 				if (selectedLang === 'en') {
- 					// English video is already loaded
- 					switchToVideo(selectedLang);
- 				} else {
- 					// For other languages, ensure lazy videos are loaded
- 					if (!lazyVideosLoaded) {
- 						loadLazyVideos();
- 					}
- 					
- 					// Small delay to ensure video is available
- 					setTimeout(() => {
- 						switchToVideo(selectedLang);
- 					}, 100);
- 				}
- 				
- 				// Handle text content switching
- 				switchTextContent(selectedLang);
- 			});
- 		});
- 	});
+function switchTextContent(selectedLang){const allFadeTexts=document.querySelectorAll('.fade-text');allFadeTexts.forEach(text=>{text.classList.add('fade-out');text.classList.remove('fade-in')});setTimeout(()=>{langContents.forEach(content=>{if(content.getAttribute('data-lang')===selectedLang){content.style.display='block';setTimeout(()=>{const fadeTexts=content.querySelectorAll('.fade-text');fadeTexts.forEach(text=>{text.classList.remove('fade-out');text.classList.add('fade-in')})},10)}else{content.style.display='none';const fadeTexts=content.querySelectorAll('.fade-text');fadeTexts.forEach(text=>{text.classList.remove('fade-in','fade-out')})}})},150)}function syncLanguageSelectors(selectedLang){document.querySelectorAll('.lang-btn').forEach(btn=>{btn.classList.remove('active');btn.setAttribute('aria-pressed','false');if(btn.getAttribute('data-lang')===selectedLang){btn.classList.add('active');btn.setAttribute('aria-pressed','true')}})}document.querySelectorAll('.mobile-language-selector .lang-btn').forEach(button=>{button.addEventListener('click',function(){const selectedLang=this.getAttribute('data-lang');syncLanguageSelectors(selectedLang);if(selectedLang==='en'){switchToVideo(selectedLang)}else{if(!lazyVideosLoaded){loadLazyVideos()}setTimeout(()=>{switchToVideo(selectedLang)},100)}switchTextContent(selectedLang)})})});
 
 
 
- 	 		// Page fade transition and initial video logic
- 	document.addEventListener('DOMContentLoaded', function() {
- 		const getActiveVideo = () => document.querySelector('.video-background.active-video');
- 		let video = getActiveVideo();
+document.addEventListener('DOMContentLoaded',function(){const getActiveVideo=()=>document.querySelector('.video-background.active-video');let video=getActiveVideo();function setupInitialVideoEvents(video){if(!video)return;video.load();function attemptPlay(){const playPromise=video.play();if(playPromise!==undefined){playPromise.catch(()=>{setTimeout(attemptPlay,500)})}}attemptPlay();video.addEventListener('canplay',function(){attemptPlay()});video.addEventListener('error',function(e){});video.addEventListener('loadeddata',function(){attemptPlay()});setTimeout(function(){if(video.readyState<2||video.paused){attemptPlay()}},2000)}if(!fallbackMode)setupInitialVideoEvents(video);document.body.classList.add('fade-in');const overlay=document.querySelector('.video-overlay');if(overlay){overlay.style.display='block';overlay.style.backgroundColor='rgba(0, 0, 0, 0.65)'}const navLinks=document.querySelectorAll('a[href]');navLinks.forEach(link=>{const href=link.getAttribute('href');if(href&&!href.startsWith('http')&&!href.startsWith('#')&&!href.startsWith('mailto:')&&!href.startsWith('tel:')){link.addEventListener('click',function(e){if(!link.hasAttribute('target')||link.getAttribute('target')!=='blank'){e.preventDefault();const targetUrl=this.getAttribute('href');document.body.classList.remove('fade-in');document.body.classList.add('fade-out');setTimeout(()=>{window.location.href=targetUrl},500)}})}})});
 
- 		function setupInitialVideoEvents(video) {
- 			if (!video) return;
- 			console.log('Setting up initial video events');
- 			
- 			video.load();
- 			
- 			// Multiple attempts to play the video
- 			function attemptPlay() {
- 				const playPromise = video.play();
- 				if (playPromise !== undefined) {
- 					playPromise.then(() => {
- 						console.log('Video playing successfully');
- 					}).catch((error) => {
- 						console.error('Video play failed:', error);
- 						// Try again after a short delay
- 						setTimeout(attemptPlay, 500);
- 					});
- 				}
- 			}
- 			
- 			// Start playing attempts
- 			attemptPlay();
- 			
- 			video.addEventListener('canplay', function() {
- 				console.log('Initial video can play');
- 				attemptPlay(); // Try to play again when it can play
- 			});
- 			video.addEventListener('error', function(e) {
- 				console.error('Initial video error:', e);
- 			});
- 			video.addEventListener('loadeddata', function() {
- 				console.log('Initial video loaded data');
- 				attemptPlay(); // Try to play again when data is loaded
- 			});
- 			
- 			// Check if video is actually playing after a delay
- 			setTimeout(function() {
- 				console.log('Initial video readyState:', video.readyState);
- 				console.log('Video paused:', video.paused);
- 				console.log('Video currentTime:', video.currentTime);
- 				
- 				if (video.readyState < 2 || video.paused) {
- 					console.log('Video not playing - attempting one more time');
- 					attemptPlay();
- 					
- 					// Final check
- 					setTimeout(function() {
- 						if (video.paused) {
- 							console.log('Video still not playing');
- 						} else {
- 							console.log('Video playing successfully');
- 						}
- 					}, 1000);
- 				} else {
- 					console.log('Initial video loaded successfully');
- 				}
- 			}, 2000);
- 		}
+function enableFallbackMode(){fallbackMode=true;document.querySelectorAll('.video-background').forEach(v=>{v.pause();v.style.display='none'});const fb=document.getElementById('fallback-bg');if(fb)fb.style.display='block';const overlay=document.querySelector('.video-overlay');if(overlay)overlay.style.display='block'}function disableFallbackMode(){fallbackMode=false;const fb=document.getElementById('fallback-bg');if(fb)fb.style.display='none';const activeVideo=document.querySelector('.video-background.active-video');if(activeVideo){activeVideo.style.display='';activeVideo.play().catch(()=>{})}}
 
- 		// Initial setup for the default video
-		if (!fallbackMode) setupInitialVideoEvents(video);
 
- 		// Fade in the page when it loads
- 		document.body.classList.add('fade-in');
- 		
- 		// Apply default overlay for English language on page load
- 		const overlay = document.querySelector('.video-overlay');
- 		if (overlay) {
- 			overlay.style.display = 'block';
- 			overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.65)';
- 		}
- 		
- 		// Handle navigation links for fade out effect
- 		const navLinks = document.querySelectorAll('a[href]');
- 		navLinks.forEach(link => {
- 			// Only apply to internal links (not external or same page)
- 			const href = link.getAttribute('href');
- 			if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
- 				link.addEventListener('click', function(e) {
- 					// Don't apply to links that open in new tabs
- 					if (!link.hasAttribute('target') || link.getAttribute('target') !== 'blank') {
- 						e.preventDefault();
- 						const targetUrl = this.getAttribute('href');
- 						
- 						// Fade out current page
- 						document.body.classList.remove('fade-in');
- 						document.body.classList.add('fade-out');
- 						
- 						// Navigate to new page after fade out
- 						setTimeout(() => {
- 							window.location.href = targetUrl;
- 						}, 500);
- 					}
- 				});
- 			}
-		});
-	});
 
-	// Fallback mode toggle helpers
-	function enableFallbackMode() {
-		fallbackMode = true;
-		// Hide all videos
-		document.querySelectorAll('.video-background').forEach(v => {
-			v.pause();
-			v.style.display = 'none';
-		});
-		// Show fallback image
-		const fb = document.getElementById('fallback-bg');
-		if (fb) fb.style.display = 'block';
-		// Ensure overlay is visible for legibility
-		const overlay = document.querySelector('.video-overlay');
-		if (overlay) overlay.style.display = 'block';
-	}
 
-	function disableFallbackMode() {
-		fallbackMode = false;
-		// Hide fallback image
-		const fb = document.getElementById('fallback-bg');
-		if (fb) fb.style.display = 'none';
-		// Restore active video
-		const activeVideo = document.querySelector('.video-background.active-video');
-		if (activeVideo) {
-			activeVideo.style.display = '';
-			activeVideo.play().catch(() => {});
-		}
-	}
 
-	// Legacy spacer function - now handled by critical script above
-	function updateHeroSpacer() {
-		// This function is now redundant but kept for compatibility
-		// The critical spacer calculation runs immediately in the head script
-	}
-	
-	// Update spacer when language changes (in case hero text height changes)
-	document.addEventListener('DOMContentLoaded', function() {
-		const langButtons = document.querySelectorAll('.lang-btn');
-		langButtons.forEach(button => {
-			button.addEventListener('click', function() {
-				// Re-run the critical spacer calculation after language changes
-				setTimeout(() => {
-					const heroContainer = document.querySelector('.hero-container');
-					const heroSpacer = document.querySelector('.hero-spacer');
-					const contentDivider = document.querySelector('.content-divider');
-					
-					if (!heroContainer || !heroSpacer || !contentDivider) return;
-					
-					const heroRect = heroContainer.getBoundingClientRect();
-					const heroBottom = heroRect.bottom;
-					const dividerRect = contentDivider.getBoundingClientRect();
-					const dividerTop = dividerRect.top;
-					
-					const viewportHeight = window.innerHeight;
-					const desiredGap = viewportHeight * 0.055;
-					const currentGap = dividerTop - heroBottom;
-					
-					if (currentGap < desiredGap) {
-						heroSpacer.style.height = (desiredGap - currentGap) + 'px';
-					} else {
-						heroSpacer.style.height = '0px';
-					}
-				}, 200);
-			});
-		});
-	});
+
 
 
 
 
 </script>
+
 
 </body>
 </html>

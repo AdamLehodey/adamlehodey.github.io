@@ -31,6 +31,7 @@
     <style>
       /* Critical CSS for immediate rendering */
       html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+      :root { --mobile-social-nav-spacing: 4vh; }
       .page-fade { opacity: 0; transition: opacity 0.1s ease-in-out; }
       .page-fade.fade-in { opacity: 1; }
       
@@ -74,8 +75,9 @@
         pointer-events: none !important;
       }
       
-      .homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-top: 5vh; margin-left: 5vw; font-family: "Libre Bodoni", serif; font-size: 1.4vw; font-weight: 300; color: white; z-index: 2; }
-      .social-container { position: relative; margin-right: 5vw; margin-bottom: 0px; z-index: 2; }
+      .top-nav-container { position: static; display: flex; justify-content: space-between; align-items: flex-start; width: 100%; margin-top: 5vh; z-index: 2; }
+      .homepage-nav { display: inline-block; vertical-align: top; line-height: 1; margin-left: 5vw; font-family: "Libre Bodoni", serif; font-size: 1.4vw; font-weight: 300; color: white; z-index: 2; }
+      .social-container { position: static; margin-right: 5vw; margin-top: 0; z-index: 2; }
       
       /* Remove the old blog background image and gradient overlay */
       .blog-background-image { display: none; }
@@ -182,6 +184,11 @@
           margin-top: 50px !important;
           padding: 1rem 0 !important;
         }
+        
+        /* Mobile responsive for top-nav-container */
+        .top-nav-container { position: relative; display: flex; flex-direction: column; margin-top: 5vh; width: 100%; text-align: center; align-items: center; }
+        .top-nav-container .social-container { order: 1; display: flex !important; margin: 0 auto var(--mobile-social-nav-spacing) auto; }
+        .top-nav-container .homepage-nav { order: 2; font-size: 16px; text-align: center; width: 90vw; margin-left: 5vw; margin-top: 0; }
       }
       
       @media (max-width: 700px) {
@@ -460,11 +467,13 @@
   <!-- Fallback background for when video fails to load -->
   <div class="biography-fallback-background"></div>
   
+  <div class="top-nav-container">
+  	<div class="homepage-nav"><a class="homepage-nav-link" href="/">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="essays-articles">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
   	<div class="social-container">
 		<a href="https://x.com/adamlehodey" target="_blank"><img class="social-icon" src="site-resources/x-logo-white.png" alt="X Link" loading="eager"></a>
 		<a href="https://www.linkedin.com/in/adamlehodey/" target="_blank"><img class="social-icon" src="site-resources/LinkedIn.png" alt="LinkedIn Link" loading="eager"></a>
 	</div>
-  <div class="homepage-nav"><a class="homepage-nav-link" href="/">HOME</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="essays-articles">ESSAYS AND ARTICLES</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="biography">BIOGRAPHY</a><span class="nav-separator"> • </span><a class="homepage-nav-link" href="contact">CONTACT</a></div>
+  </div>
   
 
   
