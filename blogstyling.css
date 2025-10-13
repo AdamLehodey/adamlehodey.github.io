@@ -708,9 +708,12 @@ body.blog-page {
     margin-left: 0;
     margin-right: 0;
     border: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
     border-radius: 0;
     background: rgba(64, 64, 64, 0.2);
     margin-bottom: 0 !important;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.1);
   }
   
   /* Keep filter buttons at baseline size above 640px */
@@ -722,9 +725,9 @@ body.blog-page {
     white-space: nowrap;
   }
   
-  /* Align filter bar with first post - reduce gap */
+  /* Align filter bar with first post - maintain same gap as featured cards */
   #blog-container {
-    margin-top: 0;
+    margin-top: 1rem;
     padding-top: 0;
   }
   
