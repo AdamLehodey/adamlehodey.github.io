@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blogPosts>
+  <post featured="false" type="Analysis" id="10359">
+    <title>Here's How New York Voters Are Feeling About the Mayoral Race</title>
+    <subtitle>Public safety and the cost of living are some of their top concerns.</subtitle>
+    <description>As the 2025 New York mayoral race heats up, I went on the ground to hear from the candidates themselves and examine what policy proposals might mean for the city.</description>
+    <author>Adam Lehodey</author>
+    <date>October 2025</date>
+    <publication>City Journal</publication>
+    <image>https://media4.manhattan-institute.org/wp-content/uploads/sites/5/new-york-city-mayoral-race-curtis-sliwa-zohran-mamdani-andrew-cuomo.jpg</image>
+    <link>https://www.city-journal.org/article/new-york-city-mayoral-race-curtis-sliwa-zohran-mamdani-andrew-cuomo</link>
+    <link-text>Read article</link-text>
+  </post>
   <post featured="false" type="Podcasts" id="10358">
     <title>American Universities, Two Years After October 7</title>
     <subtitle>City Journal Podcast</subtitle>
