@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blogPosts>
+  <post featured="false" type="Analysis" id="10362">
+    <title>Why Mamdani Struggled With Working-Class Voters</title>
+    <subtitle>They shied away in the primary; we asked why.</subtitle>
+    <description>Mamdani performed strongly amongst younger, more affluent New Yorkers, but failed to secure votes in lower-income parts of New York during the Democratic Primary. I spent several hours in Cuomo strongholds in the Bronx to better understand working-class New Yorkers' concerns about his policies and the election, here's what they told me.</description>
+    <author>Adam Lehodey</author>
+    <date>October 2025</date>
+    <publication>City Journal</publication>
+    <image>https://media4.manhattan-institute.org/wp-content/uploads/sites/5/working-class-New-Yorkers-Zohran-Mamdani-Andrew-Cuomo.jpg</image>
+    <link>https://www.city-journal.org/article/working-class-new-yorkers-zohran-mamdani-andrew-cuomo</link>
+    <link-text>Read article</link-text>
+  </post>
   <post featured="false" type="Analysis" id="10361">
     <title>New York can do better than just free buses</title>
     <subtitle>High (opportunity) costs and a lost occasion to think bigger on transportation</subtitle>
