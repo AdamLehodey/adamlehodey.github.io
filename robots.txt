@@ -6,3 +6,14 @@ Disallow: /
 
 # Sitemap location
 Sitemap: https://adamlehodey.com/sitemap.xml
+
+# Block image indexing for all images except the public profile picture
+# Google Images
+User-agent: Googlebot-Image
+Disallow: /
+Allow: /site-resources/ProfilePicture.png
+
+# Bing Images
+User-agent: msnbot-media
+Disallow: /
+Allow: /site-resources/ProfilePicture.png
