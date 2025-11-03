@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blogPosts>
+  <post featured="false" type="Analysis" id="10363">
+    <title>These Ballot Proposals Could Spur a Housing Revolution in New York</title>
+    <subtitle>Why voters should support all four measures</subtitle>
+    <description>New York's ballot proposals represent a meaningful next step towards a city of more abundant, aesthetic and affordable housing.</description>
+    <author>Adam Lehodey</author>
+    <date>November 2025</date>
+    <publication>City Journal</publication>
+    <image>https://media4.manhattan-institute.org/wp-content/uploads/sites/5/New-York-City-ballot-proposals-housing-zoning.jpg</image>
+    <link>https://www.city-journal.org/article/new-york-city-ballot-proposals-housing-zoning</link>
+    <link-text>Read article</link-text>
+  </post>
   <post featured="false" type="Analysis" id="10362">
     <title>Working-class New Yorkers Are Skeptical of Socialism — Here’s Why</title>
     <subtitle>“We have to know why it’s free, because sometimes free is expensive.”</subtitle>
@@ -648,16 +659,5 @@
     <image>https://images.unsplash.com/photo-1487700160041-babef9c3cb55?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1935&amp;q=80</image>
     <link>https://medium.com/@adyleho/on-minimalism-part-one-fc6bd142d147</link>
     <link-text>View Article</link-text>
-  </post>
-  <post featured="false" type="Analysis" id="10363">
-    <title>These Ballot Proposals Could Spur a Housing Revolution in New York</title>
-    <subtitle>Why voters should support all four measures</subtitle>
-    <description>New York's ballot proposals represent a meaningful next step towards a city of more abundant, aesthetic and affordable housing.</description>
-    <author>Adam Lehodey</author>
-    <date>November 2025</date>
-    <publication>City Journal</publication>
-    <image>https://media4.manhattan-institute.org/wp-content/uploads/sites/5/New-York-City-ballot-proposals-housing-zoning.jpg</image>
-    <link>https://www.city-journal.org/article/new-york-city-ballot-proposals-housing-zoning</link>
-    <link-text>Read article</link-text>
   </post>
 </blogPosts>
