@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blogPosts>
+  <post featured="false" type="Analysis" id="10364">
+    <title>Why These New Yorkers Voted for Mamdani</title>
+    <subtitle>Capturing the city's pulse on Election Day</subtitle>
+    <description>After dozens of miles of walking, countless interviews with ordinary New Yorkers, storekeepers, property owners, renters, transit riders, and many more, including the candidates themselves, voters elected Zohran Mamdani as Gotham's next mayor. I captured the pulse of the city on election day.</description>
+    <author>Adam Lehodey</author>
+    <date>November 2025</date>
+    <publication>City Journal</publication>
+    <image>https://media4.manhattan-institute.org/wp-content/uploads/sites/5/Zohran-Mamdani-New-York-City-Election-Day.jpg</image>
+    <link>https://www.city-journal.org/article/zohran-mamdani-new-york-city-election-day</link>
+    <link-text>Read article</link-text>
+  </post>
   <post featured="false" type="Analysis" id="10363">
     <title>These Ballot Proposals Could Spur a Housing Revolution in New York</title>
     <subtitle>Why voters should support all four measures</subtitle>
