@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blogPosts>
+  <post featured="false" type="Analysis" id="10366">
+    <title>Will Mamdani Really Be Able to Freeze the Rent?</title>
+    <subtitle>Speaking with members of the Rent Guidelines Board about the mayor-elect's agenda</subtitle>
+    <description>"Freeze the Rent" was the big promise of Mamdani's campaign. I spoke to members of the NYC Rent Guidelines Board to examine whether the move is feasible, and whether it'll actually make a difference in alleviating New Yorkers' rent burden in the long-run.</description>
+    <author>Adam Lehodey</author>
+    <date>November 2025</date>
+    <publication>City Journal</publication>
+    <image>https://media4.manhattan-institute.org/wp-content/uploads/sites/5/New-York-City-Rent-Guidelines-Board-Zohran-Mamdani.jpg</image>
+    <link>https://www.city-journal.org/article/will-mamdani-really-be-able-to-freeze-the-rent</link>
+    <link-text>Read article</link-text>
+  </post>
   <post featured="false" type="Analysis" id="10365">
     <title>The $442 Million Question: Does Having Two Train Conductors Make Subways Safer?</title>
     <subtitle>Delving into the data on safety</subtitle>
