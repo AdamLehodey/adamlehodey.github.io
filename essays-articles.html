@@ -243,9 +243,14 @@
   		return new Date(0); // Fallback for invalid dates
   	}
 
-  	// Global variables for filtering
+  	// Global variables for filtering and pagination
   	let allPosts = [];
   	let currentFilter = 'all';
+  	let postsPerPage = 20;
+  	let currentlyDisplayed = 0;
+  	let filteredPostsList = [];
+  	let loadMoreObserver = null;
+  	let isLoadingMore = false; // Flag to prevent multiple simultaneous loads
   	
   	// Function to load and display blog posts
   	async function loadBlogPosts() {
@@ -359,38 +364,151 @@
 		filterBar.innerHTML = filterHTML;
 	}
 	
-	// Function to display posts
-  	function displayPosts(postsToShow) {
+  	// Function to display posts with pagination
+  	function displayPosts(postsToShow, append = false) {
   		const container = document.getElementById('blog-container');
-  		let html = '';
   		
-  		// Separate featured and regular posts
+  		// Separate featured and regular posts, then combine in order (featured first)
   		const featuredPosts = postsToShow.filter(post => post.featured);
   		const regularPosts = postsToShow.filter(post => !post.featured);
+  		const orderedPosts = [...featuredPosts, ...regularPosts];
+  		
+  		// Calculate how many posts to show
+  		let postsToDisplay;
+  		if (append) {
+  			// When appending, show next batch from the ordered list
+  			const startIndex = currentlyDisplayed;
+  			const endIndex = Math.min(startIndex + postsPerPage, orderedPosts.length);
+  			postsToDisplay = orderedPosts.slice(startIndex, endIndex);
+  			currentlyDisplayed = endIndex;
+  		} else {
+  			// Initial load - show first batch (up to postsPerPage)
+  			postsToDisplay = orderedPosts.slice(0, postsPerPage);
+  			currentlyDisplayed = postsToDisplay.length;
+  		}
+  		
+  		// Separate the posts to display into featured and regular
+  		const featuredToShow = postsToDisplay.filter(post => post.featured);
+  		const regularToShow = postsToDisplay.filter(post => !post.featured);
+  		
+  		let html = '';
   		
   		// Add featured posts first
-  		featuredPosts.forEach(post => {
+  		featuredToShow.forEach(post => {
   			html += generateFeaturedPostHTML(post);
   		});
   		
-  		// Add regular posts
-  		let altClass = false;
-  		regularPosts.forEach(post => {
+  		// Add regular posts with alternating layout
+  		// Calculate starting alt class based on current display count
+  		const existingCards = container.querySelectorAll('.brutalist-minimal-card').length;
+  		let altClass = (existingCards % 2 === 0);
+  		regularToShow.forEach(post => {
   			html += generateRegularPostHTML(post, altClass);
   			altClass = !altClass; // Alternate layout
   		});
   		
-  		container.innerHTML = '';
-  		const temp = document.createElement('div');
-  		temp.innerHTML = html;
-  		while (temp.firstChild) {
-  			container.appendChild(temp.firstChild);
+  		if (append) {
+  			// Append new posts to existing content
+  			const temp = document.createElement('div');
+  			temp.innerHTML = html;
+  			while (temp.firstChild) {
+  				container.appendChild(temp.firstChild);
+  			}
+  		} else {
+  			// Replace all content
+  			container.innerHTML = '';
+  			const temp = document.createElement('div');
+  			temp.innerHTML = html;
+  			while (temp.firstChild) {
+  				container.appendChild(temp.firstChild);
+  			}
   		}
   		
-		// Reinitialize lazy loading for new content with small delay to ensure filter buttons work
-		setTimeout(() => {
-			initLazyLoading();
-		}, 100);
+  		// Reinitialize lazy loading for new content
+  		setTimeout(() => {
+  			initLazyLoading();
+  			// Setup observer for loading more posts
+  			setupLoadMoreObserver();
+  		}, 100);
+  	}
+  	
+  	// Function to load more posts when scrolling
+  	function loadMorePosts() {
+  		// Prevent multiple simultaneous loads (debouncing)
+  		if (isLoadingMore) {
+  			return;
+  		}
+  		
+  		// Calculate total ordered posts (featured + regular)
+  		const featuredPosts = filteredPostsList.filter(post => post.featured);
+  		const regularPosts = filteredPostsList.filter(post => !post.featured);
+  		const totalOrderedPosts = featuredPosts.length + regularPosts.length;
+  		
+  		if (currentlyDisplayed >= totalOrderedPosts) {
+  			// All posts are already displayed
+  			if (loadMoreObserver) {
+  				loadMoreObserver.disconnect();
+  			}
+  			return;
+  		}
+  		
+  		// Set loading flag to prevent duplicate loads
+  		isLoadingMore = true;
+  		
+  		// Load next batch
+  		displayPosts(filteredPostsList, true);
+  		
+  		// Reset loading flag after a short delay to allow DOM updates to complete
+  		setTimeout(() => {
+  			isLoadingMore = false;
+  		}, 300);
+  	}
+  	
+  	// Function to setup IntersectionObserver for auto-loading more posts
+  	function setupLoadMoreObserver() {
+  		// Disconnect previous observer if it exists
+  		if (loadMoreObserver) {
+  			loadMoreObserver.disconnect();
+  		}
+  		
+  		// Check if there are more posts to load
+  		const featuredPosts = filteredPostsList.filter(post => post.featured);
+  		const regularPosts = filteredPostsList.filter(post => !post.featured);
+  		const totalOrderedPosts = featuredPosts.length + regularPosts.length;
+  		
+  		if (currentlyDisplayed >= totalOrderedPosts) {
+  			return;
+  		}
+  		
+  		// Find all cards (both featured and regular)
+  		const cards = document.querySelectorAll('.brutalist-minimal-card, .featured-card');
+  		if (cards.length === 0) {
+  			return;
+  		}
+  		
+  		// Observe the last card in the current batch
+  		// This will trigger loading more when user scrolls near the end of current content
+  		const lastCardIndex = cards.length - 1;
+  		const breakpointCard = cards[lastCardIndex];
+  		
+  		if (!breakpointCard) {
+  			return;
+  		}
+  		
+  		// Create observer to watch for when last card comes into view
+  		loadMoreObserver = new IntersectionObserver((entries) => {
+  			entries.forEach(entry => {
+  				if (entry.isIntersecting) {
+  					// Load more posts when last card is near viewport
+  					loadMorePosts();
+  				}
+  			});
+  		}, {
+  			rootMargin: '300px 0px', // Start loading 300px before the last card for smoother experience
+  			threshold: 0.1
+  		});
+  		
+  		loadMoreObserver.observe(breakpointCard);
   	}
   	
   	// Function to initialize filter buttons
@@ -430,6 +548,19 @@
 			}
 		} else {
 			filteredPosts = allPosts.filter(post => post.type === filter);
+		}
+		
+		// Store filtered posts and reset pagination
+		filteredPostsList = filteredPosts;
+		currentlyDisplayed = 0;
+		
+		// Reset loading flag when filter changes
+		isLoadingMore = false;
+		
+		// Disconnect previous observer if it exists
+		if (loadMoreObserver) {
+			loadMoreObserver.disconnect();
+			loadMoreObserver = null;
 		}
 		
 		displayPosts(filteredPosts);
