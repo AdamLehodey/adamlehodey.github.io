@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blogPosts>
-  <post featured="false" type="Analysis" id="10367">
-    <title>Who Was to Blame for Pandemic School Closures?</title>
-    <subtitle>Review of "15 Days" by Natalya Murakhver</subtitle>
-    <description>A new documentary, "15 Days" re-ignites the conversation around covid-19 era school closures and underscores the continued salience of teachers' unions in the decision-making process.</description>
-    <author>Adam Lehodey</author>
-    <date>November 2025</date>
-    <publication>City Journal</publication>
-    <image>https://images.unsplash.com/photo-1580974852861-c381510bc98a?q=80&amp;w=2884&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D</image>
-    <link>https://www.city-journal.org/article/natalya-murakhver-15-days-documentary-covid-pandemic-school-closures</link>
-    <link-text>Read article</link-text>
-  </post>
   <post featured="false" type="Analysis" id="10366">
     <title>Will Mamdani Really Be Able to Freeze the Rent?</title>
     <subtitle>Speaking with members of the Rent Guidelines Board about the mayor-elect's agenda</subtitle>
@@ -54,6 +43,17 @@
     <image>https://media4.manhattan-institute.org/wp-content/uploads/sites/5/New-York-City-ballot-proposals-housing-zoning.jpg</image>
     <link>https://www.city-journal.org/article/new-york-city-ballot-proposals-housing-zoning</link>
     <link-text>Read article</link-text>
+  </post>
+  <post featured="false" type="Essays" id="10367">
+    <title>Who Was to Blame for Pandemic School Closures?</title>
+    <subtitle>Review of "15 Days" by Natalya Murakhver</subtitle>
+    <description>A new documentary, "15 Days" re-ignites the conversation around covid-19 era school closures and underscores the continued salience of teachers' unions in the decision-making process.</description>
+    <author>Adam Lehodey</author>
+    <date>November 2025</date>
+    <publication>City Journal</publication>
+    <image>https://images.unsplash.com/photo-1580974852861-c381510bc98a?q=80&amp;w=2884&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D</image>
+    <link>https://www.city-journal.org/article/natalya-murakhver-15-days-documentary-covid-pandemic-school-closures</link>
+    <link-text>Read essay</link-text>
   </post>
   <post featured="false" type="Analysis" id="10362">
     <title>Working-class New Yorkers Are Skeptical of Socialism — Here’s Why</title>
