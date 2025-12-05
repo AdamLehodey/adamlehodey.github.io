@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blogPosts>
+  <post featured="false" type="Analysis" id="10368">
+    <title>New York City Wants to Give Nonprofits First Dibs on Housing</title>
+    <subtitle>But Washington, D.C.'s experience offers a cautionary tale</subtitle>
+    <description>New York City legislators come up with no end of badly-thought through policies to "fix" the housing crisis. The latest one will cause needless delays and increase transaction costs on properties that need investment the most.</description>
+    <author>Adam Lehodey</author>
+    <date>December 2025</date>
+    <publication>City Journal</publication>
+    <image>https://media4.manhattan-institute.org/wp-content/uploads/sites/5/New-York-City-Community-Opportunity-Purchase-Act-COPA-nonprofits-housing.jpg</image>
+    <link>https://www.city-journal.org/article/new-york-city-community-opportunity-purchase-act-copa-nonprofits-housing</link>
+    <link-text>Read article</link-text>
+  </post>
   <post featured="false" type="Essays" id="10367">
     <title>Who Was to Blame for Pandemic School Closures?</title>
     <subtitle>Review of "15 Days" by Natalya Murakhver</subtitle>
