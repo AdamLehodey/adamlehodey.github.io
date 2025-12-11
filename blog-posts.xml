@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blogPosts>
+  <post featured="false" type="Podcasts" id="10369">
+    <title>Mamdani's Extreme Ideas</title>
+    <subtitle>City Journal Podcast</subtitle>
+    <description>Rafael Mangual, Judge Glock, and Adam Lehodey talk about New York City Mayor-elect Zohran Mamdani's pledge to end homeless encampment clearances. They discuss the small group of supporters who believe sheltering outside is a human right, explain why relying on the shelter system is preferable, and consider the implications of letting the homeless occupy the city's limited public spaces. They also examine the Community Opportunity to Purchase Act, which would give nonprofits the first right of refusal to buy housing.</description>
+    <author>Adam Lehodey</author>
+    <date>December 2025</date>
+    <publication>City Journal</publication>
+    <image>https://media4.manhattan-institute.org/wp-content/uploads/sites/5/mamdanis-extreme-ideas.jpg</image>
+    <link>https://www.city-journal.org/multimedia/mamdanis-extreme-ideas</link>
+    <link-text>Listen Now</link-text>
+  </post>
   <post featured="false" type="Analysis" id="10368">
     <title>New York City Wants to Give Nonprofits First Dibs on Housing</title>
     <subtitle>But Washington, D.C.'s experience offers a cautionary tale</subtitle>
