@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blogPosts>
+  <post featured="false" type="Analysis" id="10370">
+    <title>Why Are 50,000 New York City Apartments Vacant?</title>
+    <subtitle>The emergence of "ghost apartments" reveals a fundamentally broken housing market.</subtitle>
+    <description>In New York City, laws built on the premise that "housing is a human right" come crashing into economic reality, leading to the rise of an estimated 50,000 vacant "ghost apartments." The State must restore vacancy resets to ensure the prevent the city's housing stock from literally falling apart.</description>
+    <author>Adam Lehodey</author>
+    <date>December 2025</date>
+    <publication>City Journal</publication>
+    <type>Analysis</type>
+    <image>https://images.unsplash.com/photo-1696994205072-3311aafe1ae3?q=80&amp;w=2940&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D</image>
+    <link>https://www.city-journal.org/article/vacant-new-york-city-apartments-rent-control-housing</link>
+    <link-text>Read article</link-text>
+    <featured>false</featured>
+  </post>
   <post featured="false" type="Podcasts" id="10369">
     <title>Mamdani's Extreme Ideas</title>
     <subtitle>City Journal Podcast</subtitle>
