@@ -396,17 +396,6 @@
     <link>https://medium.com/p/769076d8b70b</link>
     <link-text>View Essay</link-text>
   </post>
-  <post featured="false" type="Essays" id="10308">
-    <title>The History and Future of Nicotine</title>
-    <subtitle>LONG READ: Examining the roots and next steps.</subtitle>
-    <description>It's the largest preventable cause of death, amounts to millions of hours of lost productivity, and costs our health systems billions. Where did it start, why is it actually bad for you, and how can we end nicotine related deaths for good?</description>
-    <author>Adam Lehodey</author>
-    <date>January 2023</date>
-    <publication>Medium</publication>
-    <image>https://miro.medium.com/max/744/1*OVN-7sS0_g3TeHcWiaVaSA.png</image>
-    <link>https://medium.com/@adyleho/the-history-and-future-of-smoking-a7ab84351ad0</link>
-    <link-text>Read essay</link-text>
-  </post>
   <post featured="false" type="Essays" id="10335">
     <title>Lessons from the twentieth century for the twenty-first</title>
     <subtitle>A re-examination of events.</subtitle>
@@ -703,6 +692,17 @@
     <image>https://images.unsplash.com/photo-1566645561206-a5586419fb5f?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80</image>
     <link>https://www.1828.org.uk/2020/06/24/how-vaping-could-end-nicotine-related-deaths-for-good/</link>
     <link-text>View Article</link-text>
+  </post>
+  <post featured="false" type="Essays" id="10308">
+    <title>The History and Future of Nicotine</title>
+    <subtitle>LONG READ: Examining the roots and next steps.</subtitle>
+    <description>Smoking is one of largest preventable cause of death, amounts to millions of hours of lost productivity, and costs our health systems billions. Where did it start, why is it bad for you, and how can we end nicotine related deaths for good?</description>
+    <author>Adam Lehodey</author>
+    <date>January 2020</date>
+    <publication>Medium</publication>
+    <image>https://miro.medium.com/max/744/1*OVN-7sS0_g3TeHcWiaVaSA.png</image>
+    <link>https://medium.com/@adyleho/the-history-and-future-of-smoking-a7ab84351ad0</link>
+    <link-text>Read essay</link-text>
   </post>
   <post featured="false" type="Essays" id="10307">
     <title>Inequality in a Meritocratic World</title>
