@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blogPosts>
+  <post featured="false" type="Analysis" id="10373">
+    <title>Voices of Sanity in New York City</title>
+    <subtitle>Conversations with five New Yorkers, from five boroughs</subtitle>
+    <description>And what they teach us about governance and leadership in a city as big, and diverse, as New York City.</description>
+    <author>Adam Lehodey</author>
+    <date>January 2026</date>
+    <publication>City Journal</publication>
+    <image>https://media4.manhattan-institute.org/wp-content/uploads/sites/5/Astoria-community-leader-George-Delis.jpg</image>
+    <link>https://www.city-journal.org/article/new-york-city-opportunity-good-governance-zohran-mamdani</link>
+    <link-text>Read article</link-text>
+  </post>
   <post featured="false" type="Analysis" id="10372">
     <title>Mamdani’s Corporate Tax Hike is a Disaster Waiting to Happen</title>
     <subtitle>A less competitive New York has detrimental effects in real life</subtitle>
