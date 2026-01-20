@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blogPosts>
+  <post featured="false" type="Analysis" id="10374">
+    <title>New York City’s New Law Makes “Affordable” Housing Way More Expensive</title>
+    <subtitle>And how the Construction Justice Act is a classic example of “everything-bagel liberalism"</subtitle>
+    <description>Politicians must resist the urge to achieve everything if they are to achieve something.</description>
+    <author>Adam Lehodey</author>
+    <date>January 2026</date>
+    <publication>City Journal Substack</publication>
+    <image>https://images.unsplash.com/photo-1664752061692-c10d74ccf425?fm=jpg&amp;amp;q=60&amp;amp;w=3000&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;ixlib=rb-4.1.0&amp;amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D</image>
+    <link>http://go.adamlehodey.com/construction-justice-act</link>
+    <link-text>Read article</link-text>
+  </post>
   <post featured="true" type="Essays" id="10373">
     <title>Voices of Sanity in New York City</title>
     <subtitle>In conversation with New Yorkers</subtitle>
