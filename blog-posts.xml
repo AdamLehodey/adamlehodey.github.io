@@ -539,17 +539,6 @@
     <link>https://adyleho.medium.com/a-letter-to-great-britain-ee6fed1b834a</link>
     <link-text>View Article</link-text>
   </post>
-  <post featured="false" type="Analysis" id="10324">
-    <title>Levelling up risks becoming Levelling Down</title>
-    <subtitle>There are flaws to the Government's current policy</subtitle>
-    <description>We are at risk of 'levelling up' becoming a proxy for one set of vested interests grabbing resources at the expense of everyone else.</description>
-    <author>Adam Lehodey</author>
-    <date>October 2021</date>
-    <publication>1828</publication>
-    <image>https://images.unsplash.com/photo-1457976178975-68bdee640edb?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=892&amp;q=80</image>
-    <link>https://www.1828.org.uk/2021/10/11/the-levelling-up-agenda-risks-levelling-down-britain/</link>
-    <link-text>View Article</link-text>
-  </post>
   <post featured="false" type="Essays" id="10323">
     <title>Veblen's Theory of the Leisure Class</title>
     <subtitle>Summary, Notes and Critiques</subtitle>
@@ -779,6 +768,17 @@
     <publication>Adam Smith Institute</publication>
     <image>https://media.graphcms.com/resize=width:800/Gks5tD9RNNUqVejgOlge</image>
     <link>https://www.adamsmith.org/blog/sorry-claudia-billionaires-have-the-right-to-exist</link>
+    <link-text>View Article</link-text>
+  </post>
+  <post featured="false" type="Opinion" id="10324">
+    <title>Levelling up risks becoming Levelling Down</title>
+    <subtitle>There are flaws to the Government's current policy</subtitle>
+    <description>We are at risk of 'levelling up' becoming a proxy for one set of vested interests grabbing resources at the expense of everyone else.</description>
+    <author>Adam Lehodey</author>
+    <date>October </date>
+    <publication>1828</publication>
+    <image>https://images.unsplash.com/photo-1457976178975-68bdee640edb?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=892&amp;q=80</image>
+    <link>https://www.1828.org.uk/2021/10/11/the-levelling-up-agenda-risks-levelling-down-britain/</link>
     <link-text>View Article</link-text>
   </post>
 </blogPosts>
