@@ -462,6 +462,17 @@
     <link>https://adyleho.medium.com/a-world-where-only-money-matters-comparative-analysis-of-amis-money-and-ellis-american-psycho-410ccc372a31</link>
     <link-text>Read Essay</link-text>
   </post>
+  <post featured="false" type="Opinion" id="10332">
+    <title>The troubled foundations of Rishinomics</title>
+    <subtitle>Sunak's leadersip plan contains many flaws</subtitle>
+    <description>A successful political campaign has two ingredients: (1) a message that is coherent, and (2) a message that is sound. Unfortunately for Rishi Sunak, 'Rishinomics' delivers on neither of these...</description>
+    <author>Adam Lehodey</author>
+    <date>August 2022</date>
+    <publication>Friedmanomics</publication>
+    <image>https://static.wixstatic.com/media/748768_95425fe659cf4c26bc4d6b1cc6b1c441~mv2.png/v1/fill/w_1110,h_740,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/748768_95425fe659cf4c26bc4d6b1cc6b1c441~mv2.png</image>
+    <link>https://www.friedmanomics.co.uk/post/the-troubled-foundations-of-rishinomics</link>
+    <link-text>View Article</link-text>
+  </post>
   <post featured="false" type="Prose/Verse" id="10331">
     <title>On the road: stories from an American adventure</title>
     <subtitle>Memories from the summer</subtitle>
@@ -495,6 +506,17 @@
     <link>https://adyleho.medium.com/debt-the-first-5000-years-a-critique-e2153eb5c506</link>
     <link-text>Read essay</link-text>
   </post>
+  <post featured="false" type="Opinion" id="10328">
+    <title>Billionaires have the right to exist</title>
+    <subtitle>Claudia Webbe's attack on billionaires is baseless</subtitle>
+    <description>Claudia Webbe, the Member of Parliament for Leicester East, recently restated her dislike for billioniares in a series of tweets. Her comments are underpinned by a number of fallacies.</description>
+    <author>Adam Lehodey</author>
+    <date>January 2022</date>
+    <publication>Adam Smith Institute</publication>
+    <image>https://media.graphcms.com/resize=width:800/Gks5tD9RNNUqVejgOlge</image>
+    <link>https://www.adamsmith.org/blog/sorry-claudia-billionaires-have-the-right-to-exist</link>
+    <link-text>View Article</link-text>
+  </post>
   <post featured="false" type="Essays" id="10327">
     <title>Tender is the Night</title>
     <subtitle>Analysis, thoughts and ideas</subtitle>
@@ -506,17 +528,6 @@
     <link>https://adyleho.medium.com/tender-is-the-night-notes-and-ideas-e28779733866</link>
     <link-text>View Article</link-text>
   </post>
-  <post featured="false" type="Analysis" id="10326">
-    <title>Fracking can play an important role in lowering energy costs</title>
-    <subtitle>The Government should revisit its policy on hydraulic fracturing</subtitle>
-    <description>When energy costs rise, people feel the hit directly. Not only do their own energy bills go up, but so too does the price of food, electronics, and almost all other goods. Hydraulic fracturing could be the answer.</description>
-    <author>Adam Lehodey</author>
-    <date>January 2022</date>
-    <publication>Adam Smith Institute</publication>
-    <image>https://images.unsplash.com/photo-1598336206157-a79a3f583cd2?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1031&amp;q=80</image>
-    <link>https://www.adamsmith.org/blog/fracking-can-play-an-important-role-in-lowering-energy-costs</link>
-    <link-text>View Article</link-text>
-  </post>
   <post featured="false" type="Prose/Verse" id="10325">
     <title>A Letter to Great Britain</title>
     <subtitle>An incredible place.</subtitle>
@@ -526,6 +537,28 @@
     <publication>Medium</publication>
     <image>https://miro.medium.com/max/750/0*nXyCw1MuxHkITbT7</image>
     <link>https://adyleho.medium.com/a-letter-to-great-britain-ee6fed1b834a</link>
+    <link-text>View Article</link-text>
+  </post>
+  <post featured="false" type="Opinion" id="10324">
+    <title>Levelling up risks becoming Levelling Down</title>
+    <subtitle>There are flaws to the Government's current policy</subtitle>
+    <description>We are at risk of 'levelling up' becoming a proxy for one set of vested interests grabbing resources at the expense of everyone else.</description>
+    <author>Adam Lehodey</author>
+    <date>October 2021</date>
+    <publication>1828</publication>
+    <image>https://images.unsplash.com/photo-1457976178975-68bdee640edb?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=892&amp;q=80</image>
+    <link>https://www.1828.org.uk/2021/10/11/the-levelling-up-agenda-risks-levelling-down-britain/</link>
+    <link-text>View Article</link-text>
+  </post>
+  <post featured="false" type="Analysis" id="10326">
+    <title>Fracking can play an important role in lowering energy costs</title>
+    <subtitle>The Government should revisit its policy on hydraulic fracturing</subtitle>
+    <description>When energy costs rise, people feel the hit directly. Not only do their own energy bills go up, but so too does the price of food, electronics, and almost all other goods. Hydraulic fracturing could be the answer.</description>
+    <author>Adam Lehodey</author>
+    <date>January 2022</date>
+    <publication>Adam Smith Institute</publication>
+    <image>https://images.unsplash.com/photo-1598336206157-a79a3f583cd2?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1031&amp;q=80</image>
+    <link>https://www.adamsmith.org/blog/fracking-can-play-an-important-role-in-lowering-energy-costs</link>
     <link-text>View Article</link-text>
   </post>
   <post featured="false" type="Essays" id="10323">
@@ -594,6 +627,17 @@
     <link>https://adyleho.medium.com/american-dream-sue%C3%B1o-americano-77740cd3b581</link>
     <link-text>View Article</link-text>
   </post>
+  <post featured="false" type="Opinion" id="10318">
+    <title>The Conservatives' worrying move away from economic liberalism</title>
+    <subtitle>The way forward: markets and trade</subtitle>
+    <description>To truly deliver on the 'levelling-up' agenda and create opportunities for all, the choice is clear: we must embrace trade, markets, and the freedom to choose.</description>
+    <author>Adam Lehodey</author>
+    <date>May 2021</date>
+    <publication>1828</publication>
+    <image>https://images.unsplash.com/photo-1494419470281-65c2b001a42b?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1932&amp;q=80</image>
+    <link>https://www.1828.org.uk/2021/05/21/the-conservative-partys-move-away-from-economic-liberalism-should-worry-us-all/</link>
+    <link-text>View Article</link-text>
+  </post>
   <post featured="false" type="Prose/Verse" id="10315">
     <title>Postcard from Mexico City</title>
     <subtitle>La vida está buena.</subtitle>
@@ -603,6 +647,17 @@
     <publication>Medium</publication>
     <image>https://miro.medium.com/max/1050/0*7ybL6JvhLcE-_ZdG</image>
     <link>https://adyleho.medium.com/postcard-from-mexico-city-195962b4b958</link>
+    <link-text>View Article</link-text>
+  </post>
+  <post featured="false" type="Opinion" id="10313">
+    <title>US Elections: There's a Lot to be Optimistic About</title>
+    <subtitle>A turning point in US politics</subtitle>
+    <description>It's official: Biden has won the US election and is set to become the 46th President of the USA. Although America remains divided, there are many reasons to be optimistic, and his Presidency could mark the start of a new era in US and international politics.</description>
+    <author>Adam Lehodey</author>
+    <date>November 2020</date>
+    <publication>1828</publication>
+    <image>https://images.unsplash.com/photo-1499188073299-5bd9060e044b?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1050&amp;q=80</image>
+    <link>https://www.1828.org.uk/2020/11/09/us-elections-theres-a-lot-to-be-optimistic-about/</link>
     <link-text>View Article</link-text>
   </post>
   <post featured="false" type="Essays" id="10312">
@@ -616,6 +671,17 @@
     <link>https://adyleho.medium.com/long-live-liberalism-1458984a79c8</link>
     <link-text>View Article</link-text>
   </post>
+  <post featured="false" type="Essays" id="10308">
+    <title>The History and Future of Nicotine</title>
+    <subtitle>LONG READ: Examining the roots and next steps.</subtitle>
+    <description>Smoking is one of largest preventable cause of death, amounts to millions of hours of lost productivity, and costs our health systems billions. Where did it start, why is it bad for you, and how can we end nicotine related deaths for good?</description>
+    <author>Adam Lehodey</author>
+    <date>January 2020</date>
+    <publication>Medium</publication>
+    <image>https://miro.medium.com/max/744/1*OVN-7sS0_g3TeHcWiaVaSA.png</image>
+    <link>https://medium.com/@adyleho/the-history-and-future-of-smoking-a7ab84351ad0</link>
+    <link-text>Read essay</link-text>
+  </post>
   <post featured="false" type="Analysis" id="10311">
     <title>Education reform is the key to social mobility</title>
     <subtitle>Social mobility in the 21st Century</subtitle>
@@ -625,6 +691,17 @@
     <publication>1828</publication>
     <image>https://images.unsplash.com/photo-1520670453919-ec413efb2951?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1868&amp;q=80</image>
     <link>https://www.1828.org.uk/2020/08/20/how-education-reform-can-unlock-social-mobility/</link>
+    <link-text>View Article</link-text>
+  </post>
+  <post featured="false" type="Opinion" id="10317">
+    <title>Tyranny can't stop climate change</title>
+    <subtitle>The troubling rise of neo-luddism</subtitle>
+    <description>Building a better, greener and cleaner world to enable us to live meaninfully and enjoy our lives will require co-operation and depend on technology. It can't be solved by coercion.</description>
+    <author>Adam Lehodey</author>
+    <date>May 2021</date>
+    <publication>Medium</publication>
+    <image>https://images.unsplash.com/photo-1569462529461-9d84b52954d2?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80</image>
+    <link>https://adyleho.medium.com/tyranny-cant-stop-climate-change-the-troubling-rise-of-neo-luddism-1773e78d5a8</link>
     <link-text>View Article</link-text>
   </post>
   <post featured="false" type="Analysis" id="10310">
@@ -648,17 +725,6 @@
     <image>https://images.unsplash.com/photo-1566645561206-a5586419fb5f?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80</image>
     <link>https://www.1828.org.uk/2020/06/24/how-vaping-could-end-nicotine-related-deaths-for-good/</link>
     <link-text>View Article</link-text>
-  </post>
-  <post featured="false" type="Essays" id="10308">
-    <title>The History and Future of Nicotine</title>
-    <subtitle>LONG READ: Examining the roots and next steps.</subtitle>
-    <description>Smoking is one of largest preventable cause of death, amounts to millions of hours of lost productivity, and costs our health systems billions. Where did it start, why is it bad for you, and how can we end nicotine related deaths for good?</description>
-    <author>Adam Lehodey</author>
-    <date>January 2020</date>
-    <publication>Medium</publication>
-    <image>https://miro.medium.com/max/744/1*OVN-7sS0_g3TeHcWiaVaSA.png</image>
-    <link>https://medium.com/@adyleho/the-history-and-future-of-smoking-a7ab84351ad0</link>
-    <link-text>Read essay</link-text>
   </post>
   <post featured="false" type="Essays" id="10307">
     <title>Inequality in a Meritocratic World</title>
@@ -702,72 +768,6 @@
     <publication>Medium</publication>
     <image>https://images.unsplash.com/photo-1487700160041-babef9c3cb55?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1935&amp;q=80</image>
     <link>https://medium.com/@adyleho/on-minimalism-part-one-fc6bd142d147</link>
-    <link-text>View Article</link-text>
-  </post>
-  <post featured="false" type="Opinion" id="10313">
-    <title>US Elections: There's a Lot to be Optimistic About</title>
-    <subtitle>A turning point in US politics</subtitle>
-    <description>It's official: Biden has won the US election and is set to become the 46th President of the USA. Although America remains divided, there are many reasons to be optimistic, and his Presidency could mark the start of a new era in US and international politics.</description>
-    <author>Adam Lehodey</author>
-    <date>November </date>
-    <publication>1828</publication>
-    <image>https://images.unsplash.com/photo-1499188073299-5bd9060e044b?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1050&amp;q=80</image>
-    <link>https://www.1828.org.uk/2020/11/09/us-elections-theres-a-lot-to-be-optimistic-about/</link>
-    <link-text>View Article</link-text>
-  </post>
-  <post featured="false" type="Opinion" id="10328">
-    <title>Billionaires have the right to exist</title>
-    <subtitle>Claudia Webbe's attack on billionaires is baseless</subtitle>
-    <description>Claudia Webbe, the Member of Parliament for Leicester East, recently restated her dislike for billioniares in a series of tweets. Her comments are underpinned by a number of fallacies.</description>
-    <author>Adam Lehodey</author>
-    <date>January </date>
-    <publication>Adam Smith Institute</publication>
-    <image>https://media.graphcms.com/resize=width:800/Gks5tD9RNNUqVejgOlge</image>
-    <link>https://www.adamsmith.org/blog/sorry-claudia-billionaires-have-the-right-to-exist</link>
-    <link-text>View Article</link-text>
-  </post>
-  <post featured="false" type="Opinion" id="10324">
-    <title>Levelling up risks becoming Levelling Down</title>
-    <subtitle>There are flaws to the Government's current policy</subtitle>
-    <description>We are at risk of 'levelling up' becoming a proxy for one set of vested interests grabbing resources at the expense of everyone else.</description>
-    <author>Adam Lehodey</author>
-    <date>October </date>
-    <publication>1828</publication>
-    <image>https://images.unsplash.com/photo-1457976178975-68bdee640edb?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=892&amp;q=80</image>
-    <link>https://www.1828.org.uk/2021/10/11/the-levelling-up-agenda-risks-levelling-down-britain/</link>
-    <link-text>View Article</link-text>
-  </post>
-  <post featured="false" type="Opinion" id="10318">
-    <title>The Conservatives' worrying move away from economic liberalism</title>
-    <subtitle>The way forward: markets and trade</subtitle>
-    <description>To truly deliver on the 'levelling-up' agenda and create opportunities for all, the choice is clear: we must embrace trade, markets, and the freedom to choose.</description>
-    <author>Adam Lehodey</author>
-    <date>May </date>
-    <publication>1828</publication>
-    <image>https://images.unsplash.com/photo-1494419470281-65c2b001a42b?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1932&amp;q=80</image>
-    <link>https://www.1828.org.uk/2021/05/21/the-conservative-partys-move-away-from-economic-liberalism-should-worry-us-all/</link>
-    <link-text>View Article</link-text>
-  </post>
-  <post featured="false" type="Opinion" id="10332">
-    <title>The troubled foundations of Rishinomics</title>
-    <subtitle>Sunak's leadersip plan contains many flaws</subtitle>
-    <description>A successful political campaign has two ingredients: (1) a message that is coherent, and (2) a message that is sound. Unfortunately for Rishi Sunak, 'Rishinomics' delivers on neither of these...</description>
-    <author>Adam Lehodey</author>
-    <date>August </date>
-    <publication>Friedmanomics</publication>
-    <image>https://static.wixstatic.com/media/748768_95425fe659cf4c26bc4d6b1cc6b1c441~mv2.png/v1/fill/w_1110,h_740,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/748768_95425fe659cf4c26bc4d6b1cc6b1c441~mv2.png</image>
-    <link>https://www.friedmanomics.co.uk/post/the-troubled-foundations-of-rishinomics</link>
-    <link-text>View Article</link-text>
-  </post>
-  <post featured="false" type="Opinion" id="10317">
-    <title>Tyranny can't stop climate change</title>
-    <subtitle>The troubling rise of neo-luddism</subtitle>
-    <description>Building a better, greener and cleaner world to enable us to live meaninfully and enjoy our lives will require co-operation and depend on technology. It can't be solved by coercion.</description>
-    <author>Adam Lehodey</author>
-    <date>May </date>
-    <publication>Medium</publication>
-    <image>https://images.unsplash.com/photo-1569462529461-9d84b52954d2?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80</image>
-    <link>https://adyleho.medium.com/tyranny-cant-stop-climate-change-the-troubling-rise-of-neo-luddism-1773e78d5a8</link>
     <link-text>View Article</link-text>
   </post>
 </blogPosts>
