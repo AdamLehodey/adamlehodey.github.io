@@ -506,17 +506,6 @@
     <link>https://adyleho.medium.com/debt-the-first-5000-years-a-critique-e2153eb5c506</link>
     <link-text>Read essay</link-text>
   </post>
-  <post featured="false" type="Analysis" id="10328">
-    <title>Billionaires have the right to exist</title>
-    <subtitle>Claudia Webbe's attack on billionaires is baseless</subtitle>
-    <description>Claudia Webbe, the Member of Parliament for Leicester East, recently restated her dislike for billioniares in a series of tweets. Her comments are underpinned by a number of fallacies.</description>
-    <author>Adam Lehodey</author>
-    <date>January 2022</date>
-    <publication>Adam Smith Institute</publication>
-    <image>https://media.graphcms.com/resize=width:800/Gks5tD9RNNUqVejgOlge</image>
-    <link>https://www.adamsmith.org/blog/sorry-claudia-billionaires-have-the-right-to-exist</link>
-    <link-text>View Article</link-text>
-  </post>
   <post featured="false" type="Essays" id="10327">
     <title>Tender is the Night</title>
     <subtitle>Analysis, thoughts and ideas</subtitle>
@@ -779,6 +768,17 @@
     <publication>1828</publication>
     <image>https://images.unsplash.com/photo-1499188073299-5bd9060e044b?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1050&amp;q=80</image>
     <link>https://www.1828.org.uk/2020/11/09/us-elections-theres-a-lot-to-be-optimistic-about/</link>
+    <link-text>View Article</link-text>
+  </post>
+  <post featured="false" type="Opinion" id="10328">
+    <title>Billionaires have the right to exist</title>
+    <subtitle>Claudia Webbe's attack on billionaires is baseless</subtitle>
+    <description>Claudia Webbe, the Member of Parliament for Leicester East, recently restated her dislike for billioniares in a series of tweets. Her comments are underpinned by a number of fallacies.</description>
+    <author>Adam Lehodey</author>
+    <date>January </date>
+    <publication>Adam Smith Institute</publication>
+    <image>https://media.graphcms.com/resize=width:800/Gks5tD9RNNUqVejgOlge</image>
+    <link>https://www.adamsmith.org/blog/sorry-claudia-billionaires-have-the-right-to-exist</link>
     <link-text>View Article</link-text>
   </post>
 </blogPosts>
