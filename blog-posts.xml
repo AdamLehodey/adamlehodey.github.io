@@ -528,6 +528,17 @@
     <link>https://adyleho.medium.com/tender-is-the-night-notes-and-ideas-e28779733866</link>
     <link-text>View Article</link-text>
   </post>
+  <post featured="false" type="Analysis" id="10326">
+    <title>Fracking can play an important role in lowering energy costs</title>
+    <subtitle>The Government should revisit its policy on hydraulic fracturing</subtitle>
+    <description>When energy costs rise, people feel the hit directly. Not only do their own energy bills go up, but so too does the price of food, electronics, and almost all other goods. Hydraulic fracturing could be the answer.</description>
+    <author>Adam Lehodey</author>
+    <date>January 2022</date>
+    <publication>Adam Smith Institute</publication>
+    <image>https://images.unsplash.com/photo-1598336206157-a79a3f583cd2?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1031&amp;q=80</image>
+    <link>https://www.adamsmith.org/blog/fracking-can-play-an-important-role-in-lowering-energy-costs</link>
+    <link-text>View Article</link-text>
+  </post>
   <post featured="false" type="Prose/Verse" id="10325">
     <title>A Letter to Great Britain</title>
     <subtitle>An incredible place.</subtitle>
@@ -548,17 +559,6 @@
     <publication>1828</publication>
     <image>https://images.unsplash.com/photo-1457976178975-68bdee640edb?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=892&amp;q=80</image>
     <link>https://www.1828.org.uk/2021/10/11/the-levelling-up-agenda-risks-levelling-down-britain/</link>
-    <link-text>View Article</link-text>
-  </post>
-  <post featured="false" type="Analysis" id="10326">
-    <title>Fracking can play an important role in lowering energy costs</title>
-    <subtitle>The Government should revisit its policy on hydraulic fracturing</subtitle>
-    <description>When energy costs rise, people feel the hit directly. Not only do their own energy bills go up, but so too does the price of food, electronics, and almost all other goods. Hydraulic fracturing could be the answer.</description>
-    <author>Adam Lehodey</author>
-    <date>January 2022</date>
-    <publication>Adam Smith Institute</publication>
-    <image>https://images.unsplash.com/photo-1598336206157-a79a3f583cd2?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1031&amp;q=80</image>
-    <link>https://www.adamsmith.org/blog/fracking-can-play-an-important-role-in-lowering-energy-costs</link>
     <link-text>View Article</link-text>
   </post>
   <post featured="false" type="Essays" id="10323">
@@ -616,17 +616,6 @@
     <link>https://adyleho.medium.com/on-the-creation-of-wealth-wealth-money-and-redistribution-c868a64078b7</link>
     <link-text>View Article</link-text>
   </post>
-  <post featured="false" type="Essays" id="10316">
-    <title>American Dream</title>
-    <subtitle>How to live the good life</subtitle>
-    <description>What is the American Dream? The embodiment of hope and opportunity, or a failed idea swallowed up by Corporate America?</description>
-    <author>Adam Lehodey</author>
-    <date>April 2021</date>
-    <publication>Medium</publication>
-    <image>https://miro.medium.com/max/3600/0*rkl1FK_DjjpIyjyY.jpg</image>
-    <link>https://adyleho.medium.com/american-dream-sue%C3%B1o-americano-77740cd3b581</link>
-    <link-text>View Article</link-text>
-  </post>
   <post featured="false" type="Opinion" id="10318">
     <title>The Conservatives' worrying move away from economic liberalism</title>
     <subtitle>The way forward: markets and trade</subtitle>
@@ -636,6 +625,28 @@
     <publication>1828</publication>
     <image>https://images.unsplash.com/photo-1494419470281-65c2b001a42b?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1932&amp;q=80</image>
     <link>https://www.1828.org.uk/2021/05/21/the-conservative-partys-move-away-from-economic-liberalism-should-worry-us-all/</link>
+    <link-text>View Article</link-text>
+  </post>
+  <post featured="false" type="Opinion" id="10317">
+    <title>Tyranny can't stop climate change</title>
+    <subtitle>The troubling rise of neo-luddism</subtitle>
+    <description>Building a better, greener and cleaner world to enable us to live meaninfully and enjoy our lives will require co-operation and depend on technology. It can't be solved by coercion.</description>
+    <author>Adam Lehodey</author>
+    <date>May 2021</date>
+    <publication>Medium</publication>
+    <image>https://images.unsplash.com/photo-1569462529461-9d84b52954d2?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80</image>
+    <link>https://adyleho.medium.com/tyranny-cant-stop-climate-change-the-troubling-rise-of-neo-luddism-1773e78d5a8</link>
+    <link-text>View Article</link-text>
+  </post>
+  <post featured="false" type="Essays" id="10316">
+    <title>American Dream</title>
+    <subtitle>How to live the good life</subtitle>
+    <description>What is the American Dream? The embodiment of hope and opportunity, or a failed idea swallowed up by Corporate America?</description>
+    <author>Adam Lehodey</author>
+    <date>April 2021</date>
+    <publication>Medium</publication>
+    <image>https://miro.medium.com/max/3600/0*rkl1FK_DjjpIyjyY.jpg</image>
+    <link>https://adyleho.medium.com/american-dream-sue%C3%B1o-americano-77740cd3b581</link>
     <link-text>View Article</link-text>
   </post>
   <post featured="false" type="Prose/Verse" id="10315">
@@ -671,39 +682,6 @@
     <link>https://adyleho.medium.com/long-live-liberalism-1458984a79c8</link>
     <link-text>View Article</link-text>
   </post>
-  <post featured="false" type="Essays" id="10308">
-    <title>The History and Future of Nicotine</title>
-    <subtitle>LONG READ: Examining the roots and next steps.</subtitle>
-    <description>Smoking is one of largest preventable cause of death, amounts to millions of hours of lost productivity, and costs our health systems billions. Where did it start, why is it bad for you, and how can we end nicotine related deaths for good?</description>
-    <author>Adam Lehodey</author>
-    <date>January 2020</date>
-    <publication>Medium</publication>
-    <image>https://miro.medium.com/max/744/1*OVN-7sS0_g3TeHcWiaVaSA.png</image>
-    <link>https://medium.com/@adyleho/the-history-and-future-of-smoking-a7ab84351ad0</link>
-    <link-text>Read essay</link-text>
-  </post>
-  <post featured="false" type="Analysis" id="10311">
-    <title>Education reform is the key to social mobility</title>
-    <subtitle>Social mobility in the 21st Century</subtitle>
-    <description>Such a large part of social mobility and equality of opportunity lies in education, that we need to ask ourselves how best to improve the system to tap into the full potential of the thousands of children going through it each year.</description>
-    <author>Adam Lehodey</author>
-    <date>August 2020</date>
-    <publication>1828</publication>
-    <image>https://images.unsplash.com/photo-1520670453919-ec413efb2951?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1868&amp;q=80</image>
-    <link>https://www.1828.org.uk/2020/08/20/how-education-reform-can-unlock-social-mobility/</link>
-    <link-text>View Article</link-text>
-  </post>
-  <post featured="false" type="Opinion" id="10317">
-    <title>Tyranny can't stop climate change</title>
-    <subtitle>The troubling rise of neo-luddism</subtitle>
-    <description>Building a better, greener and cleaner world to enable us to live meaninfully and enjoy our lives will require co-operation and depend on technology. It can't be solved by coercion.</description>
-    <author>Adam Lehodey</author>
-    <date>May 2021</date>
-    <publication>Medium</publication>
-    <image>https://images.unsplash.com/photo-1569462529461-9d84b52954d2?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80</image>
-    <link>https://adyleho.medium.com/tyranny-cant-stop-climate-change-the-troubling-rise-of-neo-luddism-1773e78d5a8</link>
-    <link-text>View Article</link-text>
-  </post>
   <post featured="false" type="Analysis" id="10310">
     <title>How to reinvigorate our cities</title>
     <subtitle>Build back better.</subtitle>
@@ -713,6 +691,17 @@
     <publication>1828</publication>
     <image>https://images.unsplash.com/photo-1541371301799-86ad7e6e44cd?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=750&amp;q=80</image>
     <link>https://www.1828.org.uk/2020/08/05/how-to-reinvigorate-our-cities/</link>
+    <link-text>View Article</link-text>
+  </post>
+  <post featured="false" type="Opinion" id="10311">
+    <title>Education reform is the key to social mobility</title>
+    <subtitle>Social mobility in the 21st Century</subtitle>
+    <description>Such a large part of social mobility and equality of opportunity lies in education, that we need to ask ourselves how best to improve the system to tap into the full potential of the thousands of children going through it each year.</description>
+    <author>Adam Lehodey</author>
+    <date>August 2020</date>
+    <publication>1828</publication>
+    <image>https://images.unsplash.com/photo-1520670453919-ec413efb2951?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1868&amp;q=80</image>
+    <link>https://www.1828.org.uk/2020/08/20/how-education-reform-can-unlock-social-mobility/</link>
     <link-text>View Article</link-text>
   </post>
   <post featured="false" type="Analysis" id="10309">
@@ -725,6 +714,17 @@
     <image>https://images.unsplash.com/photo-1566645561206-a5586419fb5f?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80</image>
     <link>https://www.1828.org.uk/2020/06/24/how-vaping-could-end-nicotine-related-deaths-for-good/</link>
     <link-text>View Article</link-text>
+  </post>
+  <post featured="false" type="Essays" id="10308">
+    <title>The History and Future of Nicotine</title>
+    <subtitle>LONG READ: Examining the roots and next steps.</subtitle>
+    <description>Smoking is one of largest preventable cause of death, amounts to millions of hours of lost productivity, and costs our health systems billions. Where did it start, why is it bad for you, and how can we end nicotine related deaths for good?</description>
+    <author>Adam Lehodey</author>
+    <date>January 2020</date>
+    <publication>Medium</publication>
+    <image>https://miro.medium.com/max/744/1*OVN-7sS0_g3TeHcWiaVaSA.png</image>
+    <link>https://medium.com/@adyleho/the-history-and-future-of-smoking-a7ab84351ad0</link>
+    <link-text>Read essay</link-text>
   </post>
   <post featured="false" type="Essays" id="10307">
     <title>Inequality in a Meritocratic World</title>
