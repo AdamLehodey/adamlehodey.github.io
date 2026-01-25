@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blogPosts>
+  <post featured="false" type="Analysis" id="10375">
+    <title>Mamdani Doesn't Understand New York's Housing Market</title>
+    <subtitle>His intervention in the Pinnacle bankruptcy shows everything wrong with the new mayor's approach.</subtitle>
+    <description>The inside story of how the Pinnacle Group became the Mamdani administration's most-hated target, and why things are only going to get worse from here.</description>
+    <author>Adam Lehodey</author>
+    <date>January 2026</date>
+    <publication>City Journal</publication>
+    <image>https://media4.manhattan-institute.org/wp-content/uploads/sites/5/Pinnacle-Group-bankruptcy-Zohran-Mamdani-housing-landlords.jpg</image>
+    <link>https://www.city-journal.org/article/pinnacle-group-bankruptcy-zohran-mamdani-housing-landlords</link>
+    <link-text>Read article</link-text>
+  </post>
   <post featured="false" type="Analysis" id="10374">
     <title>New York City’s New Law Makes “Affordable” Housing Way More Expensive</title>
     <subtitle>And how the Construction Justice Act is a classic example of “everything-bagel liberalism"</subtitle>
