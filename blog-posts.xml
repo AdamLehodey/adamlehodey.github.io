@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blogPosts>
+  <post featured="false" type="Analysis" id="10378">
+    <title>New York's First "Rental Ripoff" Hearings: Fiery Rhetoric, Little Substance</title>
+    <subtitle>Solutions came prebaked at the first of five planned events.</subtitle>
+    <description>The first "rental ripoff" hearings could be a sign of things to come for a mayor in a bind between unrealistic promises and needing to maintain support.</description>
+    <author>Adam Lehodey</author>
+    <date>March 2026</date>
+    <publication>City Journal</publication>
+    <image>https://media4.manhattan-institute.org/wp-content/uploads/sites/5/New-York-rental-ripoff-hearings-Mamdani-GettyImages-2238635592.jpg</image>
+    <link>https://www.city-journal.org/article/new-york-rental-ripoff-hearings-mamdani</link>
+    <link-text>Read article</link-text>
+  </post>
   <post featured="false" type="Analysis" id="10377">
     <title>Banning Hidden Fees Won’t Make New York’s Hotels More Affordable</title>
     <subtitle>The city's high room rates are driven by scarcity, not “junk” charges.</subtitle>
