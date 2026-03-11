@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blogPosts>
+  <post featured="false" type="Analysis" id="10380">
+    <title>In New York, Medicaid Is a Story of Fraud and Waste—but Also Political Largesse</title>
+    <subtitle>How the government health insurance program came to engulf the state's budget—and how it can be reformed</subtitle>
+    <description>A long-form investigation exploring New York's Medicaid program. Fraud is rampant, but most of the spending growth has come from a political will to expand the program.</description>
+    <author>Adam Lehodey</author>
+    <date>March 2026</date>
+    <publication>City Journal</publication>
+    <image>https://media4.manhattan-institute.org/wp-content/uploads/sites/5/new-york-medicaid-fraud-waste-uncontrolled-spending-growth-GettyImages-809509674.jpg</image>
+    <link>https://www.city-journal.org/article/new-york-medicaid-fraud-waste-uncontrolled-spending-growth</link>
+    <link-text>Read article</link-text>
+  </post>
   <post featured="false" type="Analysis" id="10379">
     <title>“Pro-Worker AI” Means Deregulation</title>
     <subtitle>The coming of artificial intelligence means states must remove onerous restrictions on labor.</subtitle>
