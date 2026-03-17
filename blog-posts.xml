@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blogPosts>
+  <post featured="false" type="Analysis" id="10381">
+    <title>The $3 bn Case for Auctioning New York City’s Parking Spaces</title>
+    <subtitle>An urban economist's dream</subtitle>
+    <description>New York should allocate parking more efficiently—and raise billions—by letting the market decide how curb space is used, opening up the possibility for more outdoor dining, taxistands, micro-parks, and more.</description>
+    <author>Adam Lehodey</author>
+    <date>March 2026</date>
+    <publication>Substack</publication>
+    <image>https://images.unsplash.com/photo-1551303875-b131880846c2?crop=entropy&amp;amp;cs=tinysrgb&amp;amp;fit=max&amp;amp;fm=jpg&amp;amp;ixid=M3wzMDAzMzh8MHwxfHNlYXJjaHwxNXx8bnljJTIwYnVzeSUyMHN0cmVldHxlbnwwfHx8fDE3NzM2ODI2Nzl8MA&amp;amp;ixlib=rb-4.1.0&amp;amp;q=80&amp;amp;w=1080</image>
+    <link>https://open.substack.com/pub/cityjournal/p/the-case-for-auctioning-new-york</link>
+    <link-text>Read article</link-text>
+  </post>
   <post featured="false" type="Analysis" id="10380">
     <title>In New York, Medicaid Is a Story of Fraud and Waste—but Also Political Largesse</title>
     <subtitle>How the government health insurance program came to engulf the state's budget—and how it can be reformed</subtitle>
